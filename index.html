@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>(주)에이치바이럴 | 소상공인·중소기업 디지털 마케팅</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background-color: #f5f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 헤더 */
+    header {
+      width: 100%;
+      padding: 16px 24px;
+      background-color: #0f4c81;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .logo-text {
+      font-size: 16px;
+    }
+
+    .header-right {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    /* 히어로 영역 */
+    .hero {
+      background: linear-gradient(135deg, #0f4c81, #2563eb);
+      color: #ffffff;
+      padding: 48px 20px 56px;
+    }
+
+    .hero-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-title {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      margin-bottom: 16px;
+      opacity: 0.96;
+    }
+
+    .hero-bullets {
+      font-size: 14px;
+      margin-bottom: 20px;
+      opacity: 0.96;
+    }
+
+    .hero-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      padding: 4px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background-color: rgba(15, 76, 129, 0.35);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .btn-kakao {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background-color: #fee500; /* 카카오 노란색 */
+      color: #111111;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-sub {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .hero-notice {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 6px;
+    }
+
+    /* 오른쪽 이미지 박스 */
+    .hero-image-box {
+      background-color: rgba(15, 23, 42, 0.16);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    /* 섹션 공통 */
+    section {
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #4b5563;
+    }
+
+    /* 카드 레이아웃 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .card-tagline {
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .card-text {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* 문의 섹션 */
+    .contact-box {
+      background-color: #ffffff;
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+      max-width: 560px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+
+    .contact-label {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .contact-kakao-id {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .contact-small {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* 푸터 */
+    footer {
+      padding: 18px 20px 26px;
+      background-color: #0b1730;
+      color: #9ca3af;
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-top {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <!-- 헤더 -->
+  <header>
+    <div class="logo">
+      <div class="logo-mark">H</div>
+      <div class="logo-text">(주)에이치바이럴</div>
+    </div>
+    <div class="header-right">
+      소상공인·중소기업 디지털 마케팅 파트너
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <!-- 왼쪽 텍스트 -->
+      <div>
+        <h1 class="hero-title">
+          소상공인·중소기업<br />
+          &nbsp;전문직종까지 함께 가는<br />
+          디지털 마케팅 파트너
+        </h1>
+        <p class="hero-subtitle">
+          세무·노무·법무·변호·공인중개사·병원 등<br />
+          전문직종 고객의 온라인 브랜딩과
+          디지털 마케팅 솔루션을 설계합니다.
+        </p>
+        <p class="hero-bullets">
+          · 업종·상권·고객 타깃 분석 기반 전략 설계<br />
+          · 네이버 중심 검색 노출 & 브랜드 블로그 운영<br />
+          · 홈페이지·콘텐츠·광고까지 한 번에 컨설팅
+        </p>
+
+        <div class="hero-badge-row">
+          <div class="hero-badge">소상공인·중소기업 전담</div>
+          <div class="hero-badge">전문직종 온라인 브랜딩</div>
+          <div class="hero-badge">네이버 최적화 전략</div>
+        </div>
+
+        <div class="hero-cta-row">
+          <!-- TODO: 실제 카카오톡 채널 링크로 교체 -->
+          <a
+            href="https://pf.kakao.com/"
+            target="_blank"
+            class="btn-kakao"
+          >
+            💬 카카오톡으로 빠른 상담
+          </a>
+          <span class="btn-sub">상담 요청을 남겨주시면 담당 컨설턴트가 1:1로 연결해 드립니다.</span>
+        </div>
+
+        <div class="hero-notice">
+          * 세무·노무·법무 등 민감 업종은 광고 심의 및 관련 법규를 준수한 범위 내에서만 진행합니다.
+        </div>
+      </div>
+
+      <!-- 오른쪽 이미지 영역 -->
+      <div class="hero-image-box">
+        <!-- 여기 src에 메인 파란 이미지 파일 경로만 바꿔서 사용 -->
+        <img src="hero-main.jpg" alt="디지털 마케팅 컨설팅 이미지" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 타깃 업종 섹션 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">이런 업종일수록 온라인 브랜딩이 중요합니다</h2>
+      <p class="section-desc">
+        단순 광고 집행이 아니라, <b>전문성·신뢰·리뷰·검색 노출</b>이 동시에 잡혀야
+        문의가 꾸준히 들어옵니다.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-tagline">세무·노무·법무·변호</div>
+          <div class="card-title">신뢰가 생기면 상담이 늘어납니다</div>
+          <p class="card-text">
+            세무사·노무사·변호사 등 전문직은 광고보다
+            <b>전문성 콘텐츠와 후기</b>가 핵심입니다.
+            검색에서 반복 노출될 수 있는 구조를 설계합니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tagline">공인중개사·부동산</div>
+          <div class="card-title">상권·매물별 검색 키워드 설계</div>
+          <p class="card-text">
+            지역·매물 특성에 맞춘 키워드, 블로그, 지도 노출 전략을 통해
+            <b>전화 및 방문 문의</b>를 늘릴 수 있도록 돕습니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-tagline">병원·클리닉</div>
+          <div class="card-title">신뢰도 중심 온라인 브랜딩</div>
+          <p class="card-text">
+            병원·클리닉은 브랜드 이미지와 후기, 의료광고 관련 법규 준수가 중요합니다.
+            안전한 범위에서 <b>신뢰를 쌓는 브랜딩·콘텐츠 전략</b>을 제안합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 서비스 섹션 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">(주)에이치바이럴의 서비스</h2>
+      <p class="section-desc">
+        계정 하나, 포스팅 몇 개로 끝나는 작업이 아니라
+        <b>장기적으로 쌓이는 온라인 자산</b>을 만든다는 관점으로 설계합니다.
+      </p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">네이버 중심 통합 전략</div>
+          <p class="card-text">
+            네이버 블로그·플레이스·검색 노출 구조를 먼저 설계한 뒤,
+            그 안에 콘텐츠와 광고를 채워 넣는 방식으로 진행합니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">브랜드 블로그·홈페이지 기획</div>
+          <p class="card-text">
+            업종·지역·객단가에 맞는 카테고리 구성, 글 스타일, 이미지 가이드를 설계해
+            <b>대표님의 브랜드 자산</b>이 되도록 돕습니다.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-title">성과 관점 컨설팅</div>
+          <p class="card-text">
+            방문·체류·문의·재방문까지 데이터를 보면서,
+            <b>실제 매출과 연결되는 지점</b>을 함께 점검합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 섹션 -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">프로젝트 상담 문의</h2>
+      <p class="section-desc">
+        현재 상황(업종·지역·월 매출·하고 싶은 방향)을 간단히 남겨주시면,
+        담당 컨설턴트가 카카오톡으로 먼저 연락드립니다.
+      </p>
+
+      <div class="contact-box">
+        <div class="contact-row">
+          <span class="contact-label">카카오톡 채널 상담</span>
+          <!-- 여기에도 실제 카카오톡 채널 링크로 교체 -->
+          <a
+            href="https://pf.kakao.com/"
+            target="_blank"
+            class="btn-kakao"
+          >
+            💬 카카오톡 상담 시작하기
+          </a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">카카오톡 ID&nbsp;</span>
+          <span class="contact-kakao-id">hviral</span>
+        </div>
+        <div class="contact-small">
+          상담 시간: 평일 10:00 ~ 18:00 / 문의량에 따라 답변이 지연될 수 있습니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        (주)에이치바이럴 | H VIRAL Co., Ltd.
+      </div>
+      <div>
+        사업자 정보, 주소, 연락처 등은 실제 등록 내용에 맞춰 기입해 주세요.
+      </div>
+      <div>
+        ⓒ (주)에이치바이럴. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
