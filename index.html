@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko" id="top">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>(주)에이치바이럴 | 소상공인·전문직 디지털 마케팅 파트너</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>(주)에이치바이럴 | 소상공인·중소기업 전문 디지털 마케팅 파트너</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     * {
       box-sizing: border-box;
@@ -15,709 +15,705 @@
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
         "Noto Sans KR", system-ui, sans-serif;
       background-color: #020617;
-      color: #f9fafb;
+      color: #e5e7eb;
       line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    /* 상단 헤더 */
+    ul {
+      list-style: none;
+    }
+
+    /* 레이아웃 공통 */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 헤더 */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 23, 42, 0.95),
-        rgba(15, 23, 42, 0.7),
-        transparent
-      );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      z-index: 20;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 14px 18px;
+    .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 64px;
     }
 
-    .logo-badge {
+    .logo {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 8px 18px;
       border-radius: 999px;
+      background: radial-gradient(circle at 0% 0%, #38bdf8, #2563eb);
+      color: #e5f2ff;
       font-weight: 700;
       letter-spacing: 0.08em;
-      font-size: 13px;
-      color: #eff6ff;
-      background: radial-gradient(circle at 10% 20%, #1d4ed8, #22c1c3);
-      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.5);
-      border: 1px solid rgba(191, 219, 254, 0.7);
+      font-size: 14px;
     }
 
     nav ul {
       display: flex;
-      gap: 20px;
-      list-style: none;
+      gap: 24px;
       font-size: 14px;
-      color: #e5e7eb;
+      color: #cbd5f5;
     }
 
-    nav li a {
-      padding: 4px 0;
+    nav a {
       position: relative;
+      padding-bottom: 4px;
     }
 
-    nav li a::after {
+    nav a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -2px;
+      bottom: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(to right, #38bdf8, #22c55e);
+      background: #38bdf8;
       transition: width 0.2s ease;
     }
 
-    nav li a:hover::after {
+    nav a:hover::after {
       width: 100%;
     }
 
-    /* 히어로 섹션 */
+    /* 히어로 영역 */
+    main {
+      padding-bottom: 80px;
+    }
+
     .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 40px 18px 56px;
+      position: relative;
+      background: radial-gradient(circle at 0% 0%, #1d4ed8, #020617 55%);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-      gap: 38px;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 40px;
       align-items: center;
+      padding: 64px 0 72px;
     }
 
-    .hero-left {
-      min-width: 0;
-    }
-
-    .eyebrow {
-      font-size: 14px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #93c5fd;
-      margin-bottom: 14px;
+    .hero-eyebrow {
+      font-size: 13px;
+      color: #bfdbfe;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
     }
 
     .hero-title {
-      font-size: 28px;
-      line-height: 1.3;
+      font-size: 30px;
       font-weight: 800;
-      color: #eff6ff;
-      margin-bottom: 18px;
+      color: #f9fafb;
+      margin-bottom: 14px;
     }
 
     .hero-sub {
       font-size: 14px;
       color: #e5e7eb;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .hero-bullets {
       font-size: 13px;
-      color: #cbd5f5;
-      margin-bottom: 18px;
+      color: #dbeafe;
+      margin-bottom: 20px;
     }
 
-    .hero-bullets li::before {
-      content: "• ";
-      color: #60a5fa;
+    .hero-bullets li + li {
+      margin-top: 4px;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
-    .hero-tag {
-      padding: 7px 12px;
+    .tag-pill {
+      font-size: 12px;
+      padding: 6px 12px;
       border-radius: 999px;
-      font-size: 11px;
-      color: #e0f2fe;
-      border: 1px solid rgba(191, 219, 254, 0.6);
-      background: radial-gradient(circle at 10% 0%, #0f172a, #1d3557);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.4);
+      color: #e5e7eb;
     }
 
-    .hero-buttons {
+    .hero-ctas {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
-    .btn {
+    .btn-primary,
+    .btn-kakao {
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-        background-color 0.12s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.45);
+      gap: 6px;
     }
 
     .btn-primary {
-      background: linear-gradient(to right, #22c55e, #16a34a);
-      color: #022c22;
-      border-color: rgba(34, 197, 94, 0.4);
+      background: linear-gradient(135deg, #38bdf8, #2563eb);
+      color: #0b1120;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
     }
 
     .btn-kakao {
-      background-color: #fee500;
-      color: #1f2937;
-      border-color: #fbbf24;
+      background: #fee500;
+      color: #111827;
     }
 
-    .btn-kakao span {
-      margin-right: 6px;
-      font-size: 15px;
+    .btn-kakao:hover {
+      filter: brightness(0.98);
     }
 
     .hero-note {
       font-size: 11px;
+      color: #cbd5f5;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    .hero-disclaimer {
+      margin-top: 10px;
+      font-size: 11px;
       color: #9ca3af;
     }
 
-    .hero-right {
-      display: flex;
-      justify-content: center;
-    }
-
+    /* 우측 이미지 박스 */
     .hero-image-box {
-      width: 100%;
-      max-width: 380px;
+      position: relative;
+      border-radius: 32px;
+      padding: 20px;
+      background: radial-gradient(circle at 0% 0%, #1d4ed8, #020617);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.8);
       min-height: 220px;
-      border-radius: 26px;
-      padding: 14px;
-      background: radial-gradient(circle at 10% 0%, #1d4ed8, #0f172a);
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9);
       display: flex;
-      gap: 10px;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
 
     .hero-image-box img {
-      width: 48%;
-      height: 100%;
-      object-fit: cover;
+      width: 100%;
+      max-width: 360px;
       border-radius: 20px;
-      border: 1px solid rgba(191, 219, 254, 0.65);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+      display: block;
+      object-fit: cover;
     }
 
-    .hero-image-caption {
-      font-size: 12px;
+    .hero-image-label {
+      position: absolute;
+      left: 24px;
+      bottom: 22px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
       color: #e5e7eb;
-      text-align: center;
-      margin-top: 8px;
+      font-size: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
-    /* 공통 섹션 */
-    main {
-      background: radial-gradient(circle at 0 0, #1d4ed8 0, #020617 40%);
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-    }
-
+    /* 섹션 공통 */
     section {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 18px 40px;
+      padding: 56px 0 32px;
     }
 
     section h2 {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
-      margin-bottom: 6px;
-      color: #e5edff;
+      margin-bottom: 10px;
+      color: #f9fafb;
     }
 
-    section .section-sub {
+    section p.section-sub {
       font-size: 13px;
       color: #9ca3af;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
-    .card-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
     }
 
     .card {
       background: rgba(15, 23, 42, 0.85);
       border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 16px 15px 18px;
-      font-size: 13px;
-      color: #e5e7eb;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+      padding: 16px 18px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
     }
 
     .card h3 {
-      font-size: 14px;
+      font-size: 15px;
       margin-bottom: 8px;
-      color: #bfdbfe;
+      color: #e5e7eb;
     }
 
-    .pill {
-      display: inline-block;
-      font-size: 10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.14);
-      color: #bfdbfe;
-      margin-bottom: 6px;
+    .card p {
+      font-size: 13px;
+      color: #cbd5f5;
     }
 
-    /* 소개 섹션 */
+    .card ul {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .card ul li + li {
+      margin-top: 4px;
+    }
+
+    /* 소개/문의 */
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
-      gap: 20px;
-      align-items: flex-start;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
     }
 
-    .about-box {
+    .about-block {
       background: rgba(15, 23, 42, 0.9);
       border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 16px 15px 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
       font-size: 13px;
-      color: #e5e7eb;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+      color: #d1d5db;
     }
 
-    .about-box h3 {
-      font-size: 14px;
+    .about-block h3 {
+      font-size: 15px;
       margin-bottom: 8px;
-      color: #bfdbfe;
+      color: #e5e7eb;
     }
 
-    .about-box ul {
-      padding-left: 16px;
+    .contact-list {
+      font-size: 13px;
+      color: #cbd5f5;
+    }
+
+    .contact-list li + li {
       margin-top: 6px;
     }
 
-    .about-box li {
+    /* 푸터 */
+    footer {
+      border-top: 1px solid rgba(55, 65, 81, 0.8);
+      padding: 16px 0 24px;
+      background: #020617;
+    }
+
+    .footer-text {
+      font-size: 10px;
+      color: #9ca3af;
+      line-height: 1.7;
+    }
+
+    .footer-brand {
+      font-size: 11px;
+      font-weight: 600;
+      color: #e5e7eb;
       margin-bottom: 4px;
     }
 
-    /* 문의 섹션 */
-    .contact-box {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 16px 15px 18px;
-      font-size: 13px;
-      color: #e5e7eb;
-      max-width: 520px;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
-    }
-
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    footer {
-      border-top: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 16px 18px 20px;
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 960px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
+    /* 반응형 */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-top: 40px;
       }
 
-      .hero {
-        padding-top: 28px;
-      }
-
-      .hero-right {
+      .hero-image-box {
         order: -1;
+        margin-bottom: 18px;
+      }
+
+      header {
+        position: static;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        height: auto;
+        padding: 10px 0 12px;
       }
 
       nav ul {
-        gap: 12px;
-        font-size: 13px;
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .about-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .card-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-title {
-        font-size: 22px;
-      }
-
-      .hero {
-        padding: 24px 16px 34px;
-      }
-
-      header .nav-inner {
-        padding: 10px 16px;
-      }
-
-      nav ul {
-        display: none; /* 모바일 메뉴는 나중에 필요하면 따로 구성 */
+        flex-wrap: wrap;
+        gap: 14px;
       }
     }
   </style>
 </head>
-<body>
-
-  <!-- 헤더 / 네비게이션 -->
+<body id="top">
+  <!-- 헤더 -->
   <header>
-    <div class="nav-inner">
-      <a href="#top" class="logo-badge">H VIRAL</a>
+    <div class="container header-inner">
+      <!-- 로고 클릭하면 맨 위로 이동 -->
+      <a href="#top" class="logo">H VIRAL</a>
       <nav>
         <ul>
           <li><a href="#services">서비스</a></li>
           <li><a href="#strengths">강점</a></li>
           <li><a href="#cases">사례 구성</a></li>
-          <li><a href="#operation">운영 방식</a></li>
-          <li><a href="#contact">문의</a></li>
+          <li><a href="#process">운영 방식</a></li>
           <li><a href="#about">소개</a></li>
+          <li><a href="#contact">문의</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-
-    <!-- 히어로 섹션 -->
+    <!-- 히어로 -->
     <section class="hero">
-      <div class="hero-left">
-        <div class="eyebrow">소상공인 · 중소기업 · 전문직</div>
-        <h1 class="hero-title">
-          전문직종까지 함께 가는<br>
-          디지털 마케팅 파트너
-        </h1>
-        <p class="hero-sub">
-          세무·노무·법무·변호·공인중개사·병원 등 전문직 고객의 온라인 브랜딩과
-          퍼포먼스 중심 디지털 마케팅 솔루션을 설계합니다.
-        </p>
-        <ul class="hero-bullets">
-          <li>업종·상권·고객 데이터를 기반으로 한 인사이트 도출 &amp; 전략 설계</li>
-          <li>네이버 검색·콘텐츠·브랜드를 아우르는 통합 디지털 전략</li>
-          <li>광고 예산 효율을 극대화하는 실전형 캠페인 설계</li>
-        </ul>
-
-        <div class="hero-tags">
-          <span class="hero-tag">네이버 중심 검색 최적화</span>
-          <span class="hero-tag">브랜딩 · 퍼포먼스 통합 전략</span>
-          <span class="hero-tag">전문직 종합 온라인 브랜딩 특화</span>
-        </div>
-
-        <div class="hero-buttons">
-          <a href="#contact" class="btn btn-primary">무료 상담 연결</a>
-          <a href="https://open.kakao.com/o/s9BjRd3h" target="_blank" class="btn btn-kakao">
-            <span>💬</span>카카오톡 무료 상담
-          </a>
-        </div>
-
-        <p class="hero-note">
-          상담 요청을 남겨주시면 담당 컨설턴트가 1:1로 안내해드립니다.<br>
-          디지털 위에서 움직이지만, 언제나 사람 중심의 안전한 마케팅 원칙을 지켜나갑니다.
-        </p>
-      </div>
-
-      <div class="hero-right">
+      <div class="container hero-inner">
+        <!-- 왼쪽 텍스트 -->
         <div>
-          <div class="hero-image-box">
-            <!-- ⚠️ 여기 SRC 를 GitHub에 업로드한 실제 이미지 주소로 꼭 교체하세요 -->
-            <img src="IMAGE_URL_1" alt="디지털 마케팅 상담 중인 여성 컨설턴트">
-            <img src="IMAGE_URL_2" alt="디지털 마케팅 상담 중인 남성 컨설턴트">
-          </div>
-          <p class="hero-image-caption">
-            실제 전문 컨설턴트와 함께 업종·상권·고객 특성을 반영한 전략을 설계합니다.
+          <div class="hero-eyebrow">소상공인 · 중소기업 · 전문직</div>
+          <h1 class="hero-title">
+            전문직종까지 함께 가는<br />
+            디지털 마케팅 파트너
+          </h1>
+          <p class="hero-sub">
+            세무·노무·법무·변호·공인중개사·병원 등 전문직 고객의 온라인 브랜딩과
+            퍼포먼스 중심 디지털 마케팅 솔루션을 설계합니다.
           </p>
+
+          <ul class="hero-bullets">
+            <li>· 업종·상권·고객 데이터를 활용한 인사이트 도출 &amp; 전략 설계</li>
+            <li>· 네이버 검색·콘텐츠·브랜딩을 아우르는 풀퍼널 디지털 전략</li>
+            <li>· 광고 예산 효율을 극대화하는 실질형 캠페인 설계</li>
+          </ul>
+
+          <div class="hero-tags">
+            <span class="tag-pill">네이버 중심 검색 최적화</span>
+            <span class="tag-pill">브랜딩 · 퍼포먼스 통합 전략</span>
+            <span class="tag-pill">전문직 종합 브랜딩 특화</span>
+          </div>
+
+          <div class="hero-ctas">
+            <a
+              href="mailto:hyun012019@gmail.com?subject=%5BH%20VIRAL%5D%20무료%20상담%20문의"
+              class="btn-primary"
+            >
+              무료 상담 연결
+            </a>
+            <a
+              href="https://open.kakao.com/o/s9BjRd3h"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-kakao"
+            >
+              카카오톡 무료 상담
+            </a>
+          </div>
+
+          <p class="hero-note">
+            상담 요청을 남겨주시면 담당 컨설턴트가 1:1로 연락을 드립니다.
+          </p>
+          <p class="hero-disclaimer">
+            ※ 특정 업종의 광고 집행은 관련 법령과 가이드라인을 준수하는 범위에서만 진행합니다.
+          </p>
+        </div>
+
+        <!-- 오른쪽 이미지 -->
+        <div class="hero-image-box">
+          <img
+            src="file_000000001444720874410f3b1ea57d9 (1).png"
+            alt="디지털 마케팅을 함께 설계하는 컨설턴트 이미지"
+          />
+          <div class="hero-image-label">디지털 마케팅 컨설팅 현장 이미지</div>
         </div>
       </div>
     </section>
 
-    <!-- 서비스 섹션 -->
+    <!-- 서비스 -->
     <section id="services">
-      <h2>SERVICES | 업종별 맞춤 디지털 전략</h2>
-      <p class="section-sub">
-        단순 광고 집행이 아니라, 각 업종·업태별로 브랜드·유입·전환까지 이어지는 디지털 전략을 설계합니다.
-      </p>
-      <div class="card-grid">
-        <article class="card">
-          <span class="pill">네이버 중심</span>
-          <h3>검색 &amp; 콘텐츠 최적화</h3>
-          <p>
-            업종별 주요 검색어 구조를 분석하고, 네이버 검색·블로그·플레이스·지식인 등
-            핵심 채널을 중심으로 노출 전략을 설계합니다.  
-            광고 의존도를 줄이고, 검색 기반의 ‘찾아오는 유입’을 만들어갑니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">브랜딩 &amp; 퍼포먼스</span>
-          <h3>브랜드 풀파널 마케팅</h3>
-          <p>
-            인지–관심–문의–재방문까지 한 번에 이어지는 구조를 설계합니다.
-            브랜드 스토리, 전문성, 실제 고객 경험을 자연스럽게 녹여
-            ‘신뢰 기반 전환’을 만들어내는 것을 목표로 합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">전문직 특화</span>
-          <h3>세무·노무·법무·병원·공인중개사</h3>
-          <p>
-            높은 신뢰가 필요한 전문직 업종을 위해, 법·윤리 기준을 고려한
-            보수적·안전한 커뮤니케이션 원칙을 적용합니다.
-            과장·허위 없이, 장기적으로 쌓이는 평판을 중시합니다.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 강점 섹션 -->
-    <section id="strengths">
-      <h2>STRENGTHS | 에이치바이럴의 강점</h2>
-      <p class="section-sub">
-        온라인에서의 숫자와 함께, 결국 사람과 관계가 남는 마케팅을 추구합니다.
-      </p>
-      <div class="card-grid">
-        <article class="card">
-          <span class="pill">사람 중심</span>
-          <h3>데이터 위에 사람을 보는 관점</h3>
-          <p>
-            클릭·노출·전환율 뒤에 있는 ‘사람의 행동과 심리’를 함께 해석합니다.
-            사장님과 고객 모두가 편안한 방향으로 설계하는 것이 에이치바이럴의 기준입니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">구조화</span>
-          <h3>안전한 마케팅 구조 설계</h3>
-          <p>
-            일시적인 편법이나 위험한 광고 기법은 지양합니다.
-            플랫폼 정책과 광고 관련 법규를 지키는 범위 안에서,
-            장기적으로 운영 가능한 구조를 설계합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">투명한 소통</span>
-          <h3>숫자와 과정의 공유</h3>
-          <p>
-            어떤 채널에서 어떤 이유로 결과가 나오는지,
-            이해하기 쉬운 언어로 설명드리는 것을 중요하게 생각합니다.
-            ‘맡기면 알아서 하겠습니다’ 보다는 ‘함께 이해하고 결정하는’ 방식을 추구합니다.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 사례 구성 섹션 -->
-    <section id="cases">
-      <h2>CASE 구성 | 이렇게 진행됩니다</h2>
-      <p class="section-sub">
-        업종과 상황에 따라 구체적인 전략은 달라지지만, 기본적인 진행 단계는 다음과 같습니다.
-      </p>
-      <div class="card-grid">
-        <article class="card">
-          <span class="pill">1단계</span>
-          <h3>진단 &amp; 목표 설정</h3>
-          <p>
-            현재 온라인 현황, 경쟁 상황, 상권·업종 특성을 진단합니다.
-            단기·중장기 목표를 나누어 설정하고, 그에 맞는 KPI를 함께 정리합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">2단계</span>
-          <h3>전략 설계 &amp; 채널 구조화</h3>
-          <p>
-            네이버 검색·콘텐츠·브랜드 채널을 중심으로 어떤 구조로 가져갈지 설계합니다.
-            광고·콘텐츠·브랜딩이 따로 놀지 않도록, 하나의 흐름으로 연결합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">3단계</span>
-          <h3>운영 &amp; 리포트</h3>
-          <p>
-            실제 운영 과정에서 나온 데이터를 바탕으로, 메시지·이미지·랜딩 흐름을 지속적으로 보완합니다.
-            작은 변화라도 공유하며, 함께 의사결정을 만들어갑니다.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 운영 방식 섹션 -->
-    <section id="operation">
-      <h2>OPERATION | 운영 방식</h2>
-      <p class="section-sub">
-        복잡한 용어보다, 사장님 입장에서 이해하기 쉬운 구조를 우선합니다.
-      </p>
-      <div class="card-grid">
-        <article class="card">
-          <span class="pill">커뮤니케이션</span>
-          <h3>정기 점검 &amp; 필요 시 수시 소통</h3>
-          <p>
-            정기 리포트를 통해 주요 지표와 의미를 공유하고,
-            매출·문의·현장 상황의 변화를 함께 확인합니다.
-            필요 시 카카오톡·전화 등을 통해 수시로 방향을 조율합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">안전성</span>
-          <h3>플랫폼 &amp; 법규 준수</h3>
-          <p>
-            플랫폼 정책 위반, 과장·허위·비방 등 리스크가 있는 표현은 사용하지 않습니다.
-            특히 전문직 업종의 경우 광고·표시 관련 법규를 우선 검토한 뒤 진행합니다.
-          </p>
-        </article>
-        <article class="card">
-          <span class="pill">지속 가능성</span>
-          <h3>단기 이벤트가 아닌 구조 설계</h3>
-          <p>
-            일시적인 이벤트나 가격 경쟁만으로 승부하기보다는,
-            브랜드 신뢰를 쌓고 소개·재방문이 자연스럽게 일어나는 구조를 목표로 합니다.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 문의 섹션 -->
-    <section id="contact">
-      <h2>CONTACT | 상담 문의</h2>
-      <p class="section-sub">
-        지금 상황과 고민을 편하게 말씀해 주세요.  
-        업종·상권·예산 규모에 맞춰 현실적인 방향을 함께 고민해드립니다.
-      </p>
-      <div class="contact-box">
-        <p>
-          📩 이메일 문의  
-          <strong>hyun012019@gmail.com</strong>
+      <div class="container">
+        <h2>SERVICES | 업종별 맞춤 디지털 전략</h2>
+        <p class="section-sub">
+          단순 광고 집행이 아니라, 각 업종·업태에 맞는 브랜딩·유입·전환까지 이르는 디지털 전략을
+          통합 설계합니다.
         </p>
-        <div class="contact-row" style="margin-top:12px;">
-          <div>
-            <p>💬 카카오톡 오픈채팅</p>
-            <p style="font-size:12px; color:#9ca3af;">
-              간단한 내용을 먼저 남겨주시면 순차적으로 1:1 답변을 드립니다.
+
+        <div class="cards">
+          <div class="card">
+            <h3>소상공인·점포 비즈니스</h3>
+            <p>
+              음식점·카페·뷰티·생활서비스 등 상권 기반 비즈니스에 특화된
+              지역 중심 디지털 마케팅 플랜을 설계합니다.
+            </p>
+            <ul>
+              <li>· 상권·고객 흐름 데이터 기반 키워드·콘텐츠 전략</li>
+              <li>· 네이버 검색·지도·블로그·리뷰 채널 연계 운영</li>
+              <li>· 재방문·단골 고객 확보를 위한 브랜딩 운영</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>전문직·지식 서비스</h3>
+            <p>
+              세무·노무·법무·변호·공인중개사·병원 등 신뢰가 중요한 전문직의
+              온라인 브랜딩 구조를 설계합니다.
+            </p>
+            <ul>
+              <li>· 전문성·신뢰도를 강조하는 콘텐츠 기획</li>
+              <li>· 법령·가이드라인을 고려한 안전한 노출 구조 설계</li>
+              <li>· 잠재 고객 여정을 고려한 상담 전환 구조 설계</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>중소기업·B2B 마케팅</h3>
+            <p>
+              제조·솔루션·서비스 기업의 리드(문의) 창출과 브랜드 인지도를
+              함께 가져가는 B2B 디지털 전략을 제공합니다.
+            </p>
+            <ul>
+              <li>· 기업 스토리와 레퍼런스를 중심으로 한 콘텐츠 구조화</li>
+              <li>· 검색·SNS·콘텐츠 허브를 연계한 풀퍼널 전략</li>
+              <li>· 세일즈 조직과 연동되는 리드 관리 체계 구축</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 강점 -->
+    <section id="strengths">
+      <div class="container">
+        <h2>STRENGTHS | 안전한 구조, 사람 중심 디지털</h2>
+        <p class="section-sub">
+          디지털 위에 사람을 두는 것을 원칙으로, 장기적으로 안전하고
+          지속 가능한 마케팅 구조를 설계합니다.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>안전한 마케팅 구조 설계</h3>
+            <p>
+              표시·광고의 공정화에 관한 법률, 개인정보 보호법,
+              각 플랫폼 정책을 존중하는 구조를 우선 설계합니다.
+            </p>
+            <ul>
+              <li>· 과장·허위·오인 소지가 있는 문구 지양</li>
+              <li>· 업종별 가이드라인 범위 내에서의 집행 원칙</li>
+              <li>· 장기적으로 문제없는 안정적인 운영 지향</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>사람 중심 인사이트</h3>
+            <p>
+              모든 데이터 뒤에는 ‘사람’이 있다는 관점으로 고객 여정을 해석하고,
+              관계를 쌓는 브랜딩을 우선합니다.
+            </p>
+            <ul>
+              <li>· 단기 클릭보다 장기 신뢰·재방문에 초점</li>
+              <li>· 고객 입장에서 이해되는 언어와 구조 사용</li>
+              <li>· 사장님·의뢰인의 의사결정 흐름까지 고려한 전략</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>데이터 기반 의사결정</h3>
+            <p>
+              감에 의존하기보다는 데이터를 바탕으로 가설을 검증하고,
+              효율을 개선해 나가는 방식을 지향합니다.
+            </p>
+            <ul>
+              <li>· 유입·문의·전환·재방문 지표를 함께 관리</li>
+              <li>· 캠페인별·채널별 성과 리포트 제공</li>
+              <li>· 데이터에 근거한 전략 수정·보완</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사례 구성(예시) -->
+    <section id="cases">
+      <div class="container">
+        <h2>CASE STRUCTURE | 결과 중심 사례 구성(예시)</h2>
+        <p class="section-sub">
+          실제 고객사 정보는 비공개를 원칙으로 하며, 아래 내용은 구조를 설명하기 위한 예시입니다.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>지역 세무법인 A사 (예시)</h3>
+            <p>
+              신규 기장·세무 상담 문의를 늘리기 위해 상권·업종 데이터를
+              기반으로 한 검색·콘텐츠 전략을 설계했습니다.
+            </p>
+            <ul>
+              <li>· 세무 이슈 · 절세 팁 등 정보성 콘텐츠 허브 구축</li>
+              <li>· 상담 전 필수 안내를 온라인에서 미리 소통</li>
+              <li>· 유입 대비 상담 전환율 중심으로 성과 관리</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>병원·클리닉 B사 (예시)</h3>
+            <p>
+              의료광고 관련 법령과 가이드라인을 준수하는 범위에서,
+              정보 제공 중심의 브랜딩 구조를 설계했습니다.
+            </p>
+            <ul>
+              <li>· 시술·치료 효과를 과장하지 않는 정보성 콘텐츠</li>
+              <li>· 자주 묻는 질문·내원 절차 등 사전 안내 강화</li>
+              <li>· 장기적으로 신뢰를 쌓는 콘텐츠 방향 유지</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>프리랜서 전문직 C (예시)</h3>
+            <p>
+              개인 브랜드를 구축하고 싶은 전문직 종사자를 위해
+              ‘이름 검색 시’ 신뢰가 쌓이는 구조를 설계했습니다.
+            </p>
+            <ul>
+              <li>· 이름·전문 분야 키워드 중심의 검색 구조 설계</li>
+              <li>· 인터뷰형·스토리형 콘텐츠 기획</li>
+              <li>· 문의 채널(이메일·카카오 등) 일원화</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 운영 방식 -->
+    <section id="process">
+      <div class="container">
+        <h2>PROCESS | 운영 방식</h2>
+        <p class="section-sub">
+          장기적으로 안전하고 효율적인 구조를 만들기 위해, 다음과 같은
+          단계로 함께 일합니다.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>1. 진단 &amp; 목표 설정</h3>
+            <p>
+              업종·상권·경쟁·현재 온라인 자산을 함께 점검하고,
+              현실적인 목표와 방향성을 설정합니다.
             </p>
           </div>
-          <a href="https://open.kakao.com/o/s9BjRd3h" target="_blank" class="btn btn-kakao">
-            <span>💬</span>카카오톡 상담 바로가기
-          </a>
+          <div class="card">
+            <h3>2. 구조·전략 설계</h3>
+            <p>
+              검색·콘텐츠·브랜딩·전환까지의 전체 구조를 설계하고,
+              사장님·의뢰인과 합의된 전략을 문서로 정리합니다.
+            </p>
+          </div>
+          <div class="card">
+            <h3>3. 실행 &amp; 리포트</h3>
+            <p>
+              정해진 전략에 따라 실행하고, 주요 지표와 인사이트를
+              정기 리포트 형태로 공유합니다.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 소개 섹션 -->
+    <!-- 소개 & 문의 -->
     <section id="about">
-      <h2>ABOUT | 에이치바이럴이 지향하는 방향</h2>
-      <p class="section-sub">
-        디지털 위에서 움직이지만, 결국 사람과 관계를 중심에 두는 마케팅을 지향합니다.
-      </p>
-      <div class="about-grid">
-        <div class="about-box">
-          <h3>안전한 마케팅 시장을 위한 구조 설계</h3>
-          <p>
-            에이치바이럴은 ‘효과만 나오면 된다’는 접근보다는
-            <strong>안전한 구조와 장기적인 신뢰</strong>를 우선합니다.
-          </p>
-          <ul>
-            <li>플랫폼 정책과 광고·표시 관련 법규를 준수하는 범위 안에서만 진행</li>
-            <li>과장·허위·비방 표현 배제, 사실과 데이터 기반 커뮤니케이션</li>
-            <li>사장님이 이해하고 설명할 수 있는 구조만 제안</li>
-          </ul>
-          <p style="margin-top:8px;">
-            디지털 도구는 빠르고 편리하지만, 최종 결정과 책임은 결국 사람에게 남습니다.  
-            그래서 모든 전략의 출발점을 “사람과 관계”에 두고 설계합니다.
-          </p>
-        </div>
-        <div class="about-box">
-          <h3>사람 중심 디지털 마케팅</h3>
-          <p>
-            숫자와 그래프 뒤에 있는 고객의 일상, 사장님의 고민을 함께 바라봅니다.
-          </p>
-          <ul>
-            <li>고객이 어떤 상황에서 검색하고, 어떤 마음으로 문의하는지부터 질문</li>
-            <li>사장님이 지키고 싶은 브랜드 가치와 운영 철학을 콘텐츠에 자연스럽게 반영</li>
-            <li>“잠깐 반짝였다 사라지는 마케팅”이 아니라, 시간이 지날수록 힘을 가지는 구조 지향</li>
-          </ul>
-          <p style="margin-top:8px;">
-            디지털 위에 사람 중심의 기준을 세우는 것,  
-            그것이 에이치바이럴이 시장에서 만들어가고 싶은 변화입니다.
-          </p>
+      <div class="container">
+        <h2>ABOUT | 에이치바이럴이 지향하는 것</h2>
+        <p class="section-sub">
+          안전한 마케팅 구조와 사람 중심 디지털을 통해, 사장님·전문가·기업이
+          장기적으로 성장할 수 있는 기반을 만드는 것을 목표로 합니다.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-block">
+            <h3>안전한 마케팅 시장 혁신을 향해</h3>
+            <p>
+              에이치바이럴은 “단기 성과를 위해 무리하는 마케팅”이 아니라,
+              법과 가이드라인을 존중하는 구조를 통해 시장을 더 건강하게
+              만드는 방향을 지향합니다.
+            </p>
+            <p style="margin-top:8px;">
+              계정·리뷰·광고를 무리하게 사용하는 방식이 아닌,
+              사장님과 고객이 모두 편안한 구조 안에서 브랜딩과 성장을
+              함께 설계하고자 합니다.
+            </p>
+            <p style="margin-top:8px;">
+              디지털 위에 결국 ‘사람’이 있다는 전제를 잊지 않고,
+              관계를 쌓는 마케팅을 함께 고민하겠습니다.
+            </p>
+          </div>
+
+          <div class="about-block" id="contact">
+            <h3>문의 · 상담 안내</h3>
+            <ul class="contact-list">
+              <li>· 이메일 : <a href="mailto:hyun012019@gmail.com">hyun012019@gmail.com</a></li>
+              <li>
+                · 카카오톡 오픈채팅 :
+                <a
+                  href="https://open.kakao.com/o/s9BjRd3h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  상담방 바로가기
+                </a>
+              </li>
+              <li>· 상담 가능 시간 : 평일 10:00 ~ 18:00 (주말·공휴일 제외)</li>
+              <li>· 상담 내용에 따라 준비 시간이 필요할 수 있습니다.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
+  <!-- 푸터 -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <span>© 에이치바이럴(H VIRAL). All rights reserved.</span>
-        <span>Contact · hyun012019@gmail.com</span>
-      </div>
-      <div>
-        본 사이트의 모든 마케팅 제안은 플랫폼 정책 및 광고표시 관련 법규를 준수하는 범위 안에서만 진행됩니다.
-        과장·허위·비방·타인 계정 악용 등 불법적인 방식은 일절 사용하지 않습니다.
-      </div>
+    <div class="container">
+      <div class="footer-brand">H VIRAL | 온라인 브랜딩 · 디지털 마케팅 파트너</div>
+      <p class="footer-text">
+        본 사이트는 온라인 브랜딩 및 디지털 마케팅 서비스 소개를 위한 페이지입니다.
+        모든 문구와 콘텐츠는 표시·광고의 공정화에 관한 법률, 개인정보 보호법 및 관련
+        가이드라인을 준수하는 것을 원칙으로 작성되었습니다.
+        실제 계약 체결 시 서비스 범위, 책임 소재, 사업자 정보 등은 별도의 계약서와
+        안내문을 통해 다시 고지됩니다. 본 페이지의 내용은 특정 결과를 보장하는
+        의미가 아니며, 업종·상황에 따라 성과는 달라질 수 있습니다.
+      </p>
     </div>
   </footer>
-
 </body>
 </html>
