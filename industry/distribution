@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>유통업 디지털 마케팅 설계 │ H VIRAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
+    }
+
+    /* 헤더 · 상단 공통 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .menu-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #020617;
+    }
+    .menu-btn span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+    }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
+    .logo-wrap {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .consult-btn {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* 사이드 메뉴(전체 업종 메뉴) */
+    #sideBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
+    }
+    #sideBackdrop.show {
+      display: block;
+    }
+    #sideMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
+    }
+    #sideMenu.open {
+      transform: translateX(0);
+    }
+    .side-menu-header {
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .side-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
+    .side-scroll {
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
+    }
+    .side-section-title {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    details.side-group {
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
+    }
+    .side-group summary {
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .side-group summary::-webkit-details-marker {
+      display: none;
+    }
+    .side-group-label {
+      font-weight: 600;
+    }
+    .side-group-arrow {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+    }
+
+    /* 히어로/본문 */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 26px 0 30px;
+    }
+    .hero-card {
+      border-radius: 26px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 24px 20px 24px;
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
+      margin-bottom: 14px;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+    .hero-title {
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 14px;
+    }
+    .hero-desc strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+    .hero-tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: #cbd5e1;
+    }
+
+    .section-title {
+      margin: 26px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .section-tagline {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+    .pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 11px;
+      color: #e5e7eb;
+      margin-bottom: 10px;
+    }
+    .card {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 18px 16px;
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 16px;
+    }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
+
+    .process-grid {
+      margin-top: 10px;
+      display: grid;
+      gap: 10px;
+    }
+    @media (min-width: 640px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .process-step {
+      border-radius: 16px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .process-step-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .process-step-desc {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* 문의 섹션 */
+    #contact {
+      margin: 32px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+      margin-left: 2px;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 13px;
+      padding: 9px 10px;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #6b7280;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .terms-box {
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      padding: 10px 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 12px;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .terms-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
+    .form-submit {
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 0;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+    .contact-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+    }
+    .contact-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* 하단 고정 상담바 */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 14px 10px 14px;
+      z-index: 9700;
+    }
+    .bottom-btn {
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 34px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-card {
+        padding: 30px 28px 26px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
+
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      </div>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
+
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
+
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/ortho.html">정형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
+
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/studyroom.html">공부방</a>
+          <a href="/industry/lang.html">외국어 학원</a>
+          <a href="/industry/arts.html">예체능·취미학원</a>
+          <a href="/industry/studycafe.html">스터디카페</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+          <a href="/industry/gymtae.html">체육관·합기도·태권도</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무/회계사</a>
+          <a href="/industry/law.html">법무사</a>
+          <a href="/industry/attorney.html">변호사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/agent.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈 본사</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
+      </div>
+      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn" target="_blank" rel="noopener">
+        상담하기
+      </a>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            유통업 디지털 세일즈 파이프라인 설계
+          </div>
+          <h1 class="hero-title">
+            유통업, 거래처 발굴부터 입점 제안까지<br />
+            디지털 채널을 세일즈 인프라로 전환합니다.
+          </h1>
+          <p class="hero-desc">
+            도매·납품·입점 제안·총판 모집 등 유통업 특유의
+            <strong>B2B 세일즈 구조</strong>를 온라인에 그대로 옮겨 놓습니다.<br />
+            브랜드 스토리, 카탈로그, 가격 정책, 상담 채널을 하나의
+            <strong>디지털 세일즈 허브</strong>로 통합해 드립니다.
+          </p>
+          <div class="hero-tags">
+            <span class="hero-tag">유통사 디지털 세일즈 전략</span>
+            <span class="hero-tag">도매·입점 제안 페이지</span>
+            <span class="hero-tag">리드 확보·견적 문의 구조</span>
+          </div>
+        </div>
+
+        <!-- 본문 : 유통업 관점 설명 -->
+        <h2 class="section-title">유통업에 맞춘 디지털 마케팅·브랜딩 관점</h2>
+        <p class="section-tagline">
+          “소비자”가 아니라 “바이어·거래처·점주”를 대상으로 한 세일즈 구조에 초점을 맞춥니다.
+        </p>
+
+        <div class="pill">01. 유통 구조·채널 구조 파악</div>
+        <div class="card">
+          <strong>유통사 관점에서의 디지털 전략 정렬</strong><br />
+          어느 채널에서 어떤 고객(도매처, 소매점, 체인점, 가맹점주)을 만나는지가
+          유통업의 핵심입니다. 먼저 유통 구조를 디지털 관점에서 다시 정리합니다.
+          <ul>
+            <li>자사 브랜드 / 총판 / 대리점 / 직영 매장 구조 정리</li>
+            <li>현재 확보된 거래처 유형(대형마트, 동네 소매점, 온라인 셀러 등) 파악</li>
+            <li>디지털 채널(검색, 홈페이지, 제안서, 상담 채널) 역할 구분</li>
+          </ul>
+        </div>
+
+        <div class="pill">02. 거래처가 보고 싶은 정보 중심 설계</div>
+        <div class="card">
+          <strong>“제품 카탈로그”가 아니라 “거래 구조·수익 구조”를 보여주는 페이지</strong><br />
+          거래처 입장에서 궁금한 것은 단순 제품 스펙이 아니라,
+          <strong>마진 구조·공급 안정성·브랜드 지원</strong>입니다.
+          <ul>
+            <li>주력 품목·라인업·가격 정책(소비자 가격 vs 공급가) 구조 정리</li>
+            <li>프로모션·공동 마케팅·전시 지원 등 유통 파트너 혜택 명확화</li>
+            <li>실제 매출 사례, 입점 후 지표 변화, 파트너 인터뷰 등 레퍼런스 구성</li>
+          </ul>
+        </div>
+
+        <div class="pill">03. 견적·입점 제안 리드 수집 구조</div>
+        <div class="card">
+          <strong>유통사에 맞는 리드(견적·제안 요청) 수집 설계</strong><br />
+          “전화 한 통”이나 “이메일 한 통”이 아니라,
+          <strong>유통사 입장에서 필요한 정보가 정리된 상담 요청</strong>을 받는 것이 중요합니다.
+          <ul>
+            <li>업태, 점포 수, 월 매출 구간, 관심 카테고리 등 필수 정보 수집 항목 설계</li>
+            <li>도매 문의 / 입점 제안 / 총판·대리점 문의를 구분한 접수 구조</li>
+            <li>담당자별 응대 플로우(영업팀·MD·CS)와 연결되는 디지털 폼 구성</li>
+          </ul>
+        </div>
+
+        <div class="pill">진행 방식</div>
+        <div class="card">
+          <strong>유통업 디지털 세일즈 인프라 구성 프로세스</strong>
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="process-step-title">STEP 1. 유통 구조·제품 포트폴리오 인터뷰</div>
+              <div class="process-step-desc">
+                현재 취급 품목, 거래처 유형, 기존 세일즈 방식(전시장, 영업사원, 기존 채널)을 파악합니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 2. 타깃별 메시지 정리</div>
+              <div class="process-step-desc">
+                대형 채널, 전문점, 온라인 셀러 등 타깃별로 다른 관심 포인트를 정리해,
+                각 대상에게 맞는 가치 제안을 만듭니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 3. 제안 페이지·카탈로그형 콘텐츠 구성</div>
+              <div class="process-step-desc">
+                제품·브랜드 소개, 공급 조건, 물류·납기 안정성, 지원 정책 등이 한 번에 보이도록
+                디지털 제안 페이지를 설계합니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 4. 리드 수집·후속 미팅 체계화</div>
+              <div class="process-step-desc">
+                온라인에서 들어오는 문의가 실질적인 미팅·견적 논의까지 이어질 수 있도록,
+                리드 관리·후속 응대 플로우를 함께 정리합니다.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 문의 섹션 -->
+        <section id="contact">
+          <h2 class="contact-title">유통업 디지털 세일즈 인프라 상담</h2>
+          <p class="contact-sub">
+            취급 품목, 현재 거래 구조, 확장하고 싶은 채널(도매·입점·온라인 셀러 등)을 간단히 남겨주시면,
+            가능한 방향과 예상 구성을 먼저 설명드립니다.
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName" class="form-label">
+                      성명<span>*</span>
+                    </label>
+                    <input
+                      id="contactName"
+                      type="text"
+                      class="form-input"
+                      placeholder="담당자명을 입력해 주세요."
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone" class="form-label">
+                      연락처<span>*</span>
+                    </label>
+                    <input
+                      id="contactPhone"
+                      type="tel"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만 입력"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactCompany" class="form-label">
+                      회사명·브랜드명<span>*</span>
+                    </label>
+                    <input
+                      id="contactCompany"
+                      type="text"
+                      class="form-input"
+                      placeholder="예: ○○유통, ○○식자재, ○○푸드 등"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">
+                    현재 상황 / 상담 받고 싶은 내용<span>*</span>
+                  </label>
+                  <textarea
+                    id="contactMessage"
+                    class="form-textarea"
+                    placeholder="예) 식자재 도매업, 중소 슈퍼·식당 거래처 확대 및 온라인 셀러 신규 발굴을 위한 디지털 세일즈 인프라 상담 요청"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 회사명·브랜드명, 문의 내용<br />
+                    ② 수집 목적: 프로젝트 상담, 견적 안내 및 관련 문의 회신<br />
+                    ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                    ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
+                  <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail" style="margin-top:4px;">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    서비스 안내, 세미나·자료 발송 등 마케팅 정보 제공을 위해
+                    카카오톡/문자로 연락을 드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다. (선택)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <p class="contact-note">
+              * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
+            </p>
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/s0ogfV3h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡으로 바로 상담
+              </a>
+              <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정 상담바 -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/s0ogfV3h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담
+    </a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    // 사이드 메뉴 토글
+    function toggleMenu(open) {
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if (open) {
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    }
+
+    // 업종 그룹 열릴 때 부드럽게 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+
+    // 문의 폼 제출 → 대표님 폰 문자앱으로 내용 넘기기
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const company = document.getElementById("contactCompany").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+      const termsRequired = document.getElementById("termsRequired").checked;
+
+      if (!termsRequired) {
+        alert("개인정보 수집 및 이용에 동의해 주세요.");
+        return;
+      }
+      if (!name || !phone || !company || !message) {
+        alert("필수 항목을 모두 입력해 주세요.");
+        return;
+      }
+
+      const smsBody =
+        `[H VIRAL 유통업 문의]\n` +
+        `성명: ${name}\n연락처: ${phone}\n회사명·브랜드명: ${company}\n` +
+        `내용: ${message}`;
+
+      const encoded = encodeURIComponent(smsBody);
+      const smsUrl = `sms:01032689899?body=${encoded}`;
+      window.location.href = smsUrl;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
