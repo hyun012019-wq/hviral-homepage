@@ -2,206 +2,65 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>앱·예약 시스템 | H VIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>앱·예약 시스템 구축｜H VIRAL</title>
+
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",system-ui,sans-serif;
-      background:#020617;color:#e5e7eb;line-height:1.6;
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif; background:#020617; color:#e2e8f0; }
+
+    header {
+      position:sticky; top:0;
+      background:#0f172a; padding:16px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      z-index:900;
     }
-    a{color:inherit;text-decoration:none;}
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(15,23,42,0.98);
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 18px;border-bottom:1px solid #1f2937;
+    .logo { font-size:18px; font-weight:700; color:#60a5fa; cursor:pointer; }
+
+    .section { padding:28px 20px; max-width:1080px; margin:auto; line-height:1.7; }
+    .title { font-size:24px; font-weight:800; margin-bottom:14px; color:#93c5fd; }
+
+    .bottom-bar {
+      position:fixed; bottom:0; left:0;
+      width:100%; display:flex; gap:8px;
+      padding:14px 12px;
+      background:rgba(15,23,42,0.95);
+      border-top:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      z-index:9999;
     }
-    .logo-area{display:flex;align-items:center;gap:10px;cursor:pointer;}
-    .logo-text{font-size:20px;font-weight:700;letter-spacing:0.12em;color:#60a5fa;}
-    .consult-btn{padding:8px 16px;border-radius:999px;background:#3b82f6;font-size:14px;font-weight:600;border:none;cursor:pointer;}
-    .page{max-width:1080px;margin:0 auto;padding:20px 16px 40px;}
-    .hero-card{
-      background:radial-gradient(circle at top left,#1d4ed8,#020617 60%);
-      border-radius:26px;padding:26px 22px;
-      border:1px solid rgba(148,163,184,0.4);
-      box-shadow:0 20px 40px rgba(15,23,42,0.8);
-      margin-bottom:28px;
-    }
-    .badge{display:inline-flex;align-items:center;gap:8px;
-      padding:6px 12px;border-radius:999px;border:1px solid rgba(148,163,184,0.6);
-      font-size:12px;margin-bottom:18px;background:rgba(15,23,42,0.5);}
-    .badge-dot{width:8px;height:8px;border-radius:999px;background:#22c55e;}
-    .hero-title{font-size:24px;font-weight:800;margin-bottom:14px;}
-    .hero-sub{font-size:14px;color:#e5e7eb;margin-bottom:18px;}
-    .hero-note{font-size:13px;color:#eab308;font-weight:500;margin-top:4px;}
-    .section{margin-bottom:26px;padding:20px 18px;border-radius:20px;background:#020617;border:1px solid #1f2937;}
-    .section-title{font-size:18px;font-weight:700;margin-bottom:10px;}
-    .section p{font-size:14px;color:#d1d5db;}
-    ul{margin-top:8px;padding-left:18px;font-size:14px;color:#d1d5db;}
-    li{margin-bottom:4px;}
-    .image-card{margin-top:14px;padding:16px 14px;border-radius:18px;background:#020617;border:1px dashed #334155;font-size:13px;color:#9ca3af;}
-    .cta-row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}
-    .cta-btn{flex:1;min-width:140px;padding:12px 10px;border-radius:999px;text-align:center;font-size:14px;font-weight:600;cursor:pointer;border:none;}
-    .cta-kakao{background:#facc15;color:#000;}
-    .cta-form{background:#3b82f6;color:#fff;}
-    @media(min-width:768px){
-      .hero-title{font-size:28px;}
-      .hero-sub{font-size:15px;}
-    }
+    .bottom-bar a { flex:1; text-align:center; padding:14px 0; border-radius:10px; font-size:15px; font-weight:600; text-decoration:none; color:#fff; }
+    .kakao { background:#ffe812; color:#000; }
+    .ask { background:#1e293b; }
+    .call { background:#3b82f6; }
+
+    @media (min-width:1024px){ .bottom-bar{display:flex !important;} }
   </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo-area" onclick="goHome()">
-    <div class="logo-text">H VIRAL</div>
-  </div>
-  <button class="consult-btn" onclick="goConsult()">상담하기</button>
+  <div class="logo" onclick="location.href='/'">H VIRAL</div>
 </header>
 
-<main class="page">
-  <section class="hero-card">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      <span>앱·예약 시스템 구축</span>
-    </div>
-    <h1 class="hero-title">전화 대신, 예약 시스템으로 문의를 정리합니다.</h1>
-    <p class="hero-sub">
-      전화·카카오로 흩어지는 예약을 <strong>한 곳에서 관리</strong>할 수 있도록,
-      업종에 맞는 예약 구조를 설계합니다. 단순 예약 캘린더부터,
-      앱 형태의 예약·관리 시스템까지 단계별로 제안드립니다.
-    </p>
-    <p class="hero-note">
-      “예약 자체”보다, <strong>우리 매장 운영 방식에 맞는 시스템</strong>이 더 중요합니다.
-    </p>
-  </section>
+<div class="section">
+  <div class="title">앱·예약 시스템 구축</div>
 
-  <section class="section">
-    <h2 class="section-title">이런 업종에 잘 맞습니다.</h2>
-    <ul>
-      <li>피부과·치과·한의원 등 진료 예약이 많은 의료 업종</li>
-      <li>헬스장·PT 스튜디오·요가·필라테스 등 레슨·수업형 업종</li>
-      <li>학원·교육·컨설팅·세무/법무 상담 예약</li>
-    </ul>
-    <div class="image-card">
-      ※ 이 영역에는 “실제 직원이 예약 현황을 관리하는 모습, 상담하는 장면” 등
-      한국인 실사 이미지를 사용합니다.
-    </div>
-  </section>
+  <p>
+    매장·학원·병원 등 다양한 업종에 맞춘<br>
+    **앱·예약·회원관리 시스템 구축 서비스**입니다.<br><br>
 
-  <section class="section">
-    <h2 class="section-title">구축 범위 예시</h2>
-    <ul>
-      <li>모바일·PC에서 동시에 사용 가능한 예약 페이지</li>
-      <li>예약 시간대·인원·지점 관리</li>
-      <li>알림톡·문자 발송 연동(가능한 범위 내)</li>
-      <li>직원용 관리자 화면(예약 확인·변경·메모)</li>
-    </ul>
-  </section>
+    고객 예약 흐름, 운영 편의성, 자동화 기능을 포함해  
+    실제 매출까지 이어지는 구조로 설계합니다.
+  </p>
+</div>
 
-  <section class="section">
-    <h2 class="section-title">예약 시스템이 필요하신가요?</h2>
-    <p>
-      현재 예약을 어떻게 받고 계신지, 직원 수/지점 수가 어떻게 되는지 간단히 남겨 주세요.<br/>
-      상황에 맞는 구조를 먼저 제안드린 뒤, 개발 범위와 비용을 안내드립니다.
-    </p>
-    <div class="cta-row">
-      <button class="cta-btn cta-kakao" onclick="openKakao()">카톡으로 상담하기</button>
-      <button class="cta-btn cta-form" onclick="goConsult()">문의 폼 작성하기</button>
-    </div>
-  </section>
-</main>
-
-<script>
-  function goHome(){ window.location.href = "/"; }
-  function goConsult(){ window.location.href = "/#contact"; }
-  function openKakao(){ window.location.href = "https://open.kakao.com/o/s0ogfV3h"; }
-</script>
-  <!-- ===== 하단 고정 상담바 시작 ===== -->
-<style>
-  .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(2, 6, 23, 0.96);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 18px;
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-  }
-  .bottom-bar a {
-    flex: 1;
-    margin: 0 4px;
-    padding: 12px 0;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-  }
-  .kakao {
-    background: #facc15;
-    color: #000;
-  }
-  .ask {
-    background: #1e293b;
-  }
-  .call {
-    background: #3b82f6;
-  }
-
-</style>
-  
-/* ===== 하단 고정 상담바 공통 스타일 ===== */
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 14px 12px;
-  background: rgba(15, 23, 42, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  z-index: 9999;
-}
-
-.bottom-bar a {
-  flex: 1;
-  text-align: center;
-  padding: 14px 0;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-}
-
-.bottom-bar a.kakao {
-  background: #facc15;
-  color: #000;
-}
-
-.bottom-bar a.ask {
-  background: #1e293b;
-}
-
-.bottom-bar a.call {
-  background: #3b82f6;
-}
-
-/* PC에서도 항상 보이도록 설정 */
-@media (min-width: 1024px) {
-  .bottom-bar {
-    display: flex !important;
-  }
-}
+<div class="bottom-bar">
+  <a href="https://open.kakao.com/o/s0ogfV3h" class="kakao">카톡 상담</a>
+  <a href="/#form" class="ask">문의하기</a>
+  <a href="tel:01032689899" class="call">전화 상담</a>
+</div>
 
 </body>
 </html>
