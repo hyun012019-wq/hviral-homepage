@@ -18,7 +18,7 @@
     /* 헤더 */
     header {
       width: 100%;
-      padding: 16px 20px;
+      padding: 12px 16px;
       position: sticky;
       top: 0;
       background: rgba(2, 6, 23, 0.9);
@@ -29,8 +29,13 @@
       align-items: center;
       border-bottom: 1px solid rgba(148,163,184,0.2);
     }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
     .logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.12em;
       color: #60a5fa;
@@ -43,6 +48,132 @@
       border-radius: 6px;
       font-size: 14px;
     }
+
+    /* 햄버거 메뉴 */
+    .menu-toggle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .hamburger {
+      width: 16px;
+      height: 12px;
+      position: relative;
+    }
+    .hamburger span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 5px; }
+    .hamburger span:nth-child(3) { top: 10px; }
+    .menu-toggle.active .hamburger span:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+    .menu-toggle.active .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .hamburger span:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+
+    .side-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 950;
+    }
+    .side-menu-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 320px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148,163,184,0.4);
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+      z-index: 960;
+      display: flex;
+      flex-direction: column;
+    }
+    .side-menu.show {
+      transform: translateX(0);
+    }
+    .side-menu-header {
+      padding: 18px 18px 10px;
+      border-bottom: 1px solid rgba(148,163,184,0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .side-menu-title {
+      font-size: 14px;
+      color: #9ca3af;
+    }
+    .side-menu-close {
+      font-size: 14px;
+      color: #cbd5e1;
+      cursor: pointer;
+    }
+    .side-menu-section-title {
+      font-size: 13px;
+      color: #9ca3af;
+      padding: 14px 18px 6px;
+    }
+    .side-menu-list {
+      list-style: none;
+      padding: 0 10px 10px;
+      max-height: 260px;
+      overflow-y: auto;
+    }
+    .side-menu-list li a {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+    .side-menu-list li a:hover {
+      background: #0f172a;
+    }
+    .side-menu-footer {
+      margin-top: auto;
+      padding: 14px 16px 20px;
+      border-top: 1px solid rgba(148,163,184,0.25);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .side-menu-footer a {
+      font-size: 14px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .side-kakao { background: #fee500; color: #18181b; }
+    .side-inquiry { background: #1e293b; color: #e5e7eb; }
 
     /* 슬라이드 */
     .slider {
@@ -72,14 +203,13 @@
       position: relative;
       overflow: hidden;
     }
-    /* 트로피 배경 */
     .slide-1::after {
       content: "";
       position: absolute;
-      right: -20px;
-      top: -20px;
-      width: 160px;
-      height: 160px;
+      right: -10px;
+      top: -10px;
+      width: 140px;
+      height: 140px;
       background-image: url('https://cdn-icons-png.flaticon.com/512/2583/2583249.png');
       background-size: contain;
       background-repeat: no-repeat;
@@ -142,7 +272,6 @@
       border: 1px solid rgba(148,163,184,0.4);
     }
 
-    /* 공통 섹션 */
     .section { padding: 32px 22px; max-width: 1080px; margin: 0 auto; }
     .title {
       font-size: 22px;
@@ -196,12 +325,8 @@
       border-color: #60a5fa;
       transform: translateY(-1px);
     }
-    .item.active {
-      background: #1d4ed8;
-      border-color: #93c5fd;
-    }
 
-    /* 업종 상세 랜딩 */
+    /* 업종 프리뷰 박스 (간이 설명) */
     .landing-box {
       background: #0f172a;
       padding: 22px;
@@ -210,18 +335,27 @@
       border: 1px solid rgba(148,163,184,0.25);
     }
     .landing-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #60a5fa;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .landing-text {
       font-size: 14px;
       color: #cbd5e1;
       line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .landing-link {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: #93c5fd;
+      text-decoration: underline;
+      cursor: pointer;
     }
 
-    /* 솔루션 소개 */
+    /* 솔루션, 강의, 문의 */
     .solution-box {
       background: #0f172a;
       padding: 30px 24px;
@@ -242,7 +376,6 @@
       line-height: 1.7;
     }
 
-    /* 강의 안내 */
     .class-box {
       background: #020617;
       padding: 26px 24px;
@@ -262,7 +395,6 @@
       line-height: 1.7;
     }
 
-    /* 문의 폼 */
     .form-box {
       background: #0f172a;
       padding: 26px;
@@ -326,7 +458,6 @@
     .call  { background: #3b82f6; color: #fff; }
     .inq   { background: #1e293b; color: #fff; }
 
-    /* 푸터 + 짱박기 */
     footer {
       padding: 30px 22px 80px;
       margin-top: 40px;
@@ -334,7 +465,6 @@
       border-top: 1px solid rgba(148,163,184,0.25);
     }
     .footer-text { font-size: 14px; color: #94a3b8; margin-bottom: 8px; }
-
     .prelaunch-note {
       position: absolute;
       bottom: -9999px;
@@ -344,7 +474,6 @@
       color: transparent;
     }
 
-    /* PC 보정 */
     @media (min-width: 960px) {
       .slider { height: 260px; }
       .section { padding: 40px 22px; }
@@ -359,9 +488,69 @@
 <body id="top">
 
 <header>
-  <a href="#top" class="logo">H VIRAL</a>
+  <div class="header-left">
+    <button class="menu-toggle" type="button" aria-label="메뉴 열기">
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+    <a href="#top" class="logo">H VIRAL</a>
+  </div>
   <a class="contact-header-btn" href="https://open.kakao.com/o/s0ogfV3h" target="_blank">상담하기</a>
 </header>
+
+<div class="side-menu-overlay" id="sideOverlay"></div>
+<div class="side-menu" id="sideMenu">
+  <div class="side-menu-header">
+    <div>
+      <div class="logo" style="font-size:16px;">H VIRAL</div>
+      <div class="side-menu-title">온라인 설계·브랜딩 플랫폼</div>
+    </div>
+    <div class="side-menu-close" id="sideClose">닫기</div>
+  </div>
+
+  <div class="side-menu-section-title">서비스</div>
+  <ul class="side-menu-list">
+    <li><a href="#industries" data-scroll="industries">온라인 설계</a></li>
+    <li><a href="#solution" data-scroll="solution">홈페이지 제작</a></li>
+    <li><a href="#solution" data-scroll="solution">앱·예약 시스템</a></li>
+    <li><a href="#class" data-scroll="class">전략·강의</a></li>
+  </ul>
+
+  <div class="side-menu-section-title">업종별 상세페이지</div>
+  <ul class="side-menu-list">
+    <li><a href="industry.html?name=헬스장">헬스장</a></li>
+    <li><a href="industry.html?name=피부과">피부과</a></li>
+    <li><a href="industry.html?name=치과">치과</a></li>
+    <li><a href="industry.html?name=정형외과">정형외과</a></li>
+    <li><a href="industry.html?name=내과">내과</a></li>
+    <li><a href="industry.html?name=이비인후과">이비인후과</a></li>
+    <li><a href="industry.html?name=한의원">한의원</a></li>
+    <li><a href="industry.html?name=산부인과">산부인과</a></li>
+    <li><a href="industry.html?name=안과">안과</a></li>
+    <li><a href="industry.html?name=비뇨기과">비뇨기과</a></li>
+    <li><a href="industry.html?name=가정의학과">가정의학과</a></li>
+    <li><a href="industry.html?name=소아과">소아과</a></li>
+    <li><a href="industry.html?name=미용실">미용실</a></li>
+    <li><a href="industry.html?name=교육/학원">교육/학원</a></li>
+    <li><a href="industry.html?name=카페">카페</a></li>
+    <li><a href="industry.html?name=음식점">음식점</a></li>
+    <li><a href="industry.html?name=애견카페">애견카페</a></li>
+    <li><a href="industry.html?name=숙박">숙박</a></li>
+    <li><a href="industry.html?name=부동산">부동산</a></li>
+    <li><a href="industry.html?name=공인중개사">공인중개사</a></li>
+    <li><a href="industry.html?name=태권도/합기도">태권도/합기도</a></li>
+    <li><a href="industry.html?name=인력사무소">인력사무소</a></li>
+    <li><a href="industry.html?name=유통업">유통업</a></li>
+    <li><a href="industry.html?name=B2B 인력공급">B2B 인력공급</a></li>
+    <li><a href="industry.html?name=프랜차이즈">프랜차이즈</a></li>
+  </ul>
+
+  <div class="side-menu-footer">
+    <a class="side-inquiry" href="#form" data-scroll="form">문의하기</a>
+    <a class="side-kakao" href="https://open.kakao.com/o/s0ogfV3h" target="_blank">카톡 상담</a>
+  </div>
+</div>
 
 <!-- 슬라이드 3개 -->
 <div class="slider">
@@ -459,15 +648,16 @@
     <div class="item" data-industry="프랜차이즈">프랜차이즈</div>
   </div>
 
-  <!-- 업종 상세 랜딩 영역 -->
+  <!-- 간이 프리뷰 -->
   <div class="landing-box" id="landingBox">
     <div class="landing-title" id="landingTitle">헬스장 · 피트니스 센터 디지털 설계</div>
     <p class="landing-text" id="landingText">
       회원권 문의, PT 상담, 체험 등록 등 헬스장 고객 여정에 맞춘
       검색·콘텐츠·문의 퍼널을 설계합니다.
-      단순 홍보가 아니라, “회원이 실제로 문의하고 등록하는 구조”에 맞춘
+      단순 홍보가 아니라, 회원이 실제로 문의하고 등록하는 구조에 맞춘
       온라인 브랜딩을 구축합니다.
     </p>
+    <span class="landing-link" id="landingLink">헬스장 상세페이지 바로가기</span>
   </div>
 </section>
 
@@ -531,148 +721,120 @@
   <a class="bar-btn call" href="tel:01032689899">전화 상담</a>
 </div>
 
-<!-- 푸터 -->
 <footer>
   <div class="footer-text">문의: hyun012019@gmail.com</div>
   <div class="footer-text">카카오톡 상담: https://open.kakao.com/o/s0ogfV3h</div>
-
-  <!-- 화면에는 안 보이는 사전 론칭 안내 -->
   <p class="prelaunch-note">
     본 페이지는 온라인 솔루션 안내 및 상담을 위한 사전 론칭 버전입니다.
   </p>
 </footer>
 
-<!-- 동작 스크립트 -->
 <script>
-  const industryLanding = {
-    "헬스장": {
-      title: "헬스장 · 피트니스 센터 디지털 설계",
-      text: "회원권 문의, PT 상담, 체험 등록 등 헬스장 고객 여정에 맞춘 검색·콘텐츠·문의 퍼널을 설계합니다. 단순 홍보가 아니라, 회원이 실제로 문의하고 등록하는 구조에 집중합니다."
-    },
-    "피부과": {
-      title: "피부과 디지털 설계",
-      text: "피부 고민 검색 키워드부터 상담 예약까지, 고객 상황에 맞는 온라인 동선을 설계합니다. 시술명 나열이 아닌, 신뢰와 후기 중심 구조로 브랜드를 설계합니다."
-    },
-    "치과": {
-      title: "치과 · 교정·임플란트 온라인 구조",
-      text: "치과는 신뢰와 정보력이 핵심입니다. 진료과목, 후기, 전·후 사진, 상담 문의까지 자연스럽게 이어지는 구조를 설계합니다."
-    },
-    "정형외과": {
-      title: "정형외과 온라인 진료 구조",
-      text: "통증 키워드와 진료 정보, 후기, 예약 문의가 자연스럽게 이어지는 구조를 설계합니다."
-    },
-    "내과": {
-      title: "내과 · 검진센터 디지털 인프라",
-      text: "검진·예방·치료 정보를 정리하고, 전화·예약 문의로 연결되는 구조를 설계합니다."
-    },
-    "이비인후과": {
-      title: "이비인후과 지역 기반 온라인 설계",
-      text: "호흡기·알레르기·소아 진료 중심으로, 지역 검색과 후기 구조를 설계합니다."
-    },
-    "한의원": {
-      title: "한의원 · 한방클리닉 온라인 구조",
-      text: "증상별 키워드, 진료 스토리, 상담 문의로 이어지는 구조를 설계합니다."
-    },
-    "산부인과": {
-      title: "산부인과 · 여성의원 디지털 채널",
-      text: "민감한 진료 특성을 고려해 신뢰와 프라이버시 중심 구조를 설계합니다."
-    },
-    "안과": {
-      title: "안과 · 시력 클리닉 온라인 구조",
-      text: "수술·검진 정보와 후기, 상담 문의까지 자연스럽게 이어지는 흐름을 만듭니다."
-    },
-    "비뇨기과": {
-      title: "비뇨기과 온라인 설계",
-      text: "고객이 안심하고 문의할 수 있는 정보 구조와 상담 동선을 설계합니다."
-    },
-    "가정의학과": {
-      title: "가정의학과 · 통합진료 구조",
-      text: "평소 건강 관리와 상담 중심의 콘텐츠 동선을 설계합니다."
-    },
-    "소아과": {
-      title: "소아과 · 소아청소년과 디지털 구조",
-      text: "보호자 관점의 정보·후기·예약 동선을 설계합니다."
-    },
-    "미용실": {
-      title: "미용실 · 헤어샵 온라인 브랜딩",
-      text: "스타일 사진, 가격, 후기, 예약 문의까지 한 번에 보이는 구조를 설계합니다."
-    },
-    "교육/학원": {
-      title: "교육·학원 온라인 등록 구조",
-      text: "과목·커리큘럼·후기·상담 신청으로 이어지는 퍼널을 설계합니다."
-    },
-    "카페": {
-      title: "카페 · 디저트샵 온라인 브랜딩",
-      text: "감성 사진, 메뉴, 위치, 리뷰가 한 번에 보이는 구조를 설계해 방문과 재방문을 유도합니다."
-    },
-    "음식점": {
-      title: "음식점 · 맛집 매출 퍼널 설계",
-      text: "검색 노출, 리뷰 구조, 재방문 유도까지 한 번에 설계합니다. 점심·저녁 피크타임, 포장·배달 고객 흐름까지 고려합니다."
-    },
-    "애견카페": {
-      title: "애견카페 · 반려동물 매장 구조 설계",
-      text: "반려인 동선에 맞춘 정보 구조, 사진, 후기, 예약 안내까지 한 번에 설계합니다."
-    },
-    "숙박": {
-      title: "숙박 · 펜션 · 호텔 온라인 구조",
-      text: "객실 정보, 사진, 후기, 예약 문의로 이어지는 구조를 설계합니다."
-    },
-    "부동산": {
-      title: "부동산 · 상가·주거 매물 채널",
-      text: "매물 정보뿐 아니라 상권 분석·사례·오프라인 상담으로 이어지는 퍼널을 설계합니다."
-    },
-    "공인중개사": {
-      title: "공인중개사 브랜드 채널 설계",
-      text: "대표님 이름으로 신뢰를 쌓는 구조, 상권·사례·칼럼형 콘텐츠로 장기적인 브랜드를 만듭니다."
-    },
-    "태권도/합기도": {
-      title: "태권도·합기도·체육도장 온라인 구조",
-      text: "연령대별 프로그램 안내, 수업 사진, 상담 문의로 이어지는 구조를 설계합니다."
-    },
-    "인력사무소": {
-      title: "인력사무소 · 일용직 매칭 구조",
-      text: "구인·구직 양쪽의 검색 패턴을 분석해, 문의와 연결이 빠르게 일어나는 퍼널을 설계합니다."
-    },
-    "유통업": {
-      title: "유통업 온라인 세일즈 인프라",
-      text: "도매·납품·입점 제안에 맞춘 세일즈 퍼널을 설계합니다. 카탈로그형 페이지와 문의 구조를 동시에 구축합니다."
-    },
-    "B2B 인력공급": {
-      title: "B2B 인력공급 · 아웃소싱 구조 설계",
-      text: "기업 인사 담당자 관점에서 정보를 설계하고, 견적·제안 요청으로 자연스럽게 이어지는 구조를 만듭니다."
-    },
-    "프랜차이즈": {
-      title: "프랜차이즈 가맹 문의 퍼널 설계",
-      text: "창업 검토 단계별로 필요한 정보·수익 구조·상담 신청까지, 단계별 퍼널을 설계합니다."
+  // 햄버거 메뉴
+  const menuToggle = document.querySelector('.menu-toggle');
+  const sideMenu = document.getElementById('sideMenu');
+  const sideOverlay = document.getElementById('sideOverlay');
+  const sideClose = document.getElementById('sideClose');
+
+  function closeMenu() {
+    menuToggle.classList.remove('active');
+    sideMenu.classList.remove('show');
+    sideOverlay.classList.remove('show');
+  }
+  function openMenu() {
+    menuToggle.classList.add('active');
+    sideMenu.classList.add('show');
+    sideOverlay.classList.add('show');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    if (menuToggle.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
-  };
+  });
+  sideOverlay.addEventListener('click', closeMenu);
+  sideClose.addEventListener('click', closeMenu);
+
+  // 사이드 메뉴 내 스크롤 링크
+  document.querySelectorAll('.side-menu a[data-scroll]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.dataset.scroll;
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        closeMenu();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // 상단 서비스 아이콘 스크롤
+  document.querySelectorAll('.service-item').forEach(si => {
+    const targetId = si.dataset.target;
+    si.addEventListener('click', () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 
   const items = document.querySelectorAll('.item');
   const landingTitle = document.getElementById('landingTitle');
   const landingText  = document.getElementById('landingText');
-  const landingBox   = document.getElementById('landingBox');
+  const landingLink  = document.getElementById('landingLink');
+  let currentIndustry = '헬스장';
 
-  function updateLanding(ind) {
-    items.forEach(i => i.classList.toggle('active', i.dataset.industry === ind));
+  const previewText = {
+    "헬스장": "회원권 문의, PT 상담, 체험 등록 등 헬스장 고객 여정에 맞춘 검색·콘텐츠·문의 퍼널을 설계합니다.",
+    "피부과": "피부 고민 검색부터 상담 예약까지, 신뢰 중심 구조로 설계합니다.",
+    "치과": "교정·임플란트 등 고관여 진료에 맞는 정보·후기·상담 구조를 설계합니다.",
+    "정형외과": "통증 키워드와 진료 정보·후기가 자연스럽게 이어지는 진료 구조를 만듭니다.",
+    "내과": "검진·예방·치료 정보를 정리하고 문의로 이어지는 구조를 설계합니다.",
+    "이비인후과": "지역 기반 검색과 후기 구조를 중심으로 동선을 설계합니다.",
+    "한의원": "증상별 스토리와 상담 문의로 이어지는 콘텐츠 구조를 설계합니다.",
+    "산부인과": "신뢰와 프라이버시를 우선한 디지털 채널을 설계합니다.",
+    "안과": "시력 교정·검진 정보를 이해하기 쉽게 풀어내고 문의로 연결합니다.",
+    "비뇨기과": "민감한 상담이 편안하게 이어지는 정보 구조를 설계합니다.",
+    "가정의학과": "생활밀착형 건강 상담 구조로 신뢰를 쌓는 채널을 만듭니다.",
+    "소아과": "보호자 관점의 안내와 예약 동선을 설계합니다.",
+    "미용실": "스타일 사진·가격·후기를 한 번에 보여주고 예약으로 이어지는 구조를 설계합니다.",
+    "교육/학원": "과목·커리큘럼·후기·상담 신청까지 단계별 퍼널을 설계합니다.",
+    "카페": "감성 사진·메뉴·후기를 함께 보여주고 방문으로 이어지게 설계합니다.",
+    "음식점": "검색 노출부터 리뷰·재방문까지 매출 중심 퍼널을 설계합니다.",
+    "애견카페": "반려인 동선에 맞춘 사진·후기·예약 안내 구조를 만듭니다.",
+    "숙박": "객실·후기·예약 문의가 자연스럽게 이어지는 구조를 설계합니다.",
+    "부동산": "상권 분석·사례·상담으로 이어지는 채널 구조를 설계합니다.",
+    "공인중개사": "대표님 이름을 전면에 내세운 신뢰형 채널을 설계합니다.",
+    "태권도/합기도": "연령대별 프로그램과 수업 사진, 상담 문의 구조를 설계합니다.",
+    "인력사무소": "구인·구직 양쪽을 빠르게 연결하는 문의 퍼널을 설계합니다.",
+    "유통업": "도매·납품·입점 제안에 맞춘 세일즈 인프라를 설계합니다.",
+    "B2B 인력공급": "기업 인사 담당자 관점에서 제안·문의로 이어지는 구조를 설계합니다.",
+    "프랜차이즈": "창업 검토 단계별 정보와 가맹 문의 퍼널을 설계합니다."
+  };
 
-    if (industryLanding[ind]) {
-      landingTitle.textContent = industryLanding[ind].title;
-      landingText.textContent  = industryLanding[ind].text;
-    } else {
-      landingTitle.textContent = ind + " 디지털 설계";
-      landingText.textContent  =
-        "해당 업종의 고객 여정과 검색 패턴을 분석해, 문의와 계약으로 이어지는 디지털 인프라를 설계합니다.";
-    }
-
-    landingBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function setPreview(ind) {
+    currentIndustry = ind;
+    landingTitle.textContent = ind + " 디지털 설계 프리뷰";
+    landingText.textContent = previewText[ind] ||
+      "해당 업종의 고객 여정과 검색 패턴을 분석해, 문의와 계약으로 이어지는 디지털 인프라를 설계합니다.";
+    landingLink.textContent = ind + " 상세페이지 바로가기";
   }
 
-  // 업종 카드 클릭
+  // 업종 카드 클릭 → 상세페이지 이동
   items.forEach(item => {
     item.addEventListener('click', () => {
       const ind = item.dataset.industry;
-      updateLanding(ind);
+      setPreview(ind);
+      window.location.href = "industry.html?name=" + encodeURIComponent(ind);
     });
+  });
+
+  // 프리뷰 박스 링크 클릭 → 상세페이지 이동
+  landingLink.addEventListener('click', () => {
+    window.location.href = "industry.html?name=" + encodeURIComponent(currentIndustry);
   });
 
   // 검색 필터
@@ -685,20 +847,7 @@
     });
   });
 
-  // 상단 서비스 아이콘 클릭 → 섹션 이동
-  const serviceItems = document.querySelectorAll('.service-item');
-  serviceItems.forEach(si => {
-    const targetId = si.dataset.target;
-    if (!targetId) return;
-    si.addEventListener('click', () => {
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // 문의 접수 버튼 동작 (간단 피드백용)
+  // 문의 버튼
   const submitBtn   = document.querySelector('.btn-submit');
   const nameInput   = document.querySelector('input[placeholder="이름"]');
   const typeInput   = document.querySelector('input[placeholder="업종"]');
@@ -716,13 +865,10 @@
 
     alert("문의가 정상적으로 접수되었습니다.\n\n현재는 사전 론칭 페이지로, 남겨주신 내용을 바탕으로 개별 안내를 드릴 예정입니다.");
 
-    // 폼 초기화
     nameInput.value   = "";
     typeInput.value   = "";
     areaInput.value   = "";
     messageArea.value = "";
-
-    // 상단으로 살짝 올려주기 (선택)
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
