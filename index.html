@@ -30,6 +30,7 @@
       margin: 0 auto;
       padding: 0 20px 96px;
     }
+
     /* 헤더 */
     header {
       position: sticky;
@@ -106,6 +107,7 @@
       font-size: 15px;
       font-weight: 600;
     }
+
     /* 히어로 */
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
@@ -139,6 +141,17 @@
       background: #22c55e;
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
+    .hero-trophy {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(96, 165, 250, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.95);
+      font-size: 13px;
+    }
     .hero-title {
       font-size: 24px;
       line-height: 1.4;
@@ -148,12 +161,50 @@
     .hero-desc {
       font-size: 14px;
       color: #cbd5f5;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .hero-desc strong {
       color: #e5e7eb;
       font-weight: 600;
     }
+
+    /* 히어로 슬라이더 */
+    .hero-slider {
+      position: relative;
+      min-height: 130px;
+      margin-bottom: 16px;
+    }
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .hero-slide.active {
+      position: relative;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .hero-dots {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.6);
+      transition: all 0.25s ease;
+    }
+    .hero-dot.active {
+      width: 18px;
+      background: #60a5fa;
+    }
+
     /* 서비스 4개 */
     .service-box {
       display: grid;
@@ -200,6 +251,7 @@
       margin-bottom: 2px;
       background: rgba(15, 23, 42, 0.9);
     }
+
     /* 업종 검색 */
     .search-wrap {
       margin-top: 8px;
@@ -245,6 +297,7 @@
       padding: 11px 0;
       text-align: center;
     }
+
     /* 본문 섹션 제목 */
     .section-title {
       margin: 32px 0 14px;
@@ -256,6 +309,7 @@
       color: #9ca3af;
       margin-bottom: 12px;
     }
+
     /* 카드형 블록 */
     .pill {
       display: inline-flex;
@@ -284,6 +338,7 @@
       list-style: disc;
       margin-bottom: 4px;
     }
+
     /* 프로세스 그리드 */
     .process-grid {
       margin-top: 10px;
@@ -310,6 +365,7 @@
       font-size: 12px;
       color: #9ca3af;
     }
+
     /* 문의 섹션 */
     #contact {
       margin: 36px 0 4px;
@@ -464,6 +520,7 @@
       background: #2563eb;
       color: #fff;
     }
+
     /* 사이드 메뉴(전체 메뉴) */
     #sideBackdrop {
       position: fixed;
@@ -578,6 +635,7 @@
       padding: 4px 0;
       font-size: 13px;
     }
+
     /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
@@ -613,6 +671,7 @@
       background: #2563eb;
       color: #fff;
     }
+
     @media (min-width: 1024px) {
       .hero {
         padding-top: 36px;
@@ -632,6 +691,7 @@
 <body>
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
+
   <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
@@ -696,7 +756,7 @@
           <a href="/industry/korean.html">한식당</a>
           <a href="/industry/japanese.html">일식당</a>
           <a href="/industry/chinese.html">중식당</a>
-          <a href="/industry/icecream.html">아이스크림 매장</a>
+          <a href="/industry/pub.html">주점·펍</a>
         </div>
       </details>
 
@@ -710,8 +770,6 @@
           <a href="/industry/academy.html">입시·보습학원</a>
           <a href="/industry/lang.html">어학·유학</a>
           <a href="/industry/art.html">예체능·취미</a>
-          <a href="/industry/studyroom.html">공부방</a>
-          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
       </details>
 
@@ -724,16 +782,15 @@
         <div class="side-group-links">
           <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/car.html">자동차 정비·카센터</a>
-          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
           <a href="/industry/local.html">지역 생활 서비스</a>
         </div>
       </details>
 
-      <!-- B2B / 전문직 -->
+      <!-- 전문 서비스·B2B -->
       <details class="side-group">
         <summary>
-          <span class="side-group-label">B2B / 전문직</span>
+          <span class="side-group-label">전문 서비스·B2B</span>
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
@@ -741,7 +798,6 @@
           <a href="/industry/law.html">법무법인·변호사</a>
           <a href="/industry/administrative.html">행정사</a>
           <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
-          <a href="/industry/manufacturing.html">B2B 제조업</a>
           <a href="/industry/b2b.html">B2B 서비스</a>
         </div>
       </details>
@@ -760,7 +816,7 @@
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)" class="consult-btn">상담하기</a>
+      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
     </div>
   </header>
 
@@ -769,16 +825,65 @@
     <section class="hero">
       <div class="container">
         <div class="hero-card">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            2025 마케팅 전문 파트너
+
+          <!-- 히어로 자동 슬라이더 -->
+          <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active">
+              <div class="hero-badge">
+                <span class="hero-trophy">🏆</span>
+                <span class="hero-badge-dot"></span>
+                2025 마케팅 전문 파트너
+              </div>
+              <h1 class="hero-title">에이치바이럴, 2025 최다 문의 달성!</h1>
+              <p class="hero-desc">
+                소상공인·전문직·B2B 기업을 위한 디지털 마케팅 전략·브랜딩
+                시스템을 업종별로 설계합니다.
+                <strong>검색–콘텐츠–문의까지 이어지는 디지털 인프라</strong>를
+                한 번에 정리해 드립니다.
+              </p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide">
+              <div class="hero-badge">
+                <span class="hero-trophy">🏆</span>
+                <span class="hero-badge-dot"></span>
+                업종별 디지털 인프라 설계
+              </div>
+              <h1 class="hero-title">홈페이지·예약·상담 채널까지 한 번에</h1>
+              <p class="hero-desc">
+                업종별 홈페이지, 예약 시스템, 상담 채널을
+                <strong>한 방향으로 정렬</strong>해
+                고객이 검색한 순간부터 예약·문의까지 자연스럽게 이어지도록
+                설계합니다.
+              </p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide">
+              <div class="hero-badge">
+                <span class="hero-trophy">🏆</span>
+                <span class="hero-badge-dot"></span>
+                데이터 기반 문의 증가
+              </div>
+              <h1 class="hero-title">광고비보다 ‘전환 구간’을 먼저 봅니다</h1>
+              <p class="hero-desc">
+                단순 노출이 아니라,
+                <strong>문의가 실제로 발생하는 구간</strong>을 데이터로 찾아
+                콘텐츠와 페이지를 고도화하고, 같은 예산 안에서 문의 효율을
+                끌어올리는 방향으로 제안합니다.
+              </p>
+            </div>
+
+            <!-- 슬라이드 점 -->
+            <div class="hero-dots">
+              <span class="hero-dot active"></span>
+              <span class="hero-dot"></span>
+              <span class="hero-dot"></span>
+            </div>
           </div>
-          <h1 class="hero-title">에이치바이럴, 2025 최다 문의 달성!</h1>
-          <p class="hero-desc">
-            소상공인·전문직·B2B 기업을 위한 디지털 마케팅 전략·브랜딩 시스템을
-            업종별로 설계합니다. <strong>검색–콘텐츠–문의까지 이어지는
-            디지털 인프라</strong>를 한 번에 정리해 드립니다.
-          </p>
+
           <!-- 서비스 4개 -->
           <div class="service-box">
             <a href="/digital.html" class="service">
@@ -802,6 +907,7 @@
               <div class="service-name">마케팅 강의 신청</div>
             </a>
           </div>
+
           <!-- 업종 검색 -->
           <div class="search-wrap">
             <div class="search-title">업종별 디지털 인프라 설계</div>
@@ -828,7 +934,9 @@
         <p class="section-tagline">
           채널 하나가 아니라, 검색·콘텐츠·예약·상담이 함께 작동하도록 설계합니다.
         </p>
+
         <div class="pill">H VIRAL 서비스 개요</div>
+
         <div class="card">
           <strong>1. 검색 기반 퍼널 설계</strong><br />
           고객이 브랜드를 인지하고 탐색한 뒤 상담 문의로 이어지는 여정을
@@ -838,6 +946,7 @@
             <li>문의 전환에 맞춘 키워드·콘텐츠 전략</li>
           </ul>
         </div>
+
         <div class="card">
           <strong>2. 실사 중심 콘텐츠·페이지 제작</strong><br />
           실제 매장·병원·사무실 환경과 상담 현장을 담은 실사 중심 콘텐츠로
@@ -847,6 +956,7 @@
             <li>고객이 궁금해하는 포인트를 묶어 FAQ형으로 정리</li>
           </ul>
         </div>
+
         <div class="card">
           <strong>3. 디지털 인프라 일원화</strong><br />
           홈페이지, 예약 시스템, 상담 채널을 한 방향으로 정렬해
@@ -888,7 +998,8 @@
         <section id="contact">
           <h2 class="contact-title">프로젝트 상담·문의 접수</h2>
           <p class="contact-sub">
-            업종·현재 상황·월 목표 문의 수를 간단히 남겨주시면, 가능한 방향과 예상 그림을 먼저 설명드립니다.
+            업종·현재 상황·월 목표 문의 수를 간단히 남겨주시면,
+            가능한 방향과 예상 그림을 먼저 설명드립니다.
           </p>
           <div class="contact-card">
             <form id="contactForm" onsubmit="handleContactSubmit(event)">
@@ -945,6 +1056,7 @@
                   ></textarea>
                 </div>
               </div>
+
               <div class="terms-box">
                 <details class="terms-detail">
                   <summary class="terms-summary">
@@ -963,8 +1075,12 @@
                     id="termsRequired"
                     class="terms-checkbox"
                   />
-                  <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+                  <span
+                    >위 내용을 확인하였으며, 개인정보 수집 및 이용에
+                    동의합니다.</span
+                  >
                 </label>
+
                 <details class="terms-detail" style="margin-top:4px;">
                   <summary class="terms-summary">
                     마케팅 정보 수신 동의 (선택)
@@ -983,20 +1099,24 @@
                   <span>마케팅 정보 수신에 동의합니다. (선택)</span>
                 </label>
               </div>
+
               <button type="submit" class="form-submit">문의 접수하기</button>
             </form>
+
             <p class="contact-note">
               * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
             </p>
             <div class="contact-actions">
               <a
-                href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)"
+                href="https://open.kakao.com/o/s0ogfV3h"
                 target="_blank"
                 rel="noopener"
                 class="contact-kakao"
                 >카톡으로 바로 상담</a
               >
-              <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+              <a href="tel:01032689899" class="contact-call"
+                >전화로 바로 상담</a
+              >
             </div>
           </div>
         </section>
@@ -1007,7 +1127,7 @@
   <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
     <a
-      href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)"
+      href="https://open.kakao.com/o/s0ogfV3h"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
@@ -1033,7 +1153,7 @@
       }
     }
 
-    // 대제목(업종 그룹) 클릭 시, 펼치면서 그 위치로 스르르 스크롤
+    // 대제목(업종 그룹) 펼칠 때 그 위치로 스크롤
     const sideScroll = document.querySelector(".side-scroll");
     document.querySelectorAll("details.side-group").forEach((group) => {
       group.addEventListener("toggle", function () {
@@ -1058,7 +1178,6 @@
       { key: "이비인후과", url: "/industry/ent.html" },
       { key: "안과", url: "/industry/eye.html" },
       { key: "한의원", url: "/industry/oriental.html" },
-
       { key: "헬스장", url: "/industry/gym.html" },
       { key: "pt", url: "/industry/pt.html" },
       { key: "피티", url: "/industry/pt.html" },
@@ -1066,35 +1185,18 @@
       { key: "필라테스", url: "/industry/pilates.html" },
       { key: "미용실", url: "/industry/beauty.html" },
       { key: "네일", url: "/industry/nail.html" },
-
       { key: "카페", url: "/industry/cafe.html" },
       { key: "한식", url: "/industry/korean.html" },
       { key: "일식", url: "/industry/japanese.html" },
       { key: "중식", url: "/industry/chinese.html" },
-      { key: "아이스크림", url: "/industry/icecream.html" },
-      { key: "아이스크림매장", url: "/industry/icecream.html" },
-
-      { key: "입시", url: "/industry/academy.html" },
-      { key: "보습학원", url: "/industry/academy.html" },
-      { key: "어학", url: "/industry/lang.html" },
-      { key: "유학", url: "/industry/lang.html" },
-      { key: "예체능", url: "/industry/art.html" },
-      { key: "취미", url: "/industry/art.html" },
-      { key: "공부방", url: "/industry/studyroom.html" },
-      { key: "태권도", url: "/industry/dojang.html" },
-      { key: "합기도", url: "/industry/dojang.html" },
-      { key: "체육관", url: "/industry/dojang.html" },
-
+      { key: "술집", url: "/industry/pub.html" },
+      { key: "펍", url: "/industry/pub.html" },
       { key: "공인중개사", url: "/industry/realestate.html" },
       { key: "부동산", url: "/industry/realestate.html" },
       { key: "카센터", url: "/industry/car.html" },
       { key: "자동차정비", url: "/industry/car.html" },
-      { key: "차량튜닝", url: "/industry/cartuning.html" },
-      { key: "튜닝", url: "/industry/cartuning.html" },
-      { key: "썬팅", url: "/industry/cartuning.html" },
       { key: "청소", url: "/industry/cleaning.html" },
       { key: "이사", url: "/industry/cleaning.html" },
-
       { key: "세무", url: "/industry/tax.html" },
       { key: "회계", url: "/industry/tax.html" },
       { key: "법무사", url: "/industry/law.html" },
@@ -1102,8 +1204,6 @@
       { key: "행정사", url: "/industry/administrative.html" },
       { key: "가맹거래사", url: "/industry/franchise.html" },
       { key: "프랜차이즈", url: "/industry/franchise.html" },
-      { key: "b2b 제조업", url: "/industry/manufacturing.html" },
-      { key: "제조업", url: "/industry/manufacturing.html" },
       { key: "b2b", url: "/industry/b2b.html" }
     ];
 
@@ -1143,6 +1243,7 @@
       const industry = document.getElementById("contactIndustry").value.trim();
       const message = document.getElementById("contactMessage").value.trim();
       const termsRequired = document.getElementById("termsRequired").checked;
+
       if (!termsRequired) {
         alert("개인정보 수집 및 이용에 동의해 주세요.");
         return;
@@ -1151,19 +1252,48 @@
         alert("필수 항목을 모두 입력해 주세요.");
         return;
       }
+
       const smsBody =
         `[H VIRAL 홈페이지 문의]\n` +
         `성명: ${name}\n연락처: ${phone}\n업종·서비스: ${industry}\n` +
         `내용: ${message}`;
-      // 문자앱 열기 (모바일에서 동작, PC에서는 무응답일 수 있음)
+
       const encoded = encodeURIComponent(smsBody);
       const smsUrl = `sms:01032689899?body=${encoded}`;
       window.location.href = smsUrl;
+
       alert(
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
           "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
+
       e.target.reset();
+    }
+
+    // 히어로 자동 슬라이드
+    const heroSlides = document.querySelectorAll(".hero-slide");
+    const heroDots = document.querySelectorAll(".hero-dot");
+    let heroIndex = 0;
+
+    function showHeroSlide(index) {
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      heroDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      heroIndex = index;
+    }
+
+    if (heroSlides.length > 1) {
+      setInterval(() => {
+        const next = (heroIndex + 1) % heroSlides.length;
+        showHeroSlide(next);
+      }, 5000);
+
+      heroDots.forEach((dot, i) => {
+        dot.addEventListener("click", () => showHeroSlide(i));
+      });
     }
   </script>
 </body>
