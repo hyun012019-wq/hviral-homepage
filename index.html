@@ -25,13 +25,11 @@
     ul {
       list-style: none;
     }
-
     .container {
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 20px 96px;
     }
-
     /* 헤더 */
     header {
       position: sticky;
@@ -86,7 +84,6 @@
     .menu-btn span::after {
       top: 5px;
     }
-
     .logo-wrap {
       display: block;
       text-decoration: none;
@@ -109,7 +106,6 @@
       font-size: 15px;
       font-weight: 600;
     }
-
     /* 히어로 */
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
@@ -158,7 +154,6 @@
       color: #e5e7eb;
       font-weight: 600;
     }
-
     /* 서비스 4개 */
     .service-box {
       display: grid;
@@ -205,7 +200,6 @@
       margin-bottom: 2px;
       background: rgba(15, 23, 42, 0.9);
     }
-
     /* 업종 검색 */
     .search-wrap {
       margin-top: 8px;
@@ -251,7 +245,6 @@
       padding: 11px 0;
       text-align: center;
     }
-
     /* 본문 섹션 제목 */
     .section-title {
       margin: 32px 0 14px;
@@ -263,7 +256,6 @@
       color: #9ca3af;
       margin-bottom: 12px;
     }
-
     /* 카드형 블록 */
     .pill {
       display: inline-flex;
@@ -292,7 +284,6 @@
       list-style: disc;
       margin-bottom: 4px;
     }
-
     /* 프로세스 그리드 */
     .process-grid {
       margin-top: 10px;
@@ -319,7 +310,6 @@
       font-size: 12px;
       color: #9ca3af;
     }
-
     /* 문의 섹션 */
     #contact {
       margin: 36px 0 4px;
@@ -341,7 +331,6 @@
       padding: 18px 16px;
       font-size: 13px;
     }
-
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -385,7 +374,6 @@
       min-height: 80px;
       resize: vertical;
     }
-
     .terms-box {
       border-radius: 12px;
       border: 1px solid rgba(55, 65, 81, 0.9);
@@ -394,7 +382,6 @@
       font-size: 12px;
       margin-bottom: 12px;
     }
-
     .terms-detail {
       margin-bottom: 6px;
     }
@@ -420,7 +407,6 @@
     .terms-detail[open] .terms-summary::after {
       content: "접기";
     }
-
     .terms-body {
       font-size: 11px;
       color: #9ca3af;
@@ -440,7 +426,6 @@
       height: 14px;
       accent-color: #2563eb;
     }
-
     .form-submit {
       width: 100%;
       border-radius: 999px;
@@ -458,7 +443,6 @@
       color: #9ca3af;
       margin-top: 8px;
     }
-
     .contact-actions {
       margin-top: 14px;
       display: flex;
@@ -480,7 +464,6 @@
       background: #2563eb;
       color: #fff;
     }
-
     /* 사이드 메뉴(전체 메뉴) */
     #sideBackdrop {
       position: fixed;
@@ -541,7 +524,6 @@
       padding: 0 22px 12px;
       flex-shrink: 0;
     }
-
     .side-scroll {
       flex: 1;
       padding: 8px 22px 120px;
@@ -561,7 +543,6 @@
       padding: 8px 0;
       font-size: 14px;
     }
-
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -597,7 +578,6 @@
       padding: 4px 0;
       font-size: 13px;
     }
-
     /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
@@ -633,7 +613,6 @@
       background: #2563eb;
       color: #fff;
     }
-
     @media (min-width: 1024px) {
       .hero {
         padding-top: 36px;
@@ -653,7 +632,6 @@
 <body>
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
-
   <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
@@ -663,7 +641,6 @@
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
       <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
@@ -719,7 +696,7 @@
           <a href="/industry/korean.html">한식당</a>
           <a href="/industry/japanese.html">일식당</a>
           <a href="/industry/chinese.html">중식당</a>
-          <a href="/industry/pub.html">주점·펍</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
         </div>
       </details>
 
@@ -733,6 +710,8 @@
           <a href="/industry/academy.html">입시·보습학원</a>
           <a href="/industry/lang.html">어학·유학</a>
           <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
       </details>
 
@@ -745,15 +724,16 @@
         <div class="side-group-links">
           <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
           <a href="/industry/local.html">지역 생활 서비스</a>
         </div>
       </details>
 
-      <!-- 전문 서비스·B2B -->
+      <!-- B2B / 전문직 -->
       <details class="side-group">
         <summary>
-          <span class="side-group-label">전문 서비스·B2B</span>
+          <span class="side-group-label">B2B / 전문직</span>
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
@@ -761,6 +741,7 @@
           <a href="/industry/law.html">법무법인·변호사</a>
           <a href="/industry/administrative.html">행정사</a>
           <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacturing.html">B2B 제조업</a>
           <a href="/industry/b2b.html">B2B 서비스</a>
         </div>
       </details>
@@ -779,7 +760,7 @@
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
+      <a href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)" class="consult-btn">상담하기</a>
     </div>
   </header>
 
@@ -798,7 +779,6 @@
             업종별로 설계합니다. <strong>검색–콘텐츠–문의까지 이어지는
             디지털 인프라</strong>를 한 번에 정리해 드립니다.
           </p>
-
           <!-- 서비스 4개 -->
           <div class="service-box">
             <a href="/digital.html" class="service">
@@ -822,7 +802,6 @@
               <div class="service-name">마케팅 강의 신청</div>
             </a>
           </div>
-
           <!-- 업종 검색 -->
           <div class="search-wrap">
             <div class="search-title">업종별 디지털 인프라 설계</div>
@@ -849,7 +828,6 @@
         <p class="section-tagline">
           채널 하나가 아니라, 검색·콘텐츠·예약·상담이 함께 작동하도록 설계합니다.
         </p>
-
         <div class="pill">H VIRAL 서비스 개요</div>
         <div class="card">
           <strong>1. 검색 기반 퍼널 설계</strong><br />
@@ -860,7 +838,6 @@
             <li>문의 전환에 맞춘 키워드·콘텐츠 전략</li>
           </ul>
         </div>
-
         <div class="card">
           <strong>2. 실사 중심 콘텐츠·페이지 제작</strong><br />
           실제 매장·병원·사무실 환경과 상담 현장을 담은 실사 중심 콘텐츠로
@@ -870,7 +847,6 @@
             <li>고객이 궁금해하는 포인트를 묶어 FAQ형으로 정리</li>
           </ul>
         </div>
-
         <div class="card">
           <strong>3. 디지털 인프라 일원화</strong><br />
           홈페이지, 예약 시스템, 상담 채널을 한 방향으로 정렬해
@@ -969,7 +945,6 @@
                   ></textarea>
                 </div>
               </div>
-
               <div class="terms-box">
                 <details class="terms-detail">
                   <summary class="terms-summary">
@@ -990,7 +965,6 @@
                   />
                   <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
-
                 <details class="terms-detail" style="margin-top:4px;">
                   <summary class="terms-summary">
                     마케팅 정보 수신 동의 (선택)
@@ -1009,16 +983,14 @@
                   <span>마케팅 정보 수신에 동의합니다. (선택)</span>
                 </label>
               </div>
-
               <button type="submit" class="form-submit">문의 접수하기</button>
             </form>
             <p class="contact-note">
               * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
             </p>
-
             <div class="contact-actions">
               <a
-                href="https://open.kakao.com/o/s0ogfV3h"
+                href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)"
                 target="_blank"
                 rel="noopener"
                 class="contact-kakao"
@@ -1035,7 +1007,7 @@
   <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
     <a
-      href="https://open.kakao.com/o/s0ogfV3h"
+      href="[https://open.kakao.com/o/s0ogfV3h](https://open.kakao.com/o/s0ogfV3h)"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
@@ -1078,7 +1050,6 @@
       { key: "피부과", url: "/industry/skin.html" },
       { key: "치과", url: "/industry/dental.html" },
       { key: "성형", url: "/industry/plastic.html" },
-      { key: "성형외科", url: "/industry/plastic.html" },
       { key: "성형외과", url: "/industry/plastic.html" },
       { key: "내과", url: "/industry/internal.html" },
       { key: "산부인과", url: "/industry/obgyn.html" },
@@ -1087,6 +1058,7 @@
       { key: "이비인후과", url: "/industry/ent.html" },
       { key: "안과", url: "/industry/eye.html" },
       { key: "한의원", url: "/industry/oriental.html" },
+
       { key: "헬스장", url: "/industry/gym.html" },
       { key: "pt", url: "/industry/pt.html" },
       { key: "피티", url: "/industry/pt.html" },
@@ -1094,18 +1066,35 @@
       { key: "필라테스", url: "/industry/pilates.html" },
       { key: "미용실", url: "/industry/beauty.html" },
       { key: "네일", url: "/industry/nail.html" },
+
       { key: "카페", url: "/industry/cafe.html" },
       { key: "한식", url: "/industry/korean.html" },
       { key: "일식", url: "/industry/japanese.html" },
       { key: "중식", url: "/industry/chinese.html" },
-      { key: "술집", url: "/industry/pub.html" },
-      { key: "펍", url: "/industry/pub.html" },
+      { key: "아이스크림", url: "/industry/icecream.html" },
+      { key: "아이스크림매장", url: "/industry/icecream.html" },
+
+      { key: "입시", url: "/industry/academy.html" },
+      { key: "보습학원", url: "/industry/academy.html" },
+      { key: "어학", url: "/industry/lang.html" },
+      { key: "유학", url: "/industry/lang.html" },
+      { key: "예체능", url: "/industry/art.html" },
+      { key: "취미", url: "/industry/art.html" },
+      { key: "공부방", url: "/industry/studyroom.html" },
+      { key: "태권도", url: "/industry/dojang.html" },
+      { key: "합기도", url: "/industry/dojang.html" },
+      { key: "체육관", url: "/industry/dojang.html" },
+
       { key: "공인중개사", url: "/industry/realestate.html" },
       { key: "부동산", url: "/industry/realestate.html" },
       { key: "카센터", url: "/industry/car.html" },
       { key: "자동차정비", url: "/industry/car.html" },
+      { key: "차량튜닝", url: "/industry/cartuning.html" },
+      { key: "튜닝", url: "/industry/cartuning.html" },
+      { key: "썬팅", url: "/industry/cartuning.html" },
       { key: "청소", url: "/industry/cleaning.html" },
       { key: "이사", url: "/industry/cleaning.html" },
+
       { key: "세무", url: "/industry/tax.html" },
       { key: "회계", url: "/industry/tax.html" },
       { key: "법무사", url: "/industry/law.html" },
@@ -1113,6 +1102,8 @@
       { key: "행정사", url: "/industry/administrative.html" },
       { key: "가맹거래사", url: "/industry/franchise.html" },
       { key: "프랜차이즈", url: "/industry/franchise.html" },
+      { key: "b2b 제조업", url: "/industry/manufacturing.html" },
+      { key: "제조업", url: "/industry/manufacturing.html" },
       { key: "b2b", url: "/industry/b2b.html" }
     ];
 
@@ -1120,15 +1111,12 @@
       const input = document.getElementById("industryInput");
       if (!input) return;
       const value = (input.value || "").trim().toLowerCase();
-
       if (!value) {
         alert("업종 또는 서비스를 입력해 주세요.");
         input.focus();
         return;
       }
-
       const found = industryMap.find((item) => value.includes(item.key));
-
       if (found) {
         window.location.href = found.url;
       } else {
@@ -1155,7 +1143,6 @@
       const industry = document.getElementById("contactIndustry").value.trim();
       const message = document.getElementById("contactMessage").value.trim();
       const termsRequired = document.getElementById("termsRequired").checked;
-
       if (!termsRequired) {
         alert("개인정보 수집 및 이용에 동의해 주세요.");
         return;
@@ -1164,25 +1151,20 @@
         alert("필수 항목을 모두 입력해 주세요.");
         return;
       }
-
       const smsBody =
         `[H VIRAL 홈페이지 문의]\n` +
         `성명: ${name}\n연락처: ${phone}\n업종·서비스: ${industry}\n` +
         `내용: ${message}`;
-
       // 문자앱 열기 (모바일에서 동작, PC에서는 무응답일 수 있음)
       const encoded = encodeURIComponent(smsBody);
       const smsUrl = `sms:01032689899?body=${encoded}`;
       window.location.href = smsUrl;
-
       alert(
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
           "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
-
       e.target.reset();
     }
   </script>
-  
 </body>
 </html>
