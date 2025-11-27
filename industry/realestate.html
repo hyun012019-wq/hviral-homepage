@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>공인중개사 · 상가·주택 중개 브랜딩 │ H VIRAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+    }
+    a {text-decoration:none; color:inherit;}
+    .container {max-width:1080px; margin:0 auto; padding:0 20px 96px;}
+
+    /* 헤더 */
+    header {
+      position:sticky; top:0; z-index:9000;
+      background:#020617; border-bottom:1px solid rgba(148,163,184,0.3);
+    }
+    .header-inner {
+      max-width:1080px; margin:0 auto;
+      padding:14px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .menu-btn {
+      width:32px; height:32px; border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      display:flex; align-items:center; justify-content:center;
+      background:#020617; cursor:pointer;
+    }
+    .menu-btn span {
+      width:16px; height:2px; background:#e5e7eb; position:relative;
+    }
+    .menu-btn span:before,
+    .menu-btn span:after {
+      content:""; position:absolute; left:0;
+      width:16px; height:2px; background:#e5e7eb;
+    }
+    .menu-btn span:before {top:-5px;}
+    .menu-btn span:after {top:5px;}
+
+    .logo {font-size:22px; font-weight:800;}
+    .logo-sub {font-size:11px; color:#9ca3af;}
+
+    .consult-btn {
+      background:#2563eb; padding:9px 20px; border-radius:999px;
+      color:#fff; font-size:15px; font-weight:600;
+    }
+
+    /* 히어로 */
+    .hero {
+      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 58%);
+      padding:28px 0 32px;
+    }
+    .hero-card {
+      border-radius:28px; padding:28px 20px;
+      background:linear-gradient(135deg,#0b1f3a,#020617);
+      border:1px solid rgba(148,163,184,0.45);
+      box-shadow:0 22px 50px rgba(15,23,42,0.9);
+    }
+    .hero-badges {
+      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+    }
+    .hero-badge {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(96,165,250,0.6);
+      padding:4px 10px; border-radius:999px;
+      font-size:11px; display:inline-flex; align-items:center; gap:6px;
+    }
+    .hero-badge-dot {
+      width:8px; height:8px; border-radius:999px; background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+    }
+    .hero-title {font-size:24px; font-weight:800; margin-bottom:12px; line-height:1.45;}
+    .hero-desc {font-size:14px; color:#cbd5f5;}
+
+    .section-title {margin:34px 0 10px; font-size:20px; font-weight:800;}
+    .section-sub {font-size:13px; color:#9ca3af; margin-bottom:14px;}
+
+    .card {
+      background:#020617; border-radius:20px;
+      border:1px solid rgba(148,163,184,0.55);
+      padding:18px 16px; margin-bottom:14px; font-size:13px;
+    }
+    .card-tag {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.6);
+      padding:3px 9px; border-radius:999px;
+      font-size:11px; display:inline-block; margin-bottom:6px;
+    }
+    .card ul {padding-left:14px; margin-top:6px;}
+    .card li {margin-bottom:5px; list-style:disc;}
+
+    /* 2단 그리드 */
+    .grid-half {display:grid; gap:10px;}
+    @media (min-width:640px) {
+      .grid-half {grid-template-columns:repeat(2,1fr);}
+    }
+    .grid-box {
+      background:#020617; border-radius:14px; border:1px solid rgba(55,65,81,0.9);
+      padding:12px; font-size:12px;
+    }
+    .grid-title {font-weight:600; margin-bottom:4px;}
+    .grid-desc {font-size:12px; color:#9ca3af;}
+
+    /* 문의 섹션 */
+    #contact {margin:40px 0 20px;}
+    .contact-title {font-size:20px; font-weight:800; margin-bottom:10px;}
+    .contact-sub {font-size:13px; color:#9ca3af; margin-bottom:16px;}
+    .contact-card {
+      border-radius:20px; border:1px solid rgba(148,163,184,0.55);
+      background:#020617; padding:18px 16px;
+    }
+
+    .form-group {margin-bottom:12px; display:flex; flex-direction:column; gap:6px;}
+    .form-label {font-size:12px; color:#9ca3af;}
+    .form-label span {color:#f97316;}
+    .form-input, .form-textarea {
+      padding:9px 10px; font-size:13px; border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7); background:#020617; color:#fff;
+    }
+    .form-textarea {resize:vertical; min-height:80px;}
+
+    /* 약관 */
+    .terms-box {
+      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
+      padding:10px; margin-top:6px; font-size:11px; color:#9ca3af;
+    }
+    .terms-detail {margin-bottom:4px;}
+    .terms-summary {
+      list-style:none; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:12px; color:#e5e7eb;
+    }
+    .terms-summary::-webkit-details-marker {display:none;}
+    .terms-summary::after {
+      content:"자세히 보기";
+      font-size:11px; color:#9ca3af; margin-left:8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content:"접기";
+    }
+    .terms-body {
+      margin-top:6px; font-size:11px; color:#9ca3af; line-height:1.5;
+    }
+    .terms-row {
+      display:flex; gap:8px; align-items:center;
+      margin-top:6px; font-size:12px;
+    }
+    .terms-checkbox {width:14px; height:14px; accent-color:#2563eb;}
+
+    .form-submit {
+      width:100%; background:#2563eb; color:#fff; font-size:15px;
+      padding:12px 0; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+      font-weight:700;
+    }
+
+    /* 하단 고정 상담바 */
+    .bottom-bar {
+      position:fixed; bottom:0; left:0; width:100%; z-index:9600;
+      background:#020617; padding:14px 10px;
+      border-top:1px solid rgba(148,163,184,0.45);
+      display:flex; gap:8px;
+    }
+    .bottom-btn {
+      flex:1; border-radius:999px; padding:13px 0;
+      text-align:center; font-weight:600; font-size:15px;
+    }
+    .bottom-btn.kakao {background:#facc15; color:#000;}
+    .bottom-btn.ask {background:#111827; color:#fff; border:1px solid rgba(148,163,184,0.6);}
+    .bottom-btn.call {background:#2563eb; color:#fff;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="menu-btn" onclick="goHome()" aria-label="홈으로 이동">
+      <span></span>
+    </button>
+
+    <a href="/" class="logo-wrap">
+      <div class="logo">H VIRAL</div>
+      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+    </a>
+
+    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            공인중개사 전용 온라인 문의 설계
+          </div>
+          <div class="hero-badge">
+            상가·주택·토지 매물 상담을 디지털 채널로 연결합니다.
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          공인중개사 사무소의  
+          매물 설명과 상담 요청을 한 화면에 모아드립니다.
+        </h1>
+
+        <p class="hero-desc">
+          상권·매물·고객군이 모두 다른 공인중개업은  
+          “어떤 매물에 어떤 고객이 들어오면 좋은지”를 기준으로  
+          온라인 안내와 상담 방식을 정리해 둘수록 문의 품질이 높아집니다.
+        </p>
+      </div>
+
+      <!-- 주요 문의 패턴 -->
+      <h2 class="section-title">공인중개사 고객이 먼저 묻는 질문들</h2>
+      <p class="section-sub">
+        실제 현장에서 자주 듣는 질문을 기준으로, 온라인 안내 내용을 설계합니다.
+      </p>
+
+      <div class="card">
+        <div class="card-tag">상가 · 점포</div>
+        <ul>
+          <li>유동 인구, 배후 수요, 주변 업종 구성이 어느 정도인지</li>
+          <li>권리금·임대료 구조, 예상 고정비 수준이 어떻게 되는지</li>
+          <li>매출이 나오는 매장인지, 인근 이탈·공실 흐름은 어떤지</li>
+          <li>계약 시 인수인계 범위와 향후 리스크 포인트는 무엇인지</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">주거 · 오피스텔 · 주택</div>
+        <ul>
+          <li>통학·출퇴근 동선, 생활 인프라, 소음·채광·층간소음 등 생활 요소</li>
+          <li>실입주 예정 시기와 전세·월세 구조, 대출 가능 여부</li>
+          <li>향후 매도·갈아타기 관점에서의 거시적인 그림</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">토지 · 개발</div>
+        <ul>
+          <li>현 이용 현황과 지목, 용도지역, 건폐율·용적률 등 개발 여건</li>
+          <li>중장기 개발 계획, 인근 개발 이슈, 규제·제한 사항</li>
+          <li>실수요·투자 관점에서 접근 방식이 다른 지점들</li>
+        </ul>
+      </div>
+
+      <!-- 온라인 안내 전략 -->
+      <h2 class="section-title">공인중개사 온라인 안내에 필요한 요소</h2>
+      <p class="section-sub">
+        단순 매물 나열이 아니라, 어떤 손님에게 어떤 선택지를 제안하는지까지 보여주는 것이 중요합니다.
+      </p>
+
+      <div class="grid-half">
+        <div class="grid-box">
+          <div class="grid-title">1. 사무소 포지션 명확화</div>
+          <div class="grid-desc">
+            상가 중심인지, 주거 위주인지, 토지·개발 특화인지  
+            사무소가 집중하는 분야를 먼저 제시합니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">2. 주요 상권·권역 정리</div>
+          <div class="grid-desc">
+            “어디 지역, 어떤 상권의 매물을 주로 다루는지”를  
+            고객이 한 번에 이해할 수 있도록 정리합니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">3. 손님 유형별 안내</div>
+          <div class="grid-desc">
+            창업 예정 점주, 점포 이전을 고민하는 사장님, 첫 집을 찾는 실수요자 등  
+            손님 유형별로 상담 포인트를 따로 정리해 둡니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">4. 계약 이후까지 고려한 설명</div>
+          <div class="grid-desc">
+            입점 후 예상되는 상황, 이사 일정, 확장·재계약 가능성 등  
+            단발성 계약에 그치지 않는 관점을 함께 보여줍니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">이런 방식의 온라인 안내를 제안합니다</div>
+        <ul>
+          <li>자주 다루는 상권·매물의 공통점을 정리해 “이 사무소를 선택해야 하는 이유”를 명확히 표현</li>
+          <li>대표 매물 사례 몇 개를 기준으로, 임대료·보증금·필수 고정비 구성을 직관적으로 제시</li>
+          <li>실제 상담에서 설명하는 내용과 비슷한 수준의 정보를 온라인에도 반영</li>
+          <li>“지금 연락하면 무엇부터 같이 점검할지”를 안내해, 고객이 망설이지 않도록 설계</li>
+        </ul>
+      </div>
+
+      <!-- 상담 문의 섹션 -->
+      <section id="contact">
+        <h2 class="contact-title">공인중개사 사무소 디지털 문의 세팅 상담</h2>
+        <p class="contact-sub">
+          다루고 있는 지역·매물·손님 유형을 남겨 주시면,  
+          어떤 방향으로 온라인 문의를 정리하면 좋을지 먼저 안내드립니다.
+        </p>
+
+        <div class="contact-card">
+          <form id="realEstateForm" onsubmit="handleRealEstateSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">성함<span>*</span></label>
+              <input
+                id="name"
+                class="form-input"
+                type="text"
+                placeholder="성함 또는 담당자명을 입력해 주세요."
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">연락처<span>*</span></label>
+              <input
+                id="phone"
+                class="form-input"
+                type="tel"
+                placeholder="'-' 없이 숫자만 입력"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">주요 취급 매물·지역<span>*</span></label>
+              <input
+                id="area"
+                class="form-input"
+                type="text"
+                placeholder="예: ○○역 상가 · ○○동 주택 · ○○신도시 오피스텔 등"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
+              <textarea
+                id="message"
+                class="form-textarea"
+                placeholder="예: 점포 매물 위주 / 상권 확장 계획 / 상가·주거 병행 / 온라인 문의 정리 필요 등 자세히 적어 주세요."
+                required
+              ></textarea>
+            </div>
+
+            <div class="terms-box">
+              <details class="terms-detail">
+                <summary class="terms-summary">
+                  개인정보 수집 및 이용 동의 (필수)
+                </summary>
+                <div class="terms-body">
+                  ① 수집 항목: 성명, 연락처, 취급 매물·지역, 문의 내용<br />
+                  ② 수집 목적: 상담 회신 및 관련 안내<br />
+                  ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                </div>
+              </details>
+              <label class="terms-row">
+                <input
+                  type="checkbox"
+                  id="termsRequired"
+                  class="terms-checkbox"
+                />
+                <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit">문의 접수하기</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<!-- 하단 고정 상담바 -->
+<div class="bottom-bar">
+  <a
+    href="https://open.kakao.com/o/s0ogfV3h"
+    class="bottom-btn kakao"
+    target="_blank"
+    rel="noopener"
+  >카톡 상담</a>
+  <a href="#contact" class="bottom-btn ask">문의하기</a>
+  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+</div>
+
+<script>
+  function goHome() {
+    window.location.href = "/";
+  }
+
+  function handleRealEstateSubmit(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const area = document.getElementById("area").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const termsRequired = document.getElementById("termsRequired").checked;
+
+    if (!termsRequired) {
+      alert("개인정보 수집 및 이용에 동의해 주세요.");
+      return;
+    }
+    if (!name || !phone || !area || !message) {
+      alert("필수 항목을 모두 입력해 주세요.");
+      return;
+    }
+
+    const smsBody =
+      `[H VIRAL 공인중개사 문의]\n` +
+      `성함: ${name}\n연락처: ${phone}\n주요 매물·지역: ${area}\n` +
+      `내용: ${message}`;
+
+    const encoded = encodeURIComponent(smsBody);
+    const smsUrl = `sms:01032689899?body=${encoded}`;
+    window.location.href = smsUrl;
+
+    alert(
+      "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+      "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+    );
+
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
