@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>행정사 · 인허가 · 민원 대행 │ H VIRAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+    }
+    a {text-decoration:none; color:inherit;}
+    .container {max-width:1080px; margin:0 auto; padding:0 20px 96px;}
+
+    /* 헤더 */
+    header {
+      position:sticky; top:0; z-index:9000;
+      background:#020617; border-bottom:1px solid rgba(148,163,184,0.3);
+    }
+    .header-inner {
+      max-width:1080px; margin:0 auto;
+      padding:14px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .menu-btn {
+      width:32px; height:32px; border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      display:flex; align-items:center; justify-content:center;
+      background:#020617; cursor:pointer;
+    }
+    .menu-btn span {
+      width:16px; height:2px; background:#e5e7eb; position:relative;
+    }
+    .menu-btn span:before,
+    .menu-btn span:after {
+      content:""; position:absolute; left:0;
+      width:16px; height:2px; background:#e5e7eb;
+    }
+    .menu-btn span:before {top:-5px;}
+    .menu-btn span:after {top:5px;}
+
+    .logo {font-size:22px; font-weight:800;}
+    .logo-sub {font-size:11px; color:#9ca3af;}
+
+    .consult-btn {
+      background:#2563eb; padding:9px 20px; border-radius:999px;
+      color:#fff; font-size:15px; font-weight:600;
+    }
+
+    /* 히어로 */
+    .hero {
+      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 58%);
+      padding:28px 0 32px;
+    }
+    .hero-card {
+      border-radius:28px; padding:28px 20px;
+      background:linear-gradient(135deg,#0b1f3a,#020617);
+      border:1px solid rgba(148,163,184,0.45);
+      box-shadow:0 22px 50px rgba(15,23,42,0.9);
+    }
+    .hero-badges {
+      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+    }
+    .hero-badge {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(96,165,250,0.6);
+      padding:4px 10px; border-radius:999px;
+      font-size:11px; display:inline-flex; align-items:center; gap:6px;
+    }
+    .hero-badge-dot {
+      width:8px; height:8px; border-radius:999px; background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+    }
+    .hero-title {font-size:24px; font-weight:800; margin-bottom:12px; line-height:1.45;}
+    .hero-desc {font-size:14px; color:#cbd5f5;}
+
+    .section-title {margin:34px 0 10px; font-size:20px; font-weight:800;}
+    .section-sub {font-size:13px; color:#9ca3af; margin-bottom:14px;}
+
+    .card {
+      background:#020617; border-radius:20px;
+      border:1px solid rgba(148,163,184,0.55);
+      padding:18px 16px; margin-bottom:14px; font-size:13px;
+    }
+    .card-tag {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.6);
+      padding:3px 9px; border-radius:999px;
+      font-size:11px; display:inline-block; margin-bottom:6px;
+    }
+    .card ul {padding-left:14px; margin-top:6px;}
+    .card li {margin-bottom:5px; list-style:disc;}
+
+    /* 2단 그리드 */
+    .grid-half {display:grid; gap:10px;}
+    @media (min-width:640px) {
+      .grid-half {grid-template-columns:repeat(2,1fr);}
+    }
+    .grid-box {
+      background:#020617; border-radius:14px; border:1px solid rgba(55,65,81,0.9);
+      padding:12px; font-size:12px;
+    }
+    .grid-title {font-weight:600; margin-bottom:4px;}
+    .grid-desc {font-size:12px; color:#9ca3af;}
+
+    /* 문의 섹션 */
+    #contact {margin:40px 0 20px;}
+    .contact-title {font-size:20px; font-weight:800; margin-bottom:10px;}
+    .contact-sub {font-size:13px; color:#9ca3af; margin-bottom:16px;}
+    .contact-card {
+      border-radius:20px; border:1px solid rgba(148,163,184,0.55);
+      background:#020617; padding:18px 16px;
+    }
+
+    .form-group {margin-bottom:12px; display:flex; flex-direction:column; gap:6px;}
+    .form-label {font-size:12px; color:#9ca3af;}
+    .form-label span {color:#f97316;}
+    .form-input, .form-textarea {
+      padding:9px 10px; font-size:13px; border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7); background:#020617; color:#fff;
+    }
+    .form-textarea {resize:vertical; min-height:80px;}
+
+    /* 약관 */
+    .terms-box {
+      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
+      padding:10px; margin-top:6px; font-size:11px; color:#9ca3af;
+    }
+    .terms-detail {margin-bottom:4px;}
+    .terms-summary {
+      list-style:none; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:12px; color:#e5e7eb;
+    }
+    .terms-summary::-webkit-details-marker {display:none;}
+    .terms-summary::after {
+      content:"자세히 보기";
+      font-size:11px; color:#9ca3af; margin-left:8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content:"접기";
+    }
+    .terms-body {
+      margin-top:6px; font-size:11px; color:#9ca3af; line-height:1.5;
+    }
+    .terms-row {
+      display:flex; gap:8px; align-items:center;
+      margin-top:6px; font-size:12px;
+    }
+    .terms-checkbox {width:14px; height:14px; accent-color:#2563eb;}
+
+    .form-submit {
+      width:100%; background:#2563eb; color:#fff; font-size:15px;
+      padding:12px 0; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+      font-weight:700;
+    }
+
+    /* 하단 고정 상담바 */
+    .bottom-bar {
+      position:fixed; bottom:0; left:0; width:100%; z-index:9600;
+      background:#020617; padding:14px 10px;
+      border-top:1px solid rgba(148,163,184,0.45);
+      display:flex; gap:8px;
+    }
+    .bottom-btn {
+      flex:1; border-radius:999px; padding:13px 0;
+      text-align:center; font-weight:600; font-size:15px;
+    }
+    .bottom-btn.kakao {background:#facc15; color:#000;}
+    .bottom-btn.ask {background:#111827; color:#fff; border:1px solid rgba(148,163,184,0.6);}
+    .bottom-btn.call {background:#2563eb; color:#fff;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="menu-btn" onclick="goHome()" aria-label="홈으로 이동">
+      <span></span>
+    </button>
+
+    <a href="/" class="logo-wrap">
+      <div class="logo">H VIRAL</div>
+      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+    </a>
+
+    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            행정 인허가 · 신고 · 민원 대응 중심 안내
+          </div>
+          <div class="hero-badge">
+            영업 시작·확장에 필요한 행정 리스크를 정리합니다.
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          행정사가 개입하면  
+          인허가, 신고, 민원 흐름이 한 번에 정리됩니다.
+        </h1>
+
+        <p class="hero-desc">
+          음식점·병원·학원부터 제조·물류까지,  
+          각 업종에 맞는 인허가 절차와 행정 리스크를 정리하고  
+          필요한 서류와 진행 방향을 한 번에 안내합니다.
+        </p>
+      </div>
+
+      <!-- 주요 문의 유형 -->
+      <h2 class="section-title">행정사에게 주로 들어오는 문의</h2>
+      <p class="section-sub">
+        업종별로 반복되는 질문을 미리 정리해 두면, 고객이 바로 상담을 요청할 수 있습니다.
+      </p>
+
+      <div class="card">
+        <div class="card-tag">대표적인 상담 내용</div>
+        <ul>
+          <li>신규 창업 인허가: 일반음식점, 제과점, 카페, 학원, 병원, 물류·제조업 등</li>
+          <li>영업 변경·확장: 업종 추가, 면적 변경, 사업장 이전 관련 인허가 문의</li>
+          <li>각종 신고·등록: 위생, 소방, 건축, 환경 관련 행정 신고·등록 업무</li>
+          <li>행정 처분 대응: 영업정지, 과태료, 시정명령 등에 대한 대응 방향 문의</li>
+          <li>출입국·비자: 외국인 근로자·전문인력 비자, 체류 자격 관련 상담</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">고객이 먼저 확인하고 싶어하는 것</div>
+        <ul>
+          <li>지금 상황에서 가능한 선택지가 무엇인지</li>
+          <li>어떤 서류를 준비해야 하는지, 누가 발급해 주는지</li>
+          <li>관할 행정기관 처리 기간과 대략적인 일정</li>
+          <li>처리 난이도, 예상 비용 구간, 진행 방식</li>
+        </ul>
+      </div>
+
+      <!-- 서비스 영역 -->
+      <h2 class="section-title">행정사 서비스 영역 구분</h2>
+      <p class="section-sub">
+        사무소가 집중하는 업종과 업무를 선명하게 정리해 두면, 문의 품질이 달라집니다.
+      </p>
+
+      <div class="grid-half">
+        <div class="grid-box">
+          <div class="grid-title">창업 · 영업 인허가</div>
+          <div class="grid-desc">
+            음식점, 카페, 제과점, 숙박업, 학원, 병원, 체육시설 등  
+            업종별 인허가 조건과 준비 사항 안내.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">변경 신고 · 이전</div>
+          <div class="grid-desc">
+            사업장 이전, 면적 변경, 업종 추가 등 영업 내용 변동에 따른 인허가·신고 업무.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">행정 처분 대응</div>
+          <div class="grid-desc">
+            영업정지·과태료·시정명령 등 처분 통지 이후  
+            향후 일정, 소명 자료 준비 방향, 완화 가능성 점검.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">기업·공장 · 물류 인허가</div>
+          <div class="grid-desc">
+            공장 설립, 창고업, 물류센터 관련 인허가와 각종 인·검토 요청 대응.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">출입국 · 비자</div>
+          <div class="grid-desc">
+            외국인 근로자, 주재원, 전문인력 등 체류 자격 부여·변경, 연장 관련 자문.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">각종 신고·증명</div>
+          <div class="grid-desc">
+            내용증명, 사실확인서, 진정·탄원서, 민원 신청서 작성 지원.
+          </div>
+        </div>
+      </div>
+
+      <!-- 온라인 안내 포인트 -->
+      <div class="card">
+        <div class="card-tag">온라인 안내 시 강조하면 좋은 부분</div>
+        <ul>
+          <li>“어떤 상황에서 연락 주시면 좋은지”를 구체적으로 제시</li>
+          <li>업종·사업 단계별로 필요한 행정 처리 흐름을 한 화면에서 보여주기</li>
+          <li>기관별로 달라지는 기준이나 유의사항을 정리해 신뢰감 형성</li>
+          <li>단순 대행이 아닌, 리스크를 줄이기 위한 사전 점검 관점이라는 메시지</li>
+        </ul>
+      </div>
+
+      <!-- 상담 문의 섹션 -->
+      <section id="contact">
+        <h2 class="contact-title">행정사 업무 상담 · 인허가 문의</h2>
+        <p class="contact-sub">
+          준비 중인 업종, 현재 단계, 행정기관으로부터 받은 안내 문구가 있다면  
+          그대로 남겨주시면, 검토 후 연락 가능한 시간대에 맞춰 회신드립니다.
+        </p>
+
+        <div class="contact-card">
+          <form id="adminForm" onsubmit="handleAdministrativeSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">성함<span>*</span></label>
+              <input
+                id="name"
+                class="form-input"
+                type="text"
+                placeholder="성함 또는 담당자명을 입력해 주세요."
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">연락처<span>*</span></label>
+              <input
+                id="phone"
+                class="form-input"
+                type="tel"
+                placeholder="'-' 없이 숫자만 입력"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">업종 · 인허가 유형<span>*</span></label>
+              <input
+                id="permitType"
+                class="form-input"
+                type="text"
+                placeholder="예: 일반음식점 신규 / 학원 등록 / 공장 설립 / 물류센터 인허가 등"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
+              <textarea
+                id="message"
+                class="form-textarea"
+                placeholder="행정기관에서 받은 안내, 진행 중인 상황, 고민 중인 부분을 자유롭게 적어 주세요."
+                required
+              ></textarea>
+            </div>
+
+            <div class="terms-box">
+              <details class="terms-detail">
+                <summary class="terms-summary">
+                  개인정보 수집 및 이용 동의 (필수)
+                </summary>
+                <div class="terms-body">
+                  ① 수집 항목: 성명, 연락처, 업종·인허가 유형, 문의 내용<br />
+                  ② 수집 목적: 상담 회신 및 관련 안내<br />
+                  ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                </div>
+              </details>
+              <label class="terms-row">
+                <input
+                  type="checkbox"
+                  id="termsRequired"
+                  class="terms-checkbox"
+                />
+                <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit">문의 접수하기</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<!-- 하단 고정 상담바 -->
+<div class="bottom-bar">
+  <a
+    href="https://open.kakao.com/o/s0ogfV3h"
+    class="bottom-btn kakao"
+    target="_blank"
+    rel="noopener"
+  >카톡 상담</a>
+  <a href="#contact" class="bottom-btn ask">문의하기</a>
+  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+</div>
+
+<script>
+  function goHome() {
+    window.location.href = "/";
+  }
+
+  function handleAdministrativeSubmit(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const permitType = document.getElementById("permitType").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const termsRequired = document.getElementById("termsRequired").checked;
+
+    if (!termsRequired) {
+      alert("개인정보 수집 및 이용에 동의해 주세요.");
+      return;
+    }
+    if (!name || !phone || !permitType || !message) {
+      alert("필수 항목을 모두 입력해 주세요.");
+      return;
+    }
+
+    const smsBody =
+      `[H VIRAL 행정사 문의]\n` +
+      `성함: ${name}\n연락처: ${phone}\n업종·인허가 유형: ${permitType}\n` +
+      `내용: ${message}`;
+
+    const encoded = encodeURIComponent(smsBody);
+    const smsUrl = `sms:01032689899?body=${encoded}`;
+    window.location.href = smsUrl;
+
+    alert(
+      "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+      "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+    );
+
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
