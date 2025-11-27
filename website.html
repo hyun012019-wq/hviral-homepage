@@ -2,219 +2,63 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>홈페이지 제작 | H VIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", system-ui, sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(15,23,42,0.98);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 18px; border-bottom: 1px solid #1f2937;
-    }
-    .logo-area { display:flex; align-items:center; gap:10px; cursor:pointer; }
-    .logo-text { font-size:20px; font-weight:700; letter-spacing:0.12em; color:#60a5fa; }
-    .consult-btn { padding:8px 16px; border-radius:999px; background:#3b82f6; font-size:14px; font-weight:600; border:none; cursor:pointer; }
-    .page { max-width:1080px; margin:0 auto; padding:20px 16px 40px; }
-    .hero-card {
-      background: radial-gradient(circle at top left, #1d4ed8, #020617 60%);
-      border-radius:26px; padding:26px 22px;
-      border:1px solid rgba(148,163,184,0.4);
-      box-shadow:0 20px 40px rgba(15,23,42,0.8);
-      margin-bottom:28px;
-    }
-    .badge { display:inline-flex; align-items:center; gap:8px;
-      padding:6px 12px; border-radius:999px; border:1px solid rgba(148,163,184,0.6);
-      font-size:12px; margin-bottom:18px; background:rgba(15,23,42,0.5);
-    }
-    .badge-dot { width:8px; height:8px; border-radius:999px; background:#22c55e; }
-    .hero-title { font-size:24px; font-weight:800; margin-bottom:14px; }
-    .hero-sub { font-size:14px; color:#e5e7eb; margin-bottom:18px; }
-    .hero-note { font-size:13px; color:#eab308; font-weight:500; margin-top:4px; }
+  <title>홈페이지 제작｜H VIRAL</title>
 
-    .section { margin-bottom:26px; padding:20px 18px; border-radius:20px;
-      background:#020617; border:1px solid #1f2937; }
-    .section-title { font-size:18px; font-weight:700; margin-bottom:10px; }
-    .section p { font-size:14px; color:#d1d5db; }
-    ul { margin-top:8px; padding-left:18px; font-size:14px; color:#d1d5db; }
-    li { margin-bottom:4px; }
-    .image-card {
-      margin-top:14px; padding:16px 14px; border-radius:18px;
-      background:#020617; border:1px dashed #334155;
-      font-size:13px; color:#9ca3af;
+  <style>
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif; background:#020617; color:#e2e8f0; }
+
+    header {
+      position:sticky; top:0;
+      background:#0f172a; padding:16px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      z-index:900;
     }
-    .cta-row { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
-    .cta-btn { flex:1; min-width:140px; padding:12px 10px; border-radius:999px;
-      text-align:center; font-size:14px; font-weight:600; cursor:pointer; border:none; }
-    .cta-kakao { background:#facc15; color:#000; }
-    .cta-form { background:#3b82f6; color:#fff; }
-    @media (min-width:768px){
-      .hero-title{font-size:28px;}
-      .hero-sub{font-size:15px;}
+    .logo { font-size:18px; font-weight:700; color:#60a5fa; cursor:pointer; }
+
+    .section { padding:28px 20px; max-width:1080px; margin:auto; line-height:1.7; }
+    .title { font-size:24px; font-weight:800; margin-bottom:14px; color:#93c5fd; }
+
+    .bottom-bar {
+      position:fixed; bottom:0; left:0;
+      width:100%; display:flex; gap:8px;
+      padding:14px 12px;
+      background:rgba(15,23,42,0.95);
+      border-top:1px solid rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      z-index:9999;
     }
+    .bottom-bar a { flex:1; text-align:center; padding:14px 0; border-radius:10px; font-size:15px; font-weight:600; text-decoration:none; color:#fff; }
+    .kakao { background:#ffe812; color:#000; }
+    .ask { background:#1e293b; }
+    .call { background:#3b82f6; }
+
+    @media (min-width:1024px){ .bottom-bar{display:flex !important;} }
   </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo-area" onclick="goHome()">
-    <div class="logo-text">H VIRAL</div>
-  </div>
-  <button class="consult-btn" onclick="goConsult()">상담하기</button>
+  <div class="logo" onclick="location.href='/'">H VIRAL</div>
 </header>
 
-<main class="page">
-  <section class="hero-card">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      <span>소상공인·중소기업 홈페이지 제작</span>
-    </div>
-    <h1 class="hero-title">검색·광고·문의가 한 번에 이어지는 홈페이지를 만들겠습니다.</h1>
-    <p class="hero-sub">
-      단순 회사 소개가 아니라, <strong>문의가 실제로 들어오는 구조</strong>에 맞춰
-      페이지를 설계합니다. 대표님의 업종과 예산, 앞으로 운영 방식까지 고려해
-      필요한 구성만 정확히 담습니다.
-    </p>
-    <p class="hero-note">
-      “예쁘기만 한 홈페이지”가 아니라, <strong>문의·예약이 들어오는 홈페이지</strong>를 목표로 합니다.
-    </p>
-  </section>
+<div class="section">
+  <div class="title">홈페이지 제작</div>
 
-  <section class="section">
-    <h2 class="section-title">홈페이지 구성 예시</h2>
-    <ul>
-      <li>메인 페이지 – 업종/차별점/대표 서비스 요약</li>
-      <li>서비스·시술·상품 소개 페이지</li>
-      <li>후기·포트폴리오 영역</li>
-      <li>문의 폼·카카오·전화 동시 노출 영역</li>
-      <li>블로그·콘텐츠와 연결되는 구조(네이버·검색 연동)</li>
-    </ul>
-    <div class="image-card">
-      ※ 이 영역에는 “실제 매장/병원/회사 내부 실사 이미지”를 사용합니다.
-      (외관, 내부, 업무 모습 등 합법적인 실사 사진만 사용)
-    </div>
-  </section>
+  <p>
+    기업·소상공인의 목적에 맞춘 **맞춤형 반응형 홈페이지 제작 서비스**입니다.<br><br>
+    브랜드 톤, 색감, UX 흐름을 고려해 온라인 신뢰도를 높이고
+    실제 문의·계약 전환을 유도하는 구조로 설계합니다.
+  </p>
+</div>
 
-  <section class="section">
-    <h2 class="section-title">진행 방식</h2>
-    <ul>
-      <li>1차 상담 – 업종·예산·필요 페이지 수 확인</li>
-      <li>구성안·와이어프레임 공유</li>
-      <li>디자인·카피 반영 후 초안 전달</li>
-      <li>수정 1~2회 반영 후 최종 오픈</li>
-      <li>네이버·검색 연동 방법 안내</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <h2 class="section-title">문의 남기기</h2>
-    <p>
-      “업종 / 현재 홈페이지 유무 / 대략적인 예산”만 남겨 주셔도 됩니다.<br/>
-      확인 후, 담당자가 순서대로 연락을 드립니다.
-    </p>
-    <div class="cta-row">
-      <button class="cta-btn cta-kakao" onclick="openKakao()">카톡으로 상담하기</button>
-      <button class="cta-btn cta-form" onclick="goConsult()">문의 폼 작성하기</button>
-    </div>
-  </section>
-</main>
-
-<script>
-  function goHome(){ window.location.href = "/"; }
-  function goConsult(){ window.location.href = "/#contact"; }
-  function openKakao(){ window.location.href = "https://open.kakao.com/o/s0ogfV3h"; }
-</script>
-  <!-- ===== 하단 고정 상담바 시작 ===== -->
-<style>
-  .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(2, 6, 23, 0.96);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 18px;
-    backdrop-filter: blur(10px);
-    z-index: 9999;
-  }
-  .bottom-bar a {
-    flex: 1;
-    margin: 0 4px;
-    padding: 12px 0;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-  }
-  .kakao {
-    background: #facc15;
-    color: #000;
-  }
-  .ask {
-    background: #1e293b;
-  }
-  .call {
-    background: #3b82f6;
-  }
-  
-</style>
-
-/* ===== 하단 고정 상담바 공통 스타일 ===== */
-.bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 14px 12px;
-  background: rgba(15, 23, 42, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  z-index: 9999;
-}
-
-.bottom-bar a {
-  flex: 1;
-  text-align: center;
-  padding: 14px 0;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-}
-
-.bottom-bar a.kakao {
-  background: #facc15;
-  color: #000;
-}
-
-.bottom-bar a.ask {
-  background: #1e293b;
-}
-
-.bottom-bar a.call {
-  background: #3b82f6;
-}
-
-/* PC에서도 항상 보이도록 설정 */
-@media (min-width: 1024px) {
-  .bottom-bar {
-    display: flex !important;
-  }
-}
+<div class="bottom-bar">
+  <a href="https://open.kakao.com/o/s0ogfV3h" class="kakao">카톡 상담</a>
+  <a href="/#form" class="ask">문의하기</a>
+  <a href="tel:01032689899" class="call">전화 상담</a>
+</div>
 
 </body>
 </html>
