@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>가맹거래사 · 프랜차이즈 본사 온라인 문의 │ H VIRAL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+    }
+    a {text-decoration:none; color:inherit;}
+    .container {max-width:1080px; margin:0 auto; padding:0 20px 96px;}
+
+    /* 헤더 */
+    header {
+      position:sticky; top:0; z-index:9000;
+      background:#020617; border-bottom:1px solid rgba(148,163,184,0.3);
+    }
+    .header-inner {
+      max-width:1080px; margin:0 auto;
+      padding:14px 20px;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .menu-btn {
+      width:32px; height:32px; border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      display:flex; align-items:center; justify-content:center;
+      background:#020617; cursor:pointer;
+    }
+    .menu-btn span {
+      width:16px; height:2px; background:#e5e7eb; position:relative;
+    }
+    .menu-btn span:before,
+    .menu-btn span:after {
+      content:""; position:absolute; left:0;
+      width:16px; height:2px; background:#e5e7eb;
+    }
+    .menu-btn span:before {top:-5px;}
+    .menu-btn span:after {top:5px;}
+
+    .logo {font-size:22px; font-weight:800;}
+    .logo-sub {font-size:11px; color:#9ca3af;}
+
+    .consult-btn {
+      background:#2563eb; padding:9px 20px; border-radius:999px;
+      color:#fff; font-size:15px; font-weight:600;
+    }
+
+    /* 히어로 */
+    .hero {
+      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 58%);
+      padding:28px 0 32px;
+    }
+    .hero-card {
+      border-radius:28px; padding:28px 20px;
+      background:linear-gradient(135deg,#0b1f3a,#020617);
+      border:1px solid rgba(148,163,184,0.45);
+      box-shadow:0 22px 50px rgba(15,23,42,0.9);
+    }
+    .hero-badges {
+      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+    }
+    .hero-badge {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(96,165,250,0.6);
+      padding:4px 10px; border-radius:999px;
+      font-size:11px; display:inline-flex; align-items:center; gap:6px;
+    }
+    .hero-badge-dot {
+      width:8px; height:8px; border-radius:999px; background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+    }
+    .hero-title {font-size:24px; font-weight:800; margin-bottom:12px; line-height:1.45;}
+    .hero-desc {font-size:14px; color:#cbd5f5;}
+
+    .section-title {margin:34px 0 10px; font-size:20px; font-weight:800;}
+    .section-sub {font-size:13px; color:#9ca3af; margin-bottom:14px;}
+
+    .card {
+      background:#020617; border-radius:20px;
+      border:1px solid rgba(148,163,184,0.55);
+      padding:18px 16px; margin-bottom:14px; font-size:13px;
+    }
+    .card-tag {
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.6);
+      padding:3px 9px; border-radius:999px;
+      font-size:11px; display:inline-block; margin-bottom:6px;
+    }
+    .card ul {padding-left:14px; margin-top:6px;}
+    .card li {margin-bottom:5px; list-style:disc;}
+
+    /* 2단 그리드 */
+    .grid-half {display:grid; gap:10px;}
+    @media (min-width:640px) {
+      .grid-half {grid-template-columns:repeat(2,1fr);}
+    }
+    .grid-box {
+      background:#020617; border-radius:14px; border:1px solid rgba(55,65,81,0.9);
+      padding:12px; font-size:12px;
+    }
+    .grid-title {font-weight:600; margin-bottom:4px;}
+    .grid-desc {font-size:12px; color:#9ca3af;}
+
+    /* 문의 섹션 */
+    #contact {margin:40px 0 20px;}
+    .contact-title {font-size:20px; font-weight:800; margin-bottom:10px;}
+    .contact-sub {font-size:13px; color:#9ca3af; margin-bottom:16px;}
+    .contact-card {
+      border-radius:20px; border:1px solid rgba(148,163,184,0.55);
+      background:#020617; padding:18px 16px;
+    }
+
+    .form-group {margin-bottom:12px; display:flex; flex-direction:column; gap:6px;}
+    .form-label {font-size:12px; color:#9ca3af;}
+    .form-label span {color:#f97316;}
+    .form-input, .form-textarea {
+      padding:9px 10px; font-size:13px; border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7); background:#020617; color:#fff;
+    }
+    .form-textarea {resize:vertical; min-height:80px;}
+
+    /* 약관 */
+    .terms-box {
+      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
+      padding:10px; margin-top:6px; font-size:11px; color:#9ca3af;
+    }
+    .terms-detail {margin-bottom:4px;}
+    .terms-summary {
+      list-style:none; cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:12px; color:#e5e7eb;
+    }
+    .terms-summary::-webkit-details-marker {display:none;}
+    .terms-summary::after {
+      content:"자세히 보기";
+      font-size:11px; color:#9ca3af; margin-left:8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content:"접기";
+    }
+    .terms-body {
+      margin-top:6px; font-size:11px; color:#9ca3af; line-height:1.5;
+    }
+    .terms-row {
+      display:flex; gap:8px; align-items:center;
+      margin-top:6px; font-size:12px;
+    }
+    .terms-checkbox {width:14px; height:14px; accent-color:#2563eb;}
+
+    .form-submit {
+      width:100%; background:#2563eb; color:#fff; font-size:15px;
+      padding:12px 0; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+      font-weight:700;
+    }
+
+    /* 하단 고정 상담바 */
+    .bottom-bar {
+      position:fixed; bottom:0; left:0; width:100%; z-index:9600;
+      background:#020617; padding:14px 10px;
+      border-top:1px solid rgba(148,163,184,0.45);
+      display:flex; gap:8px;
+    }
+    .bottom-btn {
+      flex:1; border-radius:999px; padding:13px 0;
+      text-align:center; font-weight:600; font-size:15px;
+    }
+    .bottom-btn.kakao {background:#facc15; color:#000;}
+    .bottom-btn.ask {background:#111827; color:#fff; border:1px solid rgba(148,163,184,0.6);}
+    .bottom-btn.call {background:#2563eb; color:#fff;}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <button class="menu-btn" onclick="goHome()" aria-label="홈으로 이동">
+      <span></span>
+    </button>
+
+    <a href="/" class="logo-wrap">
+      <div class="logo">H VIRAL</div>
+      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+    </a>
+
+    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            가맹거래사 · 프랜차이즈 본사 전용 디지털 브랜딩
+          </div>
+          <div class="hero-badge">
+            정보공개서·가맹계약 흐름에 맞춘 온라인 문의 세팅
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          가맹점 모집 설명, 본사 지원 체계,  
+          브랜드 이미지를 한 화면으로 정리합니다.
+        </h1>
+
+        <p class="hero-desc">
+          가맹본부와 가맹거래사는 브랜드 가치·수익 모델·지원 체계를  
+          이해하기 쉽게 전달하는 것이 핵심입니다.  
+          상담 단계에서 실제로 다루는 내용을 중심으로,  
+          온라인 안내와 문의 접수를 함께 설계합니다.
+        </p>
+      </div>
+
+      <!-- 섹션 1: 가맹본부 · 가맹거래사가 원하는 온라인 설명 -->
+      <h2 class="section-title">가맹 희망 점주가 먼저 확인하는 포인트</h2>
+      <p class="section-sub">
+        “이 브랜드로 창업하면 어떤 그림인지”를 온라인에서 어느 정도까지 이해할 수 있어야 상담 품질이 올라갑니다.
+      </p>
+
+      <div class="card">
+        <div class="card-tag">브랜드 포지셔닝</div>
+        <ul>
+          <li>동일 업종 대비 브랜드가 어떤 위치에 있는지 (가격대·타깃·운영 콘셉트 등)</li>
+          <li>권장 입지, 점포 크기, 필수 인력 구성, 운영 난이도</li>
+          <li>주요 메뉴·서비스 구성과 재구매를 만드는 핵심 요소</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">가맹점 수익 모델 커뮤니케이션</div>
+        <ul>
+          <li>초기 투자 항목(인테리어, 설비, 보증금, 교육 등)을 묶어서 설명하는 방식</li>
+          <li>매출 시나리오별 손익 예시를 어떻게 안내할지에 대한 기준</li>
+          <li>본사 로열티·물류 마진·필수 상품 구성에 대한 기본 안내</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">본사 지원 체계</div>
+        <ul>
+          <li>오픈 준비 단계(입지 검토, 상권 분석, 점포 개발, 인허가 지원 등)의 역할 구분</li>
+          <li>오픈 이후 마케팅·매장 운영·교육·리포트 체계에 대한 설명</li>
+          <li>장기적으로 본사가 추구하는 브랜드 방향성과 성장 계획</li>
+        </ul>
+      </div>
+
+      <!-- 섹션 2: 가맹거래사 · 컨설팅 관점 -->
+      <h2 class="section-title">가맹거래사 · 컨설팅사 관점에서 필요한 화면</h2>
+      <p class="section-sub">
+        법적 절차와 상업적 설명 사이의 균형을 잡을 수 있도록, 온라인 안내를 조정합니다.
+      </p>
+
+      <div class="grid-half">
+        <div class="grid-box">
+          <div class="grid-title">1. 정보공개서·계약 흐름 정렬</div>
+          <div class="grid-desc">
+            정보공개서, 가맹계약서, 주요 설명자료의 핵심 항목을  
+            온라인 안내 내용과 자연스럽게 맞춰 줍니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">2. 과장된 표현 최소화</div>
+          <div class="grid-desc">
+            특정 수익을 단정하는 표현은 최대한 배제하고,  
+            브랜드 방향·지원 범위·운영 방식 중심으로 설명을 구성합니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">3. 점주 유형별 안내</div>
+          <div class="grid-desc">
+            기존 자영업자, 직장인 창업, 다점포 운영자 등  
+            유형별로 고려해야 할 포인트를 별도로 정리합니다.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">4. 장기 브랜드 관점 공유</div>
+          <div class="grid-desc">
+            단기 오픈 수만이 아니라, 장기적으로 어떤 브랜드를 만들어 가는지  
+            본사 전략을 간결하게 전달하는 문장을 세팅합니다.
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">H VIRAL이 제안하는 화면 구성 예시</div>
+        <ul>
+          <li>브랜드 한눈에 보기: 핵심 콘셉트·권장 입지·권장 점포 크기·대표 메뉴/서비스</li>
+          <li>가맹 개설 개요: 투자 항목 묶음 설명, 예상 준비 기간, 오픈 준비 단계별 체크포인트</li>
+          <li>본사 지원: 교육, 운영 매뉴얼, 마케팅·디지털 지원, 데이터 리포트 등</li>
+          <li>문의 안내: “현재 어떤 단계에 계신지” 기준으로 상담 전제 조건을 정리한 접수 폼</li>
+        </ul>
+      </div>
+
+      <!-- 섹션 3: 이런 브랜드/본사에 적합 -->
+      <h2 class="section-title">이런 프랜차이즈 본사 · 가맹거래사에 적합합니다</h2>
+      <p class="section-sub">
+        가맹점 수를 급격히 늘리기보다는,  
+        브랜드 이미지를 지키면서 안정적으로 확장하고 싶은 팀을 위한 방식입니다.
+      </p>
+
+      <div class="grid-half">
+        <div class="grid-box">
+          <div class="grid-title">브랜드 체계가 잡혀 있는 본사</div>
+          <div class="grid-desc">
+            운영 매뉴얼·인테리어 콘셉트·교육 체계가 어느 정도 갖춰져 있고,  
+            이를 디지털 화면에 옮기고 싶은 팀.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">가맹거래사·전문 컨설팅사와 협업 중인 팀</div>
+          <div class="grid-desc">
+            법적 절차와 브랜드 커뮤니케이션을 함께 관리하는 팀으로,  
+            온라인 안내 문구까지 일관되게 설계하고 싶은 경우.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">디지털 채널로 가맹 문의를 모으고 싶은 팀</div>
+          <div class="grid-desc">
+            오프라인 박람회·지인 소개·전화 문의 위주에서,  
+            온라인 기반 문의를 본격적으로 늘리고 싶은 경우.
+          </div>
+        </div>
+        <div class="grid-box">
+          <div class="grid-title">장기적인 브랜드 관리가 중요한 업종</div>
+          <div class="grid-desc">
+            본사 이미지와 점주 만족도가  
+            향후 브랜드 가치에 직접 연결되는 업종.
+          </div>
+        </div>
+      </div>
+
+      <!-- 상담 문의 섹션 -->
+      <section id="contact">
+        <h2 class="contact-title">가맹거래사 · 프랜차이즈 본사 디지털 문의 세팅 상담</h2>
+        <p class="contact-sub">
+          브랜드·업종, 현재 가맹 현황, 고민하고 계신 지점을 적어 주시면  
+          온라인 문의 화면을 어떻게 정리하는 것이 좋을지 먼저 제안드립니다.
+        </p>
+
+        <div class="contact-card">
+          <form id="franchiseForm" onsubmit="handleFranchiseSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">성함<span>*</span></label>
+              <input
+                id="name"
+                class="form-input"
+                type="text"
+                placeholder="성함 또는 담당자명을 입력해 주세요."
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">연락처<span>*</span></label>
+              <input
+                id="phone"
+                class="form-input"
+                type="tel"
+                placeholder="'-' 없이 숫자만 입력"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">브랜드 · 업종<span>*</span></label>
+              <input
+                id="brand"
+                class="form-input"
+                type="text"
+                placeholder="예: ○○치킨, ○○카페, ○○피트니스 등"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
+              <textarea
+                id="message"
+                class="form-textarea"
+                placeholder="예: 본사 초기 단계 / 가맹점 ○개 운영 중 / 정보공개서 정비 / 디지털 문의 세팅 필요 등 자세히 적어 주세요."
+                required
+              ></textarea>
+            </div>
+
+            <div class="terms-box">
+              <details class="terms-detail">
+                <summary class="terms-summary">
+                  개인정보 수집 및 이용 동의 (필수)
+                </summary>
+                <div class="terms-body">
+                  ① 수집 항목: 성명, 연락처, 브랜드·업종, 문의 내용<br />
+                  ② 수집 목적: 상담 회신 및 관련 안내<br />
+                  ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                </div>
+              </details>
+              <label class="terms-row">
+                <input
+                  type="checkbox"
+                  id="termsRequired"
+                  class="terms-checkbox"
+                />
+                <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="form-submit">문의 접수하기</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </section>
+</main>
+
+<!-- 하단 고정 상담바 -->
+<div class="bottom-bar">
+  <a
+    href="https://open.kakao.com/o/s0ogfV3h"
+    class="bottom-btn kakao"
+    target="_blank"
+    rel="noopener"
+  >카톡 상담</a>
+  <a href="#contact" class="bottom-btn ask">문의하기</a>
+  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+</div>
+
+<script>
+  function goHome() {
+    window.location.href = "/";
+  }
+
+  function handleFranchiseSubmit(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const brand = document.getElementById("brand").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const termsRequired = document.getElementById("termsRequired").checked;
+
+    if (!termsRequired) {
+      alert("개인정보 수집 및 이용에 동의해 주세요.");
+      return;
+    }
+    if (!name || !phone || !brand || !message) {
+      alert("필수 항목을 모두 입력해 주세요.");
+      return;
+    }
+
+    const smsBody =
+      `[H VIRAL 가맹·프랜차이즈 문의]\n` +
+      `성함: ${name}\n연락처: ${phone}\n브랜드·업종: ${brand}\n` +
+      `내용: ${message}`;
+
+    const encoded = encodeURIComponent(smsBody);
+    const smsUrl = `sms:01032689899?body=${encoded}`;
+    window.location.href = smsUrl;
+
+    alert(
+      "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+      "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+    );
+
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
