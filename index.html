@@ -6,6 +6,7 @@
   <title>H VIRAL｜온라인 설계·브랜딩 플랫폼</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
       background: #020617;
@@ -43,10 +44,10 @@
       font-size: 14px;
     }
 
-    /* 슬라이드 (상단 좁은 영역만 자동 전환) */
+    /* 슬라이드 */
     .slider {
       width: 100%;
-      height: 220px;
+      height: 230px;
       overflow: hidden;
       position: relative;
       background: #020617;
@@ -71,13 +72,18 @@
       position: relative;
       overflow: hidden;
     }
+    /* 트로피 배경 */
     .slide-1::after {
-      content: "🏆";
+      content: "";
       position: absolute;
-      right: -8px;
-      top: -16px;
-      font-size: 130px;
-      opacity: 0.08;
+      right: -20px;
+      top: -20px;
+      width: 160px;
+      height: 160px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/2583/2583249.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.12;
       pointer-events: none;
     }
     .slide-2 { background: radial-gradient(circle at top, #0ea5e9, #020617); }
@@ -107,7 +113,7 @@
       100% { margin-left: -200%; }
     }
 
-    /* 에듀윌 스타일 서비스 숏컷 */
+    /* 상단 서비스 아이콘 */
     .service-shortcuts {
       display: flex;
       gap: 16px;
@@ -121,6 +127,7 @@
       font-size: 12px;
       color: #e5e7eb;
       flex-shrink: 0;
+      cursor: pointer;
     }
     .service-icon {
       width: 54px;
@@ -349,10 +356,10 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
-  <div class="logo">H VIRAL</div>
+  <a href="#top" class="logo">H VIRAL</a>
   <a class="contact-header-btn" href="https://open.kakao.com/o/s0ogfV3h" target="_blank">상담하기</a>
 </header>
 
@@ -389,21 +396,21 @@
   </div>
 </div>
 
-<!-- 에듀윌 스타일 상단 숏컷 -->
+<!-- 상단 숏컷 -->
 <div class="service-shortcuts">
-  <div class="service-item">
+  <div class="service-item" data-target="industries">
     <div class="service-icon">📐</div>
     온라인 설계
   </div>
-  <div class="service-item">
+  <div class="service-item" data-target="solution">
     <div class="service-icon">💻</div>
     홈페이지 제작
   </div>
-  <div class="service-item">
+  <div class="service-item" data-target="solution">
     <div class="service-icon">📱</div>
     앱·예약 시스템
   </div>
-  <div class="service-item">
+  <div class="service-item" data-target="class">
     <div class="service-icon">🎯</div>
     전략·강의
   </div>
@@ -435,7 +442,7 @@
     <div class="item" data-industry="소아과">소아과</div>
 
     <!-- 소상공인 일반 -->
-    <div class="item" data-industry="이미용실">이미용실</div>
+    <div class="item" data-industry="미용실">미용실</div>
     <div class="item" data-industry="교육/학원">교육/학원</div>
     <div class="item" data-industry="카페">카페</div>
     <div class="item" data-industry="음식점">음식점</div>
@@ -465,7 +472,7 @@
 </section>
 
 <!-- 솔루션 + 강의 안내 -->
-<section class="section">
+<section class="section" id="solution">
   <div class="solution-box">
     <div class="solution-title">H VIRAL SOLUTION</div>
 
@@ -586,8 +593,8 @@
       title: "소아과 · 소아청소년과 디지털 구조",
       text: "보호자 관점의 정보·후기·예약 동선을 설계합니다."
     },
-    "이미용실": {
-      title: "이미용실 · 헤어샵 온라인 브랜딩",
+    "미용실": {
+      title: "미용실 · 헤어샵 온라인 브랜딩",
       text: "스타일 사진, 가격, 후기, 예약 문의까지 한 번에 보이는 구조를 설계합니다."
     },
     "교육/학원": {
@@ -643,26 +650,28 @@
   const items = document.querySelectorAll('.item');
   const landingTitle = document.getElementById('landingTitle');
   const landingText  = document.getElementById('landingText');
+  const landingBox   = document.getElementById('landingBox');
 
+  function updateLanding(ind) {
+    items.forEach(i => i.classList.toggle('active', i.dataset.industry === ind));
+
+    if (industryLanding[ind]) {
+      landingTitle.textContent = industryLanding[ind].title;
+      landingText.textContent  = industryLanding[ind].text;
+    } else {
+      landingTitle.textContent = ind + " 디지털 설계";
+      landingText.textContent  =
+        "해당 업종의 고객 여정과 검색 패턴을 분석해, 문의와 계약으로 이어지는 디지털 인프라를 설계합니다.";
+    }
+
+    landingBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // 업종 카드 클릭
   items.forEach(item => {
     item.addEventListener('click', () => {
       const ind = item.dataset.industry;
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-
-      if (industryLanding[ind]) {
-        landingTitle.textContent = industryLanding[ind].title;
-        landingText.textContent  = industryLanding[ind].text;
-      } else {
-        landingTitle.textContent = ind + " 디지털 설계";
-        landingText.textContent  =
-          "해당 업종의 고객 여정과 검색 패턴을 분석해, 문의와 계약으로 이어지는 디지털 인프라를 설계합니다.";
-      }
-
-      document.getElementById('landingBox').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      updateLanding(ind);
     });
   });
 
@@ -674,6 +683,47 @@
       const txt = item.textContent.toLowerCase();
       item.style.display = txt.includes(v) ? 'block' : 'none';
     });
+  });
+
+  // 상단 서비스 아이콘 클릭 → 섹션 이동
+  const serviceItems = document.querySelectorAll('.service-item');
+  serviceItems.forEach(si => {
+    const targetId = si.dataset.target;
+    if (!targetId) return;
+    si.addEventListener('click', () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // 문의 접수 버튼 동작 (간단 피드백용)
+  const submitBtn   = document.querySelector('.btn-submit');
+  const nameInput   = document.querySelector('input[placeholder="이름"]');
+  const typeInput   = document.querySelector('input[placeholder="업종"]');
+  const areaInput   = document.querySelector('input[placeholder="지역"]');
+  const messageArea = document.querySelector('textarea');
+
+  submitBtn.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    const msg  = messageArea.value.trim();
+
+    if (!name || !msg) {
+      alert("이름과 문의 내용을 입력해 주세요.");
+      return;
+    }
+
+    alert("문의가 정상적으로 접수되었습니다.\n\n현재는 사전 론칭 페이지로, 남겨주신 내용을 바탕으로 개별 안내를 드릴 예정입니다.");
+
+    // 폼 초기화
+    nameInput.value   = "";
+    typeInput.value   = "";
+    areaInput.value   = "";
+    messageArea.value = "";
+
+    // 상단으로 살짝 올려주기 (선택)
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
