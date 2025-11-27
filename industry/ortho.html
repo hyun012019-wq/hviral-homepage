@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>정형외과 전문 디지털 전환 | H VIRAL</title>
+
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif; margin:0; background:#020617; color:#e5e7eb; }
+  a { color:inherit; text-decoration:none; }
+
+  header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px; background:#0f172a; position:sticky; top:0; z-index:50;
+  }
+  .menu-btn { font-size:28px; cursor:pointer; }
+  .side-menu {
+    width:300px; background:#0c1220; height:100vh;
+    position:fixed; left:-300px; top:0; transition:0.3s;
+    padding:24px; overflow-y:auto; z-index:60;
+  }
+  .side-menu.open { left:0; }
+  details summary { cursor:pointer; padding:10px 0; font-weight:600; }
+
+  .section {
+    padding:24px;
+    background:#0f172a;
+    border-radius:18px;
+    margin:20px;
+  }
+
+  .title { font-size:22px; font-weight:700; margin-bottom:12px; }
+  .subtitle { font-size:15px; opacity:0.8; margin-bottom:14px; }
+
+  /* 문의 폼 */
+  .form-box { padding:20px; background:#1e293b; border-radius:14px; margin-top:20px; }
+  .input {
+    width:100%; padding:14px; border-radius:10px;
+    border:none; margin-bottom:12px; background:#0f172a; color:#e5e7eb;
+  }
+  .checkbox-area { display:flex; align-items:flex-start; gap:10px; font-size:14px; margin:12px 0; }
+  .submit-btn {
+    width:100%; padding:15px; background:#3b82f6;
+    border:none; border-radius:10px; font-weight:700; font-size:16px;
+    color:white; cursor:pointer; margin-top:10px;
+  }
+
+  /* 하단 상담 바 */
+  .bottom-bar {
+    position:fixed; bottom:0; left:0; width:100%;
+    display:flex; justify-content:space-around;
+    background:#0f172a; padding:12px 0; border-top:1px solid #1e293b;
+    z-index:80;
+  }
+  .bottom-btn {
+    color:white; font-size:15px; font-weight:600;
+    background:#1e293b; padding:10px 16px; border-radius:10px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="menu-btn" onclick="openMenu()">≡</div>
+  <a href="/index.html" style="font-size:20px;font-weight:700;">H VIRAL</a>
+  <a href="#inquiry" style="background:#3b82f6;padding:8px 16px;border-radius:8px;font-weight:600;">상담하기</a>
+</header>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu">
+  <h2 style="margin-top:0;">H VIRAL</h2>
+  <p>디지털 마케팅 설계·브랜딩 플랫폼</p>
+
+  <details>
+    <summary>의료 · 병원</summary>
+    <p><a href="/industry/skin.html">피부과</a></p>
+    <p><a href="/industry/dental.html">치과</a></p>
+    <p><a href="/industry/ortho.html">정형외과</a></p>
+    <p><a href="/industry/ent.html">이비인후과</a></p>
+    <p><a href="/industry/internal.html">내과</a></p>
+    <p><a href="/industry/hani.html">한의원</a></p>
+    <p><a href="/industry/obgyn.html">산부인과</a></p>
+    <p><a href="/industry/eye.html">안과</a></p>
+  </details>
+
+  <!-- 여기 이하 대표님 전체 업종 구조 동일 -->
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="section">
+  <div class="title">정형외과 전문 디지털 전환</div>
+  <div class="subtitle">
+    고객은 증상 기반으로 정보를 탐색하고, 영상 장비·의료진 전문 분야·시술 가능 여부를 가장 먼저 확인합니다.  
+    정형외과는 진료–진단–재활 동선이 명확해야 문의 전환이 안정적으로 발생합니다.
+  </div>
+
+  <img src="/industry/img/ortho_main.jpg" style="width:100%;border-radius:14px;margin-bottom:18px;">
+
+  <h3>1) 증상 기반 정보 배치</h3>
+  <p style="opacity:0.85; line-height:1.6;">
+    고객은 병원명을 모른 채 ‘어깨 통증 / 무릎 연골 / 척추 협착증’처럼 부위와 증상으로 탐색합니다.  
+    진료 가능 여부를 가장 먼저 확인할 수 있도록 구성합니다.
+  </p>
+
+  <h3 style="margin-top:20px;">2) 진단 장비 및 치료 흐름</h3>
+  <p style="opacity:0.85;">
+    X-ray · 초음파 · C-arm 보유 여부와 도수·운동 치료 동선을 명확히 보여주는 것이 문의 연결률을 크게 올립니다.
+  </p>
+
+  <h3 style="margin-top:20px;">3) 의료진 전문영역 명확화</h3>
+  <ul style="opacity:0.85; line-height:1.7;">
+    <li>어깨·팔꿈치</li>
+    <li>무릎·고관절</li>
+    <li>척추</li>
+    <li>스포츠 손상</li>
+    <li>외상·골절 케이스</li>
+  </ul>
+
+  <h3 style="margin-top:20px;">4) 예약 이전 단계에서 고객이 판단하는 정보</h3>
+  <ul style="opacity:0.85; line-height:1.7;">
+    <li>당일 진료 가능 여부</li>
+    <li>대기시간 안내</li>
+    <li>재활 프로그램 운영 여부</li>
+    <li>주차·내원 동선</li>
+    <li>의료진 시간표</li>
+  </ul>
+
+</div>
+
+<!-- 문의 영역 -->
+<div class="section" id="inquiry">
+  <div class="title">상담 요청</div>
+  <div class="subtitle">정확한 안내를 위해 기본 정보를 입력해주세요.</div>
+
+  <div class="form-box">
+    <input class="input" type="text" placeholder="성명" id="name" />
+    <input class="input" type="text" placeholder="연락처" id="phone" />
+
+    <details style="margin:10px 0;">
+      <summary style="cursor:pointer; font-weight:600;">약관 보기</summary>
+      <p style="font-size:13px; opacity:0.7; line-height:1.6; margin-top:10px;">
+        상담 요청 목적 외의 용도로 개인정보는 사용되지 않습니다.  
+        정보는 즉시 담당자에게 전달되며 별도 저장되지 않습니다.
+      </p>
+    </details>
+
+    <div class="checkbox-area">
+      <input type="checkbox" id="agree" />
+      <label for="agree">약관에 동의합니다.</label>
+    </div>
+
+    <button class="submit-btn" onclick="submitForm()">문의 접수</button>
+  </div>
+</div>
+
+<!-- 하단 상담바 -->
+<div class="bottom-bar">
+  <a href="https://open.kakao.com/o/s0ogfV3h" class="bottom-btn">카톡 상담</a>
+  <a href="#inquiry" class="bottom-btn">문의하기</a>
+  <a href="tel:01032689899" class="bottom-btn">전화 상담</a>
+</div>
+
+<script>
+function openMenu() {
+  document.getElementById('sideMenu').classList.add('open');
+}
+document.body.onclick = function(e){
+  if(!e.target.closest('.side-menu') && !e.target.closest('.menu-btn')){
+    document.getElementById('sideMenu').classList.remove('open');
+  }
+};
+
+function submitForm(){
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const agree = document.getElementById('agree').checked;
+
+  if(!name || !phone){
+    alert("성명과 연락처를 입력해주세요.");
+    return;
+  }
+  if(!agree){
+    alert("약관 동의가 필요합니다.");
+    return;
+  }
+
+  // 문자 전송용 URL (대표님 번호 그대로 사용)
+  window.location.href = `sms:01032689899?body=[정형외과 문의]%0A이름:${name}%0A연락처:${phone}`;
+}
+</script>
+
+</body>
+</html>
