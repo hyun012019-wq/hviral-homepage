@@ -1275,31 +1275,60 @@
   z-index: 99999;
 }
 
-.bottom-btn {
-  flex: 1;
-  text-align: center;
-  padding: 14px 0;
-  margin: 0 4px;
-  border-radius: 12px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-}
+/* ===== 하단 고정 상담바 ===== */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      padding: 14px 12px;
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+    }
 
-.kakao {
-  background: #facc15;
-  color: #000;
-}
+    .bottom-bar a {
+      flex: 1;
+      text-align: center;
+      padding: 14px 0;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+    }
 
-.ask {
-  background: #1e293b;
-}
+    .bottom-bar a.kakao {
+      background: #ffe812;
+      color: #000;
+    }
 
-.call {
-  background: #3b82f6;
-}
-</style>
-<!-- ===== 하단 고정 상담바 끝 ===== -->
+    .bottom-bar a.ask {
+      background: #1e293b;
+    }
+
+    .bottom-bar a.call {
+      background: #3b82f6;
+    }
+
+    /* PC에서도 항상 보이도록 */
+    @media (min-width: 1024px) {
+      .bottom-bar {
+        display: flex !important;
+      }
+    }
+  </style>
+
+  <!-- ===== 하단 고정 상담바 ===== -->
+  <div class="bottom-bar">
+    <a href="https://open.kakao.com/o/s0ogfV3h" class="kakao">카톡 상담</a>
+    <a href="#contact" class="ask">문의하기</a>
+    <a href="tel:01032689899" class="call">전화 상담</a>
+  </div>
+  <!-- ===== 하단 고정 상담바 끝 ===== -->
 
 </body>
 </html>
