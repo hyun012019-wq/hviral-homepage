@@ -169,11 +169,52 @@
   
 </style>
 
-<div class="bottom-bar">
-  <a href="https://open.kakao.com/o/s0ogfV3h" class="kakao">카톡 상담</a>
-  <a href="/#contact" class="ask">문의하기</a>
-  <a href="tel:01032689899" class="call">전화 상담</a>
-</div>
-<!-- ===== 하단 고정 상담바 끝 ===== -->
+/* ===== 하단 고정 상담바 공통 스타일 ===== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 12px;
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+}
+
+.bottom-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+}
+
+.bottom-bar a.kakao {
+  background: #facc15;
+  color: #000;
+}
+
+.bottom-bar a.ask {
+  background: #1e293b;
+}
+
+.bottom-bar a.call {
+  background: #3b82f6;
+}
+
+/* PC에서도 항상 보이도록 설정 */
+@media (min-width: 1024px) {
+  .bottom-bar {
+    display: flex !important;
+  }
+}
+
 </body>
 </html>
