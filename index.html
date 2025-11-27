@@ -66,7 +66,20 @@
       justify-content: center;
       padding: 0 20px;
     }
-    .slide-1 { background: radial-gradient(circle at top, #1d4ed8, #020617); }
+    .slide-1 {
+      background: radial-gradient(circle at top, #1d4ed8, #020617);
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-1::after {
+      content: "🏆";
+      position: absolute;
+      right: -8px;
+      top: -16px;
+      font-size: 130px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
     .slide-2 { background: radial-gradient(circle at top, #0ea5e9, #020617); }
     .slide-3 { background: radial-gradient(circle at top, #22c55e, #020617); }
 
@@ -94,6 +107,34 @@
       100% { margin-left: -200%; }
     }
 
+    /* 에듀윌 스타일 서비스 숏컷 */
+    .service-shortcuts {
+      display: flex;
+      gap: 16px;
+      padding: 14px 22px 6px;
+      overflow-x: auto;
+      background: #020617;
+    }
+    .service-item {
+      min-width: 80px;
+      text-align: center;
+      font-size: 12px;
+      color: #e5e7eb;
+      flex-shrink: 0;
+    }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 6px;
+      font-size: 22px;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+
     /* 공통 섹션 */
     .section { padding: 32px 22px; max-width: 1080px; margin: 0 auto; }
     .title {
@@ -106,7 +147,7 @@
     /* 업종 검색 */
     .search-wrap {
       max-width: 1080px;
-      margin: -20px auto 8px;
+      margin: -10px auto 8px;
       padding: 0 22px;
     }
     .search-label {
@@ -303,6 +344,7 @@
       .grid { grid-template-columns: repeat(6, 1fr); }
       .slide-title { font-size: 28px; }
       .slide-sub { font-size: 15px; max-width: 520px; }
+      .service-shortcuts { justify-content: flex-start; }
     }
   </style>
 </head>
@@ -319,7 +361,7 @@
   <div class="slides">
     <div class="slide slide-1">
       <div class="slide-inner">
-        <div class="slide-title">에이치바이럴, 2025 최다문의 도전</div>
+        <div class="slide-title">에이치바이럴, 2025 최다문의 달성!</div>
         <div class="slide-sub">
           전문적 B2B 마케팅·소상공인 온라인 설계 파트너.
           업종별 디지털 인프라를 한 번에 구축합니다.
@@ -344,6 +386,26 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- 에듀윌 스타일 상단 숏컷 -->
+<div class="service-shortcuts">
+  <div class="service-item">
+    <div class="service-icon">📐</div>
+    온라인 설계
+  </div>
+  <div class="service-item">
+    <div class="service-icon">💻</div>
+    홈페이지 제작
+  </div>
+  <div class="service-item">
+    <div class="service-icon">📱</div>
+    앱·예약 시스템
+  </div>
+  <div class="service-item">
+    <div class="service-icon">🎯</div>
+    전략·강의
   </div>
 </div>
 
