@@ -1254,5 +1254,52 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 </script>
+  <!-- ===== 하단 고정 상담바 (전 페이지 공통용) ===== -->
+<div class="bottom-bar">
+  <a href="https://open.kakao.com/o/s0ogfV3h" class="bottom-btn kakao">카톡 상담</a>
+  <a href="/contact.html" class="bottom-btn ask">문의하기</a>
+  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+</div>
+
+<style>
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #0f172a;
+  padding: 12px 10px;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+  z-index: 99999;
+}
+
+.bottom-btn {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0;
+  margin: 0 4px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.kakao {
+  background: #facc15;
+  color: #000;
+}
+
+.ask {
+  background: #1e293b;
+}
+
+.call {
+  background: #3b82f6;
+}
+</style>
+<!-- ===== 하단 고정 상담바 끝 ===== -->
+
 </body>
 </html>
