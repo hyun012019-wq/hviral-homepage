@@ -2,471 +2,1208 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>H VIRAL | 에이치바이럴 디지털 마케팅 파트너</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H VIRAL │ 디지털 마케팅 설계·브랜딩 플랫폼</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6;
-      padding-bottom:80px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a { color:inherit; text-decoration:none; }
-    button { font-family:inherit; }
-    .container { max-width:1080px; margin:0 auto; padding:0 16px; }
-
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
+    }
     /* 헤더 */
     header {
-      position:sticky; top:0; z-index:50;
-      background:rgba(15,23,42,.96);
-      border-bottom:1px solid rgba(148,163,184,.3);
-      backdrop-filter:blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
     .header-inner {
-      height:60px;
-      display:flex; align-items:center; justify-content:space-between;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .header-left { display:flex; align-items:center; gap:10px; }
-    .burger {
-      width:36px; height:36px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.7);
-      background:#020617;
-      display:flex; align-items:center; justify-content:center;
-      font-size:18px; cursor:pointer;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .logo-main { font-size:18px; font-weight:700; letter-spacing:.16em; }
-    .logo-sub { font-size:11px; color:#9ca3af; }
-    .header-cta {
-      border:none; border-radius:999px;
-      padding:7px 16px;
-      background:#2563eb; color:#fff;
-      font-size:13px; font-weight:600; cursor:pointer;
-      white-space:nowrap;
+    .menu-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: #020617;
     }
-
+    .menu-btn span {
+      display: block;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+    }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
+    .logo-wrap {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .consult-btn {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+    }
     /* 히어로 */
     .hero {
-      padding:24px 0 26px;
-      background:radial-gradient(circle at top,#1e3a8a,#020617 55%);
-      border-bottom:1px solid rgba(37,99,235,.4);
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
     }
-    .hero-box {
-      border-radius:20px;
-      background:radial-gradient(circle at top left,#0f172a,#020617);
-      border:1px solid rgba(148,163,184,.4);
-      padding:18px 16px 20px;
+    .hero-card {
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px 28px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
     }
-    .hero-pill {
-      display:inline-flex; align-items:center; gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid rgba(52,211,153,.6);
-      background:rgba(15,23,42,.95);
-      font-size:11px; color:#a7f3d0;
-      margin-bottom:8px;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
+      margin-bottom: 18px;
     }
-    .hero-pill-dot {
-      width:8px; height:8px; border-radius:999px; background:#22c55e;
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
-    .hero-title { font-size:22px; font-weight:800; letter-spacing:-.04em; margin-bottom:8px; }
-    .hero-sub { font-size:13px; color:#cbd5f5; margin-bottom:12px; }
-    .hero-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }
-    .hero-tag {
-      font-size:11px; border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      padding:3px 8px;
+    .hero-title {
+      font-size: 24px;
+      line-height: 1.4;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
-    .hero-foot { font-size:11px; color:#9ca3af; }
-
-    /* 섹션 공통 */
-    .section { padding:22px 0; }
-    .section-title { font-size:17px; font-weight:700; margin-bottom:4px; }
-    .section-sub { font-size:12px; color:#9ca3af; margin-bottom:10px; }
-
-    /* 서비스 */
-    .service-grid {
-      display:grid; gap:10px;
-      grid-template-columns:repeat(2,minmax(0,1fr));
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 20px;
     }
-    @media(max-width:640px){
-      .service-grid { grid-template-columns:1fr; }
+    .hero-desc strong {
+      color: #e5e7eb;
+      font-weight: 600;
     }
-    .service-card {
-      border-radius:14px;
-      background:#020617;
-      border:1px solid rgba(75,85,99,.95);
-      padding:12px 10px 13px;
-      font-size:12px;
+    /* 서비스 4개 */
+    .service-box {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
     }
-    .service-label { font-size:11px; color:#9ca3af; margin-bottom:4px; }
-    .service-name { font-weight:700; margin-bottom:4px; }
-    .service-desc { font-size:11px; color:#9ca3af; }
-
-    /* 업종 */
-    .industry-box {
-      border-radius:18px;
-      background:#020617;
-      border:1px solid rgba(75,85,99,.95);
-      padding:14px 12px 14px;
-      font-size:12px;
+    .service {
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top, rgba(30, 64, 175, 0.55), #020617);
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease;
     }
-    .industry-search {
-      width:100%;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.7);
-      background:#020617;
-      color:#e5e7eb;
-      padding:7px 12px;
-      font-size:13px;
-      margin-bottom:10px;
+    .service:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+      border-color: #60a5fa;
     }
-    .industry-group { margin-bottom:10px; }
-    .industry-group-title { font-size:12px; font-weight:700; margin-bottom:4px; }
-    .industry-list { display:flex; flex-wrap:wrap; gap:6px; }
-    .industry-item {
-      padding:3px 7px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      font-size:11px;
-      background:#020617;
-      cursor:default;
+    .service-label {
+      font-size: 11px;
+      color: #93c5fd;
+      letter-spacing: 0.08em;
     }
-    .industry-item.hidden { display:none; }
-
-    /* 문의 */
+    .service-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .service-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-bottom: 2px;
+      background: rgba(15, 23, 42, 0.9);
+    }
+    /* 업종 검색 */
+    .search-wrap {
+      margin-top: 8px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 18px 16px 18px;
+    }
+    .search-title {
+      font-size: 13px;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .search-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+    .search-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .search-input {
+      flex: 1;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 14px;
+    }
+    .search-input::placeholder {
+      color: #6b7280;
+    }
+    .search-btn {
+      width: 70px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 0;
+      text-align: center;
+    }
+    /* 본문 섹션 제목 */
+    .section-title {
+      margin: 32px 0 14px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .section-tagline {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+    /* 카드형 블록 */
+    .pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 11px;
+      color: #e5e7eb;
+      margin-bottom: 10px;
+    }
     .card {
-      border-radius:18px;
-      background:#020617;
-      border:1px solid rgba(75,85,99,.95);
-      padding:14px 12px 16px;
-      font-size:12px;
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 18px 16px;
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 16px;
     }
-    .card-title { font-size:15px; font-weight:700; margin-bottom:4px; }
-    .card-sub { font-size:12px; color:#9ca3af; margin-bottom:8px; }
-    .form-grid { display:flex; flex-direction:column; gap:8px; }
-    .form-field { display:flex; flex-direction:column; gap:3px; }
-    .form-field label span { color:#60a5fa; margin-left:2px; }
-    .form-input, .form-select, .form-textarea {
-      border-radius:9px;
-      border:1px solid rgba(148,163,184,.7);
-      background:#020617;
-      color:#e5e7eb;
-      padding:6px 8px;
-      font-size:12px;
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
     }
-    .form-textarea { min-height:70px; resize:vertical; }
-    .form-helper { font-size:11px; color:#6b7280; }
-    .form-checks {
-      margin-top:4px;
-      display:flex; flex-direction:column; gap:3px;
-      font-size:11px; color:#9ca3af;
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
     }
-    .form-checks label { display:flex; align-items:flex-start; gap:5px; }
-    .form-checks input { margin-top:1px; }
-    .submit-btn {
-      margin-top:8px;
-      width:100%;
-      border-radius:999px;
-      border:none;
-      padding:8px 0;
-      background:linear-gradient(to right,#2563eb,#1d4ed8);
-      color:#fff; font-size:13px; font-weight:600;
-      cursor:pointer;
+    /* 프로세스 그리드 */
+    .process-grid {
+      margin-top: 10px;
+      display: grid;
+      gap: 10px;
     }
-
-    /* 하단 상담바 */
+    @media (min-width: 640px) {
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .process-step {
+      border-radius: 16px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .process-step-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .process-step-desc {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    /* 문의 섹션 */
+    #contact {
+      margin: 36px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+      margin-left: 2px;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 13px;
+      padding: 9px 10px;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #6b7280;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    .terms-box {
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      padding: 10px 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 12px;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    .terms-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
+    .form-submit {
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 11px 0;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+    .contact-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+    .contact-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+    }
+    .contact-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
+    /* 사이드 메뉴(전체 메뉴) */
+    #sideBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
+    }
+    #sideBackdrop.show {
+      display: block;
+    }
+    #sideMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
+    }
+    #sideMenu.open {
+      transform: translateX(0);
+    }
+    .side-menu-header {
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .side-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
+    .side-scroll {
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
+    }
+    .side-section-title {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    details.side-group {
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
+    }
+    .side-group summary {
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .side-group summary::-webkit-details-marker {
+      display: none;
+    }
+    .side-group-label {
+      font-weight: 600;
+    }
+    .side-group-arrow {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+    }
+    /* 하단 고정 상담바 */
     .bottom-bar {
-      position:fixed; left:0; right:0; bottom:0;
-      padding:7px 12px 9px;
-      background:radial-gradient(circle at top,#020617,#020617f2);
-      border-top:1px solid rgba(31,41,55,.9);
-      display:flex; gap:6px;
-      z-index:60;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 14px 10px 14px;
+      z-index: 9700;
     }
     .bottom-btn {
-      flex:1;
-      border-radius:999px;
-      border:none;
-      padding:8px 0;
-      font-size:13px; font-weight:600;
-      cursor:pointer; white-space:nowrap;
-      text-align:center;
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
     }
-    .bottom-btn.kakao { background:#facc15; color:#111827; }
-    .bottom-btn.inquiry {
-      background:#020617; color:#e5e7eb;
-      border:1px solid rgba(148,163,184,.7);
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
     }
-    .bottom-btn.call { background:#2563eb; color:#fff; }
-
-    @media(min-width:900px){
-      body{padding-bottom:90px;}
-      .hero-title{font-size:26px;}
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 36px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .hero-card {
+        padding: 34px 32px 30px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
+
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      </div>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
+
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
+
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
+
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·원상복구</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
   <!-- 헤더 -->
   <header>
-    <div class="container header-inner">
+    <div class="header-inner">
       <div class="header-left">
-        <button class="burger" type="button">☰</button>
-        <div>
-          <div class="logo-main">H VIRAL</div>
-          <div class="logo-sub">디지털 인프라 · 마케팅 설계 파트너</div>
-        </div>
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
       </div>
-      <button class="header-cta" type="button" onclick="scrollToContact()">상담하기</button>
+      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn" target="_blank" rel="noopener">
+        상담하기
+      </a>
     </div>
   </header>
 
-  <!-- 히어로 -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-box">
-        <div class="hero-pill">
-          <div class="hero-pill-dot"></div>
-          소상공인·중소기업 디지털 세일즈 인프라
-        </div>
-        <h1 class="hero-title">
-          광고·홈페이지·앱까지<br>한 번에 설계하는 세일즈 허브
-        </h1>
-        <p class="hero-sub">
-          병원·학원·음식점·카페·헬스장·전문직/B2B까지, 업종별로 다른 고객 여정을
-          디지털 채널 구조에 맞춰 설계합니다.
-        </p>
-        <div class="hero-tags">
-          <span class="hero-tag">네이버 검색 중심 브랜딩</span>
-          <span class="hero-tag">업종별 디지털 인프라 설계</span>
-          <span class="hero-tag">문의·예약 중심 구조</span>
-        </div>
-        <p class="hero-foot">
-          * 한 번 만들어진 인프라가 장기적으로 문의를 만드는 구조에 초점을 둡니다.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- 메인 -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            2025 마케팅 전문 파트너
+          </div>
+          <h1 class="hero-title">에이치바이럴, 2025 최다 문의 달성!</h1>
+          <p class="hero-desc">
+            소상공인·전문직·B2B 기업을 위한 디지털 마케팅 전략·브랜딩 시스템을
+            업종별로 설계합니다. <strong>검색–콘텐츠–문의까지 이어지는
+            디지털 인프라</strong>를 한 번에 정리해 드립니다.
+          </p>
 
-  <!-- 서비스 -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">SERVICE 01 · 04</h2>
-      <p class="section-sub">
-        설계 · 구축 · 위탁 운영 · 리포트까지, 디지털 인프라 전체를 한 흐름으로 봅니다.
-      </p>
-      <div class="service-grid">
-        <div class="service-card">
-          <div class="service-label">SERVICE 01</div>
-          <div class="service-name">업종별 디지털 인프라 설계</div>
-          <div class="service-desc">
-            병원·학원·음식점·카페·헬스장·전문직/B2B 등 업종별 고객 여정에 맞는
-            페이지 구조와 채널 구성을 설계합니다.
+          <!-- 서비스 4개 -->
+          <div class="service-box">
+            <a href="/digital.html" class="service">
+              <div class="service-icon">설</div>
+              <div class="service-label">SERVICE 01</div>
+              <div class="service-name">디지털 마케팅 설계</div>
+            </a>
+            <a href="/website.html" class="service">
+              <div class="service-icon">홈</div>
+              <div class="service-label">SERVICE 02</div>
+              <div class="service-name">홈페이지 제작</div>
+            </a>
+            <a href="/app.html" class="service">
+              <div class="service-icon">앱</div>
+              <div class="service-label">SERVICE 03</div>
+              <div class="service-name">앱·예약 시스템</div>
+            </a>
+            <a href="/lecture.html" class="service">
+              <div class="service-icon">강</div>
+              <div class="service-label">SERVICE 04</div>
+              <div class="service-name">마케팅 강의 신청</div>
+            </a>
           </div>
-        </div>
-        <div class="service-card">
-          <div class="service-label">SERVICE 02</div>
-          <div class="service-name">블로그·웹·앱 구조 구축</div>
-          <div class="service-desc">
-            네이버 블로그, 홈페이지, 예약/문의 시스템을 하나의 세일즈 흐름으로
-            연결하는 구조를 구축합니다.
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-label">SERVICE 03</div>
-          <div class="service-name">위탁 운영 및 콘텐츠 운영</div>
-          <div class="service-desc">
-            다계정·장기 운영을 전제로, 업종과 단계에 맞는 콘텐츠 인프라를 위탁 운영합니다.
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-label">SERVICE 04</div>
-          <div class="service-name">리포트 및 구조 개선</div>
-          <div class="service-desc">
-            단순 성과 수치가 아닌, 어느 구간에서 이탈이 발생하는지 기준으로 구조를 개선합니다.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 업종 -->
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">업종별 디지털 인프라 설계</h2>
-      <p class="section-sub">
-        대표님 업종과 상황에 맞게, 필요한 페이지만 최소 단위로 제안드립니다.
-      </p>
-      <div class="industry-box">
-        <input
-          type="text"
-          class="industry-search"
-          placeholder="업종 이름을 검색해 보세요. 예: 내과, 카페, 입시학원, 세무사"
-          oninput="filterIndustries(this.value)"
-        />
-
-        <div class="industry-group">
-          <div class="industry-group-title">의료 · 병원</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="피부과">피부과</span>
-            <span class="industry-item" data-name="치과">치과</span>
-            <span class="industry-item" data-name="정형외과">정형외과</span>
-            <span class="industry-item" data-name="내과">내과</span>
-            <span class="industry-item" data-name="이비인후과">이비인후과</span>
-            <span class="industry-item" data-name="한의원">한의원</span>
-            <span class="industry-item" data-name="산부인과">산부인과</span>
-            <span class="industry-item" data-name="안과">안과</span>
-            <span class="industry-item" data-name="소아과">소아과</span>
-          </div>
-        </div>
-
-        <div class="industry-group">
-          <div class="industry-group-title">학원 · 교육</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="입시학원">입시학원</span>
-            <span class="industry-item" data-name="보습학원">보습학원</span>
-            <span class="industry-item" data-name="영어학원">영어학원</span>
-            <span class="industry-item" data-name="예체능학원">예체능학원</span>
-          </div>
-        </div>
-
-        <div class="industry-group">
-          <div class="industry-group-title">음식점 · 요식업</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="한식당">한식당</span>
-            <span class="industry-item" data-name="일식당">일식당</span>
-            <span class="industry-item" data-name="중식당">중식당</span>
-            <span class="industry-item" data-name="양식당">양식당</span>
-            <span class="industry-item" data-name="치킨전문점">치킨전문점</span>
-          </div>
-        </div>
-
-        <div class="industry-group">
-          <div class="industry-group-title">카페 · 디저트</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="카페">카페</span>
-            <span class="industry-item" data-name="디저트카페">디저트카페</span>
-          </div>
-        </div>
-
-        <div class="industry-group">
-          <div class="industry-group-title">뷰티 · 헬스</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="헬스장">헬스장</span>
-            <span class="industry-item" data-name="헤어샵">헤어샵</span>
-            <span class="industry-item" data-name="네일샵">네일샵</span>
-          </div>
-        </div>
-
-        <div class="industry-group">
-          <div class="industry-group-title">전문직 · B2B</div>
-          <div class="industry-list">
-            <span class="industry-item" data-name="세무사 회계사">세무사·회계사</span>
-            <span class="industry-item" data-name="법무사">법무사</span>
-            <span class="industry-item" data-name="변호사">변호사</span>
-            <span class="industry-item" data-name="행정사">행정사</span>
-            <span class="industry-item" data-name="가맹거래사">가맹거래사</span>
-            <span class="industry-item" data-name="공인중개사">공인중개사</span>
-            <span class="industry-item" data-name="프랜차이즈 본사">프랜차이즈 본사</span>
-            <span class="industry-item" data-name="유통업">유통업(B2B)</span>
-            <span class="industry-item" data-name="제조업">제조업</span>
-            <span class="industry-item" data-name="도매업">도매업</span>
-          </div>
-        </div>
-
-        <p style="font-size:11px;color:#6b7280;margin-top:4px;">
-          * 업종별 고객 여정을 기준으로, 채널·페이지 구성을 함께 설계합니다.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 문의 -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="card">
-        <div class="card-title">디지털 인프라 설계 · 운영 문의</div>
-        <p class="card-sub">
-          업종, 현재 상황, 필요하신 방향을 남겨주시면 구조 관점에서 정리해 드립니다.
-        </p>
-        <form class="form-grid" onsubmit="handleSubmit(event)">
-          <div class="form-field">
-            <label>업체명 / 상호명 <span>*</span></label>
-            <input type="text" class="form-input" required placeholder="예: 에이치바이럴 / ○○의원 / ○○입시학원" />
-          </div>
-          <div class="form-field">
-            <label>업종 / 서비스 영역 <span>*</span></label>
-            <input type="text" class="form-input" required placeholder="예: 내과 / 입시·보습학원 / 한식당 / 카페 / 세무사" />
-          </div>
-          <div class="form-field">
-            <label>연락처(휴대폰) <span>*</span></label>
-            <input type="tel" class="form-input" required placeholder="숫자만 입력해주세요." />
-            <div class="form-helper">
-              남겨주신 번호는 상담 안내 외 다른 용도로 사용하지 않습니다.
+          <!-- 업종 검색 -->
+          <div class="search-wrap">
+            <div class="search-title">업종별 디지털 인프라 설계</div>
+            <div class="search-sub">
+              업종/서비스를 입력하면 해당 업종 전용 페이지로 이동합니다.
+              (예: 피부과, 헬스장, 카페, 공인중개사)
+            </div>
+            <div class="search-row">
+              <input
+                id="industryInput"
+                type="text"
+                class="search-input"
+                placeholder="업종/서비스를 입력해 주세요."
+              />
+              <button class="search-btn" type="button" onclick="goIndustry()">
+                이동
+              </button>
             </div>
           </div>
-          <div class="form-field">
-            <label>현재 온라인 상황</label>
-            <select class="form-select">
-              <option value="">선택해주세요</option>
-              <option>홈페이지 없음, 처음 시작 단계</option>
-              <option>홈페이지는 있으나 문의가 거의 없음</option>
-              <option>블로그·SNS만 운영 중</option>
-              <option>광고 경험은 있으나 구조를 다시 보고 싶음</option>
-              <option>기타 (아래 내용에 적어주세요)</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label>상담 받고 싶은 내용</label>
-            <textarea class="form-textarea" placeholder="현재 매출/가동률, 온라인 채널 운영 현황, 해결하고 싶은 고민 등을 자유롭게 적어주세요."></textarea>
-          </div>
-          <div class="form-checks">
-            <label>
-              <input type="checkbox" required />
-              <span>[필수] 개인정보 수집·이용에 동의합니다. (문의 응대 및 상담 진행을 위한 최소 정보만 사용하며, 목적 달성 후 관련 법령에 따라 안전하게 보관·파기합니다.)</span>
-            </label>
-            <label>
-              <input type="checkbox" />
-              <span>[선택] 향후 디지털 인프라 관련 안내, 콘텐츠, 리포트 제공에 동의합니다.</span>
-            </label>
-          </div>
-          <button type="submit" class="submit-btn">문의 남기기</button>
-        </form>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- 하단 상담바 -->
+        <!-- 아래 본문: 서비스 설명 -->
+        <h2 class="section-title">문의가 쌓이는 브랜딩·마케팅 시스템</h2>
+        <p class="section-tagline">
+          채널 하나가 아니라, 검색·콘텐츠·예약·상담이 함께 작동하도록 설계합니다.
+        </p>
+
+        <div class="pill">H VIRAL 서비스 개요</div>
+
+        <div class="card">
+          <strong>1. 검색 기반 퍼널 설계</strong><br />
+          고객이 브랜드를 인지하고 탐색한 뒤 상담 문의로 이어지는 여정을
+          업종별 데이터에 맞춰 설계합니다.
+          <ul>
+            <li>업종·지역·경쟁사 검색 패턴 분석</li>
+            <li>문의 전환에 맞춘 키워드·콘텐츠 전략</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>2. 실사 중심 페이지·콘텐츠 제작</strong><br />
+          실제 매장·병원·사무실 환경과 상담 현장을 담은 실사 기반 콘텐츠로
+          신뢰성과 브랜드 이미지를 함께 설계합니다.
+          <ul>
+            <li>업종 특성을 반영한 페이지 구성·카피라이팅</li>
+            <li>고객이 궁금해하는 포인트를 묶은 FAQ·사례 중심 구성</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>3. 디지털 인프라 일원화</strong><br />
+          홈페이지, 예약 시스템, 상담 채널을 한 방향으로 정렬해
+          소상공인·전문직·B2B 기업의 온라인 문의 효율을 끌어올립니다.
+        </div>
+
+        <!-- 진행 방식 -->
+        <div class="card">
+          <strong>진행 방식</strong>
+          <div class="process-grid">
+            <div class="process-step">
+              <div class="process-step-title">STEP 1. 현재 상황 진단</div>
+              <div class="process-step-desc">
+                업종·지역·고객군·경쟁사를 기준으로 현재 온라인 인입 흐름을 진단합니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 2. 전략 방향 설정</div>
+              <div class="process-step-desc">
+                브랜드 포지셔닝, 채널 역할, 핵심 메시지를 정리해 디지털 전략 방향을 잡습니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 3. 페이지·콘텐츠 설계</div>
+              <div class="process-step-desc">
+                업종별 실사 자료와 데이터 인사이트를 기반으로 페이지 구성과 카피를 설계합니다.
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="process-step-title">STEP 4. 모니터링·고도화</div>
+              <div class="process-step-desc">
+                문의량·상담 전환률·유입 키워드를 꾸준히 모니터링하며 개선 포인트를 제안합니다.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 문의 섹션 -->
+        <section id="contact">
+          <h2 class="contact-title">프로젝트 상담·문의 접수</h2>
+          <p class="contact-sub">
+            업종·현재 상황·월 목표 문의 수를 간단히 남겨주시면,
+            가능한 방향과 예상 그림을 먼저 설명드립니다.
+          </p>
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName" class="form-label"
+                      >성명<span>*</span></label
+                    >
+                    <input
+                      id="contactName"
+                      type="text"
+                      class="form-input"
+                      placeholder="담당자명을 입력해 주세요."
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone" class="form-label"
+                      >연락처<span>*</span></label
+                    >
+                    <input
+                      id="contactPhone"
+                      type="tel"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만 입력"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactIndustry" class="form-label"
+                      >업종·서비스<span>*</span></label
+                    >
+                    <input
+                      id="contactIndustry"
+                      type="text"
+                      class="form-input"
+                      placeholder="예: 피부과, 헬스장, 공인중개사, 제조업 등"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label"
+                    >현재 상황 / 문의 내용<span>*</span></label
+                  >
+                  <textarea
+                    id="contactMessage"
+                    class="form-textarea"
+                    placeholder="현재 상황과 궁금한 점을 자유롭게 남겨 주세요."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 업종·서비스, 문의 내용<br />
+                    ② 수집 목적: 프로젝트 상담, 견적 안내 및 관련 문의 회신<br />
+                    ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                    ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
+                  <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail" style="margin-top:4px;">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    서비스 안내, 세미나·자료 발송 등 마케팅 정보 제공을 위해
+                    카카오톡/문자로 연락을 드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다. (선택)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <p class="contact-note">
+              * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
+            </p>
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/s0ogfV3h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >카톡으로 바로 상담</a>
+              <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
-    <button class="bottom-btn kakao" type="button" onclick="openKakao()">카톡 상담</button>
-    <button class="bottom-btn inquiry" type="button" onclick="scrollToContact()">문의하기</button>
-    <a class="bottom-btn call" href="tel:01032689899">전화 상담</a>
+    <a
+      href="https://open.kakao.com/o/s0ogfV3h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >카톡 상담</a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
   </div>
 
   <script>
-    function scrollToContact(){
-      const el=document.getElementById("contact");
-      if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+    // 사이드 메뉴 열고 닫기
+    function toggleMenu(open) {
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if (open) {
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     }
-    function openKakao(){
-      window.location.href="https://open.kakao.com/o/s0ogfV3h";
-    }
-    function handleSubmit(e){
-      e.preventDefault();
-      alert("문의가 임시로 접수되었습니다. 실제 전송 기능은 이메일/백엔드 연동 후 적용 가능합니다.");
-    }
-    function filterIndustries(value){
-      const term=value.trim().toLowerCase();
-      const items=document.querySelectorAll(".industry-item");
-      if(!term){
-        items.forEach(i=>i.classList.remove("hidden"));
+
+    // 대제목(업종 그룹) 클릭 시, 펼치면서 그 위치로 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+
+    // 업종 검색 매핑
+    const industryMap = [
+      { key: "피부", url: "/industry/skin.html" },
+      { key: "피부과", url: "/industry/skin.html" },
+      { key: "치과", url: "/industry/dental.html" },
+      { key: "성형", url: "/industry/plastic.html" },
+      { key: "성형외과", url: "/industry/plastic.html" },
+      { key: "내과", url: "/industry/internal.html" },
+      { key: "산부인과", url: "/industry/obgyn.html" },
+      { key: "소아", url: "/industry/pediatrics.html" },
+      { key: "소아과", url: "/industry/pediatrics.html" },
+      { key: "이비인후과", url: "/industry/ent.html" },
+      { key: "안과", url: "/industry/eye.html" },
+      { key: "한의원", url: "/industry/oriental.html" },
+
+      { key: "헬스", url: "/industry/gym.html" },
+      { key: "헬스장", url: "/industry/gym.html" },
+      { key: "pt", url: "/industry/pt.html" },
+      { key: "피티", url: "/industry/pt.html" },
+      { key: "요가", url: "/industry/yoga.html" },
+      { key: "필라테스", url: "/industry/pilates.html" },
+      { key: "미용실", url: "/industry/beauty.html" },
+      { key: "네일", url: "/industry/nail.html" },
+      { key: "도장", url: "/industry/dojang.html" },
+      { key: "태권도", url: "/industry/dojang.html" },
+      { key: "합기도", url: "/industry/dojang.html" },
+      { key: "체육관", url: "/industry/dojang.html" },
+
+      { key: "카페", url: "/industry/cafe.html" },
+      { key: "디저트", url: "/industry/dessert.html" },
+      { key: "한식", url: "/industry/korean.html" },
+      { key: "일식", url: "/industry/japanese.html" },
+      { key: "중식", url: "/industry/chinese.html" },
+      { key: "양식", url: "/industry/western.html" },
+      { key: "치킨", url: "/industry/chicken.html" },
+      { key: "아이스크림", url: "/industry/icecream.html" },
+
+      { key: "학원", url: "/industry/academy.html" },
+      { key: "입시", url: "/industry/academy.html" },
+      { key: "보습", url: "/industry/academy.html" },
+      { key: "어학", url: "/industry/lang.html" },
+      { key: "외국어", url: "/industry/lang.html" },
+      { key: "예체능", url: "/industry/art.html" },
+      { key: "취미", url: "/industry/art.html" },
+      { key: "공부방", url: "/industry/studyroom.html" },
+
+      { key: "카센터", url: "/industry/car.html" },
+      { key: "자동차정비", url: "/industry/car.html" },
+      { key: "튜닝", url: "/industry/cartuning.html" },
+      { key: "썬팅", url: "/industry/cartuning.html" },
+      { key: "청소", url: "/industry/cleaning.html" },
+      { key: "이사", url: "/industry/cleaning.html" },
+      { key: "철거", url: "/industry/demolition.html" },
+      { key: "원상복구", url: "/industry/demolition.html" },
+      { key: "플라워", url: "/industry/flower.html" },
+      { key: "꽃집", url: "/industry/flower.html" },
+      { key: "사진관", url: "/industry/photo.html" },
+      { key: "펫샵", url: "/industry/pet.html" },
+
+      { key: "세무", url: "/industry/tax.html" },
+      { key: "회계", url: "/industry/tax.html" },
+      { key: "세무사", url: "/industry/tax.html" },
+      { key: "회계사", url: "/industry/tax.html" },
+      { key: "변호사", url: "/industry/lawyer.html" },
+      { key: "법무사", url: "/industry/lawoffice.html" },
+      { key: "행정사", url: "/industry/administrative.html" },
+      { key: "공인중개사", url: "/industry/realestate.html" },
+      { key: "부동산", url: "/industry/realestate.html" },
+      { key: "가맹거래사", url: "/industry/franchise.html" },
+      { key: "프랜차이즈", url: "/industry/franchise.html" },
+      { key: "제조업", url: "/industry/manufacture.html" },
+      { key: "유통업", url: "/industry/distribution.html" },
+      { key: "b2b", url: "/industry/b2b.html" },
+      { key: "컨설팅", url: "/industry/b2b.html" }
+    ];
+
+    function goIndustry() {
+      const input = document.getElementById("industryInput");
+      if (!input) return;
+      const value = (input.value || "").trim().toLowerCase();
+      if (!value) {
+        alert("업종 또는 서비스를 입력해 주세요.");
+        input.focus();
         return;
       }
-      items.forEach(i=>{
-        const name=(i.dataset.name||"").toLowerCase();
-        i.classList.toggle("hidden",!name.includes(term));
+      const found = industryMap.find((item) => value.includes(item.key));
+      if (found) {
+        window.location.href = found.url;
+      } else {
+        alert("준비된 업종 페이지가 아닙니다. 상담으로 문의주세요.");
+      }
+    }
+
+    // 엔터 키로도 이동
+    const industryInput = document.getElementById("industryInput");
+    if (industryInput) {
+      industryInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          goIndustry();
+        }
       });
+    }
+
+    // 문의 폼 제출 처리: 문자앱으로 내용 넘기기
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const industry = document.getElementById("contactIndustry").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+      const termsRequired = document.getElementById("termsRequired").checked;
+
+      if (!termsRequired) {
+        alert("개인정보 수집 및 이용에 동의해 주세요.");
+        return;
+      }
+      if (!name || !phone || !industry || !message) {
+        alert("필수 항목을 모두 입력해 주세요.");
+        return;
+      }
+
+      const smsBody =
+        `[H VIRAL 홈페이지 문의]\n` +
+        `성명: ${name}\n연락처: ${phone}\n업종·서비스: ${industry}\n` +
+        `내용: ${message}`;
+
+      const encoded = encodeURIComponent(smsBody);
+      const smsUrl = `sms:01032689899?body=${encoded}`;
+      window.location.href = smsUrl;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
     }
   </script>
 </body>
 </html>
+
