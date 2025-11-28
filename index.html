@@ -2,44 +2,81 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<title>H VIRAL | 디지털 마케팅 플랫폼</title>
+<title>H VIRAL | 에이치바이럴 소상공인·중소기업 디지털 마케팅 파트너</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;background:#020617;color:#e5e7eb;line-height:1.6;padding-bottom:80px;}
 a{text-decoration:none;color:inherit;}
 ul{list-style:none;}
-.container{max-width:1080px;margin:0 auto;padding:0 20px;}
+button{font-family:inherit;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+/* 헤더 */
 header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(148,163,184,.2);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
-.logo{display:flex;flex-direction:column;gap:2px;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.header-left{display:flex;align-items:center;gap:10px;}
+.burger{width:36px;height:36px;border-radius:999px;border:1px solid rgba(148,163,184,.6);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;background:#020617;cursor:pointer;}
+.burger span{width:16px;height:2px;border-radius:999px;background:#e5e7eb;}
+.logo{display:flex;flex-direction:column;gap:3px;}
 .logo-main{font-weight:700;letter-spacing:.16em;font-size:18px;}
 .logo-sub{font-size:11px;color:#9ca3af;}
 .header-cta{padding:8px 18px;border-radius:999px;background:#2563eb;font-size:13px;font-weight:600;border:none;cursor:pointer;white-space:nowrap;}
-.hero{background:radial-gradient(circle at top,#1e3a8a,#020617 55%);padding:24px 0 32px;}
-.hero-card{border-radius:24px;background:radial-gradient(circle at top left,#0f172a,#020617);padding:22px 20px 24px;border:1px solid rgba(148,163,184,.35);box-shadow:0 20px 40px rgba(15,23,42,.8);position:relative;overflow:hidden;}
-.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(15,23,42,.9);border:1px solid rgba(52,211,153,.5);font-size:11px;color:#a7f3d0;margin-bottom:10px;}
+/* 햄버거 메뉴 오버레이 */
+.nav-overlay{position:fixed;inset:0;background:rgba(15,23,42,.98);z-index:40;display:none;flex-direction:column;}
+.nav-overlay.active{display:flex;}
+.nav-header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(55,65,81,.8);}
+.nav-close{width:32px;height:32px;border-radius:999px;border:1px solid rgba(148,163,184,.6);display:flex;align-items:center;justify-content:center;background:#020617;cursor:pointer;font-size:18px;}
+.nav-list{padding:16px 20px;display:flex;flex-direction:column;gap:12px;font-size:15px;}
+.nav-item{padding:10px 0;border-bottom:1px solid rgba(31,41,55,.9);cursor:pointer;}
+.nav-item span{font-weight:600;}
+.nav-item small{display:block;font-size:11px;color:#9ca3af;margin-top:2px;}
+/* 히어로 */
+.hero{background:radial-gradient(circle at top,#1e3a8a,#020617 55%);padding:28px 0 32px;border-bottom:1px solid rgba(30,64,175,.4);}
+.hero-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch;}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;}}
+.hero-main{border-radius:24px;background:radial-gradient(circle at top left,#0f172a,#020617);padding:22px 20px 24px;border:1px solid rgba(148,163,184,.35);box-shadow:0 20px 40px rgba(15,23,42,.8);position:relative;overflow:hidden;}
+.hero-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(15,23,42,.9);border:1px solid rgba(52,211,153,.55);font-size:11px;color:#a7f3d0;margin-bottom:10px;}
 .hero-pill-dot{width:8px;height:8px;border-radius:999px;background:#22c55e;}
-.hero-title{font-size:22px;font-weight:800;letter-spacing:-.04em;margin-bottom:8px;}
+.hero-slide{display:none;}
+.hero-slide.active{display:block;}
+.hero-title{font-size:26px;font-weight:800;letter-spacing:-.04em;margin-bottom:8px;}
 .hero-subtitle{font-size:13px;color:#cbd5f5;margin-bottom:16px;}
 .hero-bullets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
 .hero-badge{padding:4px 9px;border-radius:999px;border:1px solid rgba(148,163,184,.6);font-size:11px;}
 .hero-footer-text{font-size:11px;color:#9ca3af;}
-.hero-slide{display:none;}
-.hero-slide.active{display:block;}
 .hero-dots{display:flex;gap:6px;margin-top:14px;justify-content:center;}
 .hero-dot{width:6px;height:6px;border-radius:999px;background:rgba(148,163,184,.4);}
 .hero-dot.active{width:16px;background:#2563eb;}
+.hero-side{border-radius:24px;border:1px solid rgba(148,163,184,.4);background:radial-gradient(circle at top right,#1e293b,#020617);padding:18px 18px 20px;display:flex;flex-direction:column;gap:14px;}
+.hero-side-title{font-size:14px;font-weight:700;}
+.hero-side-list{font-size:11px;color:#9ca3af;display:flex;flex-direction:column;gap:6px;}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.5);font-size:10px;color:#e5e7eb;}
+.hero-tag b{font-weight:700;color:#60a5fa;font-size:11px;}
+/* 공통 섹션 */
 .section{padding:28px 0;}
-.section-title{font-size:17px;font-weight:700;margin-bottom:6px;}
-.section-subtitle{font-size:12px;color:#9ca3af;margin-bottom:14px;}
+.section-header{margin-bottom:16px;}
+.section-eyebrow{font-size:11px;color:#60a5fa;margin-bottom:4px;}
+.section-title{font-size:18px;font-weight:700;margin-bottom:4px;}
+.section-subtitle{font-size:12px;color:#9ca3af;}
+/* 서비스 카드 */
+.service-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+@media(max-width:1024px){.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:600px){.service-grid{grid-template-columns:1fr;}}
+.service-card{border-radius:18px;background:#020617;border:1px solid rgba(75,85,99,.95);padding:14px 12px 16px;display:flex;flex-direction:column;gap:6px;font-size:12px;}
+.service-label{font-size:11px;color:#9ca3af;}
+.service-name{font-size:13px;font-weight:700;}
+.service-desc{font-size:11px;color:#9ca3af;}
+/* 업종 섹션 */
+.industry-wrapper{border-radius:22px;border:1px solid rgba(75,85,99,.95);background:#020617;padding:16px 14px 18px;}
 .industry-search{width:100%;border-radius:999px;border:1px solid rgba(148,163,184,.6);background:#020617;color:#e5e7eb;font-size:13px;padding:9px 14px;margin-bottom:14px;}
-.industry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
-.industry-item{border-radius:16px;background:#020617;border:1px solid rgba(75,85,99,.9);padding:10px 10px 11px;font-size:12px;display:flex;flex-direction:column;gap:2px;cursor:pointer;transition:background .15s,border-color .15s,transform .05s;}
-.industry-item span{font-weight:600;}
-.industry-item small{font-size:11px;color:#9ca3af;}
-.industry-item:hover{background:#0b1220;border-color:#3b82f6;transform:translateY(-1px);}
-.card{border-radius:20px;background:#020617;border:1px solid rgba(75,85,99,.9);padding:18px 16px 20px;}
+.industry-group{margin-bottom:12px;}
+.industry-group-title{font-size:12px;font-weight:700;margin-bottom:6px;color:#e5e7eb;}
+.industry-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.industry-chip{border-radius:999px;border:1px solid rgba(148,163,184,.7);padding:4px 9px;font-size:11px;background:#020617;cursor:pointer;transition:background .12s,border-color .12s,transform .04s;}
+.industry-chip:hover{background:#0b1220;border-color:#3b82f6;transform:translateY(-1px);}
+.industry-chip.hidden{display:none;}
+/* 문의 카드 */
+.card{border-radius:22px;background:#020617;border:1px solid rgba(75,85,99,.95);padding:18px 16px 20px;}
 .card-title{font-size:15px;font-weight:700;margin-bottom:6px;}
 .card-subtitle{font-size:12px;color:#9ca3af;margin-bottom:10px;}
 .form-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:10px;}
@@ -52,106 +89,251 @@ header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.96);backdrop-f
 .form-checkbox-group label{display:flex;align-items:flex-start;gap:6px;}
 .form-checkbox-group input{margin-top:2px;}
 .submit-btn{margin-top:10px;width:100%;border-radius:999px;padding:9px 0;font-size:13px;font-weight:600;border:none;background:linear-gradient(to right,#2563eb,#1d4ed8);color:#fff;cursor:pointer;}
+/* 하단 상담바 */
 .bottom-bar{position:fixed;left:0;right:0;bottom:0;padding:8px 14px 10px;background:radial-gradient(circle at top,#020617,#020617f2);border-top:1px solid rgba(31,41,55,.9);display:flex;gap:8px;z-index:60;}
 .bottom-btn{flex:1;border-radius:999px;padding:9px 0;font-size:13px;font-weight:600;text-align:center;border:none;cursor:pointer;white-space:nowrap;}
 .bottom-btn.kakao{background:#facc15;color:#111827;}
 .bottom-btn.inquiry{background:#020617;color:#e5e7eb;border:1px solid rgba(148,163,184,.7);}
-.bottom-btn.call{background:#2563eb;color:#fff;}
-@media(min-width:768px){body{padding-bottom:88px;}.hero-title{font-size:26px;}.hero-subtitle{font-size:14px;}.industry-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.bottom-btn.call{background:#2563eb;color:#fff;text-align:center;display:flex;align-items:center;justify-content:center;}
+@media(min-width:1024px){body{padding-bottom:90px;}.hero-title{font-size:30px;}.hero-subtitle{font-size:14px;}}
 </style>
 </head>
 <body>
+<!-- 햄버거 네비 오버레이 -->
+<div class="nav-overlay" id="navOverlay">
+  <div class="nav-header">
+    <div style="font-size:13px;font-weight:600;">H VIRAL 메뉴</div>
+    <button class="nav-close" type="button" onclick="toggleNav()">×</button>
+  </div>
+  <div class="nav-list">
+    <div class="nav-item" onclick="scrollToId('services');toggleNav()">
+      <span>서비스 구조</span>
+      <small>디지털 인프라 설계 · 위탁 운영 · 웹/앱 · 리포트</small>
+    </div>
+    <div class="nav-item" onclick="scrollToId('industries');toggleNav()">
+      <span>업종별 인프라 설계</span>
+      <small>병원 · 학원 · 음식점 · 카페 · 헬스 · 전문직/B2B</small>
+    </div>
+    <div class="nav-item" onclick="scrollToId('contact');toggleNav()">
+      <span>문의·상담</span>
+      <small>현재 상황을 남겨주시면 구조 관점에서 정리해 드립니다.</small>
+    </div>
+  </div>
+</div>
+
+<!-- 헤더 -->
 <header>
   <div class="container header-inner">
-    <div class="logo">
-      <div class="logo-main">H VIRAL</div>
-      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+    <div class="header-left">
+      <button class="burger" type="button" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo">
+        <div class="logo-main">H VIRAL</div>
+        <div class="logo-sub">디지털 인프라 · 마케팅 설계 파트너</div>
+      </div>
     </div>
-    <button class="header-cta" onclick="scrollToContact()">상담하기</button>
+    <button class="header-cta" type="button" onclick="scrollToId('contact')">상담하기</button>
   </div>
 </header>
+
+<!-- 히어로 -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-card">
+  <div class="container hero-inner">
+    <div class="hero-main">
       <div class="hero-slide active">
-        <div class="hero-pill"><div class="hero-pill-dot"></div>소상공인·중소기업 디지털 퍼널 설계</div>
-        <h1 class="hero-title">광고·홈페이지·앱까지<br>온라인 세일즈 인프라를 한 번에 설계합니다.</h1>
-        <p class="hero-subtitle">업종별로 흩어져 있던 마케팅 채널을 하나의 디지털 ‘세일즈 허브’로 묶어 드립니다. 검색·콘텐츠·상담·재방문까지 이어지는 구조를 설계합니다.</p>
+        <div class="hero-pill"><div class="hero-pill-dot"></div>소상공인·중소기업 디지털 세일즈 인프라</div>
+        <h1 class="hero-title">광고·홈페이지·앱까지<br>한 번에 설계하는 디지털 세일즈 허브</h1>
+        <p class="hero-subtitle">“어디서 검색하고, 무엇을 보고, 어떻게 문의하는가”를 기준으로 블로그·웹·앱·상담 채널을 하나의 세일즈 허브로 설계합니다.</p>
         <div class="hero-bullets">
-          <span class="hero-badge">네이버 검색 중심 디지털 브랜딩</span>
-          <span class="hero-badge">홈페이지·예약·상담 구조 통합</span>
-          <span class="hero-badge">소상공인·B2B 특화 퍼널 설계</span>
+          <span class="hero-badge">네이버 검색 중심 브랜딩</span>
+          <span class="hero-badge">업종별 퍼널 설계</span>
+          <span class="hero-badge">문의·예약 중심 구조</span>
         </div>
-        <p class="hero-footer-text">* 광고효율보다 “한 번 만든 인프라가 계속 문의를 만드는 구조”에 초점을 둡니다.</p>
+        <p class="hero-footer-text">* 한 번 만들어 놓은 디지털 인프라가, 광고와 무관하게 꾸준히 문의를 만드는 구조에 집중합니다.</p>
       </div>
       <div class="hero-slide">
-        <div class="hero-pill"><div class="hero-pill-dot"></div>업종별 디지털 세일즈 구조 설계</div>
-        <h2 class="hero-title">카페부터 병원·학원·B2B까지<br>업종별 세일즈 여정을 데이터로 설계합니다.</h2>
-        <p class="hero-subtitle">“어디서 검색하고, 무엇을 보고, 어떻게 문의하는가”를 업종별로 쪼개어 온라인 세일즈 흐름을 다시 설계합니다.</p>
+        <div class="hero-pill"><div class="hero-pill-dot"></div>업종 별 세일즈 여정 설계</div>
+        <h2 class="hero-title">병원·학원·음식점·카페·헬스장·전문직까지<br>업종별 고객 여정을 데이터로 쪼갭니다.</h2>
+        <p class="hero-subtitle">“어떤 키워드로 검색하고, 어떤 화면에서 이탈하는지”를 기준으로 업종별 온라인 세일즈 흐름을 다시 설계합니다.</p>
         <div class="hero-bullets">
-          <span class="hero-badge">카페·음식점·뷰티</span>
-          <span class="hero-badge">병원·클리닉·학원</span>
-          <span class="hero-badge">B2B·제조·유통·서비스</span>
+          <span class="hero-badge">병원·클리닉 9개 세부과</span>
+          <span class="hero-badge">입시·보습·예체능 학원</span>
+          <span class="hero-badge">한·일·중·양식·치킨 전문점</span>
         </div>
-        <p class="hero-footer-text">* 업종별 고객 여정을 기준으로 블로그·웹·앱·상담 채널을 맞춰 드립니다.</p>
+        <p class="hero-footer-text">* 업종·단계별로 필요한 페이지만 최소 단위로 구성해, 대표님이 이해하기 쉬운 구조로 정리합니다.</p>
       </div>
       <div class="hero-slide">
-        <div class="hero-pill"><div class="hero-pill-dot"></div>문의·상담 중심 디지털 허브</div>
-        <h2 class="hero-title">“한 번 클릭으로 끝나는”<br>단순한 문의·상담 경험을 설계합니다.</h2>
-        <p class="hero-subtitle">복잡한 메뉴 대신 고객이 바로 상담을 남길 수 있는 구조로 단순화합니다. 카카오톡·전화·문의폼을 하나로 모아 드립니다.</p>
+        <div class="hero-pill"><div class="hero-pill-dot"></div>위탁 운영 + 리포트</div>
+        <h2 class="hero-title">디지털 인프라 구축 이후,<br>운영과 점검까지 함께 가져갑니다.</h2>
+        <p class="hero-subtitle">단순 대행이 아닌, 계정·콘텐츠·문의 데이터를 함께 보면서 월 단위로 구조를 개선합니다.</p>
         <div class="hero-bullets">
-          <span class="hero-badge">카카오톡·전화·문의폼 통합</span>
-          <span class="hero-badge">모바일 최적화 화면 구조</span>
-          <span class="hero-badge">소상공인 맞춤 리포트 제공</span>
+          <span class="hero-badge">다계정 블로그 운영</span>
+          <span class="hero-badge">웹/앱 퍼널 점검</span>
+          <span class="hero-badge">월간 리포트 제공</span>
         </div>
-        <p class="hero-footer-text">* 대표님은 업종과 상황만 말씀해 주시면, 나머지 디지털 인프라는 저희가 설계합니다.</p>
+        <p class="hero-footer-text">* 인력·예산 대비 가장 현실적인 디지털 인프라 설계안을 제안드립니다.</p>
       </div>
       <div class="hero-dots">
-        <div class="hero-dot active"></div><div class="hero-dot"></div><div class="hero-dot"></div>
+        <div class="hero-dot active"></div>
+        <div class="hero-dot"></div>
+        <div class="hero-dot"></div>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div>
+        <div class="hero-side-title">이런 상황일 때 H VIRAL을 많이 찾습니다.</div>
+        <div class="hero-side-list">
+          <div>· 광고비는 쓰고 있는데, <b>문의는 들쑥날쑥</b>일 때</div>
+          <div>· 블로그·홈페이지·예약이 <b>각자 따로 놀고 있을 때</b></div>
+          <div>· 병원·학원·음식점 등 <b>업종 특성에 맞는 구조</b>가 필요할 때</div>
+          <div>· 내부에 마케팅 인력이 없어 <b>처음 설계부터 외주가 필요할 때</b></div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-side-title">한 번 설계하면, 이렇게 관리합니다.</div>
+        <div class="hero-side-list">
+          <div class="hero-tag"><b>01</b> 업종별 고객 여정 분석</div>
+          <div class="hero-tag"><b>02</b> 블로그·웹·앱·상담 동선 설계</div>
+          <div class="hero-tag"><b>03</b> 위탁 운영 + 월간 리포트</div>
+          <div class="hero-tag"><b>04</b> 계정·콘텐츠 구조 주기적 점검</div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- SERVICE 01~04 섹션 -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">SERVICE 01 · 04</div>
+      <h2 class="section-title">디지털 인프라를 구성하는 네 가지 축</h2>
+      <p class="section-subtitle">초기 설계부터 운영·점검까지, 소상공인·중소기업이 현실적으로 가져갈 수 있는 단위로 쪼갭니다.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-label">SERVICE 01</div>
+        <div class="service-name">업종별 디지털 인프라 설계</div>
+        <div class="service-desc">병원·학원·음식점·카페·헬스장·전문직/B2B 등 업종별 고객 여정에 맞춰 “어떤 페이지가 어디에 있어야 하는지”부터 설계합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-label">SERVICE 02</div>
+        <div class="service-name">블로그·웹·앱 구조 구축</div>
+        <div class="service-desc">네이버 블로그·홈페이지·예약/문의 시스템까지, 대표님이 이미 사용 중인 채널을 기준으로 현실적인 구조를 만듭니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-label">SERVICE 03</div>
+        <div class="service-name">위탁 운영 및 콘텐츠 운영</div>
+        <div class="service-desc">계정 구조·콘텐츠 형식·키워드·업종 특성을 반영해, 장기적으로 쌓이는 콘텐츠 인프라를 위탁 운영합니다.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-label">SERVICE 04</div>
+        <div class="service-name">리포트 및 구조 개선</div>
+        <div class="service-desc">단순 성과 보고서가 아닌, “어느 구간에서 이탈이 발생하는지”를 중심으로 구조를 다시 조정하는 리포트를 제공합니다.</div>
       </div>
     </div>
   </div>
 </section>
-<section class="section">
+
+<!-- 업종 섹션 -->
+<section class="section" id="industries">
   <div class="container">
-    <h2 class="section-title">업종별 디지털 인프라 설계</h2>
-    <p class="section-subtitle">카페·음식점부터 병원·학원·B2B까지, 업종에 맞는 디지털 세일즈 구조를 제안합니다.</p>
-    <input type="text" class="industry-search" placeholder="업종 이름을 검색해 보세요. 예: 내과, 카페, 학원, 유통업" oninput="filterIndustries(this.value)" />
-    <div class="industry-grid" id="industryGrid">
-      <button class="industry-item" data-name="카페 디저트 카페·디저트" onclick="alert('카페·디저트 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>카페·디저트</span><small>동네 카페·디저트 전문 매장</small>
-      </button>
-      <button class="industry-item" data-name="음식점 식당 한식 양식" onclick="alert('음식점 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>음식점</span><small>한식·양식·주점·프랜차이즈</small>
-      </button>
-      <button class="industry-item" data-name="뷰티 미용 헤어샵 네일샵 피부관리" onclick="alert('뷰티·미용 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>뷰티·미용</span><small>헤어샵·네일샵·피부관리샵</small>
-      </button>
-      <button class="industry-item" data-name="병원 내과 정형외과 이비인후과 피부과 치과" onclick="alert('병원·클리닉 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>병원·클리닉</span><small>내과·정형외과·이비인후과·치과</small>
-      </button>
-      <button class="industry-item" data-name="학원 교육 학습지 예체능 유치원" onclick="alert('학원·교육 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>학원·교육</span><small>입시·영어·예체능·교육 서비스</small>
-      </button>
-      <button class="industry-item" data-name="B2B 유통업 도매 제조 서비스 기업" onclick="alert('B2B·유통업 업종 상세 페이지는 추후 연결됩니다.')">
-        <span>B2B·유통업</span><small>도매·제조·B2B 서비스·유통</small>
-      </button>
+    <div class="section-header">
+      <div class="section-eyebrow">INDUSTRY</div>
+      <h2 class="section-title">업종별 디지털 인프라 설계</h2>
+      <p class="section-subtitle">병원·학원·음식점·카페·헬스장·전문직/B2B까지, 업종별로 고객 여정이 다르기 때문에 설계 방식도 다르게 가져갑니다.</p>
+    </div>
+    <div class="industry-wrapper">
+      <input type="text" class="industry-search" placeholder="업종 이름을 검색해 보세요. 예: 내과, 카페, 입시학원, 세무사" oninput="filterIndustries(this.value)" />
+      <!-- 의료·병원 -->
+      <div class="industry-group" data-group="medical">
+        <div class="industry-group-title">의료 · 병원</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="피부과">피부과</button>
+          <button class="industry-chip" data-name="치과">치과</button>
+          <button class="industry-chip" data-name="정형외과">정형외과</button>
+          <button class="industry-chip" data-name="내과">내과</button>
+          <button class="industry-chip" data-name="이비인후과">이비인후과</button>
+          <button class="industry-chip" data-name="한의원">한의원</button>
+          <button class="industry-chip" data-name="산부인과">산부인과</button>
+          <button class="industry-chip" data-name="안과">안과</button>
+          <button class="industry-chip" data-name="소아과">소아과</button>
+        </div>
+      </div>
+      <!-- 학원·교육 -->
+      <div class="industry-group" data-group="academy">
+        <div class="industry-group-title">학원 · 교육</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="입시학원">입시학원</button>
+          <button class="industry-chip" data-name="보습학원">보습학원</button>
+          <button class="industry-chip" data-name="영어학원">영어학원</button>
+          <button class="industry-chip" data-name="예체능학원">예체능학원</button>
+        </div>
+      </div>
+      <!-- 음식점 -->
+      <div class="industry-group" data-group="food">
+        <div class="industry-group-title">음식점 · 요식업</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="한식당">한식당</button>
+          <button class="industry-chip" data-name="일식당">일식당</button>
+          <button class="industry-chip" data-name="중식당">중식당</button>
+          <button class="industry-chip" data-name="양식당">양식당</button>
+          <button class="industry-chip" data-name="치킨전문점">치킨전문점</button>
+        </div>
+      </div>
+      <!-- 카페·디저트 -->
+      <div class="industry-group" data-group="cafe">
+        <div class="industry-group-title">카페 · 디저트</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="카페">카페</button>
+          <button class="industry-chip" data-name="디저트카페">디저트카페</button>
+        </div>
+      </div>
+      <!-- 뷰티·헬스 -->
+      <div class="industry-group" data-group="beauty">
+        <div class="industry-group-title">뷰티 · 헬스</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="헬스장">헬스장</button>
+          <button class="industry-chip" data-name="헤어샵">헤어샵</button>
+          <button class="industry-chip" data-name="네일샵">네일샵</button>
+        </div>
+      </div>
+      <!-- 전문직/B2B -->
+      <div class="industry-group" data-group="b2b">
+        <div class="industry-group-title">전문직 · B2B</div>
+        <div class="industry-chips">
+          <button class="industry-chip" data-name="세무사 회계사">세무사·회계사</button>
+          <button class="industry-chip" data-name="법무사">법무사</button>
+          <button class="industry-chip" data-name="변호사">변호사</button>
+          <button class="industry-chip" data-name="행정사">행정사</button>
+          <button class="industry-chip" data-name="가맹거래사">가맹거래사</button>
+          <button class="industry-chip" data-name="공인중개사">공인중개사</button>
+          <button class="industry-chip" data-name="프랜차이즈 본사">프랜차이즈 본사</button>
+          <button class="industry-chip" data-name="유통업">유통업(B2B)</button>
+          <button class="industry-chip" data-name="제조업">제조업</button>
+          <button class="industry-chip" data-name="도매업">도매업</button>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#6b7280;margin-top:4px;">* 업종별로 고객 여정과 세일즈 구조가 달라지기 때문에, 설계 방향도 다르게 제안드립니다.</p>
     </div>
   </div>
 </section>
+
+<!-- 문의 섹션 -->
 <section class="section" id="contact">
   <div class="container">
     <div class="card">
-      <h3 class="card-title">디지털 인프라 설계 문의</h3>
-      <p class="card-subtitle">업종·현재 상황·원하시는 방향을 간단히 남겨주시면, 디지털 인프라 관점에서 어떻게 설계할 수 있을지 정리해 드립니다.</p>
+      <h3 class="card-title">디지털 인프라 설계 · 운영 문의</h3>
+      <p class="card-subtitle">업종, 현재 상황, 원하시는 방향을 간단히 남겨주시면 디지털 인프라 관점에서 어떻게 설계할 수 있을지 정리해 드립니다.</p>
       <form class="form-grid" onsubmit="handleSubmit(event)">
         <div class="form-field">
           <label>업체명 / 상호명 <span>*</span></label>
-          <input type="text" class="form-input" required placeholder="예: 에이치바이럴 / ○○내과의원" />
+          <input type="text" class="form-input" required placeholder="예: 에이치바이럴 / ○○의원 / ○○입시학원" />
         </div>
         <div class="form-field">
           <label>업종 / 서비스 영역 <span>*</span></label>
-          <input type="text" class="form-input" required placeholder="예: 카페·디저트 / 내과 / 유통업 B2B / 학원" />
+          <input type="text" class="form-input" required placeholder="예: 내과 / 입시·보습학원 / 한식당 / 카페 / 세무사" />
         </div>
         <div class="form-field">
           <label>연락처(휴대폰) <span>*</span></label>
@@ -171,30 +353,80 @@ header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.96);backdrop-f
         </div>
         <div class="form-field">
           <label>상담 받고 싶은 내용</label>
-          <textarea class="form-textarea" placeholder="현재 상황, 월 매출·가동률, 디지털 채널에서 해결하고 싶은 고민 등을 자유롭게 적어주세요."></textarea>
+          <textarea class="form-textarea" placeholder="현재 매출/가동률, 온라인 채널 운영 현황, 해결하고 싶은 고민 등을 자유롭게 적어주세요."></textarea>
         </div>
         <div class="form-checkbox-group">
-          <label><input type="checkbox" required /><span>[필수] 개인정보 수집·이용에 동의합니다. (문의 응대 및 상담 진행을 위한 최소 정보만 사용하며, 목적 달성 후 관련 법령에 따라 안전하게 보관·파기합니다.)</span></label>
-          <label><input type="checkbox" /><span>[선택] 향후 디지털 인프라 관련 안내, 콘텐츠, 리포트 제공에 동의합니다.</span></label>
+          <label>
+            <input type="checkbox" required />
+            <span>[필수] 개인정보 수집·이용에 동의합니다. (문의 응대 및 상담 진행을 위한 최소 정보만 사용하며, 목적 달성 후 관련 법령에 따라 안전하게 보관·파기합니다.)</span>
+          </label>
+          <label>
+            <input type="checkbox" />
+            <span>[선택] 향후 디지털 인프라 관련 안내, 콘텐츠, 리포트 제공에 동의합니다.</span>
+          </label>
         </div>
         <button type="submit" class="submit-btn">문의 남기기</button>
       </form>
     </div>
   </div>
 </section>
+
+<!-- 하단 상담바 -->
 <div class="bottom-bar">
   <button class="bottom-btn kakao" type="button" onclick="openKakao()">카톡 상담</button>
-  <button class="bottom-btn inquiry" type="button" onclick="scrollToContact()">문의하기</button>
+  <button class="bottom-btn inquiry" type="button" onclick="scrollToId('contact')">문의하기</button>
   <a class="bottom-btn call" href="tel:01032689899">전화 상담</a>
 </div>
+
 <script>
-const slides=document.querySelectorAll(".hero-slide");const dots=document.querySelectorAll(".hero-dot");let currentSlide=0;
-function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle("active",idx===i));dots.forEach((d,idx)=>d.classList.toggle("active",idx===i));currentSlide=i;}
+/* 슬라이더 */
+const slides=document.querySelectorAll(".hero-slide");
+const dots=document.querySelectorAll(".hero-dot");
+let currentSlide=0;
+function showSlide(i){
+  slides.forEach((s,idx)=>s.classList.toggle("active",idx===i));
+  dots.forEach((d,idx)=>d.classList.toggle("active",idx===i));
+  currentSlide=i;
+}
 setInterval(()=>{const next=(currentSlide+1)%slides.length;showSlide(next);},5000);
-function filterIndustries(v){const term=v.trim().toLowerCase();document.querySelectorAll("#industryGrid .industry-item").forEach(item=>{const name=item.dataset.name.toLowerCase();item.style.display=name.includes(term)?"block":"none";});}
-function scrollToContact(){const el=document.getElementById("contact");if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
-function openKakao(){window.location.href="https://open.kakao.com/o/s0ogfV3h";}
-function handleSubmit(e){e.preventDefault();alert("문의가 임시로 접수되었습니다.\n실제 전송 기능은 이메일 또는 백엔드와 연동 후 적용해 드릴 수 있습니다.");}
+/* 햄버거 메뉴 */
+function toggleNav(){
+  const nav=document.getElementById("navOverlay");
+  nav.classList.toggle("active");
+}
+/* 스크롤 이동 */
+function scrollToId(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+}
+/* 업종 검색 필터 */
+function filterIndustries(value){
+  const term=value.trim().toLowerCase();
+  const chips=document.querySelectorAll(".industry-chip");
+  const groups=document.querySelectorAll(".industry-group");
+  if(!term){
+    chips.forEach(c=>c.classList.remove("hidden"));
+    groups.forEach(g=>g.style.display="block");
+    return;
+  }
+  chips.forEach(chip=>{
+    const name=(chip.dataset.name||"").toLowerCase();
+    chip.classList.toggle("hidden",!name.includes(term));
+  });
+  groups.forEach(group=>{
+    const visible=group.querySelector(".industry-chip:not(.hidden)");
+    group.style.display=visible?"block":"none";
+  });
+}
+/* 카카오 오픈채팅 */
+function openKakao(){
+  window.location.href="https://open.kakao.com/o/s0ogfV3h";
+}
+/* 문의폼 (임시 알럿) */
+function handleSubmit(e){
+  e.preventDefault();
+  alert("문의가 임시로 접수되었습니다.\n현재는 예시 페이지이며, 실제 전송 기능은 이메일 또는 백엔드와 연동해 적용할 수 있습니다.");
+}
 </script>
 </body>
 </html>
