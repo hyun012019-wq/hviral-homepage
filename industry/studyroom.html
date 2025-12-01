@@ -5,473 +5,942 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>공부방·스터디공간 디지털 인프라 │ H VIRAL</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a { color:inherit; text-decoration:none; }
-    ul { list-style:none; }
-    .container { max-width:1080px; margin:0 auto; padding:0 20px 96px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
+    }
 
     /* 헤더 */
     header {
-      position:sticky; top:0; z-index:9000;
-      background:#020617; border-bottom:1px solid rgba(148,163,184,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
     .header-inner {
-      max-width:1080px; margin:0 auto;
-      padding:14px 20px; display:flex; justify-content:space-between; align-items:center;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .header-left { display:flex; align-items:center; gap:16px; }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
     .menu-btn {
-      width:32px; height:32px; border-radius:999px;
-      border:1px solid rgba(148,163,184,0.6); background:#020617;
-      display:flex; align-items:center; justify-content:center; cursor:pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
     .menu-btn span {
-      width:16px; height:2px; background:#e5e7eb; position:relative;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
     }
-    .menu-btn span::before, .menu-btn span::after {
-      content:""; width:16px; height:2px; background:#e5e7eb; position:absolute; left:0;
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: absolute;
+      left: 0;
     }
-    .menu-btn span::before { top:-5px; } .menu-btn span::after { top:5px; }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
 
-    .logo-wrap { display:block; }
-    .logo { font-weight:700; font-size:22px; letter-spacing:1.2px; }
-    .logo-sub { font-size:11px; color:#9ca3af; }
+    .logo-wrap {
+      display: block;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
     .consult-btn {
-      padding:9px 20px; border-radius:999px; background:#2563eb;
-      color:#fff; font-size:15px; font-weight:600;
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     /* 히어로 */
     .hero {
-      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
-      padding:28px 0 32px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
     }
     .hero-card {
-      border-radius:28px; border:1px solid rgba(148,163,184,0.4);
-      background:linear-gradient(135deg,#0b1f3a,#020617);
-      padding:28px 20px; box-shadow:0 24px 60px rgba(15,23,42,0.9);
-      overflow:hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
     }
     .hero-badges {
-      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
     }
     .hero-badge {
-      display:inline-flex; align-items:center; gap:6px;
-      padding:4px 10px; border-radius:999px; background:rgba(15,23,42,0.9);
-      border:1px solid rgba(96,165,250,0.6);
-      font-size:11px; color:#e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
     }
     .hero-badge-dot {
-      width:8px; height:8px; border-radius:999px; background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.3);
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
-    .hero-title { font-size:22px; font-weight:800; margin-bottom:10px; }
-    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:12px; }
-    .hero-note { font-size:11px; color:#9ca3af; margin-top:4px; }
+    .hero-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+    .hero-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
 
     .section-title {
-      margin:28px 0 10px; font-size:18px; font-weight:800;
+      margin: 28px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
     }
-    .section-sub { font-size:13px; color:#9ca3af; margin-bottom:10px; }
+    .section-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
 
     .card {
-      background:#020617; border-radius:20px;
-      border:1px solid rgba(148,163,184,0.6);
-      padding:16px 14px; font-size:13px; margin-bottom:14px;
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
-    .card-title { font-weight:700; margin-bottom:6px; font-size:14px; }
-    .card ul { margin-top:6px; padding-left:18px; }
-    .card li { list-style:disc; margin-bottom:4px; }
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
 
     .label-pill {
-      display:inline-flex; padding:4px 10px; border-radius:999px;
-      border:1px solid rgba(148,163,184,0.7); background:#020617;
-      font-size:11px; margin-bottom:8px;
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
     }
 
     /* 문의 섹션 */
-    #contact { margin:32px 0 4px; }
-    .contact-title { font-size:18px; font-weight:800; margin-bottom:10px; }
-    .contact-sub { font-size:13px; color:#9ca3af; margin-bottom:14px; }
+    #contact {
+      margin: 32px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
 
     .contact-card {
-      border-radius:20px; border:1px solid rgba(148,163,184,0.7);
-      padding:18px 16px; font-size:13px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
     }
-    .contact-form { display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
-    .form-row { display:flex; gap:8px; flex-wrap:wrap; }
-    .form-group { flex:1; display:flex; flex-direction:column; gap:4px; }
-    .form-label { font-size:12px; color:#9ca3af; }
-    .form-label span { color:#f97316; }
-    .form-input, .form-textarea {
-      border-radius:10px; border:1px solid rgba(148,163,184,0.7);
-      background:#020617; color:#f9fafb;
-      padding:9px 10px; font-size:13px;
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
     }
-    .form-textarea { min-height:80px; resize:vertical; }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
 
     .terms-box {
-      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
-      padding:10px; font-size:12px; margin-bottom:12px;
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
     }
-    .terms-detail { margin-bottom:6px; }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
     .terms-summary {
-      cursor:pointer; list-style:none; font-weight:600;
-      display:flex; justify-content:space-between;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
     }
-    .terms-body { font-size:11px; color:#9ca3af; line-height:1.5; margin-top:6px; }
-    .terms-row { display:flex; gap:6px; font-size:12px; margin-bottom:4px; }
-    .terms-checkbox { width:14px; height:14px; accent-color:#2563eb; }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .terms-row {
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      align-items: center;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
 
     .form-submit {
-      width:100%; border-radius:999px;
-      background:#2563eb; color:#fff;
-      padding:11px 0; font-size:14px; font-weight:700;
-      border:none; cursor:pointer;
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
     }
 
     .contact-actions {
-      margin-top:14px; display:flex; gap:8px;
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
     }
     .contact-actions a {
-      flex:1; text-align:center; padding:11px 0;
-      border-radius:999px; font-weight:600;
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
     }
-    .contact-kakao { background:#facc15; color:#000; }
-    .contact-call { background:#2563eb; color:#fff; }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
 
     /* 하단바 */
     .bottom-bar {
-      position:fixed; left:0; bottom:0; width:100%;
-      display:flex; justify-content:space-between;
-      background:#020617; padding:14px 10px;
-      border-top:1px solid rgba(148,163,184,0.4);
-      z-index:9700;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
     }
     .bottom-btn {
-      flex:1; margin:0 4px; text-align:center;
-      padding:13px 0; border-radius:999px;
-      font-size:15px; font-weight:600;
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
     }
-    .bottom-btn.kakao { background:#facc15; color:#000; }
-    .bottom-btn.ask { background:#111827; color:#e5e7eb; border:1px solid rgba(148,163,184,0.6); }
-    .bottom-btn.call { background:#2563eb; color:#fff; }
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
 
-    /* 사이드 메뉴 */
+    /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(15,23,42,0.7); backdrop-filter:blur(4px);
-      z-index:9500; display:none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
     }
-    #sideBackdrop.show { display:block; }
-
+    #sideBackdrop.show {
+      display: block;
+    }
     #sideMenu {
-      position:fixed; top:0; left:0; width:80%; max-width:360px; height:100%;
-      background:#020617; border-right:1px solid rgba(148,163,184,0.5);
-      transform:translateX(-100%); transition:0.3s;
-      z-index:9600; display:flex; flex-direction:column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
     }
-    #sideMenu.open { transform:translateX(0); }
-
+    #sideMenu.open {
+      transform: translateX(0);
+    }
     .side-menu-header {
-      padding:20px 22px 12px; border-bottom:1px solid rgba(31,41,55,0.9);
-      display:flex; justify-content:space-between; align-items:center;
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
     }
-    .side-menu-title { font-size:18px; font-weight:700; }
-    .side-sub { font-size:11px; color:#9ca3af; padding:0 22px 12px; }
-
+    .side-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
     .side-scroll {
-      flex:1; padding:8px 22px 120px; overflow-y:auto;
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
     }
     .side-section-title {
-      font-size:13px; color:#9ca3af; margin:18px 0 6px; font-weight:600;
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
     }
-    .side-link { display:block; padding:8px 0; font-size:14px; }
-
     details.side-group {
-      margin-bottom:8px; border-radius:14px;
-      border:1px solid rgba(75,85,99,0.8); background:#020617;
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
     }
     .side-group summary {
-      padding:10px 12px; display:flex; justify-content:space-between; cursor:pointer;
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
     }
-    .side-group-links { border-top:1px solid rgba(55,65,81,0.9); padding:6px 12px 8px; }
-    .side-group-links a { display:block; padding:4px 0; font-size:13px; }
+    .side-group summary::-webkit-details-marker {
+      display: none;
+    }
+    .side-group-label {
+      font-weight: 600;
+    }
+    .side-group-arrow {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 36px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-card {
+        padding: 32px 28px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-<!-- 백드롭 -->
-<div id="sideBackdrop" onclick="toggleMenu(false)"></div>
-
-<!-- 사이드 메뉴 -->
-<nav id="sideMenu">
-  <div class="side-menu-header">
-    <div>
-      <div class="side-menu-title">H VIRAL</div>
-      <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-    </div>
-    <button class="side-close" onclick="toggleMenu(false)">닫기</button>
-  </div>
-
-  <div class="side-scroll">
-    <div class="side-section-title">서비스</div>
-    <a href="/digital.html" class="side-link">디지털 마케팅</a>
-    <a href="/website.html" class="side-link">홈페이지 제작</a>
-    <a href="/app.html" class="side-link">앱·예약 시스템</a>
-    <a href="/lecture.html" class="side-link">마케팅 강의</a>
-
-    <div class="side-section-title">교육·학원 업종</div>
-    <details class="side-group" open>
-      <summary>
-        <span>교육·학원</span><span class="side-group-arrow">▼</span>
-      </summary>
-      <div class="side-group-links">
-        <a href="/industry/academy.html">입시·보습학원</a>
-        <a href="/industry/lang.html">어학·유학</a>
-        <a href="/industry/art.html">예체능·취미</a>
-        <a href="/industry/studyroom.html">공부방·스터디공간</a>
+  <!-- 사이드 메뉴 (index / cleaning과 동일 구조) -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
-    </details>
-  </div>
-</nav>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-<!-- 헤더 -->
-<header>
-  <div class="header-inner">
-    <div class="header-left">
-      <button class="menu-btn" onclick="toggleMenu(true)">
-        <span></span>
-      </button>
-      <a href="/" class="logo-wrap">
-        <div class="logo">H VIRAL</div>
-        <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
+
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
+
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
+      </div>
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        상담하기
       </a>
     </div>
-    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
-  </div>
-</header>
+  </header>
 
-<!-- 메인 -->
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <div class="hero-badges">
-          <span class="hero-badge"><span class="hero-badge-dot"></span>공부방·홈스쿨 전용 디지털 인프라</span>
-          <span class="hero-badge">초등·중등 학습관리 중심 설명</span>
-        </div>
-
-        <h1 class="hero-title">
-          “우리 아이를 맡겨도 될까?”<br />
-          학부모가 처음 검색하는 순간부터 공부방을 이해할 수 있게 정리합니다.
-        </h1>
-        <p class="hero-desc">
-          에이치바이럴은 <strong>공부방, 홈스쿨, 소규모 학습공간</strong>을 대상으로  
-          운영 방식·관리 시스템·선생님 강점을 하나의 화면에서 명확하게 보이도록 설계합니다.
-        </p>
-        <p class="hero-note">
-          * 월 단위 소규모 공부방, 그룹 수업, 돌봄 연계형 공부방 등 형태별로 메시지와 화면 구성을 따로 잡아드립니다.
-        </p>
-      </div>
-
-      <h2 class="section-title">공부방이 온라인에서 먼저 보여줘야 하는 핵심 정보</h2>
-      <p class="section-sub">
-        “방과 후에 어디에 맡길까?”를 고민하는 학부모에게, 공간·선생님·관리 방식을 구체적으로 설명해 줍니다.
-      </p>
-
-      <div class="card">
-        <div class="card-title">1. 대상 학년·시간대·운영 콘셉트</div>
-        <ul>
-          <li>초등 몇 학년부터 어느 학년까지, 중등까지 포함하는지 명확하게 안내</li>
-          <li>하원 시간, 등원 시간, 자습 가능 시간, 저녁 케어 시간 등 시간대별 운영 방식 정리</li>
-          <li>숙제 지도형, 기초 보완형, 교과 선행형 등 공부방의 핵심 운영 콘셉트를 한 문장으로 제시</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">2. 선생님 중심 학습 관리 시스템</div>
-        <ul>
-          <li>담당 선생님의 경력, 전공, 지도 과목, 아이들과의 소통 스타일을 신뢰감 있게 소개</li>
-          <li>숙제 체크, 오답 정리, 개별 과제 부여 등 하루 루틴을 시간 순서로 설명</li>
-          <li>아이 한 명이 공부방에서 받는 피드백 흐름(숙제→점검→보완 학습)을 사례와 함께 정리</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">3. 생활 관리와 안전 관리 요소</div>
-        <ul>
-          <li>하원 알림, 출결 관리, 간식 제공, 휴대폰 사용 규칙 등 생활 관리 기준을 정리</li>
-          <li>집과 공부방 사이 이동 동선, 픽업 여부, 안전 관련 안내를 학부모 관점에서 설명</li>
-          <li>CCTV 여부, 보호자 연락 체계, 비상 상황 대응 방식 등 기본적인 안전 체계를 안내</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">4. 학습 목표·변화 사례 설명 방식</div>
-        <ul>
-          <li>“성적 몇 등급 올랐다” 보다, 학습 습관·집중력·과제 처리 속도 변화에 초점을 둔 사례 정리</li>
-          <li>처음 왔을 때와 3개월·6개월 후의 변화 포인트를 간단한 스토리 형식으로 소개</li>
-          <li>아이 성향(수줍음, 산만함, 예민함 등)에 맞춘 지도 경험을 안전하게 표현</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">5. 공간 구성과 좌석 운영</div>
-        <ul>
-          <li>정원, 좌석 배치, 자습석·수업석 분리 여부 등 공부 환경을 사진과 함께 설명</li>
-          <li>정해진 자리 배정, 자유 좌석, 소그룹 방 등 운영 방식별 장점을 학부모 눈높이로 정리</li>
-          <li>집중이 필요한 시간과 편안한 대화·휴식 시간이 어떻게 나뉘는지 안내</li>
-        </ul>
-      </div>
-
-      <div class="label-pill">공부방·스터디공간 전용 페이지에서 함께 다루는 항목</div>
-      <div class="card">
-        <ul>
-          <li>주 이용 학년, 형제·자매 동시 등록 비율, 재등록 비율 등 신뢰 지표</li>
-          <li>학교 수업·숙제와 공부방에서의 추가 학습이 어떻게 연결되는지 설명</li>
-          <li>장기 재원생 케이스(1~2년 이상 이용)의 변화 포인트를 압축 정리</li>
-          <li>학부모 상담 주기, 상담 방식(대면/전화/카카오톡)과 소통 채널 안내</li>
-        </ul>
-      </div>
-
-      <!-- 문의 -->
-      <section id="contact">
-        <h2 class="contact-title">공부방·스터디공간 디지털 인프라 상담</h2>
-        <p class="contact-sub">
-          현재 운영 방식, 대상 학년, 좌석 수, 월 목표 등록 인원을 남겨주시면<br />
-          온라인 설명 화면부터 문의 흐름까지 함께 설계해드립니다.
-        </p>
-
-        <div class="contact-card">
-          <form id="contactForm" onsubmit="handleContact(event)">
-            <div class="contact-form">
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">성명<span>*</span></label>
-                  <input type="text" id="name" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">연락처<span>*</span></label>
-                  <input type="tel" id="phone" class="form-input" placeholder="'-' 없이 숫자만" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">공부방명·대상 학년<span>*</span></label>
-                <input
-                  type="text"
-                  id="center"
-                  class="form-input"
-                  placeholder="예: ○○공부방 / 초등 3~6학년, 중1 대상"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
-                <textarea
-                  id="message"
-                  class="form-textarea"
-                  placeholder="현재 정원, 좌석 수, 상담이 필요한 내용(등록·문의·브랜딩 등)을 적어주세요."
-                  required
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="terms-box">
-              <details class="terms-detail">
-                <summary class="terms-summary">개인정보 수집 및 이용 동의 (필수)</summary>
-                <div class="terms-body">
-                  ① 수집 항목: 성명, 연락처, 공부방 정보, 문의 내용<br>
-                  ② 수집 목적: 상담 및 안내<br>
-                  ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br>
-                  ④ 동의 거부 시 상담 제공이 제한될 수 있음
-                </div>
-              </details>
-              <label class="terms-row">
-                <input type="checkbox" id="termsRequired" class="terms-checkbox" />
-                <span>개인정보 수집 및 이용에 동의합니다.</span>
-              </label>
-
-              <details class="terms-detail">
-                <summary class="terms-summary">마케팅 정보 수신 동의 (선택)</summary>
-                <div class="terms-body">
-                  세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
-                </div>
-              </details>
-              <label class="terms-row">
-                <input type="checkbox" id="termsMarketing" class="terms-checkbox" />
-                <span>마케팅 정보 수신에 동의합니다. (선택)</span>
-              </label>
-            </div>
-
-            <button type="submit" class="form-submit">문의 접수하기</button>
-          </form>
-
-          <div class="contact-actions">
-            <a href="https://open.kakao.com/o/s0ogfV3h" target="_blank" class="contact-kakao">카톡 상담</a>
-            <a href="tel:01032689899" class="contact-call">전화 상담</a>
+  <!-- 메인 -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badges">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              공부방·스터디공간 전용 디지털 인프라
+            </span>
+            <span class="hero-badge">
+              좌석 회전율·재등록·야간 이용까지 한 화면에서 설명
+            </span>
           </div>
+
+          <h1 class="hero-title">
+            “시간당 요금이 아니라,<br />
+            오래 머무를 공간을 찾는 고객에게 선택받는 화면을 만듭니다.”
+          </h1>
+          <p class="hero-desc">
+            에이치바이럴은 공부방·스터디카페·독서실이<br />
+            어떤 이용자를 핵심으로 가져갈지, 고객이 바로 이해할 수 있도록<br />
+            좌석 구성·운영 시간·이용 규칙을 기준으로 디지털 화면을 설계합니다.
+          </p>
+          <p class="hero-note">
+            “가까운 곳”이 아니라 “집중이 잘 되는, 믿고 맡길 수 있는 공간”으로 보이게 만드는 것이 핵심입니다.
+          </p>
         </div>
-      </section>
 
-    </div>
-  </section>
-</main>
+        <h2 class="section-title">공부방·스터디공간 이용자가 실제로 확인하는 정보</h2>
+        <p class="section-sub">
+          위치와 가격만 보고 결정하기에는, 공부 효율과 안전이 중요한 업종입니다.<br />
+          어떤 좌석을, 어떤 환경에서, 어떤 시간대에 운영하는지 한 번에 보여주는 구성이 필요합니다.
+        </p>
 
-<!-- 하단 고정바 -->
-<div class="bottom-bar">
-  <a href="https://open.kakao.com/o/s0ogfV3h" class="bottom-btn kakao">카톡 상담</a>
-  <a href="#contact" class="bottom-btn ask">문의하기</a>
-  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
-</div>
+        <div class="card">
+          <div class="card-title">1. 좌석 유형·공간 구성</div>
+          <ul>
+            <li>개방형·칸막이형·1인실·스터디룸 등 좌석 유형을 사진·아이콘으로 구분해 안내</li>
+            <li>정숙존·노트북존·팀스터디룸 등 소음 허용 범위를 구역별로 명확하게 표기</li>
+            <li>학생·직장인·수험생 등 핵심 타깃이 어떤 좌석을 사용하게 될지 바로 이해되도록 구성</li>
+          </ul>
+        </div>
 
-<script>
-  function toggleMenu(open){
-    const m=document.getElementById("sideMenu");
-    const b=document.getElementById("sideBackdrop");
-    if(open){
-      m.classList.add("open");
-      b.classList.add("show");
-      document.body.style.overflow="hidden";
-    } else {
-      m.classList.remove("open");
-      b.classList.remove("show");
-      document.body.style.overflow="";
+        <div class="card">
+          <div class="card-title">2. 운영 시간·요금 체계 설명</div>
+          <ul>
+            <li>평일·주말·공휴일 운영 시간과 심야 운영 여부를 한 눈에 보이게 정리</li>
+            <li>시간권·일일권·정기권(주간/야간/한 달 등)을 표 형식으로 단순하게 안내</li>
+            <li>좌석 등급별(일반석/프리미엄석/1인실 등) 요금 차이를 이해하기 쉽게 배치</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">3. 이용 규칙·소음 관리 기준</div>
+          <ul>
+            <li>휴대폰 사용, 음식 반입, 대화 가능 구역 등 기본 이용 규칙을 간단 명료하게 안내</li>
+            <li>정숙 유지 시간대, 소음 민감 구역 관리 방식 등 운영 원칙을 문장으로 정리</li>
+            <li>야간 이용 시 출입·보안·조명 관리 기준을 별도 블록으로 눈에 띄게 배치</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. 학습 환경·편의 시설 안내</div>
+          <ul>
+            <li>조명, 책상·의자, 콘센트, 와이파이 등 기본 환경을 사진과 함께 설명</li>
+            <li>복사/프린트, 라커, 스낵존, 휴게 공간 등 부가 시설을 아이콘과 함께 정리</li>
+            <li>창가 좌석, 조용한 내부 좌석 등 특장점이 되는 구역을 강조</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">5. 안전·출입·보안 시스템</div>
+          <ul>
+            <li>출입 방식(비밀번호·카드키·QR 등)과 외부인 출입 통제 방식을 안내</li>
+            <li>CCTV, 상주 관리 인력, 심야 시간 안전 관리 방식을 간단히 설명</li>
+            <li>학생·청소년 이용 비중이 높은 경우, 보호자가 안심할 수 있는 요소를 문장으로 정리</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. 이용 형태·예약 방식</div>
+          <ul>
+            <li>상시 방문 가능 여부, 피크 시간대(좌석 만석 시간)를 명확하게 안내</li>
+            <li>정기석 예약, 스터디룸 예약, 시험기간 특별 운영 등 예약 구조를 단계별로 설명</li>
+            <li>전화·메신저를 통한 좌석 문의·예약 가능 여부를 명시</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">7. 재등록·장기 이용 관점</div>
+          <ul>
+            <li>정기 이용자(월 단위, 장기 이용자)를 위한 안내 문구와 혜택을 별도로 구성</li>
+            <li>시험·공시·입시 등 장기 공부 수요에 맞춘 좌석·시간대 운영 방식을 설명</li>
+            <li>이용 이력 관리, 좌석 변경·연장 등 장기 이용 편의성을 강조</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">공부방·스터디공간 디지털 설계 시 체크하는 항목</div>
+        <div class="card">
+          <ul>
+            <li>“저렴한 곳” 목록 속에서, 집중도와 안정감을 동시에 전달할 수 있는 문장 구성</li>
+            <li>할인 경쟁이 아닌, 장기적으로 머무르고 싶은 공간 이미지 구축</li>
+            <li>학생·직장인·수험생 등 핵심 타깃별로 다른 메시지가 필요한지 정리</li>
+          </ul>
+        </div>
+
+        <!-- 문의 -->
+        <section id="contact">
+          <h2 class="contact-title">공부방·스터디공간 디지털 인프라 상담</h2>
+          <p class="contact-sub">
+            어떤 이용자를 핵심으로 가져가고 싶으신지,<br />
+            현재 좌석 이용 패턴과 문의 흐름이 어떤지 알려주시면<br />
+            화면 구성과 문장 구조를 함께 설계해 드립니다.
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">연락처<span>*</span></label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">업체명·위치·운영 형태<span>*</span></label>
+                  <input
+                    type="text"
+                    id="shop"
+                    class="form-input"
+                    placeholder="예: ○○스터디카페 / ○○구 ○○동 / 정기석·야간 중심 운영"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                  <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="어떤 시간대 이용이 많고, 어떤 고객층(학생·직장인·수험생 등)을 더 늘리고 싶은지 간단히 적어 주세요."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 업체 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/sdxcyB4h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡 상담
+              </a>
+              <a href="tel:01032689899" class="contact-call">
+                전화 상담
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정바 -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/sdxcyB4h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담
+    </a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    function toggleMenu(open) {
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
+      if (open) {
+        m.classList.add("open");
+        b.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        m.classList.remove("open");
+        b.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     }
-  }
 
-  function handleContact(e){
-    e.preventDefault();
-    const n=document.getElementById("name").value.trim();
-    const p=document.getElementById("phone").value.trim();
-    const c=document.getElementById("center").value.trim();
-    const m=document.getElementById("message").value.trim();
-    const t=document.getElementById("termsRequired").checked;
-    if(!t){
-      alert("개인정보 수집 및 이용에 동의해주세요.");
-      return;
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
+
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
+        return;
+      }
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
+        return;
+      }
+
+      const sms =
+        `[H VIRAL 공부방·스터디공간 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n업체 정보: ${s}\n` +
+        `내용: ${m}`;
+
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
     }
-    if(!n || !p || !c || !m){
-      alert("필수 항목을 모두 입력해주세요.");
-      return;
-    }
-
-    const sms =
-      `[H VIRAL 공부방 문의]\n` +
-      `성명: ${n}\n연락처: ${p}\n공부방: ${c}\n` +
-      `내용: ${m}`;
-
-    const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
-    window.location.href = url;
-  }
-</script>
-
+  </script>
 </body>
 </html>
