@@ -3,219 +3,519 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>한식당·한정식 디지털 마케팅 │ H VIRAL</title>
+  <title>한식당 디지털 인프라 │ H VIRAL</title>
   <style>
-    /* ——— [초기 구조 그대로 유지] ——— */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",
-      "Noto Sans KR",system-ui,sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a { color:inherit; text-decoration:none; }
-    ul { list-style:none; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
+    }
 
-    .container { max-width:1080px; margin:0 auto; padding:0 20px 96px; }
-
+    /* 헤더 */
     header {
-      position:sticky; top:0; z-index:9000;
-      background:#020617; border-bottom:1px solid rgba(148,163,184,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
     .header-inner {
-      max-width:1080px; margin:0 auto; padding:14px 20px;
-      display:flex; justify-content:space-between; align-items:center;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .header-left { display:flex; align-items:center; gap:16px; }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
     .menu-btn {
-      width:32px; height:32px; border-radius:999px;
-      border:1px solid rgba(148,163,184,.6);
-      background:#020617; display:flex; align-items:center;
-      justify-content:center; cursor:pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
     .menu-btn span {
-      width:16px; height:2px; background:#e5e7eb; position:relative;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
     }
     .menu-btn span::before,
     .menu-btn span::after {
-      content:""; width:16px; height:2px; background:#e5e7eb;
-      position:absolute; left:0;
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: absolute;
+      left: 0;
     }
-    .menu-btn span::before { top:-5px; }
-    .menu-btn span::after { top:5px; }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
 
-    .logo-wrap { display:block; }
-    .logo { font-weight:700; font-size:22px; letter-spacing:1.2px; }
-    .logo-sub { font-size:11px; color:#9ca3af; }
-
+    .logo-wrap {
+      display: block;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
     .consult-btn {
-      padding:9px 20px; border-radius:999px;
-      background:#2563eb; color:#fff;
-      font-size:15px; font-weight:600;
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
     }
 
-    /* ---------------------------------- HERO ---------------------------------- */
+    /* 히어로 */
     .hero {
-      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
-      padding:28px 0 32px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
     }
     .hero-card {
-      border-radius:28px;
-      border:1px solid rgba(148,163,184,.4);
-      background:linear-gradient(135deg,#0b1f3a,#020617);
-      padding:28px 20px;
-      box-shadow:0 24px 60px rgba(15,23,42,0.9);
-      overflow:hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
     }
     .hero-badges {
-      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
     }
     .hero-badge {
-      display:inline-flex; align-items:center; gap:6px;
-      padding:4px 10px; border-radius:999px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(96,165,250,0.6);
-      font-size:11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
     }
     .hero-badge-dot {
-      width:8px; height:8px; border-radius:999px;
-      background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.3);
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
-    .hero-title { font-size:22px; font-weight:800; margin-bottom:10px; }
-    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:10px; }
-    .hero-note { font-size:11px; color:#9ca3af; margin-top:4px; }
+    .hero-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+    .hero-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
 
-    /* ---------------------------------- SECTION ---------------------------------- */
-    .section-title { margin:28px 0 10px; font-size:18px; font-weight:800; }
-    .section-sub { font-size:13px; color:#9ca3af; margin-bottom:10px; }
+    .section-title {
+      margin: 28px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
 
     .card {
-      background:#020617; border-radius:20px;
-      border:1px solid rgba(148,163,184,.6);
-      padding:16px 14px; font-size:13px; margin-bottom:14px;
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
-    .card-title { font-weight:700; margin-bottom:6px; font-size:14px; }
-    .card ul { margin-top:6px; padding-left:18px; }
-    .card li { list-style:disc; margin-bottom:4px; }
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
 
     .label-pill {
-      display:inline-flex; padding:4px 10px; border-radius:999px;
-      border:1px solid rgba(148,163,184,.7);
-      background:#020617; font-size:11px;
-      margin-bottom:8px;
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
     }
 
-    /* ---------------------------------- 문의 영역 ---------------------------------- */
-    #contact { margin:32px 0 4px; }
-    .contact-title { font-size:18px; font-weight:800; margin-bottom:10px; }
-    .contact-sub { font-size:13px; color:#9ca3af; margin-bottom:14px; }
+    /* 문의 섹션 */
+    #contact {
+      margin: 32px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
 
     .contact-card {
-      border-radius:20px; border:1px solid rgba(148,163,184,.7);
-      padding:18px 16px; font-size:13px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
     }
-    .contact-form { display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
-    .form-row { display:flex; gap:8px; flex-wrap:wrap; }
-    .form-group { flex:1; display:flex; flex-direction:column; gap:4px; }
-    .form-label { font-size:12px; color:#9ca3af; }
-    .form-label span { color:#f97316; }
-
-    .form-input, .form-textarea {
-      border-radius:10px; border:1px solid rgba(148,163,184,.7);
-      background:#020617; color:#f9fafb; padding:9px 10px; font-size:13px;
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
     }
-    .form-textarea { min-height:80px; resize:vertical; }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
 
     .terms-box {
-      border-radius:12px; border:1px solid rgba(55,65,81,.9);
-      padding:10px; font-size:12px; margin-bottom:12px; background:#020617;
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
     }
-    .terms-row { display:flex; gap:6px; font-size:12px; margin-bottom:4px; align-items:center; }
-    .terms-checkbox { width:14px; height:14px; accent-color:#2563eb; }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
+    }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .terms-row {
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      align-items: center;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
 
     .form-submit {
-      width:100%; border-radius:999px; background:#2563eb;
-      color:#fff; padding:11px 0; font-size:14px; font-weight:700;
-      border:none; cursor:pointer;
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
     }
 
     .contact-actions {
-      margin-top:14px; display:flex; gap:8px;
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
     }
     .contact-actions a {
-      flex:1; text-align:center; padding:11px 0;
-      border-radius:999px; font-weight:600; font-size:14px;
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
     }
-    .contact-kakao { background:#facc15; color:#000; }
-    .contact-call { background:#2563eb; color:#fff; }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
 
-    /* ---------------------------------- 하단바 ---------------------------------- */
+    /* 하단바 */
     .bottom-bar {
-      position:fixed; left:0; bottom:0; width:100%;
-      display:flex; justify-content:space-between;
-      background:#020617; padding:14px 10px;
-      border-top:1px solid rgba(148,163,184,.4); z-index:9700;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
     }
     .bottom-btn {
-      flex:1; margin:0 4px; text-align:center; padding:13px 0;
-      border-radius:999px; font-size:15px; font-weight:600;
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
     }
-    .bottom-btn.kakao { background:#facc15; color:#000; }
-    .bottom-btn.ask { background:#111827; color:#e5e7eb; border:1px solid rgba(148,163,184,.6); }
-    .bottom-btn.call { background:#2563eb; color:#fff; }
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
 
-    /* ——— 사이드메뉴(index와 동일) ——— */
+    /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
-      position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(15,23,42,.7); backdrop-filter:blur(4px);
-      z-index:9500; display:none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
     }
-    #sideBackdrop.show { display:block; }
-
+    #sideBackdrop.show {
+      display: block;
+    }
     #sideMenu {
-      position:fixed; top:0; left:0; width:80%; max-width:360px;
-      height:100%; background:#020617;
-      border-right:1px solid rgba(148,163,184,.5);
-      transform:translateX(-100%); transition:transform .3s ease;
-      z-index:9600; display:flex; flex-direction:column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
     }
-    #sideMenu.open { transform:translateX(0); }
-
+    #sideMenu.open {
+      transform: translateX(0);
+    }
     .side-menu-header {
-      padding:20px 22px 12px;
-      border-bottom:1px solid rgba(31,41,55,.9);
-      display:flex; justify-content:space-between; align-items:center;
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
     }
-    .side-menu-title { font-size:18px; font-weight:700; }
-    .side-sub { font-size:11px; color:#9ca3af; padding:0 22px 12px; }
+    .side-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
     .side-scroll {
-      flex:1; padding:8px 22px 120px;
-      overflow-y:auto; -webkit-overflow-scrolling:touch;
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
     }
     .side-section-title {
-      font-size:13px; color:#9ca3af; margin:18px 0 6px; font-weight:600;
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
     }
     details.side-group {
-      margin-bottom:8px; border-radius:14px;
-      border:1px solid rgba(75,85,99,.8); background:#020617;
-      overflow:hidden;
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
     }
     .side-group summary {
-      list-style:none; padding:10px 12px;
-      display:flex; align-items:center; justify-content:space-between;
-      font-size:14px; cursor:pointer;
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
     }
-    .side-group-links { border-top:1px solid rgba(55,65,81,.9); padding:6px 12px 8px; }
-    .side-group-links a { display:block; padding:4px 0; font-size:13px; }
+    .side-group summary::-webkit-details-marker {
+      display: none;
+    }
+    .side-group-label {
+      font-weight: 600;
+    }
+    .side-group-arrow {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+    }
 
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 36px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-card {
+        padding: 32px 28px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
+    }
   </style>
 </head>
-
 <body>
-
-  <!-- 사이드메뉴 / 헤더 동일 유지 -->
+  <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <nav id="sideMenu">
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">H VIRAL</div>
@@ -223,20 +523,21 @@
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-
     <div class="side-scroll">
-      <!-- 서비스 메뉴 -->
       <div class="side-section-title">서비스</div>
-      <a href="/digital.html">디지털 마케팅 설계</a>
-      <a href="/website.html">홈페이지 제작</a>
-      <a href="/app.html">앱·예약 시스템</a>
-      <a href="/lecture.html">마케팅 강의 신청</a>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-      <!-- 업종별 -->
       <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
+      <!-- 의료·병원 -->
       <details class="side-group">
-        <summary><span class="side-group-label">의료·병원</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/skin.html">피부과</a>
           <a href="/industry/dental.html">치과</a>
@@ -250,8 +551,12 @@
         </div>
       </details>
 
+      <!-- 헬스·뷰티 -->
       <details class="side-group">
-        <summary><span class="side-group-label">헬스·뷰티</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/gym.html">헬스장</a>
           <a href="/industry/pt.html">PT 스튜디오</a>
@@ -263,8 +568,12 @@
         </div>
       </details>
 
+      <!-- 카페·음식점 -->
       <details class="side-group" open>
-        <summary><span class="side-group-label">카페·음식점</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/cafe.html">카페</a>
           <a href="/industry/dessert.html">디저트 카페</a>
@@ -277,8 +586,12 @@
         </div>
       </details>
 
+      <!-- 교육·학원 -->
       <details class="side-group">
-        <summary><span class="side-group-label">교육·학원</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/academy.html">입시·보습학원</a>
           <a href="/industry/lang.html">어학·유학</a>
@@ -287,8 +600,12 @@
         </div>
       </details>
 
+      <!-- 생활·지역 서비스 -->
       <details class="side-group">
-        <summary><span class="side-group-label">생활·지역 서비스</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/car.html">자동차 정비·카센터</a>
           <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
@@ -300,8 +617,12 @@
         </div>
       </details>
 
+      <!-- 전문직·B2B -->
       <details class="side-group">
-        <summary><span class="side-group-label">전문직·B2B</span><span class="side-group-arrow">▼</span></summary>
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
         <div class="side-group-links">
           <a href="/industry/tax.html">세무·회계사</a>
           <a href="/industry/lawyer.html">변호사</a>
@@ -314,15 +635,14 @@
           <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
         </div>
       </details>
-
     </div>
   </nav>
 
-  <!-- HEADER -->
+  <!-- 헤더 -->
   <header>
     <div class="header-inner">
       <div class="header-left">
-        <button class="menu-btn" onclick="toggleMenu(true)">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
@@ -330,104 +650,131 @@
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank">상담하기</a>
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        상담하기
+      </a>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- 메인 -->
   <main>
     <section class="hero">
       <div class="container">
-
-        <!-- HERO CARD -->
         <div class="hero-card">
           <div class="hero-badges">
             <span class="hero-badge">
               <span class="hero-badge-dot"></span>
-              한식당 전용 디지털 마케팅 구조
+              한식당 전용 디지털 인프라
             </span>
             <span class="hero-badge">
-              메뉴 경쟁 아닌 ‘선택받는 이유’ 중심 설계
+              점심·저녁·회식 동선을 기준으로 설계
             </span>
           </div>
 
           <h1 class="hero-title">
-            한식당 마케팅은 “홍보”가 아니라,<br />
-            <b>운영의 강점을 고객 기준으로 재구성하는 일입니다.</b>
+            “메뉴가 아니라,<br />
+            운영과 동선이 보이는 한식당이 먼저 선택됩니다.”
           </h1>
-
           <p class="hero-desc">
-            에이치바이럴은 단순히 사진·메뉴 소개가 아니라,<br />
-            한식당의 <b>회전율·객단가·재방문 구조</b>를 기준으로  
-            고객이 ‘이 집을 선택해야 하는 이유’를 정리합니다.
+            에이치바이럴은 점심 회전·저녁 회식·주말 가족 방문까지<br />
+            한식당이 어떤 고객을 주력으로 가져갈지부터 정리한 뒤,<br />
+            상권·메뉴·좌석 구성을 기준으로 디지털 마케팅 구조를 설계합니다.
           </p>
-
           <p class="hero-note">
-            한식 고객은 “한 번 먹고 끝”이 아니라,  
-            <b>상권 기반 생활 패턴에 따라 재방문이 결정됩니다.</b>
+            ‘맛있어 보이는 집’이 아니라 ‘단골로 남을 집’으로 보이게 만드는 것이 핵심입니다.
           </p>
         </div>
 
-        <!-- SECTION 1 -->
-        <h2 class="section-title">한식 고객이 실제로 판단하는 기준</h2>
+        <h2 class="section-title">한식당 고객이 실제로 확인하는 정보</h2>
         <p class="section-sub">
-          메뉴가 아니라, ‘운영의 신뢰도’를 기준으로 결정합니다.<br />
-          온라인에서 이 기준이 명확하게 보이면 문의와 방문이 달라집니다.
+          메뉴판만으로는 경쟁이 되지 않는 시장입니다.<br />
+          상권·고객 동선·식사 목적에 따라, 어떤 장점을 먼저 보여줄지 정리하는 것이 중요합니다.
         </p>
 
         <div class="card">
-          <div class="card-title">1. 조리·운영의 일관성과 신뢰도</div>
+          <div class="card-title">1. 상권·타깃 고객 정의</div>
           <ul>
-            <li>메뉴의 다양성보다 ‘계절·재료·조리 기준의 일관성’이 중요</li>
-            <li>조리 프로세스·준비 방식·피크타임 운영 역량을 고객 기준으로 설명</li>
-            <li>전문 조리 인력·주방 라인 구성·동선 관리가 신뢰 포인트가 됨</li>
+            <li>오피스 상권(점심 위주) / 주거 상권(저녁·주말 중심) / 혼합 상권을 구분해 설명</li>
+            <li>근처 회사원·가족·단체 회식 등 주력 고객군을 문장으로 명확히 정의</li>
+            <li>‘누구에게 특히 맞는 집인지’를 첫 화면에서 이해할 수 있게 구성</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-title">2. 실제 고객 패턴 기반의 마케팅</div>
+          <div class="card-title">2. 메뉴 구성과 객단가 구조</div>
           <ul>
-            <li>점심 중심 상권/저녁 중심 상권/주말 가족 중심 상권별 전략 차별화</li>
-            <li>지역 생활반경+업장 유형에 맞는 메시지 구조 설계</li>
-            <li>“메뉴가 많다”보다 “어떤 고객이 자주 찾는지”를 먼저 설명</li>
+            <li>대표 메뉴, 점심 세트, 저녁 메뉴, 주말·특선 메뉴를 역할별로 나누어 안내</li>
+            <li>1인·2인·3~4인 구성, 회식·단체용 등 인원별 추천 조합을 제안 형태로 보여줌</li>
+            <li>객단가를 결정하는 요소(찬 구성, 고기 중량, 식사 후 추가 메뉴 등)를 명확히 설명</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-title">3. 회전율을 높이는 화면 구성</div>
+          <div class="card-title">3. 맛보다 중요한 ‘안정성’과 조리 기준</div>
           <ul>
-            <li>대기시간·픽업·예약 여부 등의 운영 시스템을 미리 안내</li>
-            <li>바쁜 시간대의 동선·웨이팅 처리 능력을 보여주면 신뢰도 상승</li>
-            <li>사진·글 모두 ‘고객이 방문 전 예상할 수 있는 정보’ 중심 구성</li>
+            <li>메뉴 수 대비 조리 동선·주방 인력·피크타임 처리 역량을 간단히 설명</li>
+            <li>육류·탕·찌개·볶음류 등 조리 카테고리 별 준비·마감 기준 안내</li>
+            <li>당일 재료·전날 준비·장기 숙성 등 각 메뉴의 ‘기본 원칙’을 한 문단으로 정리</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-title">4. 재방문을 만드는 구조</div>
+          <div class="card-title">4. 좌석·테이블·회전율 구조</div>
           <ul>
-            <li>시그니처 메뉴와 안정적인 맛 유지력을 강조</li>
-            <li>점심→저녁→주말로 이어지는 방문 루프 구조화</li>
-            <li>단골 고객군(근처 직장인·주거지·가족 단위)의 패턴 분석</li>
+            <li>2인·4인·단체석 비율, 분리 좌석 여부 등 좌석 구성을 숫자와 함께 안내</li>
+            <li>점심 회전율 중심인지, 저녁 체류 중심인지에 따라 동선과 운영 방식을 설명</li>
+            <li>대기·웨이팅·예약 손님 처리 방식을 미리 알려 불편함에 대한 불안을 줄임</li>
           </ul>
         </div>
 
-        <div class="label-pill">한식당 설계 시 핵심 체크 포인트</div>
+        <div class="card">
+          <div class="card-title">5. 단체·회식·예약 운영</div>
+          <ul>
+            <li>단체 인원 기준(예: 8인·12인·20인 이상), 코스 가능 여부, 회식 전용 메뉴를 구분 안내</li>
+            <li>예약 가능 시간대, 보증 인원, 사전 주문 필요 여부 등 운영 규칙을 명확하게 표기</li>
+            <li>주차·대중교통·근처 랜드마크 등 회식 결정을 도와주는 정보를 함께 제공</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. 포장·배달·반조리 상품</div>
+          <ul>
+            <li>포장·배달 시 품질이 유지되는 메뉴와 매장에서만 추천하는 메뉴를 구분해 안내</li>
+            <li>반조리·밀키트·명절 선물세트 등 확장 가능한 상품이 있다면 별도 블록으로 구성</li>
+            <li>배달앱·직접 주문·전화 주문 등 채널별 차이와 매장 선호 채널을 자연스럽게 유도</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">7. 재방문·단골 고객 관리 관점</div>
+          <ul>
+            <li>주기적으로 찾는 메뉴(점심 고정 메뉴, 특정 찌개·탕 등)를 어떻게 유지·관리하는지 설명</li>
+            <li>계절 메뉴·제철 식재료 활용 방식, 명절·행사 시즌 운영 방식 안내</li>
+            <li>“처음 방문 후, 어떤 이유로 다시 찾게 되는지”를 실제 단골 관점에서 문장으로 정리</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">한식당 디지털 설계 시 체크하는 항목</div>
         <div class="card">
           <ul>
-            <li>조리 품질·동선 관리·메뉴 포지셔닝을 고객 기준으로 정리</li>
-            <li>상권 유형별 메시지 구조 → 점심/저녁/주말 패턴 반영</li>
-            <li>메뉴가 아니라 ‘운영의 전문성’을 설명하는 방식</li>
+            <li>상권과 주력 고객군이 ‘메뉴 소개보다 먼저’ 눈에 들어오는지</li>
+            <li>점심·저녁·주말·회식을 각각 어떻게 운영하는지, 구조가 한 번에 보이는지</li>
+            <li>맛 설명이 아니라 ‘운영의 안정성과 신뢰도’가 중심에 놓여 있는지</li>
           </ul>
         </div>
 
-
-        <!-- CONTACT -->
+        <!-- 문의 -->
         <section id="contact">
-          <h2 class="contact-title">한식당 마케팅·운영 구조 상담</h2>
+          <h2 class="contact-title">한식당 디지털 인프라·마케팅 상담</h2>
           <p class="contact-sub">
-            지금 상황을 간단히 남겨주시면,<br />
-            한식업 기준에서 반드시 짚어야 할 부분을  
-            <b>운영·상권·고객 동선 기준으로 정리해 드립니다.</b>
+            어떤 상권에서, 어떤 고객을 주력으로 운영하고 계신지,<br />
+            점심·저녁·주말·회식 중 어디를 더 키우고 싶으신지 알려주시면<br />
+            한식당에 맞는 마케팅 구조를 함께 설계해 드립니다.
           </p>
 
           <div class="contact-card">
@@ -440,30 +787,74 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label">연락처<span>*</span></label>
-                    <input type="tel" id="phone" class="form-input" placeholder="'-' 없이 숫자만" required />
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">매장명·위치·운영 형태<span>*</span></label>
-                  <input type="text" id="shop" class="form-input"
-                    placeholder="예: ○○한식 / ○○구 ○○동 / 점심·저녁 중심"
-                    required />
+                  <input
+                    type="text"
+                    id="shop"
+                    class="form-input"
+                    placeholder="예: ○○한식 / ○○구 ○○동 / 점심·저녁·회식 비율 등"
+                    required
+                  />
                 </div>
 
                 <div class="form-group">
                   <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
-                  <textarea id="message" class="form-textarea"
-                    placeholder="어떤 고객층이 많고, 어떤 시간을 더 강화하고 싶은지 적어주세요."
-                    required></textarea>
+                  <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="점심·저녁·회식·주말 중 어디가 고민이신지, 간단히 적어 주세요."
+                    required
+                  ></textarea>
                 </div>
               </div>
 
-              <!-- TERMS -->
               <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
+                  </div>
+                </details>
                 <label class="terms-row">
-                  <input type="checkbox" id="termsRequired" class="terms-checkbox">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
                   <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다.</span>
                 </label>
               </div>
 
@@ -471,53 +862,85 @@
             </form>
 
             <div class="contact-actions">
-              <a href="https://open.kakao.com/o/sdxcyB4h" class="contact-kakao" target="_blank">카톡 상담</a>
-              <a href="tel:01032689899" class="contact-call">전화 상담</a>
+              <a
+                href="https://open.kakao.com/o/sdxcyB4h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡 상담
+              </a>
+              <a href="tel:01032689899" class="contact-call">
+                전화 상담
+              </a>
             </div>
           </div>
         </section>
-
       </div>
     </section>
   </main>
 
-  <!-- 하단바 -->
+  <!-- 하단 고정바 -->
   <div class="bottom-bar">
-    <a href="https://open.kakao.com/o/sdxcyB4h" class="bottom-btn kakao" target="_blank">카톡 상담</a>
+    <a
+      href="https://open.kakao.com/o/sdxcyB4h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담
+    </a>
     <a href="#contact" class="bottom-btn ask">문의하기</a>
     <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
   </div>
 
   <script>
-    function toggleMenu(open){
-      const m=document.getElementById("sideMenu");
-      const b=document.getElementById("sideBackdrop");
-      if(open){ m.classList.add("open"); b.classList.add("show"); document.body.style.overflow="hidden"; }
-      else{ m.classList.remove("open"); b.classList.remove("show"); document.body.style.overflow=""; }
+    function toggleMenu(open) {
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
+      if (open) {
+        m.classList.add("open");
+        b.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        m.classList.remove("open");
+        b.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     }
 
-    function handleContactSubmit(e){
+    function handleContactSubmit(e) {
       e.preventDefault();
-      const n=document.getElementById("name").value.trim();
-      const p=document.getElementById("phone").value.trim();
-      const s=document.getElementById("shop").value.trim();
-      const m=document.getElementById("message").value.trim();
-      const t=document.getElementById("termsRequired").checked;
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
 
-      if(!t){ alert("개인정보 수집 및 이용에 동의해주세요."); return; }
-      if(!n||!p||!s||!m){ alert("필수 항목을 모두 입력해주세요."); return; }
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
+        return;
+      }
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
+        return;
+      }
 
-      const sms=
-        `[H VIRAL 한식당 문의]\n`+
-        `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n내용: ${m}`;
+      const sms =
+        `[H VIRAL 한식당 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n` +
+        `내용: ${m}`;
 
-      const url=`sms:01032689899?body=${encodeURIComponent(sms)}`;
-      window.location.href=url;
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
 
-      alert("문자앱을 열었습니다. 열리지 않으면 카카오톡 또는 전화 상담을 이용해주세요.");
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
       e.target.reset();
     }
   </script>
-
 </body>
 </html>
