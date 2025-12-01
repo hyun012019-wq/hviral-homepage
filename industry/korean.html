@@ -3,56 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>한식당 브랜드 운영·디지털 전환 │ H VIRAL</title>
+  <title>한식당·한정식 디지털 마케팅 │ H VIRAL</title>
   <style>
+    /* ——— [초기 구조 그대로 유지] ——— */
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",
+      "Noto Sans KR",system-ui,sans-serif;
       background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
     }
     a { color:inherit; text-decoration:none; }
     ul { list-style:none; }
+
     .container { max-width:1080px; margin:0 auto; padding:0 20px 96px; }
 
-    /* 헤더 */
     header {
       position:sticky; top:0; z-index:9000;
       background:#020617; border-bottom:1px solid rgba(148,163,184,0.2);
     }
     .header-inner {
-      max-width:1080px; margin:0 auto;
-      padding:14px 20px; display:flex; justify-content:space-between; align-items:center;
+      max-width:1080px; margin:0 auto; padding:14px 20px;
+      display:flex; justify-content:space-between; align-items:center;
     }
+    .header-left { display:flex; align-items:center; gap:16px; }
     .menu-btn {
       width:32px; height:32px; border-radius:999px;
-      border:1px solid rgba(148,163,184,0.6); background:#020617;
-      display:flex; align-items:center; justify-content:center; cursor:pointer;
+      border:1px solid rgba(148,163,184,.6);
+      background:#020617; display:flex; align-items:center;
+      justify-content:center; cursor:pointer;
     }
     .menu-btn span {
       width:16px; height:2px; background:#e5e7eb; position:relative;
     }
-    .menu-btn span::before, .menu-btn span::after {
-      content:""; width:16px; height:2px; background:#e5e7eb; position:absolute; left:0;
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content:""; width:16px; height:2px; background:#e5e7eb;
+      position:absolute; left:0;
     }
-    .menu-btn span::before { top:-5px; } .menu-btn span::after { top:5px; }
+    .menu-btn span::before { top:-5px; }
+    .menu-btn span::after { top:5px; }
 
     .logo-wrap { display:block; }
     .logo { font-weight:700; font-size:22px; letter-spacing:1.2px; }
     .logo-sub { font-size:11px; color:#9ca3af; }
+
     .consult-btn {
-      padding:9px 20px; border-radius:999px; background:#2563eb;
-      color:#fff; font-size:15px; font-weight:600;
+      padding:9px 20px; border-radius:999px;
+      background:#2563eb; color:#fff;
+      font-size:15px; font-weight:600;
     }
 
-    /* 히어로 */
+    /* ---------------------------------- HERO ---------------------------------- */
     .hero {
       background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
       padding:28px 0 32px;
     }
     .hero-card {
-      border-radius:28px; border:1px solid rgba(148,163,184,0.4);
+      border-radius:28px;
+      border:1px solid rgba(148,163,184,.4);
       background:linear-gradient(135deg,#0b1f3a,#020617);
-      padding:28px 20px; box-shadow:0 24px 60px rgba(15,23,42,0.9);
+      padding:28px 20px;
+      box-shadow:0 24px 60px rgba(15,23,42,0.9);
       overflow:hidden;
     }
     .hero-badges {
@@ -60,26 +71,26 @@
     }
     .hero-badge {
       display:inline-flex; align-items:center; gap:6px;
-      padding:4px 10px; border-radius:999px; background:rgba(15,23,42,0.9);
+      padding:4px 10px; border-radius:999px;
+      background:rgba(15,23,42,0.9);
       border:1px solid rgba(96,165,250,0.6);
-      font-size:11px; color:#e5e7eb;
+      font-size:11px;
     }
     .hero-badge-dot {
-      width:8px; height:8px; border-radius:999px; background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.3);
+      width:8px; height:8px; border-radius:999px;
+      background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.3);
     }
     .hero-title { font-size:22px; font-weight:800; margin-bottom:10px; }
-    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:12px; }
+    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:10px; }
     .hero-note { font-size:11px; color:#9ca3af; margin-top:4px; }
 
-    .section-title {
-      margin:28px 0 10px; font-size:18px; font-weight:800;
-    }
+    /* ---------------------------------- SECTION ---------------------------------- */
+    .section-title { margin:28px 0 10px; font-size:18px; font-weight:800; }
     .section-sub { font-size:13px; color:#9ca3af; margin-bottom:10px; }
 
     .card {
       background:#020617; border-radius:20px;
-      border:1px solid rgba(148,163,184,0.6);
+      border:1px solid rgba(148,163,184,.6);
       padding:16px 14px; font-size:13px; margin-bottom:14px;
     }
     .card-title { font-weight:700; margin-bottom:6px; font-size:14px; }
@@ -88,17 +99,18 @@
 
     .label-pill {
       display:inline-flex; padding:4px 10px; border-radius:999px;
-      border:1px solid rgba(148,163,184,0.7); background:#020617;
-      font-size:11px; margin-bottom:8px;
+      border:1px solid rgba(148,163,184,.7);
+      background:#020617; font-size:11px;
+      margin-bottom:8px;
     }
 
-    /* 문의 섹션 */
+    /* ---------------------------------- 문의 영역 ---------------------------------- */
     #contact { margin:32px 0 4px; }
     .contact-title { font-size:18px; font-weight:800; margin-bottom:10px; }
     .contact-sub { font-size:13px; color:#9ca3af; margin-bottom:14px; }
 
     .contact-card {
-      border-radius:20px; border:1px solid rgba(148,163,184,0.7);
+      border-radius:20px; border:1px solid rgba(148,163,184,.7);
       padding:18px 16px; font-size:13px;
     }
     .contact-form { display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
@@ -106,30 +118,23 @@
     .form-group { flex:1; display:flex; flex-direction:column; gap:4px; }
     .form-label { font-size:12px; color:#9ca3af; }
     .form-label span { color:#f97316; }
+
     .form-input, .form-textarea {
-      border-radius:10px; border:1px solid rgba(148,163,184,0.7);
-      background:#020617; color:#f9fafb;
-      padding:9px 10px; font-size:13px;
+      border-radius:10px; border:1px solid rgba(148,163,184,.7);
+      background:#020617; color:#f9fafb; padding:9px 10px; font-size:13px;
     }
     .form-textarea { min-height:80px; resize:vertical; }
 
     .terms-box {
-      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
-      padding:10px; font-size:12px; margin-bottom:12px;
+      border-radius:12px; border:1px solid rgba(55,65,81,.9);
+      padding:10px; font-size:12px; margin-bottom:12px; background:#020617;
     }
-    .terms-detail { margin-bottom:6px; }
-    .terms-summary {
-      cursor:pointer; list-style:none; font-weight:600;
-      display:flex; justify-content:space-between;
-    }
-    .terms-body { font-size:11px; color:#9ca3af; line-height:1.5; margin-top:6px; }
-    .terms-row { display:flex; gap:6px; font-size:12px; margin-bottom:4px; }
+    .terms-row { display:flex; gap:6px; font-size:12px; margin-bottom:4px; align-items:center; }
     .terms-checkbox { width:14px; height:14px; accent-color:#2563eb; }
 
     .form-submit {
-      width:100%; border-radius:999px;
-      background:#2563eb; color:#fff;
-      padding:11px 0; font-size:14px; font-weight:700;
+      width:100%; border-radius:999px; background:#2563eb;
+      color:#fff; padding:11px 0; font-size:14px; font-weight:700;
       border:none; cursor:pointer;
     }
 
@@ -138,303 +143,381 @@
     }
     .contact-actions a {
       flex:1; text-align:center; padding:11px 0;
-      border-radius:999px; font-weight:600;
+      border-radius:999px; font-weight:600; font-size:14px;
     }
     .contact-kakao { background:#facc15; color:#000; }
     .contact-call { background:#2563eb; color:#fff; }
 
-    /* 하단바 */
+    /* ---------------------------------- 하단바 ---------------------------------- */
     .bottom-bar {
       position:fixed; left:0; bottom:0; width:100%;
       display:flex; justify-content:space-between;
       background:#020617; padding:14px 10px;
-      border-top:1px solid rgba(148,163,184,0.4);
-      z-index:9700;
+      border-top:1px solid rgba(148,163,184,.4); z-index:9700;
     }
     .bottom-btn {
-      flex:1; margin:0 4px; text-align:center;
-      padding:13px 0; border-radius:999px;
-      font-size:15px; font-weight:600;
+      flex:1; margin:0 4px; text-align:center; padding:13px 0;
+      border-radius:999px; font-size:15px; font-weight:600;
     }
     .bottom-btn.kakao { background:#facc15; color:#000; }
-    .bottom-btn.ask { background:#111827; color:#e5e7eb; border:1px solid rgba(148,163,184,0.6); }
+    .bottom-btn.ask { background:#111827; color:#e5e7eb; border:1px solid rgba(148,163,184,.6); }
     .bottom-btn.call { background:#2563eb; color:#fff; }
 
-    /* 사이드 메뉴 */
+    /* ——— 사이드메뉴(index와 동일) ——— */
     #sideBackdrop {
       position:fixed; top:0; left:0; width:100%; height:100%;
-      background:rgba(15,23,42,0.7); backdrop-filter:blur(4px);
+      background:rgba(15,23,42,.7); backdrop-filter:blur(4px);
       z-index:9500; display:none;
     }
     #sideBackdrop.show { display:block; }
 
     #sideMenu {
-      position:fixed; top:0; left:0; width:80%; max-width:360px; height:100%;
-      background:#020617; border-right:1px solid rgba(148,163,184,0.5);
-      transform:translateX(-100%); transition:0.3s;
+      position:fixed; top:0; left:0; width:80%; max-width:360px;
+      height:100%; background:#020617;
+      border-right:1px solid rgba(148,163,184,.5);
+      transform:translateX(-100%); transition:transform .3s ease;
       z-index:9600; display:flex; flex-direction:column;
     }
     #sideMenu.open { transform:translateX(0); }
 
     .side-menu-header {
-      padding:20px 22px 12px; border-bottom:1px solid rgba(31,41,55,0.9);
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,.9);
       display:flex; justify-content:space-between; align-items:center;
     }
     .side-menu-title { font-size:18px; font-weight:700; }
     .side-sub { font-size:11px; color:#9ca3af; padding:0 22px 12px; }
-
     .side-scroll {
-      flex:1; padding:8px 22px 120px; overflow-y:auto;
+      flex:1; padding:8px 22px 120px;
+      overflow-y:auto; -webkit-overflow-scrolling:touch;
     }
     .side-section-title {
       font-size:13px; color:#9ca3af; margin:18px 0 6px; font-weight:600;
     }
-    .side-link { display:block; padding:8px 0; font-size:14px; }
-
     details.side-group {
       margin-bottom:8px; border-radius:14px;
-      border:1px solid rgba(75,85,99,0.8); background:#020617;
+      border:1px solid rgba(75,85,99,.8); background:#020617;
+      overflow:hidden;
     }
     .side-group summary {
-      padding:10px 12px; display:flex; justify-content:space-between; cursor:pointer;
+      list-style:none; padding:10px 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:14px; cursor:pointer;
     }
-    .side-group-links { border-top:1px solid rgba(55,65,81,0.9); padding:6px 12px 8px; }
+    .side-group-links { border-top:1px solid rgba(55,65,81,.9); padding:6px 12px 8px; }
     .side-group-links a { display:block; padding:4px 0; font-size:13px; }
+
   </style>
 </head>
+
 <body>
 
-<!-- 백드롭 -->
-<div id="sideBackdrop" onclick="toggleMenu(false)"></div>
+  <!-- 사이드메뉴 / 헤더 동일 유지 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-<!-- 사이드 메뉴 -->
-<nav id="sideMenu">
-  <div class="side-menu-header">
-    <div>
-      <div class="side-menu-title">H VIRAL</div>
-      <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-    </div>
-    <button class="side-close" onclick="toggleMenu(false)">닫기</button>
-  </div>
-
-  <div class="side-scroll">
-    <div class="side-section-title">서비스</div>
-    <a href="/digital.html" class="side-link">디지털 마케팅</a>
-    <a href="/website.html" class="side-link">홈페이지 제작</a>
-    <a href="/app.html" class="side-link">앱·예약 시스템</a>
-    <a href="/lecture.html" class="side-link">마케팅 강의</a>
-
-    <div class="side-section-title">업종별 상세</div>
-
-    <details class="side-group" open>
-      <summary>
-        <span>카페·음식점</span><span class="side-group-arrow">▼</span>
-      </summary>
-      <div class="side-group-links">
-        <a href="/industry/cafe.html">카페</a>
-        <a href="/industry/dessert.html">디저트 카페</a>
-        <a href="/industry/korean.html">한식당</a>
-        <a href="/industry/japanese.html">일식당</a>
-        <a href="/industry/chinese.html">중식당</a>
-        <a href="/industry/western.html">양식당</a>
-        <a href="/industry/chicken.html">치킨집</a>
-        <a href="/industry/icecream.html">아이스크림 매장</a>
+  <nav id="sideMenu">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
-    </details>
-
-  </div>
-</nav>
-
-<!-- 헤더 -->
-<header>
-  <div class="header-inner">
-    <div class="header-left">
-      <button class="menu-btn" onclick="toggleMenu(true)">
-        <span></span>
-      </button>
-      <a href="/" class="logo-wrap">
-        <div class="logo">H VIRAL</div>
-        <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-      </a>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
-  </div>
-</header>
 
-<!-- 메인 -->
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <div class="hero-badges">
-          <span class="hero-badge"><span class="hero-badge-dot"></span>한식 업종 특화 페이지</span>
-          <span class="hero-badge">지역·상권·회전율 기반 한식당 브랜딩 구성</span>
+    <div class="side-scroll">
+      <!-- 서비스 메뉴 -->
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html">디지털 마케팅 설계</a>
+      <a href="/website.html">홈페이지 제작</a>
+      <a href="/app.html">앱·예약 시스템</a>
+      <a href="/lecture.html">마케팅 강의 신청</a>
+
+      <!-- 업종별 -->
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
+
+      <details class="side-group">
+        <summary><span class="side-group-label">의료·병원</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
         </div>
+      </details>
 
-        <h1 class="hero-title">
-          메뉴 다양성보다, “무엇을 잘하는 한식당인지”를<br />명확하게 보여주는 방식으로 정리합니다.
-        </h1>
-        <p class="hero-desc">
-          에이치바이럴은 <strong>주력메뉴·상권특성·방문목적·회전률</strong>을 기준으로  
-          한식당의 경쟁력을 온라인에서 선명하게 전달하는 화면을 만듭니다.
-        </p>
-        <p class="hero-note">* 홀·포장·배달 비중에 따라 구성은 개별 조정 가능합니다.</p>
+      <details class="side-group">
+        <summary><span class="side-group-label">헬스·뷰티</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
+
+      <details class="side-group" open>
+        <summary><span class="side-group-label">카페·음식점</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <details class="side-group">
+        <summary><span class="side-group-label">교육·학원</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <details class="side-group">
+        <summary><span class="side-group-label">생활·지역 서비스</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <details class="side-group">
+        <summary><span class="side-group-label">전문직·B2B</span><span class="side-group-arrow">▼</span></summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
       </div>
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank">상담하기</a>
+    </div>
+  </header>
 
-      <!-- 핵심 파트 -->
-      <h2 class="section-title">한식당이 온라인에서 놓치기 쉬운 요소</h2>
-      <p class="section-sub">고객이 실제로 궁금해하는 정보 중심으로 재정리합니다.</p>
+  <!-- MAIN -->
+  <main>
+    <section class="hero">
+      <div class="container">
 
-      <div class="card">
-        <div class="card-title">1. 주력 메뉴 라인업 정리</div>
-        <p>무조건 메뉴가 많다고 좋은 것이 아닙니다. 고객이 “여기서 무엇을 먹어야 하는지”를 정확히 알 수 있어야 합니다.</p>
-        <ul>
-          <li>대표·시그니처 메뉴 3~5개 강조</li>
-          <li>고기·탕·찌개·식사류 등 카테고리별 요약</li>
-          <li>재료 특징·간 조절·맵기·식감 등 고객이 궁금해하는 실제 정보 제공</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">2. 점심·저녁·주말별 방문 패턴 안내</div>
-        <ul>
-          <li>직장가 점심 고객이 많은지, 가족 단위 저녁 방문이 많은지 구분</li>
-          <li>대기 피크 시간대 단순 요약</li>
-          <li>회식·단체석 가능 여부, 최대 수용 인원 안내</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">3. 상권·경쟁 포지션 정리</div>
-        <ul>
-          <li>주변 상권(주거/오피스/학원가)에 따라 강조해야 할 메시지 다르게 설계</li>
-          <li>동일 메뉴 경쟁점 대비 차별 요소 명확하게 표현</li>
-          <li>“왜 이 지역에서 선택받는 한식당인지”를 기준으로 문장 구성</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-title">4. 위생·조리·원재료에 대한 신뢰 요소 강조</div>
-        <ul>
-          <li>매일 준비하는 육수·반찬·식재 기준</li>
-          <li>조리 과정을 설명할 수 있는 문장 중심 구성</li>
-          <li>아이·어르신 방문에 적합한 메뉴 안내 포함</li>
-        </ul>
-      </div>
-
-      <div class="label-pill">H VIRAL이 한식당 페이지에서 함께 정리하는 내용</div>
-      <div class="card">
-        <ul>
-          <li>주력 메뉴 중심의 화면 구성(고객 선택 스트레스 최소화)</li>
-          <li>방문 목적별 문장 구성: 직장인 점심 / 가족 저녁 / 단체 회식</li>
-          <li>대기 시간, 좌석 형태, 추천 메뉴 코스 등 실질 정보 강화</li>
-          <li>예약·단체 상담까지 이어지는 문의 구조 설계</li>
-        </ul>
-      </div>
-
-      <!-- 문의 -->
-      <section id="contact">
-        <h2 class="contact-title">한식당 페이지 구성 상담</h2>
-        <p class="contact-sub">
-          매장 정보 알려주시면, 한식업종에 맞는 화면·문장 구성으로 정리해드립니다.
-        </p>
-
-        <div class="contact-card">
-          <form id="contactForm" onsubmit="handleContact(event)">
-            <div class="contact-form">
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">성명<span>*</span></label>
-                  <input type="text" id="name" class="form-input" required />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">연락처<span>*</span></label>
-                  <input type="tel" id="phone" class="form-input" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">매장명·주력메뉴<span>*</span></label>
-                <input type="text" id="shop" class="form-input" placeholder="예: ○○한식 / 갈비탕·냉면·정식" required />
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
-                <textarea id="message" class="form-textarea" required></textarea>
-              </div>
-            </div>
-
-            <div class="terms-box">
-              <details class="terms-detail">
-                <summary class="terms-summary">개인정보 수집 및 이용 동의 (필수)</summary>
-                <div class="terms-body">
-                  ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br>
-                  ② 수집 목적: 상담 및 안내<br>
-                  ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br>
-                  ④ 동의 거부 시 상담 제공이 제한될 수 있음
-                </div>
-              </details>
-              <label class="terms-row">
-                <input type="checkbox" id="termsRequired" class="terms-checkbox" />
-                <span>개인정보 수집 및 이용에 동의합니다.</span>
-              </label>
-
-              <details class="terms-detail">
-                <summary class="terms-summary">마케팅 정보 수신 동의 (선택)</summary>
-                <div class="terms-body">
-                  세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
-                </div>
-              </details>
-              <label class="terms-row">
-                <input type="checkbox" id="termsMarketing" class="terms-checkbox" />
-                <span>마케팅 정보 수신에 동의합니다.</span>
-              </label>
-            </div>
-
-            <button type="submit" class="form-submit">문의 접수하기</button>
-          </form>
-
-          <div class="contact-actions">
-            <a href="https://open.kakao.com/o/s0ogfV3h" target="_blank" class="contact-kakao">카톡 상담</a>
-            <a href="tel:01032689899" class="contact-call">전화 상담</a>
+        <!-- HERO CARD -->
+        <div class="hero-card">
+          <div class="hero-badges">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              한식당 전용 디지털 마케팅 구조
+            </span>
+            <span class="hero-badge">
+              메뉴 경쟁 아닌 ‘선택받는 이유’ 중심 설계
+            </span>
           </div>
+
+          <h1 class="hero-title">
+            한식당 마케팅은 “홍보”가 아니라,<br />
+            <b>운영의 강점을 고객 기준으로 재구성하는 일입니다.</b>
+          </h1>
+
+          <p class="hero-desc">
+            에이치바이럴은 단순히 사진·메뉴 소개가 아니라,<br />
+            한식당의 <b>회전율·객단가·재방문 구조</b>를 기준으로  
+            고객이 ‘이 집을 선택해야 하는 이유’를 정리합니다.
+          </p>
+
+          <p class="hero-note">
+            한식 고객은 “한 번 먹고 끝”이 아니라,  
+            <b>상권 기반 생활 패턴에 따라 재방문이 결정됩니다.</b>
+          </p>
         </div>
-      </section>
 
-    </div>
-  </section>
-</main>
+        <!-- SECTION 1 -->
+        <h2 class="section-title">한식 고객이 실제로 판단하는 기준</h2>
+        <p class="section-sub">
+          메뉴가 아니라, ‘운영의 신뢰도’를 기준으로 결정합니다.<br />
+          온라인에서 이 기준이 명확하게 보이면 문의와 방문이 달라집니다.
+        </p>
 
-<!-- 하단 고정바 -->
-<div class="bottom-bar">
-  <a href="https://open.kakao.com/o/s0ogfV3h" class="bottom-btn kakao">카톡 상담</a>
-  <a href="#contact" class="bottom-btn ask">문의하기</a>
-  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
-</div>
+        <div class="card">
+          <div class="card-title">1. 조리·운영의 일관성과 신뢰도</div>
+          <ul>
+            <li>메뉴의 다양성보다 ‘계절·재료·조리 기준의 일관성’이 중요</li>
+            <li>조리 프로세스·준비 방식·피크타임 운영 역량을 고객 기준으로 설명</li>
+            <li>전문 조리 인력·주방 라인 구성·동선 관리가 신뢰 포인트가 됨</li>
+          </ul>
+        </div>
 
-<script>
-  function toggleMenu(open){
-    const m=document.getElementById("sideMenu");
-    const b=document.getElementById("sideBackdrop");
-    if(open){ m.classList.add("open"); b.classList.add("show"); document.body.style.overflow="hidden"; }
-    else{ m.classList.remove("open"); b.classList.remove("show"); document.body.style.overflow=""; }
-  }
+        <div class="card">
+          <div class="card-title">2. 실제 고객 패턴 기반의 마케팅</div>
+          <ul>
+            <li>점심 중심 상권/저녁 중심 상권/주말 가족 중심 상권별 전략 차별화</li>
+            <li>지역 생활반경+업장 유형에 맞는 메시지 구조 설계</li>
+            <li>“메뉴가 많다”보다 “어떤 고객이 자주 찾는지”를 먼저 설명</li>
+          </ul>
+        </div>
 
-  function handleContact(e){
-    e.preventDefault();
-    const n=document.getElementById("name").value.trim();
-    const p=document.getElementById("phone").value.trim();
-    const s=document.getElementById("shop").value.trim();
-    const m=document.getElementById("message").value.trim();
-    const t=document.getElementById("termsRequired").checked;
-    if(!t){ alert("개인정보 수집 및 이용에 동의해주세요."); return; }
+        <div class="card">
+          <div class="card-title">3. 회전율을 높이는 화면 구성</div>
+          <ul>
+            <li>대기시간·픽업·예약 여부 등의 운영 시스템을 미리 안내</li>
+            <li>바쁜 시간대의 동선·웨이팅 처리 능력을 보여주면 신뢰도 상승</li>
+            <li>사진·글 모두 ‘고객이 방문 전 예상할 수 있는 정보’ 중심 구성</li>
+          </ul>
+        </div>
 
-    const sms=`[H VIRAL 한식당 문의]\n성명:${n}\n연락처:${p}\n매장:${s}\n내용:${m}`;
-    const url=`sms:01032689899?body=${encodeURIComponent(sms)}`;
-    window.location.href=url;
-  }
-</script>
+        <div class="card">
+          <div class="card-title">4. 재방문을 만드는 구조</div>
+          <ul>
+            <li>시그니처 메뉴와 안정적인 맛 유지력을 강조</li>
+            <li>점심→저녁→주말로 이어지는 방문 루프 구조화</li>
+            <li>단골 고객군(근처 직장인·주거지·가족 단위)의 패턴 분석</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">한식당 설계 시 핵심 체크 포인트</div>
+        <div class="card">
+          <ul>
+            <li>조리 품질·동선 관리·메뉴 포지셔닝을 고객 기준으로 정리</li>
+            <li>상권 유형별 메시지 구조 → 점심/저녁/주말 패턴 반영</li>
+            <li>메뉴가 아니라 ‘운영의 전문성’을 설명하는 방식</li>
+          </ul>
+        </div>
+
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <h2 class="contact-title">한식당 마케팅·운영 구조 상담</h2>
+          <p class="contact-sub">
+            지금 상황을 간단히 남겨주시면,<br />
+            한식업 기준에서 반드시 짚어야 할 부분을  
+            <b>운영·상권·고객 동선 기준으로 정리해 드립니다.</b>
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">연락처<span>*</span></label>
+                    <input type="tel" id="phone" class="form-input" placeholder="'-' 없이 숫자만" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">매장명·위치·운영 형태<span>*</span></label>
+                  <input type="text" id="shop" class="form-input"
+                    placeholder="예: ○○한식 / ○○구 ○○동 / 점심·저녁 중심"
+                    required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                  <textarea id="message" class="form-textarea"
+                    placeholder="어떤 고객층이 많고, 어떤 시간을 더 강화하고 싶은지 적어주세요."
+                    required></textarea>
+                </div>
+              </div>
+
+              <!-- TERMS -->
+              <div class="terms-box">
+                <label class="terms-row">
+                  <input type="checkbox" id="termsRequired" class="terms-checkbox">
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <div class="contact-actions">
+              <a href="https://open.kakao.com/o/sdxcyB4h" class="contact-kakao" target="_blank">카톡 상담</a>
+              <a href="tel:01032689899" class="contact-call">전화 상담</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단바 -->
+  <div class="bottom-bar">
+    <a href="https://open.kakao.com/o/sdxcyB4h" class="bottom-btn kakao" target="_blank">카톡 상담</a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    function toggleMenu(open){
+      const m=document.getElementById("sideMenu");
+      const b=document.getElementById("sideBackdrop");
+      if(open){ m.classList.add("open"); b.classList.add("show"); document.body.style.overflow="hidden"; }
+      else{ m.classList.remove("open"); b.classList.remove("show"); document.body.style.overflow=""; }
+    }
+
+    function handleContactSubmit(e){
+      e.preventDefault();
+      const n=document.getElementById("name").value.trim();
+      const p=document.getElementById("phone").value.trim();
+      const s=document.getElementById("shop").value.trim();
+      const m=document.getElementById("message").value.trim();
+      const t=document.getElementById("termsRequired").checked;
+
+      if(!t){ alert("개인정보 수집 및 이용에 동의해주세요."); return; }
+      if(!n||!p||!s||!m){ alert("필수 항목을 모두 입력해주세요."); return; }
+
+      const sms=
+        `[H VIRAL 한식당 문의]\n`+
+        `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n내용: ${m}`;
+
+      const url=`sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href=url;
+
+      alert("문자앱을 열었습니다. 열리지 않으면 카카오톡 또는 전화 상담을 이용해주세요.");
+      e.target.reset();
+    }
+  </script>
 
 </body>
 </html>
