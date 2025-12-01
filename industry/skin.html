@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>피부과 디지털 마케팅 퍼널 설계 │ H VIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>피부과 마케팅 인프라 │ H VIRAL</title>
   <style>
     * {
       margin: 0;
@@ -30,6 +30,7 @@
       margin: 0 auto;
       padding: 0 20px 96px;
     }
+
     /* 헤더 */
     header {
       position: sticky;
@@ -43,8 +44,8 @@
       margin: 0 auto;
       padding: 14px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
     .header-left {
       display: flex;
@@ -56,14 +57,13 @@
       height: 32px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      background: #020617;
     }
     .menu-btn span {
-      display: block;
       width: 16px;
       height: 2px;
       background: #e5e7eb;
@@ -72,11 +72,11 @@
     .menu-btn span::before,
     .menu-btn span::after {
       content: "";
-      position: absolute;
-      left: 0;
       width: 16px;
       height: 2px;
       background: #e5e7eb;
+      position: absolute;
+      left: 0;
     }
     .menu-btn span::before {
       top: -5px;
@@ -84,12 +84,13 @@
     .menu-btn span::after {
       top: 5px;
     }
+
     .logo-wrap {
       display: block;
     }
     .logo {
       font-weight: 700;
-      font-size: 20px;
+      font-size: 22px;
       letter-spacing: 1.2px;
     }
     .logo-sub {
@@ -105,7 +106,284 @@
       font-weight: 600;
     }
 
-    /* 사이드 메뉴(전체 메뉴) */
+    /* 히어로 */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
+    }
+    .hero-card {
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+    .hero-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+    .hero-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    .section-title {
+      margin: 28px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
+
+    .label-pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    /* 문의 섹션 */
+    #contact {
+      margin: 32px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .terms-box {
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
+    }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
+    }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .terms-row {
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      align-items: center;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
+
+    .form-submit {
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+    }
+    .contact-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* 하단 고정바 */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
+    }
+    .bottom-btn {
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
       position: fixed;
       top: 0;
@@ -180,11 +458,6 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
-    .side-link {
-      display: block;
-      padding: 8px 0;
-      font-size: 14px;
-    }
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -221,393 +494,15 @@
       font-size: 13px;
     }
 
-    /* 히어로(업종 헤더) */
-    .hero {
-      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
-      padding: 26px 0 28px;
-    }
-    .hero-card {
-      border-radius: 26px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: linear-gradient(135deg, #0b1f3a, #020617);
-      padding: 24px 20px 24px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-badge-row {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-      font-size: 11px;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(96, 165, 250, 0.6);
-    }
-    .hero-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-    }
-    .hero-title {
-      font-size: 22px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .hero-sub {
-      font-size: 14px;
-      color: #cbd5f5;
-      margin-bottom: 12px;
-    }
-    .hero-sub strong {
-      color: #e5e7eb;
-      font-weight: 600;
-    }
-    .hero-info {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    /* 섹션 공통 */
-    .section {
-      padding: 26px 0 0;
-    }
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .section-tagline {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 14px;
-    }
-
-    .pill {
-      display: inline-flex;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 11px;
-      color: #e5e7eb;
-      margin-bottom: 10px;
-    }
-    .card {
-      background: #020617;
-      border-radius: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      padding: 18px 16px;
-      font-size: 13px;
-      color: #e5e7eb;
-      margin-bottom: 16px;
-    }
-    .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
-    }
-    .card li {
-      list-style: disc;
-      margin-bottom: 4px;
-    }
-
-    /* 퍼널 단계 그리드 */
-    .funnel-grid {
-      display: grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    @media (min-width: 640px) {
-      .funnel-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    .funnel-step {
-      border-radius: 16px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 10px 12px;
-      font-size: 13px;
-    }
-    .funnel-step-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .funnel-step-tag {
-      display: inline-block;
-      font-size: 11px;
-      color: #93c5fd;
-      margin-bottom: 4px;
-    }
-    .funnel-step-desc {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    /* 인프라 구성 */
-    .infra-grid {
-      display: grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    @media (min-width: 768px) {
-      .infra-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    .infra-block {
-      border-radius: 16px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 12px 14px;
-      font-size: 13px;
-    }
-    .infra-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .infra-desc {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    /* 진행 방식 */
-    .process-grid {
-      margin-top: 10px;
-      display: grid;
-      gap: 10px;
-    }
-    @media (min-width: 640px) {
-      .process-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    .process-step {
-      border-radius: 16px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 10px 12px;
-      font-size: 13px;
-    }
-    .process-step-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .process-step-desc {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    /* 문의 섹션 */
-    #contact {
-      margin: 34px 0 4px;
-    }
-    .contact-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .contact-sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 14px;
-    }
-    .contact-card {
-      border-radius: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      padding: 18px 16px;
-      font-size: 13px;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .form-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .form-group {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .form-label {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-    .form-label span {
-      color: #f97316;
-      margin-left: 2px;
-    }
-    .form-input,
-    .form-textarea {
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      color: #f9fafb;
-      font-size: 13px;
-      padding: 9px 10px;
-    }
-    .form-input::placeholder,
-    .form-textarea::placeholder {
-      color: #6b7280;
-    }
-    .form-textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
-    .terms-box {
-      border-radius: 12px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 10px 10px;
-      font-size: 12px;
-      margin-bottom: 12px;
-    }
-    .terms-detail {
-      margin-bottom: 6px;
-    }
-    .terms-summary {
-      cursor: pointer;
-      list-style: none;
-      font-weight: 600;
-      font-size: 12px;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .terms-summary::-webkit-details-marker {
-      display: none;
-    }
-    .terms-summary::after {
-      content: "자세히 보기";
-      font-size: 11px;
-      color: #9ca3af;
-      margin-left: 8px;
-    }
-    .terms-detail[open] .terms-summary::after {
-      content: "접기";
-    }
-    .terms-body {
-      font-size: 11px;
-      color: #9ca3af;
-      line-height: 1.5;
-      margin-top: 6px;
-      margin-bottom: 6px;
-    }
-    .terms-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-    .terms-checkbox {
-      width: 14px;
-      height: 14px;
-      accent-color: #2563eb;
-    }
-    .form-submit {
-      width: 100%;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 11px 0;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-    }
-    .contact-note {
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 8px;
-    }
-    .contact-actions {
-      margin-top: 14px;
-      display: flex;
-      gap: 8px;
-    }
-    .contact-actions a {
-      flex: 1;
-      text-align: center;
-      padding: 11px 0;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .contact-kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .contact-call {
-      background: #2563eb;
-      color: #fff;
-    }
-
-    /* 하단 고정 상담바 */
-    .bottom-bar {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      background: #020617;
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 14px 10px 14px;
-      z-index: 9700;
-    }
-    .bottom-btn {
-      flex: 1;
-      margin: 0 4px;
-      text-align: center;
-      padding: 13px 0;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-    .bottom-btn.kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .bottom-btn.ask {
-      background: #111827;
-      color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-    }
-    .bottom-btn.call {
-      background: #2563eb;
-      color: #fff;
-    }
-
     @media (min-width: 1024px) {
       .hero {
-        padding-top: 34px;
+        padding-top: 36px;
       }
       .hero-title {
         font-size: 26px;
       }
       .hero-card {
-        padding: 30px 28px 26px;
+        padding: 32px 28px;
       }
       .container {
         padding-bottom: 110px;
@@ -616,7 +511,6 @@
   </style>
 </head>
 <body>
-
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
@@ -670,6 +564,7 @@
           <a href="/industry/pilates.html">필라테스</a>
           <a href="/industry/beauty.html">미용실</a>
           <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
       </details>
 
@@ -681,10 +576,13 @@
         </summary>
         <div class="side-group-links">
           <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
           <a href="/industry/korean.html">한식당</a>
           <a href="/industry/japanese.html">일식당</a>
           <a href="/industry/chinese.html">중식당</a>
           <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
         </div>
       </details>
 
@@ -695,7 +593,7 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/academy.html">입시·보습 학원</a>
+          <a href="/industry/academy.html">입시·보습학원</a>
           <a href="/industry/lang.html">어학·유학</a>
           <a href="/industry/art.html">예체능·취미</a>
           <a href="/industry/studyroom.html">공부방</a>
@@ -709,10 +607,13 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
-          <a href="/industry/local.html">지역 생활 서비스</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
         </div>
       </details>
 
@@ -723,13 +624,15 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/tax.html">세무/회계사</a>
-          <a href="/industry/law.html">법무사·변호사</a>
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
           <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
           <a href="/industry/manufacture.html">제조업</a>
           <a href="/industry/distribution.html">유통업</a>
-          <a href="/industry/b2b.html">B2B 서비스</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
         </div>
       </details>
     </div>
@@ -747,7 +650,12 @@
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn" target="_blank" rel="noopener">
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
         상담하기
       </a>
     </div>
@@ -758,377 +666,275 @@
     <section class="hero">
       <div class="container">
         <div class="hero-card">
-          <div class="hero-badge-row">
-            <div class="hero-badge">
-              <span class="hero-dot"></span>
-              피부과 · 레이저·시술 중심 의료기관
-            </div>
-            <div class="hero-badge">
-              퍼널 설계로 디지털 인프라 구축
-            </div>
+          <div class="hero-badges">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              피부과 의원 전용 마케팅 인프라
+            </span>
+            <span class="hero-badge">
+              환자 여정·진료 동선·상담 구조를 기준으로 설계하는 피부과 마케팅 인프라
+            </span>
           </div>
+
           <h1 class="hero-title">
-            피부과, 검색에서 상담 예약까지<br />
-            퍼널 설계로 한 번에 잇습니다.
+            “시술명을 나열하는 페이지보다,<br />
+            환자 입장에서 진료 흐름이 정리된 피부과 마케팅 인프라를 설계합니다.”
           </h1>
-          <p class="hero-sub">
-            피부 고민 검색, 시술 비교, 후기 탐색, 최종 상담 문의까지 이어지는
-            <strong>피부과 전용 디지털 마케팅 퍼널</strong>을 설계합니다.
-            채널마다 따로 움직이는 것이 아니라, 하나의 인프라로 정렬해
-            문의와 예약에 집중합니다.
+          <p class="hero-desc">
+            에이치바이럴은 특정 시술의 효과를 강조하기보다,<br />
+            어떤 환자가 어떤 경로로 내원해 어떤 과정을 거치는지부터 구조를 잡습니다.<br />
+            의료광고 관련 법규를 고려해, 설명과 정보 중심의 피부과 마케팅 인프라를 구축합니다.
           </p>
-          <p class="hero-info">
-            * 이 페이지는 피부과·레이저 클리닉을 위한 예시 페이지이며,
-            실제 프로젝트에서는 병원 상황·세부 진료 항목에 맞춰 개별 설계가 진행됩니다.
+          <p class="hero-note">
+            환자에게 과도한 기대를 주는 표현을 피하고,<br />
+            내원 전 미리 알고 있으면 좋은 정보와 진료 환경을 차분하게 정리하는 데 초점을 맞춥니다.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">피부과 고객 여정, 이렇게 흘러갑니다</h2>
-        <p class="section-tagline">
-          증상 검색 → 시술 비교 → 후기 탐색 → 병원 선택 → 상담·예약까지,
-          디지털에서 일어나는 의사결정 흐름을 기준으로 퍼널을 설계합니다.
+        <h2 class="section-title">피부과 원장님이 실제로 관리해야 하는 “환자 구조”</h2>
+        <p class="section-sub">
+          병원 소개·시술 목록만으로는 환자 선택까지 이어지기 어렵습니다.<br />
+          “누가, 어떤 고민으로, 어떤 과정을 거쳐 진료를 받는지”가 먼저 구조화되어야<br />
+          의료광고 표시 기준에 맞으면서도 실제 내원으로 연결되는 흐름을 만들 수 있습니다.
         </p>
 
-        <span class="pill">피부과 디지털 퍼널 단계</span>
-        <div class="funnel-grid">
-          <div class="funnel-step">
-            <div class="funnel-step-tag">STEP 01 · 인지</div>
-            <div class="funnel-step-title">피부 고민 검색 구간</div>
-            <div class="funnel-step-desc">
-              기미·잡티·여드름·탄력 등 피부 고민 키워드와
-              지역명을 함께 검색하는 구간입니다.
-              어떤 표현으로 검색되는지, 어떤 채널을 먼저 접하는지부터 분석합니다.
-            </div>
-          </div>
-          <div class="funnel-step">
-            <div class="funnel-step-tag">STEP 02 · 검토</div>
-            <div class="funnel-step-title">시술·비용·효과 비교 구간</div>
-            <div class="funnel-step-desc">
-              레이저 종류, 시술 횟수, 회복 기간, 금액 등을 비교하는 단계입니다.
-              이때 필요한 정보를 한곳에서 확인할 수 있도록 안내 흐름을 설계합니다.
-            </div>
-          </div>
-          <div class="funnel-step">
-            <div class="funnel-step-tag">STEP 03 · 신뢰</div>
-            <div class="funnel-step-title">후기·전문의·케이스 확인</div>
-            <div class="funnel-step-desc">
-              의료진 이력, 시술 사례, 전·후 사진, 시술 철학을 통해
-              안심할 수 있는 근거를 제공합니다.
-              상담 전 단계에서 신뢰를 확보하는 구간입니다.
-            </div>
-          </div>
-          <div class="funnel-step">
-            <div class="funnel-step-tag">STEP 04 · 전환</div>
-            <div class="funnel-step-title">상담 문의·예약 확정</div>
-            <div class="funnel-step-desc">
-              전화, 카카오톡, 온라인 접수 등
-              병원이 원하는 채널로 자연스럽게 연결되도록 퍼널을 설계합니다.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">H VIRAL 피부과 디지털 인프라 패키지</h2>
-        <p class="section-tagline">
-          채널이 여러 개여도, 고객 입장에서는 하나의 흐름으로 느껴지도록 설계합니다.
-        </p>
-
-        <span class="pill">퍼널 중심 인프라 구성</span>
-        <div class="infra-grid">
-          <div class="infra-block">
-            <div class="infra-title">01. 병원 전용 랜딩·페이지 구성</div>
-            <div class="infra-desc">
-              주요 시술군(기미/색소, 리프팅, 여드름 등) 기준으로
-              랜딩·상세 페이지를 설계합니다.
-              모바일 기준 정보량·배치를 조정해 이탈을 줄이고 상담 연결에 집중합니다.
-            </div>
-          </div>
-          <div class="infra-block">
-            <div class="infra-title">02. 검색·콘텐츠 연계 전략</div>
-            <div class="infra-desc">
-              증상·시술·연령·지역 조합 등 피부과에서 실제로 검색되는 패턴을 기준으로
-              키워드 세그먼트를 정의하고, 인입 채널 전반에 일관되게 반영합니다.
-            </div>
-          </div>
-          <div class="infra-block">
-            <div class="infra-title">03. 상담 채널 정렬</div>
-            <div class="infra-desc">
-              전화, 카카오톡, 온라인 폼을 병원 상황에 맞게 정렬해
-              상담 접점이 분산되지 않도록 설계합니다.
-              문의 유형에 따라 내부에서 대응하기 편한 형태로 정리합니다.
-            </div>
-          </div>
-          <div class="infra-block">
-            <div class="infra-title">04. 데이터 기반 운영</div>
-            <div class="infra-desc">
-              월별 문의 수, 유입 경로, 시술별 관심 비중, 시간대별 문의 패턴 등을
-              추적·정리해 이후 캠페인·예산 배분에 반영할 수 있도록 지원합니다.
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:14px;">
-          <strong>피부과 프로젝트 진행 시 예시 결과 지표</strong>
+        <div class="card">
+          <div class="card-title">1. 상권·연령대·내원 경로 정리</div>
           <ul>
-            <li>월별 상담 문의량·예약 전환 비율 비교</li>
-            <li>시술군별 인입 비중(예: 색소 vs 리프팅 vs 여드름)</li>
-            <li>문의 채널별 효율(전화·카카오·온라인 폼 등)</li>
+            <li>상가·주거 단지·업무 지구·학교 인근 등 입지에 따라 주요 연령대·내원 패턴을 정리</li>
+            <li>초진·재진 비율, 보호자 동반 여부, 평일·주말·야간 내원 시간대를 데이터 관점에서 파악</li>
+            <li>“이 지역에서 이 피부과가 맡고 있는 역할”을 한 문장으로 정리해 첫 화면에 제시</li>
           </ul>
-          <p style="margin-top:6px;font-size:12px;color:#9ca3af;">
-            * 실제 수치는 병원 위치, 경쟁 구도, 채널 운영 방식에 따라 달라지며,
-            초기 진단 후 목표와 범위를 함께 설정합니다.
+        </div>
+
+        <div class="card">
+          <div class="card-title">2. 피부과 환자 세부 유형 분석</div>
+          <ul>
+            <li>피부 트러블, 민감성 피부, 장기 관리가 필요한 환자, 검진·상담 위주 내원 등 유형을 구분</li>
+            <li>연령·직업·생활 패턴에 따라 자주 등장하는 고민과 내원 빈도, 진료 시간대를 구조적으로 정리</li>
+            <li>원장님·스태프가 머릿속으로만 알고 있던 “우리 병원 환자 이미지”를 화면에 풀어, 어떤 환자를 더 받아야 안정적인지 기준을 마련</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">3. 환자 여정·동선·대기 구조</div>
+          <ul>
+            <li>문의 → 예약·내원 → 접수 → 상담·문진 → 진료·시술 안내 → 후 관리까지의 전체 흐름을 단계별로 정리</li>
+            <li>대기 시간, 대기 공간 안내, 프라이버시 보호 방식 등을 환자 입장에서 이해하기 쉽게 설명</li>
+            <li>초진 환자와 재진 환자의 동선·안내 메시지를 분리해 만족도를 높일 수 있는 지점을 구조적으로 제안</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. 상담·설명 방식 구조화</div>
+          <ul>
+            <li>증상·기간·생활 습관 등을 파악하는 기본 질문과, 환자가 자주 묻는 질문을 정리해 상담 흐름을 설계</li>
+            <li>의료법·의료광고 관련 규정을 고려해, 효과를 단정하지 않고 설명 중심으로 안내하는 표현을 정리</li>
+            <li>원장님·상담실·데스크가 같은 방향으로 이야기할 수 있도록 문장·설명 구조를 통일하는 것을 목표로 함</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">5. 예약·재방문·장기 관리 구조</div>
+          <ul>
+            <li>전화·카카오톡·온라인 예약·현장 예약 등 채널별 예약 비중을 파악하고, 병원 상황에 맞는 우선 채널을 설정</li>
+            <li>단기 방문 환자와 정기 관리가 필요한 환자를 구분해, 예약·안내 방식과 메시지를 다르게 설계</li>
+            <li>계절·직업·생활 습관에 따라 관리 주기를 안내할 수 있도록, 설명용 문구와 안내 구조를 준비</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. 병원 정보·안심 요소 정리</div>
+          <ul>
+            <li>의료진 구성, 진료 시간, 진료 과목, 위치·주차·대중교통 정보를 한눈에 볼 수 있도록 재배치</li>
+            <li>감염 관리, 위생, 장비 관리 등 환자 안전과 관련된 기본 시스템을 설명 중심으로 정리</li>
+            <li>의료광고 법규에 어긋나는 표현을 피하면서도, 환자가 안심하고 내원할 수 있는 근거를 구조적으로 제시</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">7. 지역에서 신뢰받는 피부과로 보이게 만드는 흐름</div>
+          <ul>
+            <li>“피부 고민이 생기면 먼저 떠오르는 병원”이라는 이미지를 목표로 화면·문장을 설계</li>
+            <li>지역 주민·직장인·가족 단위 환자가 어떤 상황에서 이 병원을 선택하는지 사례를 기반으로 정리</li>
+            <li>환자와 보호자가 지인에게 정보를 전달할 때 참고하기 좋은 안내 문장을 준비해, 자연스러운 소개 흐름을 만듦</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">피부과 마케팅 인프라 설계 시 체크하는 항목</div>
+        <div class="card">
+          <ul>
+            <li>상권·연령대·내원 경로가 한 번에 이해되는지</li>
+            <li>환자 유형·진료 동선·상담 구조가 의료진 머릿속뿐 아니라 화면에도 정리되어 있는지</li>
+            <li>의료광고 관련 법규를 고려하면서도, 환자 입장에서 정보를 이해하기 쉬운 흐름으로 구성되어 있는지</li>
+          </ul>
+        </div>
+
+        <!-- 문의 -->
+        <section id="contact">
+          <h2 class="contact-title">피부과 마케팅 인프라 상담</h2>
+          <p class="contact-sub">
+            현재 진료 과목 구성, 상권·연령대, 초진·재진 비율, 예약 채널(전화·온라인·카카오톡 등),<br />
+            가장 고민되는 지점(대기 시간, 예약 공백 시간, 특정 요일·시간대 쏠림 현상 등)을 알려주시면<br />
+            의료광고 관련 법규를 고려한 피부과 전용 마케팅 인프라를 함께 설계해 드립니다.
           </p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">진행 방식</h2>
-        <p class="section-tagline">
-          현 상황 진단부터 디지털 인프라 설계, 운영·고도화까지
-          한 번에 파악할 수 있도록 정리해 드립니다.
-        </p>
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">연락처<span>*</span></label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만"
+                      required
+                    />
+                  </div>
+                </div>
 
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="process-step-title">STEP 1. 진단 미팅</div>
-            <div class="process-step-desc">
-              현재 운영 채널, 월 평균 문의 수, 집중하고 싶은 진료 파트를 확인합니다.
-              지역 경쟁 상황과 타겟 연령대도 함께 검토합니다.
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">STEP 2. 퍼널·인프라 설계</div>
-            <div class="process-step-desc">
-              검색–콘텐츠–문의 흐름을 기준으로 피부과 전용 퍼널을 설계하고,
-              필요한 페이지·섹션·상담 채널 구성을 정의합니다.
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">STEP 3. 구축·적용</div>
-            <div class="process-step-desc">
-              디자인·카피라이팅·페이지 구성을 반영해 실제 환경에 구축합니다.
-              내부 운영 방식에 맞게 문의 프로세스를 함께 정리합니다.
-            </div>
-          </div>
-          <div class="process-step">
-            <div class="process-step-title">STEP 4. 모니터링·리포트</div>
-            <div class="process-step-desc">
-              일정 기간 문의·유입 데이터를 모니터링하며,
-              이후 개선 방향·우선순위를 리포트 형태로 제안합니다.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 문의 섹션 -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="contact-title">피부과 디지털 퍼널 설계 상담 요청</h2>
-        <p class="contact-sub">
-          병원 규모, 진료 포트폴리오, 월 목표 문의 수를 간단히 남겨주시면,
-          가능한 방향과 예상 인프라 구성을 먼저 설명드립니다.
-        </p>
-        <div class="contact-card">
-          <form id="contactForm" onsubmit="handleContactSubmit(event)">
-            <div class="contact-form">
-              <div class="form-row">
                 <div class="form-group">
-                  <label for="contactName" class="form-label">
-                    성명<span>*</span>
-                  </label>
+                  <label class="form-label">의원명·위치·진료 환경<span>*</span></label>
                   <input
-                    id="contactName"
                     type="text"
+                    id="shop"
                     class="form-input"
-                    placeholder="담당자명을 입력해 주세요."
+                    placeholder="예: ○○피부과의원 / ○○구 ○○동 / 진료 과목·층수·주차·예약 방식 등"
                     required
                   />
                 </div>
+
                 <div class="form-group">
-                  <label for="contactPhone" class="form-label">
-                    연락처<span>*</span>
-                  </label>
-                  <input
-                    id="contactPhone"
-                    type="tel"
-                    class="form-input"
-                    placeholder="'-' 없이 숫자만 입력"
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                  <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="상권·연령대, 주요 진료 유형, 예약·대기 구조, 마케팅 관련 가장 고민되는 부분을 적어 주세요."
                     required
-                  />
+                  ></textarea>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="contactIndustry" class="form-label">
-                    업종·서비스<span>*</span>
-                  </label>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 의료기관 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
+                  </div>
+                </details>
+                <label class="terms-row">
                   <input
-                    id="contactIndustry"
-                    type="text"
-                    class="form-input"
-                    value="피부과"
-                    readonly
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
                   />
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="contactMessage" class="form-label">
-                  현재 상황 / 문의 내용<span>*</span>
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
-                <textarea
-                  id="contactMessage"
-                  class="form-textarea"
-                  placeholder="예: 주요 시술, 현재 월 문의 수, 집중하고 싶은 진료 파트 등을 남겨 주세요."
-                  required
-                ></textarea>
+
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다.</span>
+                </label>
               </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/sdxcyB4h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡 상담
+              </a>
+              <a href="tel:01032689899" class="contact-call">
+                전화 상담
+              </a>
             </div>
-
-            <div class="terms-box">
-              <details class="terms-detail">
-                <summary class="terms-summary">
-                  개인정보 수집 및 이용 동의 (필수)
-                </summary>
-                <div class="terms-body">
-                  ① 수집 항목: 성명, 연락처, 업종·서비스, 문의 내용<br />
-                  ② 수집 목적: 프로젝트 상담, 견적 안내 및 관련 문의 회신<br />
-                  ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
-                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
-                </div>
-              </details>
-              <label class="terms-row">
-                <input
-                  type="checkbox"
-                  id="termsRequired"
-                  class="terms-checkbox"
-                />
-                <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
-              </label>
-
-              <details class="terms-detail" style="margin-top:4px;">
-                <summary class="terms-summary">
-                  마케팅 정보 수신 동의 (선택)
-                </summary>
-                <div class="terms-body">
-                  서비스 안내, 세미나·자료 발송 등 마케팅 정보 제공을 위해
-                  카카오톡/문자로 연락을 드릴 수 있습니다.
-                </div>
-              </details>
-              <label class="terms-row">
-                <input
-                  type="checkbox"
-                  id="termsMarketing"
-                  class="terms-checkbox"
-                />
-                <span>마케팅 정보 수신에 동의합니다. (선택)</span>
-              </label>
-            </div>
-
-            <button type="submit" class="form-submit">문의 접수하기</button>
-          </form>
-
-          <p class="contact-note">
-            * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
-          </p>
-          <div class="contact-actions">
-            <a
-              href="https://open.kakao.com/o/s0ogfV3h"
-              target="_blank"
-              rel="noopener"
-              class="contact-kakao"
-            >
-              카톡으로 바로 상담
-            </a>
-            <a href="tel:01032689899" class="contact-call">
-              전화로 바로 상담
-            </a>
           </div>
-        </div>
+        </section>
       </div>
     </section>
   </main>
 
-  <!-- 하단 고정 상담바 -->
+  <!-- 하단 고정바 -->
   <div class="bottom-bar">
     <a
-      href="https://open.kakao.com/o/s0ogfV3h"
+      href="https://open.kakao.com/o/sdxcyB4h"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
     >
       카톡 상담
     </a>
-    <a href="#contact" class="bottom-btn ask">
-      문의하기
-    </a>
-    <a href="tel:01032689899" class="bottom-btn call">
-      전화 상담
-    </a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
   </div>
 
   <script>
-    // 사이드 메뉴 열고 닫기
     function toggleMenu(open) {
-      const menu = document.getElementById("sideMenu");
-      const backdrop = document.getElementById("sideBackdrop");
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
       if (open) {
-        menu.classList.add("open");
-        backdrop.classList.add("show");
+        m.classList.add("open");
+        b.classList.add("show");
         document.body.style.overflow = "hidden";
       } else {
-        menu.classList.remove("open");
-        backdrop.classList.remove("show");
+        m.classList.remove("open");
+        b.classList.remove("show");
         document.body.style.overflow = "";
       }
     }
 
-    // 대제목(업종 그룹) 클릭 시, 펼치면서 안쪽 스크롤 살짝 이동
-    const sideScroll = document.querySelector(".side-scroll");
-    document.querySelectorAll("details.side-group").forEach((group) => {
-      group.addEventListener("toggle", function () {
-        if (group.open && sideScroll) {
-          const top = group.offsetTop - 16;
-          sideScroll.scrollTo({ top, behavior: "smooth" });
-        }
-      });
-    });
-
-    // 문의 폼 → 문자앱으로 내용 전달
     function handleContactSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById("contactName").value.trim();
-      const phone = document.getElementById("contactPhone").value.trim();
-      const industry = document.getElementById("contactIndustry").value.trim();
-      const message = document.getElementById("contactMessage").value.trim();
-      const termsRequired = document.getElementById("termsRequired").checked;
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
 
-      if (!termsRequired) {
-        alert("개인정보 수집 및 이용에 동의해 주세요.");
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
         return;
       }
-      if (!name || !phone || !industry || !message) {
-        alert("필수 항목을 모두 입력해 주세요.");
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
         return;
       }
 
-      const smsBody =
-        `[H VIRAL 홈페이지 문의]\n` +
-        `성명: ${name}\n연락처: ${phone}\n업종·서비스: ${industry}\n` +
-        `내용: ${message}`;
+      const sms =
+        `[H VIRAL 피부과 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n의료기관 정보: ${s}\n` +
+        `내용: ${m}`;
 
-      const encoded = encodeURIComponent(smsBody);
-      const smsUrl = `sms:01032689899?body=${encoded}`;
-      window.location.href = smsUrl;
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
 
       alert(
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
