@@ -619,21 +619,6 @@
         </div>
       </details>
 
-      <!-- 교육·학원 -->
-      <details class="side-group">
-        <summary>
-          <span class="side-group-label">교육·학원</span>
-          <span class="side-group-arrow">▼</span>
-        </summary>
-        <div class="side-group-links">
-          <a href="/industry/academy.html">입시·보습학원</a>
-          <a href="/industry/study.html">공부방·공부클럽</a>
-          <a href="/industry/lang.html">외국어·어학원</a>
-          <a href="/industry/art.html">예체능·취미 학원</a>
-          <a href="/industry/studycafe.html">스터디카페</a>
-        </div>
-      </details>
-
       <!-- 생활·서비스 -->
       <details class="side-group" open>
         <summary>
@@ -641,8 +626,6 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/realestate.html">공인중개사</a>
-          <a href="/industry/car.html">자동차 정비·카센터</a>
           <a href="/industry/clean.html">청소·이사</a>
           <a href="/industry/local.html">지역 생활 서비스</a>
         </div>
@@ -655,12 +638,13 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
+          <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/tax.html">세무·회계사</a>
           <a href="/industry/law.html">변호사</a>
           <a href="/industry/judicial.html">법무사</a>
           <a href="/industry/administrative.html">행정사</a>
           <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
-          <a href="/industry/b2b.html">제조업·유통업 B2B</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
         </div>
       </details>
     </div>
@@ -678,7 +662,7 @@
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn" target="_blank" rel="noopener">상담하기</a>
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">상담하기</a>
     </div>
   </header>
 
@@ -935,7 +919,7 @@
             </p>
             <div class="contact-actions">
               <a
-                href="https://open.kakao.com/o/s0ogfV3h"
+                href="https://open.kakao.com/o/sdxcyB4h"
                 target="_blank"
                 rel="noopener"
                 class="contact-kakao"
@@ -955,7 +939,7 @@
   <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
     <a
-      href="https://open.kakao.com/o/s0ogfV3h"
+      href="https://open.kakao.com/o/sdxcyB4h"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
@@ -1001,18 +985,18 @@
       }
 
       const smsBody =
-        `[H VIRAL 청소·이사 문의]\n` +
-        `성명: ${name}\n` +
-        `연락처: ${phone}\n` +
-        `공간 종류: ${industry}\n` +
-        `내용: ${message}`;
+        "[H VIRAL 홈페이지 문의]\\n" +
+        "성명: " + name + "\\n" +
+        "연락처: " + phone + "\\n" +
+        "공간 종류: " + industry + "\\n" +
+        "내용: " + message;
 
       const encoded = encodeURIComponent(smsBody);
-      const smsUrl = `sms:01032689899?body=${encoded}`;
+      const smsUrl = "sms:01032689899?body=" + encoded;
       window.location.href = smsUrl;
 
       alert(
-        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\\n" +
         "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
 
