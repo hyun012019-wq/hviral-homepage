@@ -61,6 +61,11 @@
     .menu-btn span::before { top:-5px; }
     .menu-btn span::after { top:5px; }
 
+    .logo-wrap {
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
     .logo { font-size:20px; font-weight:700; letter-spacing:1px; }
     .logo-sub { font-size:11px; color:#94a3b8; }
 
@@ -410,7 +415,7 @@
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <!-- 사이드 메뉴 -->
+  <!-- 사이드 메뉴 (홈과 동일 구조) -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
@@ -541,12 +546,13 @@
         <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
           <span></span>
         </button>
-        <div>
+        <!-- 로고 클릭 시 항상 홈으로 이동 (모든 상세페이지 공통 규칙) -->
+        <a href="/" class="logo-wrap">
           <div class="logo">H VIRAL</div>
           <div class="logo-sub">B2B 서비스 · 컨설팅 디지털 마케팅</div>
-        </div>
+        </a>
       </div>
-      <!-- 업종 전용 프로젝트 상담톡 -->
+      <!-- 홈이랑 동일한 카톡 채널로 통일 -->
       <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
         프로젝트 상담톡
       </a>
@@ -780,7 +786,7 @@
           </p>
           <div class="contact-actions">
             <a
-              href="https://open.kakao.com/o/s0ogfV3h"
+              href="https://open.kakao.com/o/sdxcyB4h"
               target="_blank"
               rel="noopener"
               class="contact-kakao"
@@ -792,10 +798,10 @@
     </div>
   </main>
 
-  <!-- 하단 고정 상담바 -->
+  <!-- 하단 고정 상담바 (홈과 동일 동선) -->
   <div class="bottom-bar">
     <a
-      href="https://open.kakao.com/o/s0ogfV3h"
+      href="https://open.kakao.com/o/sdxcyB4h"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
