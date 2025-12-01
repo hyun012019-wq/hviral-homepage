@@ -494,6 +494,11 @@
       padding: 4px 0;
       font-size: 13px;
     }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
     /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
@@ -550,7 +555,7 @@
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
   <!-- 사이드 메뉴 -->
- <nav id="sideMenu" aria-label="전체 메뉴">
+  <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">H VIRAL</div>
@@ -636,7 +641,7 @@
       </details>
 
       <!-- 생활·지역 서비스 -->
-      <details class="side-group">
+      <details class="side-group" open>
         <summary>
           <span class="side-group-label">생활·지역 서비스</span>
           <span class="side-group-arrow">▼</span>
@@ -644,7 +649,7 @@
         <div class="side-group-links">
           <a href="/industry/car.html">자동차 정비·카센터</a>
           <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
-          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/cleaning.html"><strong>청소·이사</strong></a>
           <a href="/industry/demolition.html">철거·인테리어</a>
           <a href="/industry/flower.html">플라워샵</a>
           <a href="/industry/photo.html">사진관</a>
