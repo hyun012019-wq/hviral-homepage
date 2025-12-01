@@ -13,8 +13,9 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 0;
+    z-index: 0; /* 배경 레이어 */
     opacity: 0.45; /* 은은하게 */
+    pointer-events: none; /* 👉 클릭/터치 이벤트 차단 (배경만 역할) */
 }
 
     .hero {
@@ -147,6 +148,7 @@
       box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
       position: relative;
       overflow: hidden;
+      z-index: 1; /* 👉 카드/폼을 배경 슬라이드 위로 확실히 올리기 */
     }
     .hero-badge {
       display: inline-flex;
