@@ -1001,18 +1001,18 @@
       }
 
       const smsBody =
-        "[H VIRAL 홈페이지 문의]\\n" +
-        "성명: " + name + "\\n" +
-        "연락처: " + phone + "\\n" +
-        "공간 종류: " + industry + "\\n" +
-        "내용: " + message;
+        `[H VIRAL 청소·이사 문의]\n` +
+        `성명: ${name}\n` +
+        `연락처: ${phone}\n` +
+        `공간 종류: ${industry}\n` +
+        `내용: ${message}`;
 
       const encoded = encodeURIComponent(smsBody);
-      const smsUrl = "sms:01032689899?body=" + encoded;
+      const smsUrl = `sms:01032689899?body=${encoded}`;
       window.location.href = smsUrl;
 
       alert(
-        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\\n" +
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
         "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
 
