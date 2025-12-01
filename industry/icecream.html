@@ -2,325 +2,946 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>아이스크림·디저트 매장 │ H VIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <title>아이스크림 매장 마케팅 인프라 │ H VIRAL</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR",system-ui,sans-serif;
-      background:#020617;color:#e5e7eb;line-height:1.6;overflow-x:hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a{text-decoration:none;color:inherit;}
-    ul{list-style:none;}
-    .container{max-width:1080px;margin:0 auto;padding:0 20px 96px;}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
+    }
 
     /* 헤더 */
-    header{position:sticky;top:0;z-index:9000;background:#020617;border-bottom:1px solid rgba(148,163,184,0.3);}
-    .header-inner{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;}
-    .menu-btn{width:32px;height:32px;border-radius:999px;border:1px solid rgba(148,163,184,0.6);display:flex;align-items:center;justify-content:center;background:#020617;cursor:pointer;}
-    .menu-btn span{width:16px;height:2px;background:#e5e7eb;position:relative;}
-    .menu-btn span:before,.menu-btn span:after{content:"";position:absolute;left:0;width:16px;height:2px;background:#e5e7eb;}
-    .menu-btn span:before{top:-5px;} .menu-btn span:after{top:5px;}
-    .logo-wrap{display:block;}
-    .logo{font-weight:700;font-size:22px;letter-spacing:1px;}
-    .logo-sub{font-size:11px;color:#9ca3af;margin-top:2px;}
-    .consult-btn{background:#2563eb;padding:9px 20px;border-radius:999px;color:#fff;font-size:15px;font-weight:600;}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .menu-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .menu-btn span {
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: absolute;
+      left: 0;
+    }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
+
+    .logo-wrap {
+      display: block;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .consult-btn {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
     /* 히어로 */
-    .hero{background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);padding:28px 0 32px;}
-    .hero-card{
-      border-radius:28px;border:1px solid rgba(148,163,184,0.45);
-      background:linear-gradient(135deg,#0b1f3a,#020617);
-      padding:28px 20px;box-shadow:0 22px 50px rgba(15,23,42,0.9);
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
     }
-    .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-    .hero-badge{
-      display:inline-flex;align-items:center;gap:6px;
-      background:rgba(15,23,42,0.9);border:1px solid rgba(96,165,250,0.6);
-      padding:4px 10px;border-radius:999px;font-size:11px;
+    .hero-card {
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
     }
-    .hero-badge-dot{
-      width:8px;height:8px;border-radius:999px;background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
     }
-    .hero-title{font-size:24px;font-weight:800;margin-bottom:12px;line-height:1.45;}
-    .hero-desc{font-size:14px;color:#cbd5f5;margin-bottom:14px;}
-    .hero-desc strong{color:#fff;}
-
-    .section-title{margin:34px 0 10px;font-size:20px;font-weight:800;}
-    .section-sub{font-size:13px;color:#9ca3af;margin-bottom:14px;}
-    .card{
-      background:#020617;border-radius:20px;border:1px solid rgba(148,163,184,0.55);
-      padding:18px 16px;margin-bottom:14px;font-size:13px;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
     }
-    .card-tag{
-      display:inline-block;margin-bottom:6px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.6);
-      padding:3px 9px;border-radius:999px;font-size:11px;
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
-    .card ul{padding-left:14px;margin-top:6px;}
-    .card li{margin-bottom:5px;list-style:disc;}
-
-    .grid-half{display:grid;gap:10px;}
-    @media (min-width:640px){
-      .grid-half{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .hero-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
-    .grid-box{
-      background:#020617;border-radius:14px;
-      border:1px solid rgba(55,65,81,0.9);
-      padding:12px;font-size:12px;
+    .hero-desc {
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
     }
-    .grid-title{font-weight:600;margin-bottom:4px;}
-    .grid-desc{font-size:12px;color:#9ca3af;}
-
-    /* 문의 */
-    #contact{margin:40px 0 20px;}
-    .contact-title{font-size:20px;font-weight:800;margin-bottom:10px;}
-    .contact-sub{font-size:13px;color:#9ca3af;margin-bottom:16px;}
-    .contact-card{
-      border-radius:20px;border:1px solid rgba(148,163,184,0.55);
-      background:#020617;padding:18px 16px;
-    }
-    .form-group{margin-bottom:12px;display:flex;flex-direction:column;gap:6px;}
-    .form-label{font-size:12px;color:#9ca3af;}
-    .form-label span{color:#f97316;margin-left:2px;}
-    .form-input,.form-textarea{
-      padding:9px 10px;font-size:13px;border-radius:10px;
-      border:1px solid rgba(148,163,184,0.7);background:#020617;color:#fff;
-    }
-    .form-textarea{resize:vertical;min-height:80px;}
-
-    .terms-box{border-radius:12px;border:1px solid rgba(55,65,81,0.9);padding:12px;margin-top:6px;font-size:11px;color:#9ca3af;}
-    .terms-row{display:flex;gap:8px;margin-top:6px;font-size:12px;}
-    .terms-checkbox{width:14px;height:14px;accent-color:#2563eb;}
-
-    .form-submit{
-      width:100%;background:#2563eb;color:#fff;font-size:15px;
-      padding:12px 0;border-radius:999px;margin-top:8px;border:none;cursor:pointer;
-      font-weight:700;
+    .hero-note {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
     }
 
-    /* 하단 바 */
-    .bottom-bar{
-      position:fixed;bottom:0;left:0;width:100%;z-index:9600;
-      background:#020617;padding:14px 10px;border-top:1px solid rgba(148,163,184,0.45);
-      display:flex;gap:8px;
+    .section-title {
+      margin: 28px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
     }
-    .bottom-btn{
-      flex:1;border-radius:999px;padding:13px 0;text-align:center;font-weight:600;font-size:15px;
+    .section-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 10px;
     }
-    .bottom-btn.kakao{background:#facc15;color:#000;}
-    .bottom-btn.ask{background:#111827;color:#fff;border:1px solid rgba(148,163,184,0.6);}
-    .bottom-btn.call{background:#2563eb;color:#fff;}
+
+    .card {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .card ul {
+      margin-top: 6px;
+      padding-left: 18px;
+    }
+    .card li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
+
+    .label-pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    /* 문의 섹션 */
+    #contact {
+      margin: 32px 0 4px;
+    }
+    .contact-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-sub {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
+    }
+
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .form-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .form-label {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .form-label span {
+      color: #f97316;
+    }
+    .form-input,
+    .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    .form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .terms-box {
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
+    }
+    .terms-detail {
+      margin-bottom: 6px;
+    }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
+    }
+    .terms-summary::-webkit-details-marker {
+      display: none;
+    }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after {
+      content: "접기";
+    }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .terms-row {
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      align-items: center;
+    }
+    .terms-checkbox {
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
+    }
+
+    .form-submit {
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-actions {
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
+    }
+    .contact-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .contact-kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .contact-call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* 하단 고정바 */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
+    }
+    .bottom-btn {
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .bottom-btn.kakao {
+      background: #facc15;
+      color: #000;
+    }
+    .bottom-btn.ask {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+    .bottom-btn.call {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    /* 사이드 메뉴 (index와 동일 구조) */
+    #sideBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
+    }
+    #sideBackdrop.show {
+      display: block;
+    }
+    #sideMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
+    }
+    #sideMenu.open {
+      transform: translateX(0);
+    }
+    .side-menu-header {
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .side-menu-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
+    .side-scroll {
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
+    }
+    .side-section-title {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+    details.side-group {
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
+    }
+    .side-group summary {
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .side-group summary::-webkit-details-marker {
+      display: none;
+    }
+    .side-group-label {
+      font-weight: 600;
+    }
+    .side-group-arrow {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 36px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-card {
+        padding: 32px 28px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-<header>
-  <div class="header-inner">
-    <button class="menu-btn" onclick="goHome()"><span></span></button>
-    <a href="/" class="logo-wrap">
-      <div class="logo">H VIRAL</div>
-      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-    </a>
-    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <div class="hero-badges">
-          <div class="hero-badge"><span class="hero-badge-dot"></span>아이스크림·디저트 매장 전용 설계</div>
-          <div class="hero-badge">가족 단위 방문 증가·재방문 유도 중심 구성</div>
-        </div>
-
-        <h1 class="hero-title">
-          아이스크림·디저트 매장,  
-          매출이 오르는 매장 설명 구조로 정리해드립니다.
-        </h1>
-
-        <p class="hero-desc">
-          “어떤 맛이 인기인지, 재료는 무엇인지, 위생·안전·가격·이벤트는 어떻게 되는지”  
-          소비자는 빠르게 확인하고 싶어합니다.  
-          H VIRAL은 아이스크림 전문점·프랜차이즈·디저트 카페 특성에 맞춰  
-          <strong>방문을 결정하는 요소 중심</strong>으로 구성합니다.
-        </p>
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
-
-      <!-- 고객 선택 기준 -->
-      <h2 class="section-title">고객이 아이스크림 매장 선택할 때 보는 기준</h2>
-      <p class="section-sub">단순한 메뉴 소개가 아니라, “왜 여기를 선택해야 하는지”를 먼저 보여야 합니다.</p>
-
-      <div class="card">
-        <div class="card-tag">01. 인기 메뉴·시그니처 구성</div>
-        <ul>
-          <li>매장 시그니처 아이스크림·디저트 라인업 소개</li>
-          <li>원재료·베이스·토핑 구성 설명</li>
-          <li>어린이 인기 메뉴·저당/저칼로리 메뉴 강조</li>
-          <li>인스타그램·사진 촬영 포인트 구성</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">02. 원재료·위생 기준</div>
-        <ul>
-          <li>자체 제조/공급 라인·원유·생과일·수제 토핑 설명</li>
-          <li>당일 생산·당일 소진 원칙</li>
-          <li>일일 위생 점검, 기계 세척 루틴 안내</li>
-          <li>아이들 먹는 제품에 대한 안전성 강조</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">03. 매장 환경·좌석</div>
-        <ul>
-          <li>패밀리 테이블/키즈 좌석 구성</li>
-          <li>포토존·시즌 디스플레이 안내</li>
-          <li>휴일·피크 타임·대기 시간 정보 배치</li>
-        </ul>
-      </div>
-
-      <!-- 서비스 구조 -->
-      <h2 class="section-title">아이스크림 매장 서비스 구성</h2>
-
-      <div class="grid-half">
-        <div class="grid-box">
-          <div class="grid-title">시그니처 아이스크림 라인</div>
-          <div class="grid-desc">
-            배합·원재료·맛 포지션을 명확히 설명해  
-            ‘여기서만 먹을 수 있는 맛’을 부각합니다.
-          </div>
-        </div>
-
-        <div class="grid-box">
-          <div class="grid-title">생과일·스페셜 메뉴</div>
-          <div class="grid-desc">
-            시즌 메뉴·한정 메뉴 구성,  
-            사진 촬영 포인트까지 함께 안내합니다.
-          </div>
-        </div>
-
-        <div class="grid-box">
-          <div class="grid-title">디저트·토핑 구성</div>
-          <div class="grid-desc">
-            와플·쿠키·케이크·수제 토핑 등  
-            고정 수요를 만들 수 있는 라인업을 정리합니다.
-          </div>
-        </div>
-
-        <div class="grid-box">
-          <div class="grid-title">포장·배달 시스템</div>
-          <div class="grid-desc">
-            배달 포장 퀄리티 관리 기준,  
-            용기·온도 유지·토핑 감소 방지 기준 등을 안내합니다.
-          </div>
-        </div>
-      </div>
-
-      <!-- 디지털 구성 -->
-      <h2 class="section-title">아이스크림 매장의 온라인 문의·방문 전환 기준</h2>
-
-      <div class="card">
-        <div class="card-tag">검색·방문 유입</div>
-        <ul>
-          <li>“○○동 아이스크림 맛집”, “수제 아이스크림”, “디저트 카페” 검색 패턴 반영</li>
-          <li>방문 사진·좌석·혼잡도·인기 메뉴를 첫 화면에 배치</li>
-          <li>시즌 신메뉴·한정 메뉴를 상단에 고정</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">재방문·단골 구조</div>
-        <ul>
-          <li>‘시즌 메뉴 → 시그니처 추천 → 포토존 → 재방문 할인’ 흐름 구성</li>
-          <li>키즈 고객 중심의 체류시간 강화 요소 정리</li>
-        </ul>
-      </div>
-
-      <!-- 문의 -->
-      <section id="contact">
-        <h2 class="contact-title">아이스크림 매장 디지털 구성 상담</h2>
-        <p class="contact-sub">
-          매장 상황·메뉴 라인업·고객층에 따라  
-          온라인 구성 방식을 다르게 설계해드립니다.
-        </p>
-
-        <div class="contact-card">
-          <form id="form" onsubmit="sendMsg(event)">
-            <div class="form-group">
-              <label class="form-label">성명<span>*</span></label>
-              <input id="name" class="form-input" required placeholder="담당자명을 입력해 주세요." />
-            </div>
-            <div class="form-group">
-              <label class="form-label">연락처<span>*</span></label>
-              <input id="phone" class="form-input" required placeholder="'-' 없이 입력" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">매장 정보<span>*</span></label>
-              <input id="shop" class="form-input" required placeholder="예: ○○동 아이스크림 매장, 메뉴 라인업 등" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">문의 내용<span>*</span></label>
-              <textarea id="msg" class="form-textarea" required placeholder="현재 상황·강조하고 싶은 포인트·문제 상황 등을 남겨주세요."></textarea>
-            </div>
-
-            <div class="terms-box">
-              <div>
-                ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
-                ② 수집 목적: 상담 및 회신<br />
-                ③ 보유 기간: 상담 완료 후 1년 이내 파기
-              </div>
-              <div class="terms-row">
-                <input id="terms" type="checkbox" class="terms-checkbox" />
-                <span>개인정보 수집·이용에 동의합니다. (필수)</span>
-              </div>
-            </div>
-
-            <button class="form-submit">문의 접수하기</button>
-          </form>
-        </div>
-      </section>
-
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-  </section>
-</main>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-<!-- 하단 고정 상담바 -->
-<div class="bottom-bar">
-  <a class="bottom-btn kakao" href="https://open.kakao.com/o/s0ogfV3h">카톡 상담</a>
-  <a class="bottom-btn ask" href="#contact">문의하기</a>
-  <a class="bottom-btn call" href="tel:01032689899">전화 상담</a>
-</div>
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
-<script>
-  function goHome(){ window.location.href = "/"; }
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
 
-  function sendMsg(e){
-    e.preventDefault();
-    const n=document.getElementById("name").value.trim();
-    const p=document.getElementById("phone").value.trim();
-    const s=document.getElementById("shop").value.trim();
-    const m=document.getElementById("msg").value.trim();
-    const t=document.getElementById("terms").checked;
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
 
-    if(!t){ alert("필수 약관에 동의해 주세요."); return; }
-    if(!n||!p||!s||!m){ alert("필수 항목을 모두 입력해 주세요."); return; }
+      <!-- 카페·음식점 -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
 
-    const txt =
-      `[H VIRAL 아이스크림 매장 문의]\n`+
-      `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n`+
-      `문의 내용: ${m}`;
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
 
-    const url = "sms:01032689899?body=" + encodeURIComponent(txt);
-    window.location.href = url;
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
 
-    alert("문자 발송 화면으로 이동합니다.");
-  }
-</script>
+      <!-- 전문직·B2B -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
 
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
+      </div>
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        상담하기
+      </a>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badges">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              아이스크림·젤라또·소프트콘 매장 전용 디지털 인프라
+            </span>
+            <span class="hero-badge">
+              날씨·시즌·시간대별로 갈리는 매출을 한 구조 안에서 설계하는 아이스크림 매장 마케팅
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            “단순 디저트가 아니라,<br />
+            매출 구조가 보이는 아이스크림 매장을 만듭니다.”
+          </h1>
+          <p class="hero-desc">
+            에이치바이럴은 컵·콘·파인트·하프갤런부터 콤보 세트·디저트 플레이트까지,<br />
+            어떤 고객이 어떤 시간대에 이 매장을 선택해야 하는지 기준을 세우고,<br />
+            매장·포장·배달 매출이 함께 성장하는 구조를 마케팅 언어로 정리합니다.
+          </p>
+          <p class="hero-note">
+            광고비보다 먼저,  
+            <b>“왜 이 동네 아이스크림은 여기서 먹어야 하는지”</b>가 보이게 만드는 것이 핵심입니다.
+          </p>
+        </div>
+
+        <h2 class="section-title">아이스크림 매장 고객이 실제로 확인하는 정보</h2>
+        <p class="section-sub">
+          맛있어 보이는 사진과 메뉴 이름만으로는 선택받기 어렵습니다.<br />
+          “산책·데이트·가족 외식·야식 디저트 등 어떤 상황에서 이 집을 찾아와야 하는지”가 먼저 설명되어야 합니다.
+        </p>
+
+        <div class="card">
+          <div class="card-title">1. 상권·타깃·주요 시간대 정의</div>
+          <ul>
+            <li>주거지·학원가·대학교·관광지·상권 중심 등 입지 유형을 기준으로 핵심 타깃을 정리</li>
+            <li>하교 시간·저녁 산책 시간·주말 데이트·가족 나들이 등 피크 시간대를 구분</li>
+            <li>“이 동네에서 이 아이스크림 매장이 맡고 싶은 역할”을 한 문장으로 정리해 첫 화면에 노출</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">2. 메뉴·세트·객단가 구조</div>
+          <ul>
+            <li>대표 맛(바닐라·초코·딸기 등)과 시그니처 맛(말차·쿠키앤크림·흑임자·이색 메뉴)을 역할별로 배치</li>
+            <li>1인 컵·2~3인 파인트·가족용 패밀리팩 등 인원 기준 추천 구성을 통해 객단가 이미지를 설계</li>
+            <li>토핑·와플콘·음료·커피 조합을 별도 블록으로 정리해 자연스러운 추가 주문을 유도</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">3. 매장·포장·배달 매출 비율 전략</div>
+          <ul>
+            <li>매장 내 취식 / 포장 / 배달 매출 비율을 대략적으로 보여주고, 앞으로 키우고 싶은 축을 명시</li>
+            <li>매장에서 사진 찍기 좋은 메뉴, 포장·배달에 최적화된 메뉴를 구분해 소개</li>
+            <li>배달앱 의존도를 줄이고, 직접 방문·포장 고객을 늘리는 메시지를 별도 영역으로 설계</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. 피크타임·대기·제빙·재고 구조</div>
+          <ul>
+            <li>하교 시간, 주말 저녁, 더운 날씨 등 주문이 몰리는 시간대를 미리 안내해 불안을 줄임</li>
+            <li>줄 서는 평균 대기 시간, 준비 소요 시간, 준비 가능한 인원 수 등을 솔직하게 설명</li>
+            <li>날씨·계절에 따라 품절이 잦은 메뉴, 미리 예약 가능한 메뉴를 한눈에 볼 수 있도록 정리</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">5. 리뷰·별점·사진 운영 전략</div>
+          <ul>
+            <li>네이버·인스타그램·배달앱 등 각 채널의 역할과 우선순위를 설정</li>
+            <li>“맛 조합이 다양함, 매장 분위기 좋음, 아이와 함께 오기 좋음” 등 실제 선택에 영향을 주는 키워드를 문장으로 정리</li>
+            <li>광고 문구가 아니라, 재방문으로 이어지는 리뷰·사진이 쌓이도록 운영 기준을 제시</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. 시즌·프로모션·재방문 구조</div>
+          <ul>
+            <li>계절 한정 메뉴·이달의 맛·스탬프·쿠폰 등을 “단기 할인”이 아닌 재방문 구조 중심으로 설계</li>
+            <li>첫 방문·두 번째 방문·단골 고객에게 다른 메시지와 혜택을 제안</li>
+            <li>행사·이벤트를 하더라도, 어떤 고객이 남는 고객인지 숫자로 확인할 수 있는 구조를 목표로 함</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">7. 동네 디저트 상표처럼 보이게 만들기</div>
+          <ul>
+            <li>“산책하다가 아이스크림 생각나면 여기”라는 기준점을 화면과 문장으로 반복 노출</li>
+            <li>근처 아파트·학교·학원·카페 거리 등 주요 고객군을 상상하고, 그들의 일상 속에 매장을 배치</li>
+            <li>단골이 생겼을 때, 그 단골이 주변에 추천하기 쉽도록 설명 문장을 미리 설계</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">아이스크림·디저트 매장 마케팅 설계 시 체크하는 항목</div>
+        <div class="card">
+          <ul>
+            <li>상권·타깃·주요 시간대가 한 번에 이해되는지</li>
+            <li>매장·포장·배달 매출 구조가 대표님 머릿속이 아닌, 화면에도 정리되어 있는지</li>
+            <li>“이 동네 아이스크림은 여기서 먹어야 한다”는 이유가, 고객 언어로 설명되어 있는지</li>
+          </ul>
+        </div>
+
+        <!-- 문의 -->
+        <section id="contact">
+          <h2 class="contact-title">아이스크림·디저트 매장 디지털 마케팅 상담</h2>
+          <p class="contact-sub">
+            매장 내·포장·배달 매출이 각각 어느 정도인지,<br />
+            성수기·비수기, 낮·저녁·야간 매출 편차가 얼마나 되는지 알려주시면<br />
+            아이스크림 업종에 맞는 실전형 마케팅 구조를 함께 설계해 드립니다.
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">연락처<span>*</span></label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-input"
+                      placeholder="'-' 없이 숫자만"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">매장명·위치·운영 형태<span>*</span></label>
+                  <input
+                    type="text"
+                    id="shop"
+                    class="form-input"
+                    placeholder="예: ○○아이스크림 / ○○구 ○○동 / 매장·포장·배달 비율 등"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                  <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="성수기·비수기, 우천·한파, 남는 재고, 오후·야간 매출 등 가장 고민되시는 부분을 적어 주세요."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    마케팅 정보 수신 동의 (선택)
+                  </summary>
+                  <div class="terms-body">
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsMarketing"
+                    class="terms-checkbox"
+                  />
+                  <span>마케팅 정보 수신에 동의합니다.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/sdxcyB4h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡 상담
+              </a>
+              <a href="tel:01032689899" class="contact-call">
+                전화 상담
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정바 -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/sdxcyB4h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담
+    </a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    function toggleMenu(open) {
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
+      if (open) {
+        m.classList.add("open");
+        b.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        m.classList.remove("open");
+        b.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
+
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
+        return;
+      }
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
+        return;
+      }
+
+      const sms =
+        `[H VIRAL 아이스크림 매장 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n` +
+        `내용: ${m}`;
+
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
