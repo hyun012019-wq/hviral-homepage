@@ -2,364 +2,755 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>변호사 · 법률사무소 │ H VIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <title>변호사 ·로펌· 법무법인 온라인 브랜딩 │ H VIRAL</title>
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+      background:#020617; color:#e5e7eb; line-height:1.6;
+      overflow-x:hidden;
     }
-    a {text-decoration:none; color:inherit;}
-    .container {max-width:1080px; margin:0 auto; padding:0 20px 96px;}
+    a { color:inherit; text-decoration:none; }
+
+    .container { max-width:1080px; margin:0 auto; padding:20px; padding-bottom:100px; }
 
     /* 헤더 */
     header {
       position:sticky; top:0; z-index:9000;
-      background:#020617; border-bottom:1px solid rgba(148,163,184,0.3);
+      background:#020617;
+      border-bottom:1px solid rgba(148,163,184,.2);
     }
     .header-inner {
       max-width:1080px; margin:0 auto;
       padding:14px 20px;
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .header-left {
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
     .menu-btn {
-      width:32px; height:32px; border-radius:999px;
+      width:32px;
+      height:32px;
+      border-radius:999px;
       border:1px solid rgba(148,163,184,0.6);
-      display:flex; align-items:center; justify-content:center;
-      background:#020617; cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      background:#020617;
     }
     .menu-btn span {
-      width:16px; height:2px; background:#e5e7eb; position:relative;
+      display:block;
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
+      position:relative;
     }
-    .menu-btn span:before,
-    .menu-btn span:after {
-      content:""; position:absolute; left:0;
-      width:16px; height:2px; background:#e5e7eb;
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content:"";
+      position:absolute;
+      left:0;
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
     }
-    .menu-btn span:before {top:-5px;}
-    .menu-btn span:after {top:5px;}
+    .menu-btn span::before { top:-5px; }
+    .menu-btn span::after { top:5px; }
 
-    .logo {font-size:22px; font-weight:800;}
-    .logo-sub {font-size:11px; color:#9ca3af;}
+    .logo-wrap {
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo { font-size:20px; font-weight:700; letter-spacing:1px; }
+    .logo-sub { font-size:11px; color:#94a3b8; }
 
     .consult-btn {
-      background:#2563eb; padding:9px 20px; border-radius:999px;
-      color:#fff; font-size:15px; font-weight:600;
+      padding:9px 16px;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      font-size:13px;
+      font-weight:600;
+      text-decoration:none;
     }
 
     /* 히어로 */
     .hero {
-      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 58%);
-      padding:28px 0 32px;
+      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
+      padding:32px 0 38px;
     }
     .hero-card {
-      border-radius:28px; padding:28px 20px;
+      border-radius:26px;
+      border:1px solid rgba(148,163,184,.45);
       background:linear-gradient(135deg,#0b1f3a,#020617);
-      border:1px solid rgba(148,163,184,0.45);
-      box-shadow:0 22px 50px rgba(15,23,42,0.9);
-    }
-    .hero-badges {
-      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+      padding:28px 20px;
+      box-shadow:0 22px 50px rgba(15,23,42,.85);
     }
     .hero-badge {
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(96,165,250,0.6);
-      padding:4px 10px; border-radius:999px;
-      font-size:11px; display:inline-flex; align-items:center; gap:6px;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(96,165,250,.65);
+      background:rgba(15,23,42,.9);
+      font-size:11px; margin-bottom:16px;
     }
     .hero-badge-dot {
-      width:8px; height:8px; border-radius:999px; background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.25);
+      width:8px;height:8px;border-radius:999px;
+      background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.3);
     }
-    .hero-title {font-size:24px; font-weight:800; margin-bottom:12px; line-height:1.45;}
-    .hero-desc {font-size:14px; color:#cbd5f5;}
+    .hero-title { font-size:24px; font-weight:800; margin-bottom:10px; line-height:1.4; }
+    .hero-title span { color:#60a5fa; }
+    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:18px; }
+    .hero-desc strong { color:#e5e7eb; font-weight:600; }
 
-    .section-title {margin:34px 0 10px; font-size:20px; font-weight:800;}
-    .section-sub {font-size:13px; color:#9ca3af; margin-bottom:14px;}
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; }
+    .hero-meta span {
+      padding:3px 8px; border-radius:999px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.55);
+    }
 
+    /* 섹션 공통 */
+    .section-title { margin:28px 0 10px; font-size:18px; font-weight:800; }
+    .section-sub { font-size:13px; color:#94a3b8; margin-bottom:12px; }
+    .pill {
+      display:inline-flex;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.7);
+      font-size:11px;
+      margin-bottom:10px;
+    }
     .card {
-      background:#020617; border-radius:20px;
-      border:1px solid rgba(148,163,184,0.55);
-      padding:18px 16px; margin-bottom:14px; font-size:13px;
+      background:#020617;
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.6);
+      padding:16px 16px 14px;
+      font-size:13px;
+      color:#e5e7eb;
+      margin-bottom:12px;
     }
-    .card-tag {
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.6);
-      padding:3px 9px; border-radius:999px;
-      font-size:11px; display:inline-block; margin-bottom:6px;
-    }
-    .card ul {padding-left:14px; margin-top:6px;}
-    .card li {margin-bottom:5px; list-style:disc;}
+    .card strong { display:block; margin-bottom:6px; }
+    .card ul { margin-top:4px; padding-left:18px; }
+    .card li { list-style:disc; margin-bottom:4px; }
 
-    /* 2단 그리드 */
-    .grid-half {display:grid; gap:10px;}
-    @media (min-width:640px) {
-      .grid-half {grid-template-columns:repeat(2,1fr);}
+    .grid-2 {
+      display:grid; gap:10px; margin-top:4px;
+      grid-template-columns:1fr;
     }
-    .grid-box {
-      background:#020617; border-radius:14px; border:1px solid rgba(55,65,81,0.9);
-      padding:12px; font-size:12px;
+    @media(min-width:640px){
+      .grid-2 { grid-template-columns:repeat(2,1fr); }
     }
-    .grid-title {font-weight:600; margin-bottom:4px;}
-    .grid-desc {font-size:12px; color:#9ca3af;}
+
+    /* FAQ */
+    .faq-item {
+      border-radius:14px;
+      border:1px solid rgba(55,65,81,.9);
+      background:#020617;
+      padding:10px 12px;
+      margin-bottom:8px;
+      font-size:13px;
+    }
+    .faq-q { font-weight:600; margin-bottom:4px; }
+    .faq-a { font-size:12px; color:#9ca3af; }
 
     /* 문의 섹션 */
-    #contact {margin:40px 0 20px;}
-    .contact-title {font-size:20px; font-weight:800; margin-bottom:10px;}
-    .contact-sub {font-size:13px; color:#9ca3af; margin-bottom:16px;}
+    #contact { margin:34px 0 4px; }
+    .contact-title { font-size:18px; font-weight:800; margin-bottom:8px; }
+    .contact-sub { font-size:13px; color:#94a3b8; margin-bottom:12px; }
+
     .contact-card {
-      border-radius:20px; border:1px solid rgba(148,163,184,0.55);
-      background:#020617; padding:18px 16px;
+      border-radius:20px;
+      border:1px solid rgba(148,163,184,.7);
+      background:#020617;
+      padding:18px 16px;
+      font-size:13px;
     }
-
-    .form-group {margin-bottom:12px; display:flex; flex-direction:column; gap:6px;}
-    .form-label {font-size:12px; color:#9ca3af;}
-    .form-label span {color:#f97316;}
-    .form-input, .form-textarea {
-      padding:9px 10px; font-size:13px; border-radius:10px;
-      border:1px solid rgba(148,163,184,0.7); background:#020617; color:#fff;
+    .contact-form {
+      display:flex; flex-direction:column; gap:10px; margin-bottom:12px;
     }
-    .form-textarea {resize:vertical; min-height:80px;}
+    .form-row {
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    .form-group {
+      flex:1; min-width:0;
+      display:flex; flex-direction:column; gap:4px;
+    }
+    .form-label {
+      font-size:12px; color:#9ca3af;
+    }
+    .form-label span { color:#f97316; margin-left:2px; }
+    .form-input,
+    .form-textarea {
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,.7);
+      background:#020617;
+      color:#f9fafb;
+      font-size:13px;
+      padding:9px 10px;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder { color:#6b7280; }
+    .form-textarea { min-height:80px; resize:vertical; }
 
-    /* 약관 */
     .terms-box {
-      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
-      padding:10px; margin-top:6px; font-size:11px; color:#9ca3af;
+      border-radius:12px;
+      border:1px solid rgba(55,65,81,.9);
+      background:#020617;
+      padding:10px 10px;
+      font-size:12px;
+      margin-bottom:10px;
     }
-    .terms-detail {margin-bottom:4px;}
+    .terms-detail { margin-bottom:6px; }
     .terms-summary {
-      list-style:none; cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center;
-      font-size:12px; color:#e5e7eb;
+      cursor:pointer; list-style:none;
+      font-weight:600; font-size:12px;
+      color:#e5e7eb;
+      display:flex; align-items:center; justify-content:space-between;
     }
-    .terms-summary::-webkit-details-marker {display:none;}
+    .terms-summary::-webkit-details-marker { display:none; }
     .terms-summary::after {
       content:"자세히 보기";
       font-size:11px; color:#9ca3af; margin-left:8px;
     }
-    .terms-detail[open] .terms-summary::after {
-      content:"접기";
-    }
+    .terms-detail[open] .terms-summary::after { content:"접기"; }
     .terms-body {
-      margin-top:6px; font-size:11px; color:#9ca3af; line-height:1.5;
+      font-size:11px; color:#9ca3af;
+      line-height:1.5; margin-top:6px; margin-bottom:6px;
     }
     .terms-row {
-      display:flex; gap:8px; align-items:center;
-      margin-top:6px; font-size:12px;
+      display:flex; align-items:center; gap:6px;
+      font-size:12px; margin-bottom:4px;
     }
-    .terms-checkbox {width:14px; height:14px; accent-color:#2563eb;}
+    .terms-checkbox { width:14px; height:14px; accent-color:#2563eb; }
 
     .form-submit {
-      width:100%; background:#2563eb; color:#fff; font-size:15px;
-      padding:12px 0; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+      width:100%;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      font-size:14px;
       font-weight:700;
+      padding:11px 0;
+      text-align:center;
+      border:none;
+      cursor:pointer;
+    }
+    .contact-note {
+      font-size:11px;
+      color:#9ca3af;
+      margin-top:8px;
+    }
+    .contact-actions {
+      margin-top:12px;
+      display:flex;
+      gap:8px;
+    }
+    .contact-actions a {
+      flex:1;
+      text-align:center;
+      padding:11px 0;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+    }
+    .contact-kakao { background:#facc15; color:#000; }
+    .contact-call { background:#2563eb; color:#fff; }
+
+    /* 사이드 메뉴(전체 메뉴) */
+    #sideBackdrop {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(15,23,42,0.7);
+      backdrop-filter:blur(4px);
+      z-index:9500;
+      display:none;
+    }
+    #sideBackdrop.show { display:block; }
+
+    #sideMenu {
+      position:fixed;
+      top:0; left:0;
+      width:80%; max-width:360px;
+      height:100%;
+      background:#020617;
+      border-right:1px solid rgba(148,163,184,0.5);
+      transform:translateX(-100%);
+      transition:transform 0.3s ease;
+      z-index:9600;
+      display:flex;
+      flex-direction:column;
+      overscroll-behavior:contain;
+    }
+    #sideMenu.open { transform:translateX(0); }
+
+    .side-menu-header {
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,0.9);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .side-menu-title { font-size:18px; font-weight:700; }
+    .side-close {
+      padding:8px 16px;
+      border-radius:999px;
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.7);
+      font-size:13px;
+      color:#e5e7eb;
+      cursor:pointer;
+    }
+    .side-sub {
+      font-size:11px;
+      color:#9ca3af;
+      padding:0 22px 12px;
+      flex-shrink:0;
+    }
+    .side-scroll {
+      flex:1;
+      padding:8px 22px 120px;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      touch-action:pan-y;
+    }
+    .side-section-title {
+      font-size:13px;
+      color:#9ca3af;
+      margin:18px 0 6px;
+      font-weight:600;
+    }
+    .side-link {
+      display:block;
+      padding:8px 0;
+      font-size:14px;
+    }
+    details.side-group {
+      margin-bottom:8px;
+      border-radius:14px;
+      border:1px solid rgba(75,85,99,0.8);
+      background:#020617;
+      overflow:hidden;
+    }
+    .side-group summary {
+      list-style:none;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .side-group summary::-webkit-details-marker { display:none; }
+    .side-group-label { font-weight:600; }
+    .side-group-arrow {
+      font-size:11px;
+      color:#9ca3af;
+    }
+    .side-group-links {
+      border-top:1px solid rgba(55,65,81,0.9);
+      padding:6px 12px 8px;
+    }
+    .side-group-links a {
+      display:block;
+      padding:4px 0;
+      font-size:13px;
     }
 
-    /* 하단 고정바 */
+    /* 하단 고정 상담바 */
     .bottom-bar {
-      position:fixed; bottom:0; left:0; width:100%; z-index:9600;
-      background:#020617; padding:14px 10px;
-      border-top:1px solid rgba(148,163,184,0.45);
-      display:flex; gap:8px;
+      position:fixed;
+      left:0; bottom:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      background:#020617;
+      border-top:1px solid rgba(148,163,184,.4);
+      padding:12px 10px 12px;
+      z-index:9700;
+      gap:6px;
     }
     .bottom-btn {
-      flex:1; border-radius:999px; padding:13px 0;
-      text-align:center; font-weight:600; font-size:15px;
+      flex:1;
+      margin:0;
+      text-align:center;
+      padding:12px 0;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:600;
     }
-    .bottom-btn.kakao {background:#facc15; color:#000;}
-    .bottom-btn.ask {background:#111827; color:#fff; border:1px solid rgba(148,163,184,0.6);}
-    .bottom-btn.call {background:#2563eb; color:#fff;}
+    .bottom-btn.kakao {
+      background:#facc15;
+      color:#000;
+    }
+    .bottom-btn.ask {
+      background:#111827;
+      color:#e5e7eb;
+      border:1px solid rgba(148,163,184,.6);
+    }
+    .bottom-btn.call {
+      background:#2563eb;
+      color:#fff;
+    }
+
+    @media(min-width:1024px){
+      .hero { padding-top:34px; }
+      .hero-card { padding:30px 28px 26px; }
+      .hero-title { font-size:26px; }
+      .container { padding-bottom:110px; }
+    }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="header-inner">
-    <button class="menu-btn" onclick="goHome()" aria-label="홈으로 이동">
-      <span></span>
-    </button>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-    <a href="/" class="logo-wrap">
-      <div class="logo">H VIRAL</div>
-      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-    </a>
+  <!-- 사이드 메뉴 (index와 동일 구조) -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      </div>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
-  </div>
-</header>
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
-<main>
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
+
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html"><strong>변호사</strong></a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <!-- 로고: 항상 홈으로 이동 / 서브텍스트 index와 동일 -->
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
+      </div>
+      <!-- 우측 버튼 문구·링크 index와 동일 -->
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
+        상담하기
+      </a>
+    </div>
+  </header>
+
+  <!-- 히어로 -->
   <section class="hero">
     <div class="container">
       <div class="hero-card">
-
-        <div class="hero-badges">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            변호사 · 법률사무소 온라인 문의 특화 문안
-          </div>
-          <div class="hero-badge">
-            민사·형사·가사·기업 법률 업무 중심 안내
-          </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          변호사 · 로펌 전용 온라인 브랜딩
         </div>
-
         <h1 class="hero-title">
-          변호사 선임을 고민하는 고객이  
-          먼저 묻는 내용을 중심으로 정리합니다.
+          <span>변호사 업무,</span><br />
+          사건 설명보다 먼저 보이는 신뢰도 설계
         </h1>
-
         <p class="hero-desc">
-          민사·형사·가사·기업 자문까지,  
-          고객이 실제로 겪는 상황을 기준으로 업무 범위와 대응 방향을  
-          이해하기 쉬운 언어로 안내하고, 바로 상담으로 연결될 수 있게 구성합니다.
+          변호사·로펌의 핵심은 <strong>전문성·사건 경험·신뢰</strong>입니다.<br />
+          H VIRAL은 광고성 표현이 아닌, <strong>사건 유형·업무 분야·진행 방식</strong> 중심으로  
+          온라인에서 신뢰를 쌓을 수 있는 구조를 설계합니다.
         </p>
+        <div class="hero-meta">
+          <span>분야별 전문성 구조화 (형사·민사·가사·기업 등)</span>
+          <span>사건 유형·상담 흐름 중심 안내</span>
+          <span>전화·카톡 상담 동선 안정적 연결</span>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- 주요 문의 유형 -->
-      <h2 class="section-title">변호사를 찾는 고객의 실제 고민</h2>
-      <p class="section-sub">사건 유형별로 궁금해하는 질문을 먼저 정리해 주면 상담 진입이 훨씬 수월해집니다.</p>
+  <!-- 본문 -->
+  <main>
+    <div class="container">
+      <h2 class="section-title">의뢰 예정 고객은 먼저 “이 변호사가 어떤 사건을 다루는지”를 봅니다</h2>
+      <p class="section-sub">
+        단순 광고가 아니라, <strong>어떤 상황의 누가, 어떤 사건으로 상담을 요청하면 되는지</strong>를 명확히 보여주는 것이 중요합니다.
+      </p>
+
+      <div class="pill">변호사 · 로펌 온라인 안내 시 핵심 포인트</div>
 
       <div class="card">
-        <div class="card-tag">주요 문의 유형</div>
+        <strong>1. 업무 분야와 대상 고객을 명확히</strong>
         <ul>
-          <li>민사 사건: 손해배상, 계약 분쟁, 임대차 분쟁 등</li>
-          <li>형사 사건: 고소·고발, 수사 단계 대응, 재판 절차 문의</li>
-          <li>가사 사건: 이혼, 양육권, 재산 분할, 상속 분쟁</li>
-          <li>기업·상사 사건: 거래 분쟁, 지분 문제, 이사회 관련 쟁점</li>
-          <li>합의 전략, 대응 방향, 예상 기간에 대한 1차 상담 요청</li>
+          <li>형사, 민사, 가사, 기업·상사, 부동산, 노동, 의료 등 주요 분야 구분</li>
+          <li>개인(피의자·피해자, 채권자·채무자, 배우자, 상속인 등) / 기업(대표이사, 인사팀, 법무팀 등) 대상 정리</li>
+          <li>“어떤 상황일 때 상담을 권하는지”를 사례형 문장으로 표현</li>
         </ul>
       </div>
 
       <div class="card">
-        <div class="card-tag">고객이 먼저 확인하고 싶어하는 정보</div>
+        <strong>2. 구체적인 사건명보다, 상황·유형 중심 표현</strong>
         <ul>
-          <li>사건 내용을 어느 정도까지 설명해야 하는지</li>
-          <li>초기 상담 방식(전화·방문·비대면)과 소요 시간</li>
-          <li>수임료 산정 기준과 대략적인 비용 구간</li>
-          <li>진행 단계별 대략적인 기간과 준비해야 할 자료</li>
+          <li>개별 사건 결과를 홍보하기보다, 사건 유형·접근 방식·절차 안내 중심으로 구성</li>
+          <li>법률·광고 관련 규정을 고려해 과장·비교·보장 표현을 배제</li>
+          <li>의뢰인 입장에서 이해하기 쉬운 질문–답변 구조 활용</li>
         </ul>
       </div>
 
-      <!-- 업무 구분 -->
-      <h2 class="section-title">주요 법률 서비스 영역 정리</h2>
-      <p class="section-sub">사무소가 집중하는 분야를 선명하게 제시하면, 문의 품질이 달라집니다.</p>
-
-      <div class="grid-half">
-        <div class="grid-box">
-          <div class="grid-title">민사 · 상사</div>
-          <div class="grid-desc">
-            계약, 매매, 임대차, 손해배상, 채권 회수 등 금전·계약 관련 분쟁 전반.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">형사</div>
-          <div class="grid-desc">
-            고소·고발, 피의자 조사 대응, 재판 준비 등 수사 단계부터 재판까지 전 과정 자문.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">가사 · 상속</div>
-          <div class="grid-desc">
-            이혼, 양육권, 재산 분할, 유류분, 상속 재산 분쟁 등 가족 사건 중심 대응.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">기업 자문</div>
-          <div class="grid-desc">
-            계약서 검토, 정관·주주 간 합의, 이사회·주주총회 의사 진행 관련 자문.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">노무 · 인사</div>
-          <div class="grid-desc">
-            해고, 임금, 직장 내 괴롭힘, 징계 등 인사 관련 분쟁에 대한 대응 전략 설계.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">기타 일반 법률 상담</div>
-          <div class="grid-desc">
-            일상생활에서 발생하는 법률 리스크에 대한 1차 점검 및 대응 방향 안내.
-          </div>
-        </div>
-      </div>
-
-      <!-- 변호사 사무소 온라인 안내 방식 -->
       <div class="card">
-        <div class="card-tag">온라인 안내 시 중요한 포인트</div>
+        <strong>3. 상담·진행 절차를 미리 보여주기</strong>
         <ul>
-          <li>사건명을 나열하기보다, 고객 상황 기준으로 설명</li>
-          <li>“어떤 자료를 준비하면 좋은지”를 구체적으로 제시</li>
-          <li>상담 가능 시간, 회신 방식, 준비 절차를 명확히 안내</li>
-          <li>수임 여부와 관계없이 기본적으로 제공하는 안내 범위 정리</li>
+          <li>1차 상담(전화·카톡·방문) → 자료 확인 → 수임 여부 결정 → 진행 단계 등 기본 흐름 안내</li>
+          <li>준비하면 좋은 자료(계약서, 소장·판결문, 형사 관련 서류 등)를 사전에 안내</li>
+          <li>비밀 보장·정보 보호에 대한 기본적인 원칙을 명시</li>
         </ul>
       </div>
 
-      <!-- 상담 문의 섹션 -->
+      <h2 class="section-title">변호사 · 로펌 디지털 채널 구성 방식</h2>
+      <p class="section-sub">
+        검색 이후, <strong>홈페이지·프로필·상담 채널</strong>이 한 방향으로 정리될수록 상담 전환이 안정적입니다.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <strong>STEP 1. 업무 분야·강점 구조화</strong>
+          <ul>
+            <li>주요 분야(예: 형사·기업·부동산·가사 등)를 3~4개 축으로 정리</li>
+            <li>사건 규모보다, 다루는 쟁점·상황에 초점을 맞춘 설명 구성</li>
+            <li>단독 변호사·소규모 로펌·중견 로펌 등 조직 형태에 맞는 톤 설정</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>STEP 2. 의뢰인 유형별 안내 페이지 구성</strong>
+          <ul>
+            <li>개인 의뢰인(형사·민사·가사·상속 등) / 기업 의뢰인(계약, 분쟁, 자문 등) 별도 설명</li>
+            <li>“어떤 상황일 때 상담을 고려해야 하는지” 예시 중심 문장</li>
+            <li>실제 자주 들어오는 질문을 기준으로 섹션 구성</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>STEP 3. FAQ 중심 Q&A 구조</strong>
+          <ul>
+            <li>“언제까지 대응해야 하나요?”, “어디까지 변호사가 도와주나요?” 등 기본 질문 정리</li>
+            <li>개별 사건에 대한 법률 의견이 아니라, 일반적인 절차·원칙 중심으로 안내</li>
+            <li>필요 시, 개별 상담을 통해만 판단이 가능하다는 점 명시</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>STEP 4. 상담 채널·동선 정리</strong>
+          <ul>
+            <li>전화, 카카오톡, 방문 상담 예약 등 채널 역할 분리</li>
+            <li>업무시간, 회신 예상 시간, 응답 방식(전화/문자/카톡)을 안내</li>
+            <li>상담이 늘어날수록 실제 패턴을 반영해 안내 문구 보완</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="section-title">변호사 · 로펌 의뢰 예정 고객이 자주 묻는 질문</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 제 사건이 이 사무실에 맞는 사건인지 잘 모르겠습니다.</div>
+        <div class="faq-a">
+          A. 정확한 판단은 상담을 통해서만 가능하지만, 기본적인 사건 유형과 상황을 알려주시면  
+          해당 사건을 주로 다루는 분야인지, 어떤 절차부터 검토해야 하는지 안내해 드릴 수 있습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 상담은 어떻게 진행되나요?</div>
+        <div class="faq-a">
+          A. 일반적으로 전화·카카오톡 등을 통한 1차 문의 후, 필요한 경우 방문 상담으로 이어집니다.<br />
+          사건의 특성에 따라 준비하시면 좋은 자료를 사전에 안내드리고 있습니다.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Q. 상담·수임과 관련된 비용이 궁금합니다.</div>
+        <div class="faq-a">
+          A. 사건 유형, 난이도, 예상 소요 시간 등에 따라 달라집니다.<br />
+          기본적인 기준은 상담 후 개별적으로 설명드리며, 결과에 대한 보장·과장된 표현은 사용하지 않습니다.
+        </div>
+      </div>
+
+      <!-- 문의 섹션 -->
       <section id="contact">
-        <h2 class="contact-title">변호사 · 법률사무소 상담 문의</h2>
+        <h2 class="contact-title">변호사 · 로펌 디지털 브랜딩 상담</h2>
         <p class="contact-sub">
-          진행 중인 사건 또는 예상되는 분쟁 상황을 간단히 남겨주시면,  
-          연락 가능한 시간대에 맞춰 상담 가능 여부와 기본 방향을 먼저 안내드립니다.
+          현재 집중하고 있는 사건 유형, 의뢰인 구성, 온라인 채널 운영 현황을 남겨주시면,  
+          무리 없는 범위에서 온라인 브랜딩·문의 동선을 어떻게 잡을지 먼저 설명드립니다.
         </p>
-
         <div class="contact-card">
-          <form id="lawyerForm" onsubmit="handleLawyerSubmit(event)">
-            <div class="form-group">
-              <label class="form-label">성함<span>*</span></label>
-              <input
-                id="name"
-                class="form-input"
-                type="text"
-                placeholder="성함을 입력해 주세요."
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">연락처<span>*</span></label>
-              <input
-                id="phone"
-                class="form-input"
-                type="tel"
-                placeholder="'-' 없이 숫자만 입력"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">사건 유형<span>*</span></label>
-              <input
-                id="caseType"
-                class="form-input"
-                type="text"
-                placeholder="예: 민사 손해배상 / 형사 고소 / 이혼 · 재산 분할 / 상속 분쟁 등"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
-              <textarea
-                id="message"
-                class="form-textarea"
-                placeholder="현재까지의 진행 상황과 궁금하신 점을 자유롭게 작성해 주세요."
-                required
-              ></textarea>
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">성함<span>*</span></label>
+                  <input
+                    id="contactName"
+                    type="text"
+                    class="form-input"
+                    placeholder="담당 변호사 또는 실무 담당자 성함"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contactPhone" class="form-label">연락처<span>*</span></label>
+                  <input
+                    id="contactPhone"
+                    type="tel"
+                    class="form-input"
+                    placeholder="'-' 없이 숫자만 입력"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactOffice" class="form-label">법률사무소·로펌명 / 지역<span>*</span></label>
+                  <input
+                    id="contactOffice"
+                    type="text"
+                    class="form-input"
+                    placeholder="예: ○○법률사무소 / ○○로펌 / ○○구, ○○시 등"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">주요 분야 / 문의 내용<span>*</span></label>
+                <textarea
+                  id="contactMessage"
+                  class="form-textarea"
+                  placeholder="예: 형사·민사·기업 등 주력 분야, 현재 온라인 채널 운영 여부, 궁금한 점 등을 적어 주세요."
+                  required
+                ></textarea>
+              </div>
             </div>
 
             <div class="terms-box">
               <details class="terms-detail">
-                <summary class="terms-summary">
-                  개인정보 수집 및 이용 동의 (필수)
-                </summary>
+                <summary class="terms-summary">개인정보 수집 및 이용 동의 (필수)</summary>
                 <div class="terms-body">
-                  ① 수집 항목: 성명, 연락처, 사건 유형, 문의 내용<br />
-                  ② 수집 목적: 상담 회신 및 관련 안내<br />
+                  ① 수집 항목: 성명, 연락처, 법률사무소·로펌명·지역, 문의 내용<br />
+                  ② 수집 목적: 변호사·로펌 디지털 브랜딩·마케팅 상담 및 관련 문의 회신<br />
                   ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
-                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 제공이 제한될 수 있습니다.
                 </div>
               </details>
               <label class="terms-row">
@@ -370,69 +761,113 @@
                 />
                 <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
               </label>
+
+              <details class="terms-detail" style="margin-top:4px;">
+                <summary class="terms-summary">마케팅 정보 수신 동의 (선택)</summary>
+                <div class="terms-body">
+                  서비스 안내, 자료 발송 등과 관련된 정보를 카카오톡/문자로 제공해 드릴 수 있습니다.
+                </div>
+              </details>
+              <label class="terms-row">
+                <input
+                  type="checkbox"
+                  id="termsMarketing"
+                  class="terms-checkbox"
+                />
+                <span>마케팅 정보 수신에 동의합니다. (선택)</span>
+              </label>
             </div>
 
             <button type="submit" class="form-submit">문의 접수하기</button>
           </form>
+          <p class="contact-note">
+            * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
+          </p>
+          <div class="contact-actions">
+            <a
+              href="https://open.kakao.com/o/sdxcyB4h"
+              target="_blank"
+              rel="noopener"
+              class="contact-kakao"
+            >카톡으로 바로 상담</a>
+            <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+          </div>
         </div>
       </section>
-
     </div>
-  </section>
-</main>
+  </main>
 
-<!-- 하단 고정 상담바 -->
-<div class="bottom-bar">
-  <a
-    href="https://open.kakao.com/o/s0ogfV3h"
-    class="bottom-btn kakao"
-    target="_blank"
-    rel="noopener"
-  >카톡 상담</a>
-  <a href="#contact" class="bottom-btn ask">문의하기</a>
-  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
-</div>
+  <!-- 하단 고정 상담바 (index와 동일 동선, 링크 통일) -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/sdxcyB4h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >카톡 상담</a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
 
-<script>
-  function goHome() {
-    window.location.href = "/";
-  }
-
-  function handleLawyerSubmit(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const caseType = document.getElementById("caseType").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const termsRequired = document.getElementById("termsRequired").checked;
-
-    if (!termsRequired) {
-      alert("개인정보 수집 및 이용에 동의해 주세요.");
-      return;
-    }
-    if (!name || !phone || !caseType || !message) {
-      alert("필수 항목을 모두 입력해 주세요.");
-      return;
+  <script>
+    // 사이드 메뉴 열고 닫기
+    function toggleMenu(open) {
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if (open) {
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     }
 
-    const smsBody =
-      `[H VIRAL 변호사 문의]\n` +
-      `성함: ${name}\n연락처: ${phone}\n사건 유형: ${caseType}\n` +
-      `내용: ${message}`;
+    // 대제목(업종 그룹) 클릭 시, 펼치면서 그 위치로 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
 
-    const encoded = encodeURIComponent(smsBody);
-    const smsUrl = `sms:01032689899?body=${encoded}`;
-    window.location.href = smsUrl;
+    // 문의 폼 제출 → 문자앱으로 내용 전달
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const office = document.getElementById("contactOffice").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+      const termsRequired = document.getElementById("termsRequired").checked;
 
-    alert(
-      "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
-      "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
-    );
+      if (!termsRequired) {
+        alert("개인정보 수집 및 이용에 동의해 주세요.");
+        return;
+      }
+      if (!name || !phone || !office || !message) {
+        alert("필수 항목을 모두 입력해 주세요.");
+        return;
+      }
 
-    e.target.reset();
-  }
-</script>
+      const smsBody =
+        `[H VIRAL 변호사·로펌 문의]\n` +
+        `성함: ${name}\n연락처: ${phone}\n사무소/지역: ${office}\n` +
+        `내용: ${message}`;
+      const encoded = encodeURIComponent(smsBody);
+      const smsUrl = `sms:01032689899?body=${encoded}`;
+      window.location.href = smsUrl;
 
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>
