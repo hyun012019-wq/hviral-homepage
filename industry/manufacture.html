@@ -6,47 +6,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
+      background:#020617;
+      color:#e5e7eb;
+      line-height:1.6;
+      overflow-x:hidden;
     }
-    a {text-decoration:none; color:inherit;}
-    .container {max-width:1080px; margin:0 auto; padding:0 20px 96px;}
+    a { text-decoration:none; color:inherit; }
+    ul { list-style:none; }
+    .container {
+      max-width:1080px;
+      margin:0 auto;
+      padding:0 20px 96px;
+    }
 
     /* 헤더 */
     header {
-      position:sticky; top:0; z-index:9000;
-      background:#020617; border-bottom:1px solid rgba(148,163,184,0.3);
+      position:sticky;
+      top:0;
+      z-index:9000;
+      background:#020617;
+      border-bottom:1px solid rgba(148,163,184,0.3);
     }
     .header-inner {
-      max-width:1080px; margin:0 auto;
+      max-width:1080px;
+      margin:0 auto;
       padding:14px 20px;
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .header-left {
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
     .menu-btn {
-      width:32px; height:32px; border-radius:999px;
+      width:32px;
+      height:32px;
+      border-radius:999px;
       border:1px solid rgba(148,163,184,0.6);
-      display:flex; align-items:center; justify-content:center;
-      background:#020617; cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#020617;
+      cursor:pointer;
     }
     .menu-btn span {
-      width:16px; height:2px; background:#e5e7eb; position:relative;
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
+      position:relative;
     }
-    .menu-btn span:before,
-    .menu-btn span:after {
-      content:""; position:absolute; left:0;
-      width:16px; height:2px; background:#e5e7eb;
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content:"";
+      position:absolute;
+      left:0;
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
     }
-    .menu-btn span:before {top:-5px;}
-    .menu-btn span:after {top:5px;}
+    .menu-btn span::before { top:-5px; }
+    .menu-btn span::after { top:5px; }
 
-    .logo {font-size:22px; font-weight:800;}
-    .logo-sub {font-size:11px; color:#9ca3af;}
+    .logo-wrap {
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo { font-size:20px; font-weight:800; letter-spacing:1px; }
+    .logo-sub { font-size:11px; color:#94a3b8; }
 
     .consult-btn {
-      background:#2563eb; padding:9px 20px; border-radius:999px;
-      color:#fff; font-size:15px; font-weight:600;
+      padding:9px 16px;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      font-size:13px;
+      font-weight:600;
     }
 
     /* 히어로 */
@@ -55,421 +95,847 @@
       padding:28px 0 32px;
     }
     .hero-card {
-      border-radius:28px; padding:28px 20px;
+      border-radius:28px;
+      padding:28px 20px;
       background:linear-gradient(135deg,#0b1f3a,#020617);
       border:1px solid rgba(148,163,184,0.45);
       box-shadow:0 22px 50px rgba(15,23,42,0.9);
     }
     .hero-badges {
-      display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
     }
     .hero-badge {
       background:rgba(15,23,42,0.9);
       border:1px solid rgba(96,165,250,0.6);
-      padding:4px 10px; border-radius:999px;
-      font-size:11px; display:inline-flex; align-items:center; gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
     }
     .hero-badge-dot {
-      width:8px; height:8px; border-radius:999px; background:#22c55e;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#22c55e;
       box-shadow:0 0 0 4px rgba(34,197,94,0.25);
     }
-    .hero-title {font-size:24px; font-weight:800; margin-bottom:12px; line-height:1.45;}
-    .hero-desc {font-size:14px; color:#cbd5f5;}
+    .hero-title {
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:12px;
+      line-height:1.45;
+    }
+    .hero-desc {
+      font-size:14px;
+      color:#cbd5f5;
+    }
 
-    .section-title {margin:34px 0 10px; font-size:20px; font-weight:800;}
-    .section-sub {font-size:13px; color:#9ca3af; margin-bottom:14px;}
+    .section-title {
+      margin:34px 0 10px;
+      font-size:20px;
+      font-weight:800;
+    }
+    .section-sub {
+      font-size:13px;
+      color:#9ca3af;
+      margin-bottom:14px;
+    }
 
     .card {
-      background:#020617; border-radius:20px;
+      background:#020617;
+      border-radius:20px;
       border:1px solid rgba(148,163,184,0.55);
-      padding:18px 16px; margin-bottom:14px; font-size:13px;
+      padding:18px 16px;
+      margin-bottom:14px;
+      font-size:13px;
     }
     .card-tag {
       background:rgba(15,23,42,0.9);
       border:1px solid rgba(148,163,184,0.6);
-      padding:3px 9px; border-radius:999px;
-      font-size:11px; display:inline-block; margin-bottom:6px;
+      padding:3px 9px;
+      border-radius:999px;
+      font-size:11px;
+      display:inline-block;
+      margin-bottom:6px;
     }
-    .card ul {padding-left:14px; margin-top:6px;}
-    .card li {margin-bottom:5px; list-style:disc;}
+    .card ul {
+      padding-left:14px;
+      margin-top:6px;
+    }
+    .card li {
+      margin-bottom:5px;
+      list-style:disc;
+    }
 
     /* 2단 그리드 */
-    .grid-half {display:grid; gap:10px;}
+    .grid-half {
+      display:grid;
+      gap:10px;
+    }
     @media (min-width:640px) {
-      .grid-half {grid-template-columns:repeat(2,1fr);}
+      .grid-half { grid-template-columns:repeat(2,1fr); }
     }
     .grid-box {
-      background:#020617; border-radius:14px; border:1px solid rgba(55,65,81,0.9);
-      padding:12px; font-size:12px;
+      background:#020617;
+      border-radius:14px;
+      border:1px solid rgba(55,65,81,0.9);
+      padding:12px;
+      font-size:12px;
     }
-    .grid-title {font-weight:600; margin-bottom:4px;}
-    .grid-desc {font-size:12px; color:#9ca3af;}
+    .grid-title {
+      font-weight:600;
+      margin-bottom:4px;
+    }
+    .grid-desc {
+      font-size:12px;
+      color:#9ca3af;
+    }
 
     /* 문의 섹션 */
-    #contact {margin:40px 0 20px;}
-    .contact-title {font-size:20px; font-weight:800; margin-bottom:10px;}
-    .contact-sub {font-size:13px; color:#9ca3af; margin-bottom:16px;}
+    #contact { margin:40px 0 20px; }
+    .contact-title {
+      font-size:20px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .contact-sub {
+      font-size:13px;
+      color:#9ca3af;
+      margin-bottom:16px;
+    }
     .contact-card {
-      border-radius:20px; border:1px solid rgba(148,163,184,0.55);
-      background:#020617; padding:18px 16px;
+      border-radius:20px;
+      border:1px solid rgba(148,163,184,0.55);
+      background:#020617;
+      padding:18px 16px;
     }
 
-    .form-group {margin-bottom:12px; display:flex; flex-direction:column; gap:6px;}
-    .form-label {font-size:12px; color:#9ca3af;}
-    .form-label span {color:#f97316;}
-    .form-input, .form-textarea {
-      padding:9px 10px; font-size:13px; border-radius:10px;
-      border:1px solid rgba(148,163,184,0.7); background:#020617; color:#fff;
+    .form-group {
+      margin-bottom:12px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
     }
-    .form-textarea {resize:vertical; min-height:80px;}
+    .form-label {
+      font-size:12px;
+      color:#9ca3af;
+    }
+    .form-label span { color:#f97316; }
+    .form-input,
+    .form-textarea {
+      padding:9px 10px;
+      font-size:13px;
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7);
+      background:#020617;
+      color:#fff;
+    }
+    .form-textarea {
+      resize:vertical;
+      min-height:80px;
+    }
 
     /* 약관 */
     .terms-box {
-      border-radius:12px; border:1px solid rgba(55,65,81,0.9);
-      padding:10px; margin-top:6px; font-size:11px; color:#9ca3af;
+      border-radius:12px;
+      border:1px solid rgba(55,65,81,0.9);
+      padding:10px;
+      margin-top:6px;
+      font-size:11px;
+      color:#9ca3af;
     }
-    .terms-detail {margin-bottom:4px;}
+    .terms-detail { margin-bottom:4px; }
     .terms-summary {
-      list-style:none; cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center;
-      font-size:12px; color:#e5e7eb;
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:12px;
+      color:#e5e7eb;
     }
-    .terms-summary::-webkit-details-marker {display:none;}
+    .terms-summary::-webkit-details-marker { display:none; }
     .terms-summary::after {
       content:"자세히 보기";
-      font-size:11px; color:#9ca3af; margin-left:8px;
+      font-size:11px;
+      color:#9ca3af;
+      margin-left:8px;
     }
     .terms-detail[open] .terms-summary::after {
       content:"접기";
     }
     .terms-body {
-      margin-top:6px; font-size:11px; color:#9ca3af; line-height:1.5;
+      margin-top:6px;
+      font-size:11px;
+      color:#9ca3af;
+      line-height:1.5;
     }
     .terms-row {
-      display:flex; gap:8px; align-items:center;
-      margin-top:6px; font-size:12px;
+      display:flex;
+      gap:8px;
+      align-items:center;
+      margin-top:6px;
+      font-size:12px;
     }
-    .terms-checkbox {width:14px; height:14px; accent-color:#2563eb;}
+    .terms-checkbox {
+      width:14px;
+      height:14px;
+      accent-color:#2563eb;
+    }
 
     .form-submit {
-      width:100%; background:#2563eb; color:#fff; font-size:15px;
-      padding:12px 0; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+      width:100%;
+      background:#2563eb;
+      color:#fff;
+      font-size:15px;
+      padding:12px 0;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      margin-top:8px;
       font-weight:700;
+    }
+
+    .contact-note {
+      font-size:11px;
+      color:#9ca3af;
+      margin-top:8px;
+    }
+    .contact-actions {
+      margin-top:12px;
+      display:flex;
+      gap:8px;
+    }
+    .contact-actions a {
+      flex:1;
+      text-align:center;
+      padding:11px 0;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+    }
+    .contact-kakao { background:#facc15; color:#000; }
+    .contact-call { background:#2563eb; color:#fff; }
+
+    /* 사이드 메뉴(전체 메뉴) */
+    #sideBackdrop {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(15,23,42,0.7);
+      backdrop-filter:blur(4px);
+      z-index:9500;
+      display:none;
+    }
+    #sideBackdrop.show { display:block; }
+
+    #sideMenu {
+      position:fixed;
+      top:0;
+      left:0;
+      width:80%;
+      max-width:360px;
+      height:100%;
+      background:#020617;
+      border-right:1px solid rgba(148,163,184,0.5);
+      transform:translateX(-100%);
+      transition:transform 0.3s ease;
+      z-index:9600;
+      display:flex;
+      flex-direction:column;
+      overscroll-behavior:contain;
+    }
+    #sideMenu.open { transform:translateX(0); }
+
+    .side-menu-header {
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,0.9);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .side-menu-title { font-size:18px; font-weight:700; }
+    .side-close {
+      padding:8px 16px;
+      border-radius:999px;
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.7);
+      font-size:13px;
+      color:#e5e7eb;
+      cursor:pointer;
+    }
+    .side-sub {
+      font-size:11px;
+      color:#9ca3af;
+      padding:0 22px 12px;
+      flex-shrink:0;
+    }
+    .side-scroll {
+      flex:1;
+      padding:8px 22px 120px;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      touch-action:pan-y;
+    }
+    .side-section-title {
+      font-size:13px;
+      color:#9ca3af;
+      margin:18px 0 6px;
+      font-weight:600;
+    }
+    .side-link {
+      display:block;
+      padding:8px 0;
+      font-size:14px;
+    }
+    details.side-group {
+      margin-bottom:8px;
+      border-radius:14px;
+      border:1px solid rgba(75,85,99,0.8);
+      background:#020617;
+      overflow:hidden;
+    }
+    .side-group summary {
+      list-style:none;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .side-group summary::-webkit-details-marker { display:none; }
+    .side-group-label { font-weight:600; }
+    .side-group-arrow {
+      font-size:11px;
+      color:#9ca3af;
+    }
+    .side-group-links {
+      border-top:1px solid rgba(55,65,81,0.9);
+      padding:6px 12px 8px;
+    }
+    .side-group-links a {
+      display:block;
+      padding:4px 0;
+      font-size:13px;
     }
 
     /* 하단 고정 상담바 */
     .bottom-bar {
-      position:fixed; bottom:0; left:0; width:100%; z-index:9600;
-      background:#020617; padding:14px 10px;
+      position:fixed;
+      left:0;
+      bottom:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      background:#020617;
       border-top:1px solid rgba(148,163,184,0.45);
-      display:flex; gap:8px;
+      padding:14px 10px;
+      z-index:9700;
+      gap:8px;
     }
     .bottom-btn {
-      flex:1; border-radius:999px; padding:13px 0;
-      text-align:center; font-weight:600; font-size:15px;
+      flex:1;
+      margin:0;
+      text-align:center;
+      padding:13px 0;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:600;
     }
-    .bottom-btn.kakao {background:#facc15; color:#000;}
-    .bottom-btn.ask {background:#111827; color:#fff; border:1px solid rgba(148,163,184,0.6);}
-    .bottom-btn.call {background:#2563eb; color:#fff;}
+    .bottom-btn.kakao {
+      background:#facc15;
+      color:#000;
+    }
+    .bottom-btn.ask {
+      background:#111827;
+      color:#e5e7eb;
+      border:1px solid rgba(148,163,184,0.6);
+    }
+    .bottom-btn.call {
+      background:#2563eb;
+      color:#fff;
+    }
+
+    @media(min-width:1024px){
+      .hero { padding-top:34px; }
+      .hero-card { padding:30px 28px 26px; }
+      .hero-title { font-size:26px; }
+      .container { padding-bottom:110px; }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <button class="menu-btn" onclick="goHome()" aria-label="홈으로 이동">
-      <span></span>
-    </button>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-    <a href="/" class="logo-wrap">
-      <div class="logo">H VIRAL</div>
-      <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-    </a>
-
-    <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
-  </div>
-</header>
-
-<main>
-  <section class="hero">
-    <div class="container">
-      <div class="hero-card">
-
-        <div class="hero-badges">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            제조업 B2B 영업 · 디지털 문의 세팅
-          </div>
-          <div class="hero-badge">
-            설비·공정·납기·품질 기준을 한 화면에서 정리
-          </div>
-        </div>
-
-        <h1 class="hero-title">
-          설비 제원, 납기 대응력, 품질 기준을  
-          한 번에 보이게 만드는 온라인 설명 페이지
-        </h1>
-
-        <p class="hero-desc">
-          제조업은 “무엇을 어떤 스펙으로, 어느 리드타임에, 어떤 품질 수준으로 공급할 수 있는지”가 핵심입니다.  
-          영업 담당자가 매번 구두로 설명하던 내용을 온라인에 정리해 두면,  
-          초기 문의 단계에서부터 신뢰와 이해도가 크게 달라집니다.
-        </p>
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
-
-      <!-- 섹션 1: 제조업에서 먼저 보여줘야 하는 정보 -->
-      <h2 class="section-title">B2B 발주 담당자가 먼저 확인하는 제조 정보</h2>
-      <p class="section-sub">
-        도면과 견적 단계로 들어가기 전, “이 업체가 우리 수준의 요구를 감당할 수 있는지”를 온라인에서 미리 가늠합니다.
-      </p>
-
-      <div class="card">
-        <div class="card-tag">1. 생산 설비 · 공정 역량</div>
-        <ul>
-          <li>보유 설비 리스트, 주요 기계 스펙(가공 범위, 톤수, 축 수, 로트 단위 등)</li>
-          <li>양산·소량·시제품 대응 가능 범위, 자동화 라인 보유 여부</li>
-          <li>주요 공정(절단, 가공, 용접, 도장, 조립, 검사 등)을 한눈에 볼 수 있는 설명</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">2. 품질 기준 · 인증 현황</div>
-        <ul>
-          <li>적용 중인 품질 관리 체계(예: ISO, IATF, 내부 품질 규정 등)</li>
-          <li>치수·외관·기능 검사 프로세스와 샘플 승인 절차 안내</li>
-          <li>협력사 관리 방식, 클레임 발생 시 대응 프로세스</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">3. 납기 대응력 · 물류 운영</div>
-        <ul>
-          <li>일일/월간 생산 가능 수량에 대한 기준</li>
-          <li>납기 요청 대비 내부 일정 조정 방식, 안전 재고 운영 방식</li>
-          <li>출고·포장·운송에 대한 기본 정책과 협의 가능 범위</li>
-        </ul>
-      </div>
-
-      <!-- 섹션 2: 디지털 마케팅 관점에서 정리하는 포인트 -->
-      <h2 class="section-title">제조업에 맞는 디지털 마케팅 관점 정리</h2>
-      <p class="section-sub">
-        화려한 이미지보다, 구매 담당자가 궁금해하는 내용을 정확히 채워 넣는 방식으로 설계합니다.
-      </p>
-
-      <div class="grid-half">
-        <div class="grid-box">
-          <div class="grid-title">1. 핵심 품목 · 소재 그룹 정리</div>
-          <div class="grid-desc">
-            “무엇이 주력인지”를 품목·소재·용도 기준으로 분류해서,  
-            각 그룹별로 대표 이미지를 배치합니다.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">2. 레퍼런스 표현 방식</div>
-          <div class="grid-desc">
-            구체적인 회사명 대신, 업종·제품군 기준으로  
-            프로젝트 경험을 정리해 안전하게 설명할 수 있도록 구성합니다.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">3. 문의 단계 분리</div>
-          <div class="grid-desc">
-            “기술 상담이 필요한 케이스”와 “견적 요청 위주 케이스”를 구분해,  
-            입력 항목을 다르게 가져갈 수 있도록 설계합니다.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">4. 장기 거래 전제 설명</div>
-          <div class="grid-desc">
-            단발성 주문보다, 장기 거래를 염두에 둔 협력 방식·커뮤니케이션 방식을  
-            미리 안내해 두면 필터링에 도움이 됩니다.
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-tag">H VIRAL이 제안하는 온라인 페이지 구성 예시</div>
-        <ul>
-          <li>회사 개요: 주요 생산 품목, 핵심 산업군, 연혁을 간단하게 정리</li>
-          <li>설비·공정 소개: 대표 설비 사진, 공정 흐름도, 가공 가능 범위를 직관적으로 설명</li>
-          <li>품질·납기 운영: 검사 장비, 품질 기준, 납기 관리 방식 정리</li>
-          <li>문의 안내: 도면 보유 여부, 연간 예상 수량, 희망 납기 등 필수 질문을 포함한 접수 폼</li>
-        </ul>
-      </div>
-
-      <!-- 섹션 3: 이런 제조업체에 적합 -->
-      <h2 class="section-title">이런 제조업체에 특히 적합합니다</h2>
-      <p class="section-sub">
-        “영업은 계속 바쁜데, 온라인에서는 사업 역량이 제대로 보이지 않는다”는 고민이 있는 팀에게 맞는 방식입니다.
-      </p>
-
-      <div class="grid-half">
-        <div class="grid-box">
-          <div class="grid-title">국내외 B2B 비중이 높은 공장</div>
-          <div class="grid-desc">
-            직거래·협력사 비중이 크고, 담당자 교체가 잦은 업종에서  
-            회사 역량을 일관되게 설명할 기준이 필요한 팀.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">설비 투자와 기술력이 강점인 회사</div>
-          <div class="grid-desc">
-            설비와 기술 인력이 강점인데,  
-            이를 온라인에서 명확하게 보여줄 화면이 부족한 경우.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">신규 레퍼런스를 안정적으로 늘리고 싶은 팀</div>
-          <div class="grid-desc">
-            대량 문의보다, 적합한 발주처를 꾸준히 확보하고 싶은 제조업체.
-          </div>
-        </div>
-        <div class="grid-box">
-          <div class="grid-title">해외 바이어·무역사와 협업 중인 회사</div>
-          <div class="grid-desc">
-            영어 페이지와 함께, 한국어 기준 설명 페이지도 정리해  
-            내부 영업·기술팀이 같이 활용하고 싶은 경우.
-          </div>
-        </div>
-      </div>
-
-      <!-- 상담 문의 섹션 -->
-      <section id="contact">
-        <h2 class="contact-title">제조업 B2B 디지털 문의 세팅 상담</h2>
-        <p class="contact-sub">
-          생산 품목, 주요 산업군, 현재 영업 방식, 온라인에서 보완이 필요하다고 느끼는 부분을 적어 주시면  
-          어떤 방향으로 화면을 정리하는 것이 좋을지 먼저 제안드립니다.
-        </p>
-
-        <div class="contact-card">
-          <form id="manufactureForm" onsubmit="handleManufactureSubmit(event)">
-            <div class="form-group">
-              <label class="form-label">성함<span>*</span></label>
-              <input
-                id="name"
-                class="form-input"
-                type="text"
-                placeholder="성함 또는 담당자명을 입력해 주세요."
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">연락처<span>*</span></label>
-              <input
-                id="phone"
-                class="form-input"
-                type="tel"
-                placeholder="'-' 없이 숫자만 입력"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">주요 생산 품목 · 산업군<span>*</span></label>
-              <input
-                id="item"
-                class="form-input"
-                type="text"
-                placeholder="예: 자동차 부품 가공 / 산업용 장비 프레임 / 식품 포장 자재 등"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
-              <textarea
-                id="message"
-                class="form-textarea"
-                placeholder="예: 기존 협력사 위주 영업 / 신규 레퍼런스 확보 필요 / 제품군별 온라인 설명 페이지 정리 필요 등 자세히 적어 주세요."
-                required
-              ></textarea>
-            </div>
-
-            <div class="terms-box">
-              <details class="terms-detail">
-                <summary class="terms-summary">
-                  개인정보 수집 및 이용 동의 (필수)
-                </summary>
-                <div class="terms-body">
-                  ① 수집 항목: 성명, 연락처, 생산 품목·산업군, 문의 내용<br />
-                  ② 수집 목적: 상담 회신 및 관련 안내<br />
-                  ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
-                  ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
-                </div>
-              </details>
-              <label class="terms-row">
-                <input
-                  type="checkbox"
-                  id="termsRequired"
-                  class="terms-checkbox"
-                />
-                <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
-              </label>
-            </div>
-
-            <button type="submit" class="form-submit">문의 접수하기</button>
-          </form>
-        </div>
-      </section>
-
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-  </section>
-</main>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-<!-- 하단 고정 상담바 -->
-<div class="bottom-bar">
-  <a
-    href="https://open.kakao.com/o/s0ogfV3h"
-    class="bottom-btn kakao"
-    target="_blank"
-    rel="noopener"
-  >카톡 상담</a>
-  <a href="#contact" class="bottom-btn ask">문의하기</a>
-  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
-</div>
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
-<script>
-  function goHome() {
-    window.location.href = "/";
-  }
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
 
-  function handleManufactureSubmit(e) {
-    e.preventDefault();
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const item = document.getElementById("item").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const termsRequired = document.getElementById("termsRequired").checked;
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
 
-    if (!termsRequired) {
-      alert("개인정보 수집 및 이용에 동의해 주세요.");
-      return;
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html"><strong>제조업</strong></a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">H VIRAL</div>
+          <div class="logo-sub">제조업 B2B 디지털 마케팅 · 문의 시스템</div>
+        </a>
+      </div>
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
+        상담하기
+      </a>
+    </div>
+  </header>
+
+  <!-- 메인 -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badges">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              제조업 B2B 영업 · 디지털 문의 세팅
+            </div>
+            <div class="hero-badge">
+              설비·공정·납기·품질 기준을 한 화면에서 정리
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            설비 제원, 납기 대응력, 품질 기준을<br />
+            한 번에 보이게 만드는 온라인 설명 페이지
+          </h1>
+
+          <p class="hero-desc">
+            제조업은 “무엇을 어떤 스펙으로, 어느 리드타임에, 어떤 품질 수준으로 공급할 수 있는지”가 핵심입니다.<br />
+            영업 담당자가 매번 구두로 설명하던 내용을 온라인에 정리해 두면,<br />
+            초기 문의 단계에서부터 신뢰와 이해도가 크게 달라집니다.
+          </p>
+        </div>
+
+        <!-- 섹션 1 -->
+        <h2 class="section-title">B2B 발주 담당자가 먼저 확인하는 제조 정보</h2>
+        <p class="section-sub">
+          도면과 견적 단계로 들어가기 전, “이 업체가 우리 수준의 요구를 감당할 수 있는지”를 온라인에서 미리 가늠합니다.
+        </p>
+
+        <div class="card">
+          <div class="card-tag">1. 생산 설비 · 공정 역량</div>
+          <ul>
+            <li>보유 설비 리스트, 주요 기계 스펙(가공 범위, 톤수, 축 수, 로트 단위 등)</li>
+            <li>양산·소량·시제품 대응 가능 범위, 자동화 라인 보유 여부</li>
+            <li>주요 공정(절단, 가공, 용접, 도장, 조립, 검사 등)을 한눈에 볼 수 있는 설명</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">2. 품질 기준 · 인증 현황</div>
+          <ul>
+            <li>적용 중인 품질 관리 체계(예: ISO, IATF, 내부 품질 규정 등)</li>
+            <li>치수·외관·기능 검사 프로세스와 샘플 승인 절차 안내</li>
+            <li>협력사 관리 방식, 클레임 발생 시 대응 프로세스</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">3. 납기 대응력 · 물류 운영</div>
+          <ul>
+            <li>일일/월간 생산 가능 수량에 대한 기준</li>
+            <li>납기 요청 대비 내부 일정 조정 방식, 안전 재고 운영 방식</li>
+            <li>출고·포장·운송에 대한 기본 정책과 협의 가능 범위</li>
+          </ul>
+        </div>
+
+        <!-- 섹션 2 -->
+        <h2 class="section-title">제조업에 맞는 디지털 마케팅 관점 정리</h2>
+        <p class="section-sub">
+          화려한 이미지보다, 구매 담당자가 궁금해하는 내용을 정확히 채워 넣는 방식으로 설계합니다.
+        </p>
+
+        <div class="grid-half">
+          <div class="grid-box">
+            <div class="grid-title">1. 핵심 품목 · 소재 그룹 정리</div>
+            <div class="grid-desc">
+              “무엇이 주력인지”를 품목·소재·용도 기준으로 분류해서,<br />
+              각 그룹별로 대표 이미지를 배치합니다.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">2. 레퍼런스 표현 방식</div>
+            <div class="grid-desc">
+              구체적인 회사명 대신, 업종·제품군 기준으로<br />
+              프로젝트 경험을 정리해 안전하게 설명할 수 있도록 구성합니다.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">3. 문의 단계 분리</div>
+            <div class="grid-desc">
+              “기술 상담이 필요한 케이스”와 “견적 요청 위주 케이스”를 구분해,<br />
+              입력 항목을 다르게 가져갈 수 있도록 설계합니다.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">4. 장기 거래 전제 설명</div>
+            <div class="grid-desc">
+              단발성 주문보다, 장기 거래를 염두에 둔 협력 방식·커뮤니케이션 방식을<br />
+              미리 안내해 두면 필터링에 도움이 됩니다.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">H VIRAL이 제안하는 온라인 페이지 구성 예시</div>
+          <ul>
+            <li>회사 개요: 주요 생산 품목, 핵심 산업군, 연혁을 간단하게 정리</li>
+            <li>설비·공정 소개: 대표 설비 사진, 공정 흐름도, 가공 가능 범위를 직관적으로 설명</li>
+            <li>품질·납기 운영: 검사 장비, 품질 기준, 납기 관리 방식 정리</li>
+            <li>문의 안내: 도면 보유 여부, 연간 예상 수량, 희망 납기 등 필수 질문을 포함한 접수 폼</li>
+          </ul>
+        </div>
+
+        <!-- 섹션 3 -->
+        <h2 class="section-title">이런 제조업체에 특히 적합합니다</h2>
+        <p class="section-sub">
+          “영업은 계속 바쁜데, 온라인에서는 사업 역량이 제대로 보이지 않는다”는 고민이 있는 팀에게 맞는 방식입니다.
+        </p>
+
+        <div class="grid-half">
+          <div class="grid-box">
+            <div class="grid-title">국내외 B2B 비중이 높은 공장</div>
+            <div class="grid-desc">
+              직거래·협력사 비중이 크고, 담당자 교체가 잦은 업종에서<br />
+              회사 역량을 일관되게 설명할 기준이 필요한 팀.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">설비 투자와 기술력이 강점인 회사</div>
+            <div class="grid-desc">
+              설비와 기술 인력이 강점인데,<br />
+              이를 온라인에서 명확하게 보여줄 화면이 부족한 경우.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">신규 레퍼런스를 안정적으로 늘리고 싶은 팀</div>
+            <div class="grid-desc">
+              대량 문의보다, 적합한 발주처를 꾸준히 확보하고 싶은 제조업체.
+            </div>
+          </div>
+          <div class="grid-box">
+            <div class="grid-title">해외 바이어·무역사와 협업 중인 회사</div>
+            <div class="grid-desc">
+              영어 페이지와 함께, 한국어 기준 설명 페이지도 정리해<br />
+              내부 영업·기술팀이 같이 활용하고 싶은 경우.
+            </div>
+          </div>
+        </div>
+
+        <!-- 상담 문의 섹션 -->
+        <section id="contact">
+          <h2 class="contact-title">제조업 B2B 디지털 문의 세팅 상담</h2>
+          <p class="contact-sub">
+            생산 품목, 주요 산업군, 현재 영업 방식, 온라인에서 보완이 필요하다고 느끼는 부분을 적어 주시면<br />
+            어떤 방향으로 화면을 정리하는 것이 좋을지 먼저 제안드립니다.
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">성함<span>*</span></label>
+                <input
+                  id="contactName"
+                  class="form-input"
+                  type="text"
+                  placeholder="성함 또는 담당자명을 입력해 주세요."
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">연락처<span>*</span></label>
+                <input
+                  id="contactPhone"
+                  class="form-input"
+                  type="tel"
+                  placeholder="'-' 없이 숫자만 입력"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">주요 생산 품목 · 산업군<span>*</span></label>
+                <input
+                  id="contactItem"
+                  class="form-input"
+                  type="text"
+                  placeholder="예: 자동차 부품 가공 / 산업용 장비 프레임 / 식품 포장 자재 등"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">현재 상황 · 문의 내용<span>*</span></label>
+                <textarea
+                  id="contactMessage"
+                  class="form-textarea"
+                  placeholder="예: 기존 협력사 위주 영업 / 신규 레퍼런스 확보 필요 / 제품군별 온라인 설명 페이지 정리 필요 등 자세히 적어 주세요."
+                  required
+                ></textarea>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">
+                    개인정보 수집 및 이용 동의 (필수)
+                  </summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 생산 품목·산업군, 문의 내용<br />
+                    ② 수집 목적: 상담 회신 및 관련 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                    ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input
+                    type="checkbox"
+                    id="termsRequired"
+                    class="terms-checkbox"
+                  />
+                  <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <p class="contact-note">
+              * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
+            </p>
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/s0ogfV3h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >카톡으로 바로 상담</a>
+              <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정 상담바 -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/s0ogfV3h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >카톡 상담</a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    // 사이드 메뉴 열고 닫기
+    function toggleMenu(open) {
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if (open) {
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     }
-    if (!name || !phone || !item || !message) {
-      alert("필수 항목을 모두 입력해 주세요.");
-      return;
+
+    // 대제목(업종 그룹) 클릭 시, 펼치면서 그 위치로 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+
+    // 문의 폼 제출 → 문자앱으로 내용 전달
+    function handleContactSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const item = document.getElementById("contactItem").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+      const termsRequired = document.getElementById("termsRequired").checked;
+
+      if (!termsRequired) {
+        alert("개인정보 수집 및 이용에 동의해 주세요.");
+        return;
+      }
+      if (!name || !phone || !item || !message) {
+        alert("필수 항목을 모두 입력해 주세요.");
+        return;
+      }
+
+      const smsBody =
+        `[H VIRAL 제조업 B2B 문의]\n` +
+        `성함: ${name}\n연락처: ${phone}\n생산 품목·산업군: ${item}\n` +
+        `내용: ${message}`;
+
+      const encoded = encodeURIComponent(smsBody);
+      const smsUrl = `sms:01032689899?body=${encoded}`;
+      window.location.href = smsUrl;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
     }
-
-    const smsBody =
-      `[H VIRAL 제조업 B2B 문의]\n` +
-      `성함: ${name}\n연락처: ${phone}\n생산 품목·산업군: ${item}\n` +
-      `내용: ${message}`;
-
-    const encoded = encodeURIComponent(smsBody);
-    const smsUrl = `sms:01032689899?body=${encoded}`;
-    window.location.href = smsUrl;
-
-    alert(
-      "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
-      "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
-    );
-
-    e.target.reset();
-  }
-</script>
-
+  </script>
 </body>
 </html>
