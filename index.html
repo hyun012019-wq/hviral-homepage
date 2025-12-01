@@ -6,33 +6,34 @@
   <title>H VIRAL │ 에이치바이럴 소상공인,중소기업 B2B 전문직 디지털 마케팅 설계·브랜딩 플랫폼</title>
   <style>
     /* === Hero 슬라이드 추가 스타일 === */
-.hero-slides {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-    opacity: 0.45; /* 은은하게 */
-}
+    .hero-slides {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      opacity: 0.45; /* 은은하게 */
+    }
 
     .hero {
-  position: relative;
-  overflow: hidden;
-}
-.hero-slides img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.2s ease; /* 슬라이드 전환 속도 */
-}
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-slides img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease; /* 슬라이드 전환 속도 */
+    }
 
-.hero-slides img.active {
-    opacity: 1;
-}
+    .hero-slides img.active {
+      opacity: 1;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -641,6 +642,11 @@
       background: #2563eb;
       color: #fff;
     }
+    .bottom-btn.home {
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
     @media (min-width: 1024px) {
       .hero {
         padding-top: 36px;
@@ -756,12 +762,10 @@
           <a href="/industry/car.html">자동차 정비·카센터</a>
           <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
-          <!-- 🔧 텍스트 수정: 철거·인테리어 -->
           <a href="/industry/demolition.html">철거·인테리어</a>
           <a href="/industry/flower.html">플라워샵</a>
           <a href="/industry/photo.html">사진관</a>
           <a href="/industry/pet.html">펫샵</a>
-          <!-- 🔧 아이스크림 매장 중복 제거 (여기서는 삭제) -->
         </div>
       </details>
 
@@ -808,10 +812,10 @@
   <main>
     <section class="hero">
       <div class="hero-slides">
-    <img src="assets/hero-cafe.pn5.png" class="slide active">
-    <img src="assets/hero-cafe.png.png" class="slide">
-    <img src="assets/hero-cafe.png3.png" class="slide">
-</div>
+        <img src="assets/hero-cafe.pn5.png" class="slide active">
+        <img src="assets/hero-cafe.png.png" class="slide">
+        <img src="assets/hero-cafe.png3.png" class="slide">
+      </div>
       <div class="container">
         <div class="hero-card">
           <div class="hero-badge">
@@ -1052,8 +1056,9 @@
     </section>
   </main>
 
-  <!-- 하단 고정 상담바 -->
+  <!-- 하단 고정 상담바 (여기에 '메인으로' 추가) -->
   <div class="bottom-bar">
+    <a href="/" class="bottom-btn home">메인으로</a>
     <a
       href="https://open.kakao.com/o/s0ogfV3h"
       class="bottom-btn kakao"
@@ -1231,26 +1236,25 @@
     }
   </script>
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".hero-slides .slide");
-    let currentIndex = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slides .slide");
+      let currentIndex = 0;
 
-    function showSlide(index) {
+      function showSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.remove("active");
+          slide.classList.remove("active");
         });
         slides[index].classList.add("active");
-    }
+      }
 
-    function nextSlide() {
+      function nextSlide() {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
-    }
+      }
 
-    // 자동 전환 (2.5초)
-    setInterval(nextSlide, 2500);
-});
-</script>
-
+      // 자동 전환 (2.5초)
+      setInterval(nextSlide, 2500);
+    });
+  </script>
 </body>
 </html>
