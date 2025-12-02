@@ -1,29 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>H Viral</title>
     <link>https://hviral.co.kr/</link>
     <description>에이치바이럴 공식 RSS 피드</description>
-    <language>ko</language>
+    <language>ko-KR</language>
 
-    <!-- 메인 페이지 -->
     <item>
       <title>H Viral 메인</title>
       <link>https://hviral.co.kr/</link>
       <description>에이치바이럴 공식 홈페이지 메인</description>
-      <pubDate>Tue, 03 Dec 2024 09:00:00 +0900</pubDate>
+      <pubDate>Wed, 03 Dec 2025 09:00:00 +0900</pubDate>
+      <guid>https://hviral.co.kr/</guid>
     </item>
-
-    <!-- 업종 상세 / 서비스 페이지 등 추가될 때마다 여기에 항목 하나씩 복붙해서 추가하면 됩니다 -->
-    <!-- 예시 -->
-    <!--
-    <item>
-      <title>카페 마케팅</title>
-      <link>https://hviral.co.kr/service/cafe.html</link>
-      <description>카페 업종 맞춤 마케팅 전략</description>
-      <pubDate>Tue, 03 Dec 2024 09:00:00 +0900</pubDate>
-    </item>
-    -->
 
   </channel>
 </rss>
