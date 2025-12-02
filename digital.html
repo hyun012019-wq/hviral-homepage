@@ -57,14 +57,13 @@
       height: 32px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      background: #020617;
     }
     .menu-btn span {
-      display: block;
       width: 16px;
       height: 2px;
       background: #e5e7eb;
@@ -73,19 +72,27 @@
     .menu-btn span::before,
     .menu-btn span::after {
       content: "";
-      position: absolute;
-      left: 0;
       width: 16px;
       height: 2px;
       background: #e5e7eb;
+      position: absolute;
+      left: 0;
     }
     .menu-btn span::before { top: -5px; }
     .menu-btn span::after  { top: 5px; }
 
-    .logo-wrap { color: inherit; }
-    .logo { font-weight: 700; font-size: 22px; letter-spacing: 1.2px; }
-    .logo-sub { font-size: 11px; color: #9ca3af; }
-
+    .logo-wrap {
+      display: block;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
     .consult-btn {
       padding: 9px 20px;
       border-radius: 999px;
@@ -95,8 +102,9 @@
       font-weight: 600;
     }
 
-    main { padding-top: 24px; }
-
+    main {
+      padding-top: 24px;
+    }
     .page-hero-title {
       font-size: 24px;
       font-weight: 800;
@@ -119,7 +127,17 @@
       margin-bottom: 16px;
     }
 
-    /* 하단 고정 상담바 – 업종 상세페이지와 동일 */
+    .label-pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin: 10px 0 12px;
+    }
+
+    /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
       left: 0;
@@ -130,7 +148,7 @@
       justify-content: space-between;
       background: #020617;
       border-top: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 14px 10px 14px;
+      padding: 14px 10px;
       z-index: 9700;
     }
     .bottom-btn {
@@ -157,7 +175,7 @@
       color: #fff;
     }
 
-    /* 사이드 메뉴 (업종 상세페이지와 동일 구조) */
+    /* 사이드 메뉴 */
     #sideBackdrop {
       position: fixed;
       top: 0;
@@ -203,6 +221,12 @@
       font-size: 18px;
       font-weight: 700;
     }
+    .side-sub {
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
+    }
     .side-close {
       padding: 8px 16px;
       border-radius: 999px;
@@ -211,12 +235,6 @@
       font-size: 13px;
       color: #e5e7eb;
       cursor: pointer;
-    }
-    .side-sub {
-      font-size: 11px;
-      color: #9ca3af;
-      padding: 0 22px 12px;
-      flex-shrink: 0;
     }
     .side-scroll {
       flex: 1;
@@ -231,6 +249,11 @@
       color: #9ca3af;
       margin: 18px 0 6px;
       font-weight: 600;
+    }
+    .side-link {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
     }
     details.side-group {
       margin-bottom: 8px;
@@ -269,11 +292,14 @@
     }
 
     @media (min-width: 1024px) {
-      .container {
-        padding-bottom: 110px;
-      }
       .page-hero-title {
         font-size: 26px;
+      }
+      .card {
+        padding: 20px 18px;
+      }
+      .container {
+        padding-bottom: 110px;
       }
     }
   </style>
@@ -282,12 +308,12 @@
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <!-- 사이드 메뉴 (업종 상세페이지와 동일 전체 메뉴) -->
+  <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">H VIRAL</div>
-        <div class="side-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
@@ -415,7 +441,7 @@
         </button>
         <a href="/" class="logo-wrap">
           <div class="logo">H VIRAL</div>
-          <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
       <a
@@ -434,33 +460,28 @@
     <div class="container">
       <h1 class="page-hero-title">디지털 마케팅 설계</h1>
       <p class="page-hero-sub">
-        업종마다 고객이 움직이는 흐름은 모두 다릅니다.<br />
-        H VIRAL은 그 차이를 데이터로 읽고,<br />
-        검색에서 첫 인지 → 신뢰 형성 → 문의까지 이어지는
-        <strong>마케팅 인프라 시스템</strong>을 설계합니다.
+        업종별 고객 여정을 기반으로 검색 → 관심 → 문의까지 이어지는
+        <strong>마케팅 인프라 퍼널 설계 서비스</strong>입니다.
       </p>
 
       <div class="card">
-        H VIRAL은 업종·상권·고객 패턴을 기준으로<br />
-        <strong>브랜드가 어디에서 노출되고, 어떤 순간에 신뢰를 만들고, 언제 문의가 발생하는지</strong>를<br />
-        하나의 마케팅 인프라 시스템으로 정리합니다.<br /><br />
-        광고 집행 이전에, 고객이 실제로 어떻게 검색하고 비교하고 결정하는지부터 차분히 설계합니다.<br />
-        대표님 브랜드가 가진 본질적인 강점이<br />
-        숫자가 아니라 흐름으로 보이도록 정리해 드립니다.
+        업종별 검색 패턴, 상권 특성, 경쟁사 포지션, 현재 운영 중인 온라인 접점을 함께 점검하고<br />
+        <strong>“어디서 처음 인지되고, 어디서 신뢰를 얻고, 어디서 실제 문의가 발생하는지”</strong>를  
+        한 흐름으로 정리하는 작업이 진행됩니다.
       </div>
 
       <div class="card">
-        고객은 노출보다 ‘맥락’을 더 신뢰합니다.<br />
+        고객은 단순 노출보다 <strong>맥락</strong>을 더 신뢰합니다.<br />
         H VIRAL은 업종·상권·고객 여정을 분석해<br />
-        <strong>브랜드가 선택되는 순간</strong>을 정확히 찾아냅니다.<br /><br />
+        <strong>브랜드가 고객에게 선택되는 지점</strong>을 정확히 찾아냅니다.<br /><br />
+
         광고효과와 더불어,<br />
-        “왜 이 브랜드가 지금 이 고객에게 맞는가”를<br />
-        로고처럼 자연스럽게 떠올리게 만드는<br />
-        <strong>마케팅 인프라 시스템</strong>을 설계합니다.<br /><br />
+        “이 브랜드가 이 고객에게 왜 필요한가”를<br />
+        자연스럽게 이해하게 만드는 <strong>시스템화된 설계 작업</strong>이 진행됩니다.<br /><br />
+
         대표님 브랜드가 가진 본질적 강점이<br />
-        고객의 의사결정 과정 속에서 선명하게 드러날 수 있도록<br />
-        관심 → 신뢰 → 문의로 이어지는 흐름을<br />
-        브랜드 중심의 논리로 세련되게 정리해 드립니다.
+        고객에게 더 선명하게 전달될 수 있도록<br />
+        인지 → 신뢰 → 문의가 하나의 흐름으로 정리됩니다.
       </div>
     </div>
   </main>
