@@ -3,518 +3,482 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>소아과 디지털 마케팅 │ H VIRAL</title>
+  <title>소아과 마케팅 인프라 │ H VIRAL</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-        "Noto Sans KR", system-ui, sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",
+        "Noto Sans KR",system-ui,sans-serif;
+      background:#020617;
+      color:#e5e7eb;
+      line-height:1.6;
+      overflow-x:hidden;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    ul {
-      list-style: none;
-    }
+    a { color:inherit; text-decoration:none; }
+    ul { list-style:none; }
+
     .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 20px 96px;
+      max-width:1080px;
+      margin:0 auto;
+      padding:0 20px 96px;
     }
+
     /* 헤더 */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 9000;
-      background: #020617;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      position:sticky;
+      top:0;
+      z-index:9000;
+      background:#020617;
+      border-bottom:1px solid rgba(148,163,184,0.2);
     }
     .header-inner {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width:1080px;
+      margin:0 auto;
+      padding:14px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
     .header-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+      display:flex;
+      align-items:center;
+      gap:16px;
     }
     .menu-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      background: #020617;
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:#020617;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
     }
     .menu-btn span {
-      display: block;
-      width: 16px;
-      height: 2px;
-      background: #e5e7eb;
-      position: relative;
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
+      position:relative;
     }
     .menu-btn span::before,
     .menu-btn span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 16px;
-      height: 2px;
-      background: #e5e7eb;
+      content:"";
+      width:16px;
+      height:2px;
+      background:#e5e7eb;
+      position:absolute;
+      left:0;
     }
-    .menu-btn span::before { top: -5px; }
-    .menu-btn span::after { top: 5px; }
+    .menu-btn span::before { top:-5px; }
+    .menu-btn span::after { top:5px; }
 
-    .logo-wrap {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: 1.2px;
-    }
-    .logo-sub {
-      font-size: 11px;
-      color: #9ca3af;
-    }
+    .logo-wrap { display:block; }
+    .logo { font-weight:700; font-size:22px; letter-spacing:1.2px; }
+    .logo-sub { font-size:11px; color:#9ca3af; }
+
     .consult-btn {
-      padding: 9px 20px;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
+      padding:9px 20px;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
     }
 
     /* 히어로 */
     .hero {
-      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
-      padding: 28px 0 32px;
+      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
+      padding:28px 0 32px;
     }
     .hero-card {
-      border-radius: 28px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: linear-gradient(135deg, #0b1f3a, #020617);
-      padding: 28px 20px 28px;
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
+      border-radius:28px;
+      border:1px solid rgba(148,163,184,0.4);
+      background:linear-gradient(135deg,#0b1f3a,#020617);
+      padding:28px 20px;
+      box-shadow:0 24px 60px rgba(15,23,42,0.9);
+      overflow:hidden;
     }
     .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
     }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(96, 165, 250, 0.6);
-      font-size: 11px;
-      color: #e5e7eb;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(96,165,250,0.6);
+      font-size:11px;
+      color:#e5e7eb;
     }
     .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#22c55e;
+      box-shadow:0 0 0 4px rgba(34,197,94,0.3);
     }
     .hero-title {
-      font-size: 22px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-size:22px;
+      font-weight:800;
+      margin-bottom:10px;
     }
     .hero-desc {
-      font-size: 14px;
-      color: #cbd5f5;
-      margin-bottom: 12px;
-    }
-    .hero-desc strong {
-      color: #e5e7eb;
-      font-weight: 600;
+      font-size:14px;
+      color:#cbd5f5;
+      margin-bottom:12px;
     }
     .hero-note {
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 4px;
+      font-size:11px;
+      color:#9ca3af;
     }
 
-    /* 섹션 타이틀 */
     .section-title {
-      margin: 28px 0 10px;
-      font-size: 18px;
-      font-weight: 800;
+      margin:28px 0 10px;
+      font-size:18px;
+      font-weight:800;
     }
     .section-sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 10px;
+      font-size:13px;
+      color:#9ca3af;
+      margin-bottom:10px;
     }
 
     .card {
-      background: #020617;
-      border-radius: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      padding: 16px 14px;
-      font-size: 13px;
-      color: #e5e7eb;
-      margin-bottom: 14px;
+      background:#020617;
+      border-radius:20px;
+      border:1px solid rgba(148,163,184,0.6);
+      padding:16px 14px;
+      font-size:13px;
+      margin-bottom:14px;
     }
     .card-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: 14px;
+      font-weight:700;
+      margin-bottom:6px;
+      font-size:14px;
     }
     .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
+      margin-top:6px;
+      padding-left:18px;
     }
     .card li {
-      list-style: disc;
-      margin-bottom: 4px;
+      list-style:disc;
+      margin-bottom:4px;
     }
 
     .label-pill {
-      display: inline-flex;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      font-size: 11px;
-      color: #e5e7eb;
-      margin-bottom: 8px;
+      display:inline-flex;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.7);
+      background:#020617;
+      font-size:11px;
+      margin-bottom:8px;
     }
 
     /* 문의 섹션 */
     #contact {
-      margin: 32px 0 4px;
+      margin:32px 0 4px;
     }
     .contact-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 10px;
+      font-size:18px;
+      font-weight:800;
+      margin-bottom:10px;
     }
     .contact-sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 14px;
+      font-size:13px;
+      color:#9ca3af;
+      margin-bottom:14px;
     }
+
     .contact-card {
-      border-radius: 20px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      padding: 18px 16px;
-      font-size: 13px;
+      border-radius:20px;
+      border:1px solid rgba(148,163,184,0.7);
+      padding:18px 16px;
+      font-size:13px;
     }
     .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:14px;
     }
     .form-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
     }
     .form-group {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
     }
     .form-label {
-      font-size: 12px;
-      color: #9ca3af;
+      font-size:12px;
+      color:#9ca3af;
     }
     .form-label span {
-      color: #f97316;
-      margin-left: 2px;
+      color:#f97316;
     }
     .form-input,
     .form-textarea {
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: #020617;
-      color: #f9fafb;
-      font-size: 13px;
-      padding: 9px 10px;
-    }
-    .form-input::placeholder,
-    .form-textarea::placeholder {
-      color: #6b7280;
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,0.7);
+      background:#020617;
+      color:#f9fafb;
+      padding:9px 10px;
+      font-size:13px;
     }
     .form-textarea {
-      min-height: 80px;
-      resize: vertical;
+      min-height:80px;
+      resize:vertical;
     }
 
     .terms-box {
-      border-radius: 12px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: #020617;
-      padding: 10px 10px;
-      font-size: 12px;
-      margin-bottom: 12px;
+      border-radius:12px;
+      border:1px solid rgba(55,65,81,0.9);
+      padding:10px;
+      font-size:12px;
+      margin-bottom:12px;
+      background:#020617;
     }
     .terms-detail {
-      margin-bottom: 6px;
+      margin-bottom:6px;
     }
     .terms-summary {
-      cursor: pointer;
-      list-style: none;
-      font-weight: 600;
-      font-size: 12px;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      cursor:pointer;
+      list-style:none;
+      font-weight:600;
+      display:flex;
+      justify-content:space-between;
+      font-size:12px;
+      color:#e5e7eb;
+      align-items:center;
     }
-    .terms-summary::-webkit-details-marker { display: none; }
+    .terms-summary::-webkit-details-marker {
+      display:none;
+    }
     .terms-summary::after {
-      content: "자세히 보기";
-      font-size: 11px;
-      color: #9ca3af;
-      margin-left: 8px;
+      content:"자세히 보기";
+      font-size:11px;
+      color:#9ca3af;
+      margin-left:8px;
     }
     .terms-detail[open] .terms-summary::after {
-      content: "접기";
+      content:"접기";
     }
     .terms-body {
-      font-size: 11px;
-      color: #9ca3af;
-      line-height: 1.5;
-      margin-top: 6px;
-      margin-bottom: 6px;
+      font-size:11px;
+      color:#9ca3af;
+      line-height:1.5;
+      margin-top:6px;
     }
     .terms-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      margin-bottom: 4px;
+      display:flex;
+      gap:6px;
+      font-size:12px;
+      margin-bottom:4px;
+      align-items:center;
     }
     .terms-checkbox {
-      width: 14px;
-      height: 14px;
-      accent-color: #2563eb;
+      width:14px;
+      height:14px;
+      accent-color:#2563eb;
     }
 
     .form-submit {
-      width: 100%;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 11px 0;
-      text-align: center;
-      border: none;
-      cursor: pointer;
+      width:100%;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      padding:11px 0;
+      font-size:14px;
+      font-weight:700;
+      border:none;
+      cursor:pointer;
     }
-    .contact-note {
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 8px;
-    }
+
     .contact-actions {
-      margin-top: 14px;
-      display: flex;
-      gap: 8px;
+      margin-top:14px;
+      display:flex;
+      gap:8px;
     }
     .contact-actions a {
-      flex: 1;
-      text-align: center;
-      padding: 11px 0;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
+      flex:1;
+      text-align:center;
+      padding:11px 0;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
     }
     .contact-kakao {
-      background: #facc15;
-      color: #000;
+      background:#facc15;
+      color:#000;
     }
     .contact-call {
-      background: #2563eb;
-      color: #fff;
+      background:#2563eb;
+      color:#fff;
+    }
+
+    /* 하단 고정바 */
+    .bottom-bar {
+      position:fixed;
+      left:0;
+      bottom:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      background:#020617;
+      padding:14px 10px;
+      border-top:1px solid rgba(148,163,184,0.4);
+      z-index:9700;
+    }
+    .bottom-btn {
+      flex:1;
+      margin:0 4px;
+      text-align:center;
+      padding:13px 0;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:600;
+    }
+    .bottom-btn.kakao {
+      background:#facc15;
+      color:#000;
+    }
+    .bottom-btn.ask {
+      background:#111827;
+      color:#e5e7eb;
+      border:1px solid rgba(148,163,184,0.6);
+    }
+    .bottom-btn.call {
+      background:#2563eb;
+      color:#fff;
     }
 
     /* 사이드 메뉴 */
     #sideBackdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(4px);
-      z-index: 9500;
-      display: none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(15,23,42,0.7);
+      backdrop-filter:blur(4px);
+      z-index:9500;
+      display:none;
     }
-    #sideBackdrop.show { display: block; }
+    #sideBackdrop.show {
+      display:block;
+    }
 
     #sideMenu {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 80%;
-      max-width: 360px;
-      height: 100%;
-      background: #020617;
-      border-right: 1px solid rgba(148, 163, 184, 0.5);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 9600;
-      display: flex;
-      flex-direction: column;
-      overscroll-behavior: contain;
+      position:fixed;
+      top:0;
+      left:0;
+      width:80%;
+      max-width:360px;
+      height:100%;
+      background:#020617;
+      border-right:1px solid rgba(148,163,184,0.5);
+      transform:translateX(-100%);
+      transition:transform 0.3s ease;
+      z-index:9600;
+      display:flex;
+      flex-direction:column;
+      overscroll-behavior:contain;
     }
-    #sideMenu.open { transform: translateX(0); }
-
+    #sideMenu.open {
+      transform:translateX(0);
+    }
     .side-menu-header {
-      padding: 20px 22px 12px;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-shrink: 0;
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,0.9);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-shrink:0;
     }
     .side-menu-title {
-      font-size: 18px;
-      font-weight: 700;
+      font-size:18px;
+      font-weight:700;
     }
     .side-close {
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: #111827;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 13px;
-      color: #e5e7eb;
-      cursor: pointer;
+      padding:8px 16px;
+      border-radius:999px;
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.7);
+      font-size:13px;
+      color:#e5e7eb;
+      cursor:pointer;
     }
     .side-sub {
-      font-size: 11px;
-      color: #9ca3af;
-      padding: 0 22px 12px;
-      flex-shrink: 0;
+      font-size:11px;
+      color:#9ca3af;
+      padding:0 22px 12px;
+      flex-shrink:0;
     }
     .side-scroll {
-      flex: 1;
-      padding: 8px 22px 120px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      touch-action: pan-y;
+      flex:1;
+      padding:8px 22px 120px;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      touch-action:pan-y;
     }
     .side-section-title {
-      font-size: 13px;
-      color: #9ca3af;
-      margin: 18px 0 6px;
-      font-weight: 600;
-    }
-    .side-link {
-      display: block;
-      padding: 8px 0;
-      font-size: 14px;
+      font-size:13px;
+      color:#9ca3af;
+      margin:18px 0 6px;
+      font-weight:600;
     }
     details.side-group {
-      margin-bottom: 8px;
-      border-radius: 14px;
-      border: 1px solid rgba(75, 85, 99, 0.8);
-      background: #020617;
-      overflow: hidden;
+      margin-bottom:8px;
+      border-radius:14px;
+      border:1px solid rgba(75,85,99,0.8);
+      background:#020617;
+      overflow:hidden;
     }
     .side-group summary {
-      list-style: none;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 14px;
-      cursor: pointer;
+      list-style:none;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:14px;
+      cursor:pointer;
     }
-    .side-group summary::-webkit-details-marker { display: none; }
-    .side-group-label { font-weight: 600; }
+    .side-group summary::-webkit-details-marker {
+      display:none;
+    }
+    .side-group-label {
+      font-weight:600;
+    }
     .side-group-arrow {
-      font-size: 11px;
-      color: #9ca3af;
+      font-size:11px;
+      color:#9ca3af;
     }
     .side-group-links {
-      border-top: 1px solid rgba(55, 65, 81, 0.9);
-      padding: 6px 12px 8px;
+      border-top:1px solid rgba(55,65,81,0.9);
+      padding:6px 12px 8px;
     }
     .side-group-links a {
-      display: block;
-      padding: 4px 0;
-      font-size: 13px;
+      display:block;
+      padding:4px 0;
+      font-size:13px;
     }
 
-    /* 하단 고정 상담바 */
-    .bottom-bar {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      background: #020617;
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 14px 10px 14px;
-      z-index: 9700;
-    }
-    .bottom-btn {
-      flex: 1;
-      margin: 0 4px;
-      text-align: center;
-      padding: 13px 0;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-    .bottom-btn.kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .bottom-btn.ask {
-      background: #111827;
-      color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-    }
-    .bottom-btn.call {
-      background: #2563eb;
-      color: #fff;
-    }
-
-    @media (min-width: 1024px) {
-      .hero { padding-top: 36px; }
-      .hero-title { font-size: 26px; }
-      .hero-card { padding: 34px 32px 30px; }
-      .container { padding-bottom: 110px; }
+    @media (min-width:1024px) {
+      .hero { padding-top:36px; }
+      .hero-title { font-size:26px; }
+      .hero-card { padding:32px 28px; }
+      .container { padding-bottom:110px; }
     }
   </style>
 </head>
@@ -527,7 +491,7 @@
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">H VIRAL</div>
-        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        <div class="side-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
@@ -541,7 +505,7 @@
       <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
       <!-- 의료·병원 -->
-      <details class="side-group">
+      <details class="side-group" open>
         <summary>
           <span class="side-group-label">의료·병원</span>
           <span class="side-group-arrow">▼</span>
@@ -549,11 +513,11 @@
         <div class="side-group-links">
           <a href="/industry/skin.html">피부과</a>
           <a href="/industry/dental.html">치과</a>
-          <a href="/industry/ortho.html">정형외과</a>
+          <a href="/industry/plastic.html">성형외과</a>
           <a href="/industry/internal.html">내과</a>
-          <a href="/industry/ent.html">이비인후과</a>
           <a href="/industry/obgyn.html">산부인과</a>
           <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
           <a href="/industry/eye.html">안과</a>
           <a href="/industry/oriental.html">한의원</a>
         </div>
@@ -572,6 +536,7 @@
           <a href="/industry/pilates.html">필라테스</a>
           <a href="/industry/beauty.html">미용실</a>
           <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
       </details>
 
@@ -583,10 +548,13 @@
         </summary>
         <div class="side-group-links">
           <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
           <a href="/industry/korean.html">한식당</a>
           <a href="/industry/japanese.html">일식당</a>
           <a href="/industry/chinese.html">중식당</a>
-          <a href="/industry/pub.html">주점·펍</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
         </div>
       </details>
 
@@ -600,6 +568,7 @@
           <a href="/industry/academy.html">입시·보습학원</a>
           <a href="/industry/lang.html">어학·유학</a>
           <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
         </div>
       </details>
 
@@ -610,9 +579,13 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
         </div>
       </details>
 
@@ -623,11 +596,15 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/tax.html">세무/회계사</a>
-          <a href="/industry/law.html">법무사·변호사</a>
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
           <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
           <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
-          <a href="/industry/b2b.html">B2B 서비스</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
         </div>
       </details>
     </div>
@@ -642,10 +619,17 @@
         </button>
         <a href="/" class="logo-wrap">
           <div class="logo">H VIRAL</div>
-          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+          <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a href="https://open.kakao.com/o/s0ogfV3h" class="consult-btn">상담하기</a>
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        상담하기
+      </a>
     </div>
   </header>
 
@@ -653,101 +637,172 @@
   <main>
     <section class="hero">
       <div class="container">
+        <!-- 히어로 카드 -->
         <div class="hero-card">
           <div class="hero-badges">
             <span class="hero-badge">
               <span class="hero-badge-dot"></span>
-              소아과 · 소아청소년과 전문의
+              소아과 전용 마케팅 인프라 설계
             </span>
             <span class="hero-badge">
-              예방접종·성장·열감기 안내 중심 온라인 정보
+              연령대·질환 패턴·보호자 동선을 기준으로 정리하는 소아과 마케팅 인프라
             </span>
           </div>
+
           <h1 class="hero-title">
-            소아과, 보호자가 먼저 궁금해하는 내용을<br />온라인에서 미리 정리해 둡니다.
+            “진료 항목 나열보다,<br />
+            어떤 아이와 보호자가 어떤 상황에서 이 소아과를 찾게 되는지부터 구조로 봅니다.”
           </h1>
+
           <p class="hero-desc">
-            보호자는 <strong>열, 기침, 설사, 발진, 예방접종 일정, 성장·발달</strong>에 대한 정보를
-            가장 먼저 찾아봅니다. H VIRAL은 소아과 진료 특성과 보호자 문의 패턴을 기준으로,
-            병원의 진료 철학과 실제 진료 방식을 온라인에서 쉽게 이해할 수 있도록 정리합니다.
+            에이치바이럴은 영유아부터 초등·중등 연령대까지,<br />
+            호흡기·소화기·알레르기·예방접종·성장 상담 등 내원 이유를 실제 생활 기준으로 나누어 보고,<br />
+            보호자가 경로·시간·대기·설명을 함께 떠올릴 수 있는 마케팅 인프라를 설계합니다.
           </p>
+
           <p class="hero-note">
-            * 이 페이지는 소아과·소아청소년과 클리닉을 위한 예시 페이지이며, 실제 프로젝트에서는
-            병원별 진료 항목·연령대·지역 특성에 맞춰 개별 문구가 작성됩니다.
+            효과를 단정하는 표현보다,<br />
+            보호자가 “언제, 어떤 상황에서 이 소아과를 떠올리면 좋을지” 알 수 있도록 정보 중심 안내 구조를 만듭니다.
           </p>
         </div>
 
-        <!-- 정보 섹션 -->
-        <h2 class="section-title">보호자가 “전화하기 전”에 확인하는 정보부터 잡아 줍니다.</h2>
+        <!-- 인트로 -->
+        <h2 class="section-title">소아과 원장님이 실제로 보고 싶은 환자·보호자 구조</h2>
         <p class="section-sub">
-          증상·연령·예방접종·성장 관리를 중심으로, 보호자의 불안을 줄여주는 안내를 먼저 배치합니다.
+          소아과는 진료 자체만큼 보호자의 마음과 일상 동선이 중요합니다.<br />
+          “어떤 나이의 아이가, 어떤 시간에, 누구와 함께 이 소아과를 찾는지”를 기준으로 구조를 나누고 나서야<br />
+          마케팅 인프라가 단순 홍보가 아닌, 진료 방향과 연결될 수 있습니다.
         </p>
 
+        <!-- 카드 1: 상권·연령·가정 구조 -->
         <div class="card">
-          <div class="card-title">1. 연령대별 진료 포인트 정리</div>
-          <p>
-            영유아, 학령기, 청소년까지 연령대에 따라 달라지는 진료 포인트를 나누어 보여줍니다.
-          </p>
+          <div class="card-title">1. 상권·연령대·가정 구조 파악</div>
           <ul>
-            <li>신생아·영아: 모유수유·분유, 황달, 체중 증가, 영아 산통 등</li>
-            <li>유아·학령기: 잦은 감기, 중이염, 기관지염, 알레르기 비염·아토피 등</li>
-            <li>청소년: 성장판·성조숙증, 비만, 수면, 학업 스트레스 관련 컨디션 관리</li>
+            <li>신혼부부·영유아 위주 아파트 단지인지, 초등·중등 학령기 비중이 높은지 상권 구성을 먼저 확인</li>
+            <li>0~2세, 3~6세, 초등 저학년, 초등 고학년 등 연령 구간별로 내원 패턴과 진료 비중을 구분해 구조화</li>
+            <li>호흡기·발열·장염 등 급성 진료 비중이 높은지, 알레르기·아토피·성장 상담 같은 장기 관리 진료가 많은지 파악</li>
+            <li>이 소아과가 “동네 대표 호흡기·발열 진료 중심”인지, “장기 성장·알레르기 관리와 함께 보는 곳”인지 역할을 문장으로 정리</li>
           </ul>
         </div>
 
+        <!-- 카드 2: 내원 상황·보호자 고민 분석 -->
         <div class="card">
-          <div class="card-title">2. 열·감기·장염 등 “자주 오는 증상” 안내</div>
-          <p>
-            보호자가 밤새 검색하는 증상들에 대해, 병원에서 실제로 어떻게 설명하고 진료하는지 정리합니다.
-          </p>
+          <div class="card-title">2. 내원 상황·보호자 고민 분석</div>
           <ul>
-            <li>고열 시 내원 기준, 해열제 사용 방법, 응급실로 가야 하는 상황 안내</li>
-            <li>기침·가래·호흡 곤란이 동반될 때 진료 우선순위 안내</li>
-            <li>구토·설사·탈수 의심 시 보호자가 체크해야 할 항목</li>
+            <li>야간에 갑자기 열이 오른 상황, 어린이집·학교에서 연락 받고 오는 상황, 주말에 증상이 심해져 내원하는 상황 등 실제 장면별로 구조화</li>
+            <li>“응급실까지 가야 하는지”, “내일까지 기다려도 되는지”, “다른 검사도 필요한지” 같은 보호자의 질문을 목록으로 정리</li>
+            <li>대기 시간·아이 컨디션·형제 동반 여부 등 보호자가 동시에 신경 쓰는 요소를 텍스트 구조에서 함께 다룸</li>
+            <li>진료 전·후 안내를 나누어, 보호자가 상황별로 무엇을 참고하면 좋을지 문장으로 설명할 수 있도록 설계</li>
           </ul>
         </div>
 
+        <!-- 카드 3: 연령·질환별 진료 구조 -->
         <div class="card">
-          <div class="card-title">3. 예방접종·건강검진 안내</div>
-          <p>
-            국가·추가 예방접종 일정, 병원별 운영 방식, 건강검진 안내를 보호자가 보기 쉽게 정리합니다.
-          </p>
+          <div class="card-title">3. 연령·질환별 진료 구조 정리</div>
           <ul>
-            <li>연령대별 필수·권장 예방접종 표와 병원 접종 가능 항목</li>
-            <li>독감·로타·A형간염·수막구균 등 추가 접종 안내</li>
-            <li>영유아 건강검진 예약 방식과 검사 항목 안내</li>
+            <li>영유아·유치원·초등 연령대별로 자주 내원하는 증상을 유형화하고, 설명 순서와 안내 항목을 구조화</li>
+            <li>호흡기·소화기·피부·알레르기·성장 등 진료 축을 나누되, 생활 속에서 겪는 장면을 기준으로 안내 문장을 구성</li>
+            <li>검사 필요 여부, 경과 관찰 기준, 재내원 시점에 대한 안내를 숫자 중심이 아니라 보호자가 이해하기 쉬운 표현 위주로 정리</li>
+            <li>진료실에서 자주 나오는 설명을 묶어, 온라인 안내 글에서도 같은 기준이 유지되도록 구조를 제안</li>
           </ul>
         </div>
 
+        <!-- 카드 4: 예방접종·정기 검진 구조 -->
         <div class="card">
-          <div class="card-title">4. 성장·발달 관련 상담 안내</div>
-          <p>
-            키·체중, 발달 지연, 언어, 식습관 등 장기적으로 관리해야 할 주제를 정리해
-            “우리 아이가 지금 정상 범위인지” 보호자가 판단하는 데 도움을 줍니다.
-          </p>
+          <div class="card-title">4. 예방접종·정기 검진 안내 구조</div>
           <ul>
-            <li>성장 차트, 표준편차, 추적 관찰이 필요한 경우 안내</li>
-            <li>발달 검사, 언어·행동 관련 전문 기관 연계 여부</li>
-            <li>비만·저체중, 편식, 수면 패턴 등 생활 습관 상담 가능 범위</li>
+            <li>영유아 국가예방접종 일정, 추가 접종, 시기별 검진을 달력·표 구조가 아닌 텍스트 흐름으로 설명할 수 있도록 정리</li>
+            <li>어느 시기에 어떤 접종·검진을 함께 고려하면 좋은지, 보호자가 스스로 계획 세우기 편한 안내 문장을 구성</li>
+            <li>형제·자매가 여러 명인 가정에서 접종·검진 일정을 어떻게 묶으면 편한지, 생활 동선을 기준으로 설명</li>
+            <li>온라인 안내를 통해 “접종·검진을 놓치지 않기 위해 어떤 기준으로 생각하면 좋은지”를 정리해 두는 구조를 제안</li>
           </ul>
         </div>
 
-        <div class="label-pill">H VIRAL이 소아과 페이지에서 정리하는 항목 예시</div>
+        <!-- 카드 5: 성장·발달 상담 구조 -->
+        <div class="card">
+          <div class="card-title">5. 성장·발달 상담 구조 설계</div>
+          <ul>
+            <li>키·체중·발달 단계·수면·식습관 등 성장과 관련된 질문을 유형별로 정리해 상담 구조에 반영</li>
+            <li>연령 대비 성장 곡선을 극단적으로 표현하지 않고, “지켜보며 관리할 지점” 위주로 안내하는 문장을 제안</li>
+            <li>부모가 여러 출처의 정보를 보고 혼란스러워하는 상황에서, 이 소아과가 어떤 기준을 갖고 있는지 설명 구조를 구축</li>
+            <li>정기 내원 시점에 어떤 부분을 함께 점검하면 좋은지, 보호자가 체크리스트처럼 참고할 수 있도록 정리</li>
+          </ul>
+        </div>
+
+        <!-- 카드 6: 대기·동선·아이 환경 -->
+        <div class="card">
+          <div class="card-title">6. 대기·동선·아이 환경 안내</div>
+          <ul>
+            <li>유모차·형제 동반·쌍둥이·초등 자녀 동행 등 다양한 경우를 고려해, 대기 방식·좌석·동선을 텍스트로 설명</li>
+            <li>장시간 대기가 예상되는 시간대와 비교적 여유 있는 시간대를 구분해, 보호자에게 도움이 되는 정보를 제공</li>
+            <li>대기 공간에서 아이가 불편을 덜 느끼도록 고려한 요소가 있다면, 정보형 톤으로 간단히 안내</li>
+            <li>감염 우려에 민감한 보호자를 위해, 대기·진료 동선과 안내 기준을 정리해 신뢰를 쌓을 수 있는 구조를 목표로 설정</li>
+          </ul>
+        </div>
+
+        <!-- 카드 7: 야간·주말·비상 상황 안내 -->
+        <div class="card">
+          <div class="card-title">7. 야간·주말·비상 상황 안내 구조</div>
+          <ul>
+            <li>진료 시간 밖에 증상이 생겼을 때, 보호자가 가장 먼저 확인하면 좋은 기준을 안내 문장으로 정리</li>
+            <li>야간·공휴일 진료 여부, 주변 응급실·응급의료센터와의 관계 등 정보를 단정적인 표현 없이 설명</li>
+            <li>“지금 바로 응급실을 가야 하는 경우”를 규정하기보다는, 공신력 있는 안내 기준을 참고하도록 유도하는 구조를 제안</li>
+            <li>진료 시간 내에 방문했을 때 어떤 도움을 받을 수 있는지, 소아과의 역할을 명확히 설명하는 방향으로 구성</li>
+          </ul>
+        </div>
+
+        <!-- 카드 8: 보호자 커뮤니케이션·설명 방식 -->
+        <div class="card">
+          <div class="card-title">8. 보호자 커뮤니케이션·설명 구조</div>
+          <ul>
+            <li>초보 부모, 다자녀 가정, 조부모 동행 등 보호자 유형별로 자주 나오는 질문을 정리해 안내 기준으로 활용</li>
+            <li>검사·처치·경과 설명 시, 의학 용어 설명 방식과 일상 언어 간의 균형을 구조적으로 정리</li>
+            <li>“어디까지 집에서 지켜보고, 언제 다시 내원하면 좋은지”에 대한 기준을 진료실·온라인 안내에서 동일하게 유지</li>
+            <li>같은 질문이 반복될수록, 안내 문장을 다듬어 병원 전체가 한 목소리로 설명할 수 있는 구조를 설계</li>
+          </ul>
+        </div>
+
+        <!-- 카드 9: 리뷰·재내원·동네 소아과 이미지 -->
+        <div class="card">
+          <div class="card-title">9. 리뷰·재내원·동네 소아과 이미지 구조</div>
+          <ul>
+            <li>온라인 리뷰를 단기 노출 목적이 아니라, 진료 경험을 점검하는 자료로 활용할 수 있도록 방향 설정</li>
+            <li>친절·설명 충실·대기 안내·아이를 다루는 태도 등 보호자가 실제로 기억하는 요소가 드러나도록 리뷰 축적을 목표로 구성</li>
+            <li>재내원 시점을 보호자가 스스로 판단할 수 있도록, 경과·추적 관찰 기준을 설명하는 텍스트 구조를 제안</li>
+            <li>장기적으로는 “이 동네에서 아이가 아플 때 먼저 떠오르는 소아과” 이미지를 지향하는 마케팅 인프라를 설계</li>
+          </ul>
+        </div>
+
+        <!-- 라벨 + 체크리스트 1 -->
+        <div class="label-pill">소아과 마케팅 인프라 점검 항목</div>
         <div class="card">
           <ul>
-            <li>병원 진료 철학, 소아청소년과 전문의 경력·학회 활동</li>
-            <li>진료 가능 시간, 점심 시간, 야간·토요일 진료 여부</li>
-            <li>초진·재진 안내, 형제·자매 동반 내원 시 참고 사항</li>
-            <li>주차, 대중교통, 유모차 이용 가능 여부 등 방문 편의 정보</li>
+            <li>상권·연령대·가정 구조와 이 소아과의 역할이 한 문단 안에서 자연스럽게 정리되어 있는지</li>
+            <li>급성 진료·예방접종·정기 검진·성장 상담·장기 관리 축이 각각 어떤 페이지·문단에서 다뤄지는지</li>
+            <li>보호자가 가장 많이 묻는 질문이 안내 문장 안에 반영되어 있는지</li>
+            <li>온라인·오프라인 안내 텍스트가 병원 내부에서 공유되어, 전 직원이 같은 기준으로 설명하고 있는지</li>
+          </ul>
+        </div>
+
+        <!-- 라벨 + 체크리스트 2 -->
+        <div class="label-pill">아이·보호자 여정 기반 구조 점검</div>
+        <div class="card">
+          <ul>
+            <li>인지 단계: 지도·검색·지인 추천·어린이집·학교 안내를 통해 소아과를 알게 되는 흐름이 정리되어 있는지</li>
+            <li>첫 문의 단계: 전화·메신저·온라인 등 어디로 어떤 내용을 남기면 되는지 보호자가 알 수 있는지</li>
+            <li>내원 단계: 접수·대기·진료·검사·수납까지 동선과 시간 흐름이 안내되어 있는지</li>
+            <li>관리 단계: 경과 관찰·예방접종·정기 검진 일정 등 장기 관리 구조가 텍스트로 정리되어 있는지</li>
+            <li>재내원 단계: 아이 상태를 보며 “지금 다시 소아과를 찾아야겠다”고 판단할 수 있는 기준이 안내 문장에 담겨 있는지</li>
           </ul>
         </div>
 
         <!-- 문의 섹션 -->
         <section id="contact">
-          <h2 class="contact-title">소아과 온라인 안내 페이지 문의</h2>
+          <h2 class="contact-title">소아과 전용 마케팅 인프라 상담</h2>
           <p class="contact-sub">
-            현재 운영 중인 소아과·소아청소년과의 진료 범위와 보호자 문의 패턴을 알려주시면,
-            어떤 방식으로 온라인 안내를 구성할 수 있을지 정리해 드립니다.
+            상권·연령대·질환 패턴·예방접종·정기 검진·대기·동선·설명 방식 등<br />
+            병원에서 가장 고민되는 지점을 알려주시면,<br />
+            소아과에 특화된 마케팅 인프라 구조를 함께 설계해 드립니다.
           </p>
 
           <div class="contact-card">
@@ -755,54 +810,38 @@
               <div class="contact-form">
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="contactName" class="form-label">
-                      성명<span>*</span>
-                    </label>
-                    <input
-                      id="contactName"
-                      type="text"
-                      class="form-input"
-                      placeholder="담당자명을 입력해 주세요."
-                      required
-                    />
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
                   </div>
                   <div class="form-group">
-                    <label for="contactPhone" class="form-label">
-                      연락처<span>*</span>
-                    </label>
+                    <label class="form-label">연락처<span>*</span></label>
                     <input
-                      id="contactPhone"
                       type="tel"
+                      id="phone"
                       class="form-input"
-                      placeholder="'-' 없이 숫자만 입력"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="contactIndustry" class="form-label">
-                      병원명·진료 형태<span>*</span>
-                    </label>
-                    <input
-                      id="contactIndustry"
-                      type="text"
-                      class="form-input"
-                      placeholder="예: ○○소아과의원 / 소아청소년과 단독·복합센터 등"
+                      placeholder="'-' 없이 숫자만"
                       required
                     />
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="contactMessage" class="form-label">
-                    현재 상황 / 문의 내용<span>*</span>
-                  </label>
+                  <label class="form-label">의료기관명·위치·운영 환경<span>*</span></label>
+                  <input
+                    type="text"
+                    id="shop"
+                    class="form-input"
+                    placeholder="예: ○○소아과 / ○○구 ○○동 / 연령대·질환 비중·진료 시간 등"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
                   <textarea
-                    id="contactMessage"
+                    id="message"
                     class="form-textarea"
-                    placeholder="예) 예방접종·영유아검진 안내를 정리하고, 열감기 문의가 들어왔을 때 병원 강점을 잘 보여주고 싶습니다."
+                    placeholder="급성 진료, 예방접종, 정기 검진, 성장·발달 상담, 대기·동선, 온라인 안내 등 가장 고민되는 부분을 자유롭게 적어 주세요."
                     required
                   ></textarea>
                 </div>
@@ -814,10 +853,10 @@
                     개인정보 수집 및 이용 동의 (필수)
                   </summary>
                   <div class="terms-body">
-                    ① 수집 항목: 성명, 연락처, 병원명·진료 형태, 문의 내용<br />
-                    ② 수집 목적: 프로젝트 상담, 견적 안내 및 관련 문의 회신<br />
-                    ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
-                    ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 상담 서비스 제공이 제한될 수 있습니다.
+                    ① 수집 항목: 성명, 연락처, 의료기관 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
                   </div>
                 </details>
                 <label class="terms-row">
@@ -826,16 +865,15 @@
                     id="termsRequired"
                     class="terms-checkbox"
                   />
-                  <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
 
-                <details class="terms-detail" style="margin-top:4px;">
+                <details class="terms-detail">
                   <summary class="terms-summary">
                     마케팅 정보 수신 동의 (선택)
                   </summary>
                   <div class="terms-body">
-                    서비스 안내, 세미나·자료 발송 등 마케팅 정보 제공을 위해
-                    카카오톡/문자로 연락을 드릴 수 있습니다.
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
                   </div>
                 </details>
                 <label class="terms-row">
@@ -844,27 +882,24 @@
                     id="termsMarketing"
                     class="terms-checkbox"
                   />
-                  <span>마케팅 정보 수신에 동의합니다. (선택)</span>
+                  <span>마케팅 정보 수신에 동의합니다.</span>
                 </label>
               </div>
 
               <button type="submit" class="form-submit">문의 접수하기</button>
             </form>
 
-            <p class="contact-note">
-              * 온라인 접수 후, 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
-            </p>
             <div class="contact-actions">
               <a
-                href="https://open.kakao.com/o/s0ogfV3h"
+                href="https://open.kakao.com/o/sdxcyB4h"
                 target="_blank"
                 rel="noopener"
                 class="contact-kakao"
               >
-                카톡으로 바로 상담
+                카톡 상담
               </a>
               <a href="tel:01032689899" class="contact-call">
-                전화로 바로 상담
+                전화 상담
               </a>
             </div>
           </div>
@@ -873,10 +908,10 @@
     </section>
   </main>
 
-  <!-- 하단 고정 상담바 -->
+  <!-- 하단 고정바 -->
   <div class="bottom-bar">
     <a
-      href="https://open.kakao.com/o/s0ogfV3h"
+      href="https://open.kakao.com/o/sdxcyB4h"
       class="bottom-btn kakao"
       target="_blank"
       rel="noopener"
@@ -888,47 +923,44 @@
   </div>
 
   <script>
-    // 사이드 메뉴 열고 닫기
     function toggleMenu(open) {
-      const menu = document.getElementById("sideMenu");
-      const backdrop = document.getElementById("sideBackdrop");
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
       if (open) {
-        menu.classList.add("open");
-        backdrop.classList.add("show");
+        m.classList.add("open");
+        b.classList.add("show");
         document.body.style.overflow = "hidden";
       } else {
-        menu.classList.remove("open");
-        backdrop.classList.remove("show");
+        m.classList.remove("open");
+        b.classList.remove("show");
         document.body.style.overflow = "";
       }
     }
 
-    // 문의 폼 제출 처리: 대표님 폰 문자앱으로 내용 넘기기
     function handleContactSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById("contactName").value.trim();
-      const phone = document.getElementById("contactPhone").value.trim();
-      const industry = document.getElementById("contactIndustry").value.trim();
-      const message = document.getElementById("contactMessage").value.trim();
-      const termsRequired = document.getElementById("termsRequired").checked;
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
 
-      if (!termsRequired) {
-        alert("개인정보 수집 및 이용에 동의해 주세요.");
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
         return;
       }
-      if (!name || !phone || !industry || !message) {
-        alert("필수 항목을 모두 입력해 주세요.");
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
         return;
       }
 
-      const smsBody =
-        `[H VIRAL 홈페이지 문의 - 소아과]\n` +
-        `성명: ${name}\n연락처: ${phone}\n병원명·진료 형태: ${industry}\n` +
-        `내용: ${message}`;
+      const sms =
+        `[H VIRAL 소아과 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n의료기관 정보: ${s}\n` +
+        `내용: ${m}`;
 
-      const encoded = encodeURIComponent(smsBody);
-      const smsUrl = `sms:01032689899?body=${encoded}`;
-      window.location.href = smsUrl;
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
 
       alert(
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
