@@ -1,1 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>H Viral</title>
+    <link>https://hviral.co.kr/</link>
+    <description>에이치바이럴 공식 RSS 피드</description>
 
+    <item>
+      <title>페이지 제목</title>
+      <link>https://hviral.co.kr/페이지경로</link>
+      <description>요약</description>
+      <pubDate>Tue, 03 Dec 2024 09:00:00 +0900</pubDate>
+    </item>
+
+  </channel>
+</rss>
