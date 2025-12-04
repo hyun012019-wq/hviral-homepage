@@ -1,96 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
+<urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- 메인 페이지 -->
+  <!-- 메인 홈 -->
   <url>
     <loc>https://hviral.co.kr/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- 회사 기본 페이지 -->
+  <!-- 핵심 서비스 페이지 -->
+  <url>
+    <loc>https://hviral.co.kr/digital.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hviral.co.kr/website.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hviral.co.kr/app.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://hviral.co.kr/lecture.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hviral.co.kr/contact.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hviral.co.kr/about.html</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- 업종 전체 페이지 -->
-  <url><loc>https://hviral.co.kr/category/cafe.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/restaurant.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/hairshop.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/nail.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/skinclinic.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/ptgym.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/studyroom.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/englishacademy.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/kidsacademy.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/bakery.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/petshop.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/hospital.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/dermatology.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/orthodontics.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/realestate.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/interior.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/carcenter.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/flower.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/furniture.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/eventplan.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/cleaning.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/moving.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/franchise.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/lawfirm.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/tax.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/labor.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/consulting.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/b2b.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/logistics.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/distribution.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/yoga.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/pilates.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/koreanrestaurant.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/japanese.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/chinesefood.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/chicken.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/pizza.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/bbq.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/craftbeer.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/karaoke.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/pcbang.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/coinwash.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/academy.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/beauty.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/hotel.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/motel.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/guesthouse.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/barbershop.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/fashion.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/butcher.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/seafood.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/kidspark.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/printing.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/cctv.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/electronics.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/appliances.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/vrgame.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/carwash.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/drivingschool.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/petcare.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/security.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/rental.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/wedding.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/studio.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/massage.html</loc></url>
-  <url><loc>https://hviral.co.kr/category/therapy.html</loc></url>
+  <!-- 업종별 상세 (현재 index에서 링크 쓰는 /industry 구조 기준) -->
+  <!-- 의료·병원 -->
+  <url><loc>https://hviral.co.kr/industry/skin.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/dental.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/plastic.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/internal.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/obgyn.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/pediatrics.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/ent.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/eye.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/oriental.html</loc></url>
+
+  <!-- 헬스·뷰티 -->
+  <url><loc>https://hviral.co.kr/industry/gym.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/pt.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/yoga.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/pilates.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/beauty.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/nail.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/dojang.html</loc></url>
+
+  <!-- 카페·음식점 -->
+  <url><loc>https://hviral.co.kr/industry/cafe.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/dessert.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/korean.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/japanese.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/chinese.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/western.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/chicken.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/icecream.html</loc></url>
+
+  <!-- 교육·학원 -->
+  <url><loc>https://hviral.co.kr/industry/academy.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/lang.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/art.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/studyroom.html</loc></url>
+
+  <!-- 생활·지역 서비스 -->
+  <url><loc>https://hviral.co.kr/industry/car.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/cartuning.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/cleaning.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/demolition.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/flower.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/photo.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/pet.html</loc></url>
+
+  <!-- 전문직·B2B -->
+  <url><loc>https://hviral.co.kr/industry/tax.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/lawyer.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/lawoffice.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/administrative.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/realestate.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/franchise.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/manufacture.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/distribution.html</loc></url>
+  <url><loc>https://hviral.co.kr/industry/b2b.html</loc></url>
 
 </urlset>
