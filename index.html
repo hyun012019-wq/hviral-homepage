@@ -4,39 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="alternate" type="application/rss+xml" title="H Viral RSS" href="/rss.xml">
-  <title>H VIRAL │ 에이치바이럴 마케팅-소상공인,중소기업 B2B 전문직 디지털 마케팅 설계·브랜딩 플랫폼</title>
+  <title>H VIRAL │ 하비럴 디지털 소상공인,중소기업 B2B, 전문직 마케팅 플랫폼</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     /* === Hero 슬라이드 추가 스타일 === */
-.hero-slides {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0; /* 배경 레이어 */
-    opacity: 0.45; /* 은은하게 */
-    pointer-events: none; /* 👉 클릭/터치 이벤트 차단 (배경만 역할) */
-}
+    .hero-slides {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0; /* 배경 레이어 */
+      opacity: 0.45; /* 은은하게 */
+      pointer-events: none; /* 👉 클릭/터치 이벤트 차단 (배경만 역할) */
+    }
 
     .hero {
-  position: relative;
-  overflow: hidden;
-}
-.hero-slides img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.2s ease; /* 슬라이드 전환 속도 */
-}
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero-slides img.active {
-    opacity: 1;
-}
+    .hero-slides img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s ease; /* 슬라이드 전환 속도 */
+    }
+
+    .hero-slides img.active {
+      opacity: 1;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -811,17 +813,17 @@
   <main>
     <section class="hero">
       <div class="hero-slides">
-    <img src="assets/hero-cafe.pn5.png" class="slide active">
-    <img src="assets/hero-cafe.png.png" class="slide">
-    <img src="assets/hero-cafe.png3.png" class="slide">
-</div>
+        <img src="assets/hero-cafe.pn5.png" class="slide active">
+        <img src="assets/hero-cafe.png.png" class="slide">
+        <img src="assets/hero-cafe.png3.png" class="slide">
+      </div>
       <div class="container">
         <div class="hero-card">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
             2025 마케팅 전문 파트너
           </div>
-          <h1 class="hero-title">에이치바이럴, 2025 최다 문의 달성!</h1>
+          <h1 class="hero-title">하비럴, 2025 최다 문의 달성!</h1>
           <p class="hero-desc">
             소상공인·전문직·B2B 기업을 위한 디지털 마케팅 전략·브랜딩 시스템을
             업종별로 설계합니다. <strong>검색–콘텐츠–문의까지 이어지는
@@ -1234,26 +1236,25 @@
     }
   </script>
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll(".hero-slides .slide");
-    let currentIndex = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".hero-slides .slide");
+      let currentIndex = 0;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove("active");
+      function showSlide(index) {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
         });
         slides[index].classList.add("active");
-    }
+      }
 
-    function nextSlide() {
+      function nextSlide() {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
-    }
+      }
 
-    // 자동 전환 (2.5초)
-    setInterval(nextSlide, 2500);
-});
-</script>
-
+      // 자동 전환 (2.5초)
+      setInterval(nextSlide, 2500);
+    });
+  </script>
 </body>
 </html>
