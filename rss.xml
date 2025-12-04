@@ -3,13 +3,13 @@
   <channel>
     <title>H Viral</title>
     <link>https://hviral.co.kr/</link>
-    <description>에이치바이럴 공식 RSS 피드</description>
+    <description>하비럴 공식 RSS 피드</description>
     <language>ko-KR</language>
 
     <item>
       <title>H Viral 메인</title>
       <link>https://hviral.co.kr/</link>
-      <description>에이치바이럴 공식 홈페이지 메인</description>
+      <description>하비럴 공식 홈페이지 메인</description>
       <pubDate>Wed, 03 Dec 2025 09:00:00 +0900</pubDate>
       <guid>https://hviral.co.kr/</guid>
     </item>
