@@ -2,8 +2,36 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <title>디저트 카페 디지털 인프라 설계 │ 하비럴 마케팅 HVIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>디저트 카페 디지털 인프라 │ H VIRAL</title>
+
+  <!-- SEO 기본 -->
+  <meta name="description" content="디저트 카페 전용 디지털 마케팅 인프라 설계. 디저트 라인업·콘셉트·회전율·객단가·재방문 구조를 기준으로 화면과 메시지를 설계하는 하비럴 마케팅 HVIRAL입니다." />
+  <meta name="keywords" content="디저트 카페, 디저트카페 마케팅, 카페 마케팅, 디저트 카페 홈페이지, 카페 브랜드, 카페 디지털 마케팅, 하비럴, HVIRAL" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hviral.kr/industry/dessert.html" />
+
+  <!-- Open Graph / Kakao -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="디저트 카페 디지털 인프라 설계 │ 하비럴 마케팅 HVIRAL" />
+  <meta property="og:description" content="디저트 라인업과 콘셉트, 객단가·회전율·재방문까지 한 화면에서 설명되는 디저트 카페 디지털 인프라를 설계합니다." />
+  <meta property="og:url" content="https://hviral.kr/industry/dessert.html" />
+  <meta property="og:site_name" content="HVIRAL 하비럴 마케팅" />
+  <meta property="og:image" content="https://hviral.kr/og/dessert.jpg" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="디저트 카페 디지털 인프라 설계 │ 하비럴 마케팅 HVIRAL" />
+  <meta name="twitter:description" content="디저트 카페 운영 구조를 기준으로 회전율·객단가·재방문을 함께 설계하는 디지털 마케팅 인프라." />
+  <meta name="twitter:image" content="https://hviral.kr/og/dessert.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#020617" />
+
   <style>
     * {
       margin: 0;
@@ -30,7 +58,6 @@
       margin: 0 auto;
       padding: 0 20px 96px;
     }
-
     /* 헤더 */
     header {
       position: sticky;
@@ -84,7 +111,6 @@
     .menu-btn span::after {
       top: 5px;
     }
-
     .logo-wrap {
       display: block;
     }
@@ -105,7 +131,6 @@
       font-size: 15px;
       font-weight: 600;
     }
-
     /* 히어로 */
     .hero {
       background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
@@ -158,7 +183,6 @@
       color: #9ca3af;
       margin-top: 4px;
     }
-
     .section-title {
       margin: 28px 0 10px;
       font-size: 18px;
@@ -169,7 +193,6 @@
       color: #9ca3af;
       margin-bottom: 10px;
     }
-
     .card {
       background: #020617;
       border-radius: 20px;
@@ -191,7 +214,6 @@
       list-style: disc;
       margin-bottom: 4px;
     }
-
     .label-pill {
       display: inline-flex;
       padding: 4px 10px;
@@ -201,7 +223,6 @@
       font-size: 11px;
       margin-bottom: 8px;
     }
-
     /* 문의 섹션 */
     #contact {
       margin: 32px 0 4px;
@@ -216,7 +237,6 @@
       color: #9ca3af;
       margin-bottom: 14px;
     }
-
     .contact-card {
       border-radius: 20px;
       border: 1px solid rgba(148, 163, 184, 0.7);
@@ -260,7 +280,6 @@
       min-height: 80px;
       resize: vertical;
     }
-
     .terms-box {
       border-radius: 12px;
       border: 1px solid rgba(55, 65, 81, 0.9);
@@ -312,7 +331,6 @@
       height: 14px;
       accent-color: #2563eb;
     }
-
     .form-submit {
       width: 100%;
       border-radius: 999px;
@@ -324,7 +342,6 @@
       border: none;
       cursor: pointer;
     }
-
     .contact-actions {
       margin-top: 14px;
       display: flex;
@@ -346,7 +363,6 @@
       background: #2563eb;
       color: #fff;
     }
-
     /* 하단바 */
     .bottom-bar {
       position: fixed;
@@ -382,7 +398,6 @@
       background: #2563eb;
       color: #fff;
     }
-
     /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
       position: fixed;
@@ -493,7 +508,6 @@
       padding: 4px 0;
       font-size: 13px;
     }
-
     @media (min-width: 1024px) {
       .hero {
         padding-top: 36px;
@@ -518,7 +532,7 @@
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
-        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-menu-title">HVIRAL</div>
         <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
@@ -646,7 +660,7 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
@@ -675,7 +689,6 @@
               라인업·회전율·객단가 흐름을 한 화면에서 설명
             </span>
           </div>
-
           <h1 class="hero-title">
             “사진과 리뷰는 쌓이는데,<br />
             매출과 재방문이 같이 오르지 않는다면 화면부터 다시 봐야 합니다.”
@@ -776,7 +789,6 @@
             현재 객단가·재방문·포장·배달 비율이 어떻게 구성되어 있는지 알려주시면<br />
             디저트 카페에 맞는 화면 구성과 메시지 구조를 함께 설계해 드립니다.
           </p>
-
           <div class="contact-card">
             <form id="contactForm" onsubmit="handleContactSubmit(event)">
               <div class="contact-form">
@@ -796,7 +808,6 @@
                     />
                   </div>
                 </div>
-
                 <div class="form-group">
                   <label class="form-label">매장명·위치·주요 디저트<span>*</span></label>
                   <input
@@ -807,7 +818,6 @@
                     required
                   />
                 </div>
-
                 <div class="form-group">
                   <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
                   <textarea
@@ -818,7 +828,6 @@
                   ></textarea>
                 </div>
               </div>
-
               <div class="terms-box">
                 <details class="terms-detail">
                   <summary class="terms-summary">
@@ -839,7 +848,6 @@
                   />
                   <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
-
                 <details class="terms-detail">
                   <summary class="terms-summary">
                     마케팅 정보 수신 동의 (선택)
@@ -857,10 +865,8 @@
                   <span>마케팅 정보 수신에 동의합니다.</span>
                 </label>
               </div>
-
               <button type="submit" class="form-submit">문의 접수하기</button>
             </form>
-
             <div class="contact-actions">
               <a
                 href="https://open.kakao.com/o/sdxcyB4h"
@@ -927,10 +933,9 @@
       }
 
       const sms =
-        `[H VIRAL 디저트 카페 문의]\n` +
+        `[HVIRAL 디저트 카페 문의]\n` +
         `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n` +
         `내용: ${m}`;
-
       const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
       window.location.href = url;
 
@@ -938,7 +943,6 @@
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
           "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
-
       e.target.reset();
     }
   </script>
