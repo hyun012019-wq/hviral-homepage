@@ -2,8 +2,36 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>청소·이사 전문 디지털 마케팅 │ H VIRAL</title>
+  <title>청소·이사 전문 디지털 마케팅 │ 하비럴 마케팅 HVIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO 기본 -->
+  <meta name="description" content="청소·이사 전문 디지털 마케팅 인프라 설계. 평수·상태·이사 일정에 맞춘 온라인 문의·견적 구조를 하비럴 마케팅 HVIRAL이 설계합니다." />
+  <meta name="keywords" content="청소, 이사청소, 입주청소, 거주청소, 준공청소, 상가청소, 사무실청소, 청소 업체 마케팅, 이사청소 마케팅, 하비럴, HVIRAL" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://hviral.kr/industry/cleaning.html" />
+
+  <!-- Open Graph / Kakao -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="청소·이사 전문 디지털 마케팅 │ 하비럴 마케팅 HVIRAL" />
+  <meta property="og:description" content="청소·이사 전문 업체를 위한 디지털 인프라 설계. 검색부터 상담·현장 작업까지 자연스럽게 이어지는 구조를 설계합니다." />
+  <meta property="og:url" content="https://hviral.kr/industry/cleaning.html" />
+  <meta property="og:site_name" content="HVIRAL 하비럴 마케팅" />
+  <meta property="og:image" content="https://hviral.kr/og/cleaning.jpg" />
+  <meta property="og:locale" content="ko_KR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="청소·이사 전문 디지털 마케팅 │ 하비럴 마케팅 HVIRAL" />
+  <meta name="twitter:description" content="청소·이사 전문 업체를 위한 디지털 마케팅·브랜딩 설계. 온라인 문의가 작업 예약까지 이어지도록 구성합니다." />
+  <meta name="twitter:image" content="https://hviral.kr/og/cleaning.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#020617" />
+
   <style>
     * {
       margin: 0;
@@ -557,12 +585,10 @@
   <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
-      <div>
-        <div class="side-menu-title">H VIRAL</div>
-        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-      </div>
+      <a href="/" class="side-menu-title">HVIRAL</a>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
+    <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
       <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
@@ -686,7 +712,7 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
@@ -714,7 +740,7 @@
           </h1>
           <p class="hero-desc">
             고객은 <strong>검색 → 작업 범위·장비·가격 확인 → 업체 비교 → 일정 상담</strong> 순서로 움직입니다.
-            H VIRAL은 청소·이사 업체가 실제로 수행하는 내용을 기준으로,
+            하비럴은 청소·이사 업체가 실제로 수행하는 내용을 기준으로,
             온라인 문의가 바로 <strong>현장 방문·시공 예약</strong>으로 이어질 수 있도록 화면을 구성합니다.
           </p>
           <p class="hero-note">
@@ -1013,18 +1039,16 @@
       }
 
       const smsBody =
-        "[H VIRAL 홈페이지 문의]\\n" +
-        "성명: " + name + "\\n" +
-        "연락처: " + phone + "\\n" +
-        "공간 종류: " + industry + "\\n" +
-        "내용: " + message;
+        `[HVIRAL 청소·이사 문의]\n` +
+        `성명: ${name}\n연락처: ${phone}\n공간 종류: ${industry}\n` +
+        `내용: ${message}`;
 
       const encoded = encodeURIComponent(smsBody);
       const smsUrl = "sms:01032689899?body=" + encoded;
       window.location.href = smsUrl;
 
       alert(
-        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\\n" +
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
         "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
 
@@ -1033,3 +1057,4 @@
   </script>
 </body>
 </html>
+```0
