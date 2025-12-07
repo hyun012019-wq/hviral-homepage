@@ -2,8 +2,33 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <title>헬스장·PT·요가·필라테스 마케팅 인프라 │ HVIRAL 하비럴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>헬스장 마케팅 인프라 │ H VIRAL</title>
+
+  <!-- SEO 기본 메타 -->
+  <meta name="description" content="헬스장·피트니스 센터·PT 스튜디오·요가·필라테스의 회원권·PT·그룹수업·야간 이용 구조를 한눈에 보이게 정리하는 마케팅 인프라 설계. 상권·타깃·피크타임·이탈 구간·PT 비중을 함께 보고, 헬스장 매출 구조가 보이도록 HVIRAL(하비럴)이 설계합니다." />
+  <meta name="keywords" content="HVIRAL,하비럴,헬스장 마케팅,헬스장 광고,헬스장 홍보,헬스장 디지털 마케팅,피트니스 센터 마케팅,피트니스 광고,PT 마케팅,퍼스널 트레이닝 마케팅,PT 스튜디오 마케팅,요가 마케팅,필라테스 마케팅,헬스장 회원 관리,헬스장 매출 구조,헬스장 브랜딩,헬스장 홈페이지,헬스 PT 마케팅 인프라,퍼스널짐 마케팅,동네 헬스장 홍보,헬스장 인스타그램,헬스장 네이버 지도,헬스장 검색광고,헬스장 재등록,헬스장 지인 소개" />
+
+  <!-- 오픈그래프 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HVIRAL 하비럴" />
+  <meta property="og:title" content="헬스장·PT·요가·필라테스 마케팅 인프라 │ HVIRAL 하비럴" />
+  <meta property="og:description" content="헬스장·PT 스튜디오·요가·필라테스·퍼스널짐 매출 구조를 화면에서 한눈에 보이게 정리하는 디지털 마케팅 인프라. 상권·타깃·피크타임·회원 이탈 구간을 함께 보고 HVIRAL(하비럴)이 설계합니다." />
+  <meta property="og:url" content="https://hviral.kr/industry/gym.html" />
+  <meta property="og:image" content="/og-image-gym.jpg" />
+
+  <!-- 트위터 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="헬스장·PT·요가·필라테스 마케팅 인프라 │ HVIRAL 하비럴" />
+  <meta name="twitter:description" content="헬스장·피트니스 센터·PT 스튜디오·요가·필라테스 마케팅 인프라 설계. 회원권·PT·그룹수업 구조를 정리하고 신규·재등록·소개가 돌아가는 화면을 만듭니다." />
+  <meta name="twitter:image" content="/og-image-gym.jpg" />
+
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
   <style>
     * {
       margin: 0;
@@ -25,6 +50,7 @@
     ul {
       list-style: none;
     }
+
     .container {
       max-width: 1080px;
       margin: 0 auto;
@@ -84,7 +110,6 @@
     .menu-btn span::after {
       top: 5px;
     }
-
     .logo-wrap {
       display: block;
     }
@@ -152,6 +177,9 @@
       font-size: 14px;
       color: #cbd5f5;
       margin-bottom: 10px;
+    }
+    .hero-desc strong {
+      color: #fff;
     }
     .hero-note {
       font-size: 11px;
@@ -383,7 +411,7 @@
       color: #fff;
     }
 
-    /* 사이드 메뉴 (index와 동일 구조) */
+    /* 사이드 메뉴 */
     #sideBackdrop {
       position: fixed;
       top: 0;
@@ -398,6 +426,7 @@
     #sideBackdrop.show {
       display: block;
     }
+
     #sideMenu {
       position: fixed;
       top: 0;
@@ -457,6 +486,11 @@
       color: #9ca3af;
       margin: 18px 0 6px;
       font-weight: 600;
+    }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
     }
     details.side-group {
       margin-bottom: 8px;
@@ -518,7 +552,7 @@
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
-        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-menu-title">HVIRAL</div>
         <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
@@ -558,7 +592,7 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/gym.html"><strong>헬스장·피트니스</strong></a>
           <a href="/industry/pt.html">PT 스튜디오</a>
           <a href="/industry/yoga.html">요가</a>
           <a href="/industry/pilates.html">필라테스</a>
@@ -646,7 +680,7 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
@@ -669,10 +703,10 @@
           <div class="hero-badges">
             <span class="hero-badge">
               <span class="hero-badge-dot"></span>
-              헬스장·PT 스튜디오·요가·필라테스·퍼스널짐 마케팅 인프라
+              헬스장·피트니스 센터·PT 스튜디오·요가·필라테스·퍼스널짐 마케팅 인프라
             </span>
             <span class="hero-badge">
-              회원권·PT·그룹수업·야간 이용까지 한 눈에 보이게 설계하는 헬스장 마케팅 인프라
+              회원권·PT·그룹수업·락커·수건·야간 이용까지 한눈에 보이게 설계하는 헬스장 디지털 인프라
             </span>
           </div>
 
@@ -680,38 +714,44 @@
             “단순 운동 공간이 아닌,<br />
             매출 구조가 보이는 헬스장을 만듭니다.”
           </h1>
+
           <p class="hero-desc">
-            하비럴은 등록 회원·PT·그룹수업·락커·수건·부가상품까지,<br />
+            하비럴(HVIRAL)은 등록 회원·PT·그룹수업·락커·수건·부가상품까지,<br />
             어떤 회원이 어떤 시간대에 이 센터를 선택해야 하는지 기준을 세우고,<br />
-            신규·재등록·소개가 함께 돌아가는 마케팅 인프라를 언어로 정리합니다.
+            신규·재등록·소개·리텐션이 함께 돌아가는
+            <strong>헬스장·피트니스 디지털 마케팅 인프라</strong>를 언어로 정리합니다.
           </p>
           <p class="hero-note">
-            광고비보다 먼저,  
-            <b>“왜 이 동네에서는 여기서 운동해야 하는지”</b>가 보이게 만드는 것이 핵심입니다.
+            광고비보다 먼저, <br />
+            <b>“왜 이 동네에서는 여기서 운동해야 하는지”</b>가 보이게 만드는 것이
+            헬스장 브랜딩·PT 마케팅의 출발점이라고 보고 접근합니다.
           </p>
         </div>
 
         <h2 class="section-title">헬스장·PT 스튜디오 고객이 실제로 확인하는 정보</h2>
         <p class="section-sub">
           기구 사진과 가격표만으로는 선택받기 어렵습니다.<br />
-          “운동을 한 번 시작하면 이 센터를 계속 다녀야 하는 이유”가 먼저 설명되어야 합니다.
+          “운동을 한 번 시작하면 이 센터를 계속 다녀야 하는 이유”가 먼저 설명되어야
+          헬스장 검색·인스타그램·네이버 지도에서 선택될 확률이 높아집니다.
         </p>
 
         <div class="card">
           <div class="card-title">1. 상권·타깃·주요 시간대 정의</div>
           <ul>
             <li>주거지·오피스·상가·대학교·역세권 등 입지에 따라 핵심 타깃(직장인·학생·주부·야간 근무자)을 정리</li>
-            <li>출근 전·퇴근 후·점심 시간·주말 오전/오후 등 피크 시간대를 구분</li>
+            <li>출근 전·퇴근 후·점심 시간·주말 오전/오후 등 피크 시간대와 비는 시간대를 구분</li>
             <li>“이 동네에서 이 헬스장이 맡고 싶은 역할”을 한 문장으로 정리해 첫 화면에 노출</li>
+            <li>헬스장·피트니스·PT 스튜디오·요가·필라테스 중 어떤 비중을 가져갈지 방향성을 명확히 텍스트로 표현</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">2. 회원권·PT·그룹수업 상품 구조</div>
           <ul>
-            <li>1·3·6·12개월 회원권, 새벽/주간/종일권 등 상품 구성을 역할별로 배치</li>
-            <li>PT(1:1·2:1), 그룹수업(요가·필라테스·GX) 등 고객단가가 다른 상품을 한 눈에 비교 가능하게 설계</li>
-            <li>인바디·체형분석·상담·운동루틴 설계 등 부가 서비스도 별도 블록으로 정리해 부가 매출을 유도</li>
+            <li>1·3·6·12개월 회원권, 새벽/주간/종일권, 주말 전용권 등 상품 구성을 역할별로 배치</li>
+            <li>PT(1:1·2:1), 그룹수업(요가·필라테스·GX) 등 고객단가가 다른 상품을 한눈에 비교 가능하게 설계</li>
+            <li>인바디·체형분석·상담·운동루틴 설계 등 부가 서비스를 별도 블록으로 정리해 부가 매출을 유도</li>
+            <li>헬스장 창업·퍼스널짐 오픈 초기에도 바로 이해 가능한 구조로, 내부 직원·트레이너 교육에도 활용</li>
           </ul>
         </div>
 
@@ -721,6 +761,7 @@
             <li>신규 등록 / 재등록 / 지인 소개 비율을 대략적으로 파악하고, 앞으로 키우고 싶은 축을 명시</li>
             <li>체험권·1회 이용권·첫 달 프로모션 등 신규 회원 유입 동선을 정리</li>
             <li>재등록·업셀(PT·장기회원권)로 이어지는 메시지를 화면에 배치해 “한 번 등록하면 오래 다니는 센터” 이미지를 강화</li>
+            <li>네이버 플레이스·인스타그램·카카오 채널·문자·알림톡 등에서 동일한 기준으로 재방문 메시지를 전달할 수 있게 설계</li>
           </ul>
         </div>
 
@@ -730,6 +771,7 @@
             <li>퇴근 시간, 주말 오전 등 혼잡 구간과 비교적 한산한 시간대를 솔직하게 안내</li>
             <li>기구 대기 시간, 샤워실·탈의실 혼잡도, 락커 여유 현황 등을 직관적으로 설명</li>
             <li>헬스트레이너·PT 코치가 상주하는 시간, 초보 회원이 도움 받기 좋은 시간대를 명확히 안내</li>
+            <li>야간 헬스장 이용, 24시 헬스, 새벽 조깅·러닝머신 등 시간대별 이용자 이미지를 함께 보여주는 문장 구성</li>
           </ul>
         </div>
 
@@ -739,6 +781,7 @@
             <li>전후 사진·체지방 변화·기록 관리 등 결과 기반 콘텐츠와 단순 후기를 구분해 운영</li>
             <li>“초보자 친절, PT 밀착 관리, 운동 루틴 관리, 운동 분위기” 등 선택에 영향을 주는 키워드를 문장으로 정리</li>
             <li>광고 문장보다, 재등록과 지인 소개로 이어지는 후기·사진이 쌓이도록 운영 기준을 제시</li>
+            <li>인스타그램 릴스·유튜브 숏폼·블로그 리뷰 등 디지털 채널별로 활용 가능한 스토리 라인을 함께 설계</li>
           </ul>
         </div>
 
@@ -747,7 +790,8 @@
           <ul>
             <li>야간 근무자, 새벽형 직장인, 오전 타임 전업주부, 학생층 등 주요 타깃별 메시지를 나누어 설계</li>
             <li>장기 회원을 위한 혜택(갱신 할인, PT 업그레이드, 친구 추천 혜택)을 구조적으로 안내</li>
-            <li>특정 타깃(비만 클리닉형, 재활 운동, 시합 준비 등)에 특화된 운동 프로그램이 있다면 별도로 강조</li>
+            <li>특정 타깃(비만 관리, 재활 운동, 시합 준비, 바디프로필 준비 등)에 특화된 운동 프로그램이 있다면 별도로 강조</li>
+            <li>센터장·총괄트레이너 관점에서 “어떤 회원이 이 센터에 오래 남아야 하는지”를 기준으로 화면 구조를 잡습니다.</li>
           </ul>
         </div>
 
@@ -757,15 +801,31 @@
             <li>“운동 생각나면 여기부터 떠오르는 센터”라는 기준점을 화면과 문장으로 반복 노출</li>
             <li>근처 아파트 단지·회사·학교·상가를 상상하고, 그들의 일과 루틴 속에 센터를 배치</li>
             <li>회원이 지인에게 추천할 때 그대로 가져다 쓸 수 있는 설명 문장을 미리 설계</li>
+            <li>네이버 지도·카카오맵·검색 결과·간판·전단까지 한 문장으로 이어지는 헬스장 브랜드 문구를 정리</li>
           </ul>
         </div>
 
-        <div class="label-pill">헬스장·PT 스튜디오·요가·필라테스 마케팅 인프라 설계 시 체크하는 항목</div>
+        <div class="label-pill">
+          헬스장·PT 스튜디오·요가·필라테스 마케팅 인프라 설계 시 체크하는 항목
+        </div>
         <div class="card">
           <ul>
             <li>상권·타깃·주요 시간대가 한 번에 이해되는지</li>
             <li>회원권·PT·그룹수업 매출 구조가 대표님 머릿속이 아닌, 화면에도 정리되어 있는지</li>
             <li>“운동을 시작하면 이 센터를 선택해야 하는 이유”가 회원 언어로 설명되어 있는지</li>
+            <li>오프라인 설명·카운터 상담·온라인 안내 페이지가 한 기준을 공유하고 있는지</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">
+          피트니스 센터 디지털 마케팅·광고 채널 점검
+        </div>
+        <div class="card">
+          <ul>
+            <li>네이버 지도·플레이스, 카카오맵, 인스타그램·유튜브·블로그·카카오 채널 등 주요 채널에 센터 강점이 동일하게 표현되는지</li>
+            <li>검색어(“동네명 + 헬스장”, “동네명 + PT”, “24시 헬스장”, “필라테스 추천”)별로 어떤 화면이 먼저 노출되는지</li>
+            <li>체험권 문의, 1회 이용권, PT 상담, 장기 회원권 등 문의 유형별로 다른 안내 문장을 준비했는지</li>
+            <li>문자·알림톡·카톡 채널을 통해 재등록 시점, PT 업셀 타이밍을 잡을 수 있는 구조가 있는지</li>
           </ul>
         </div>
 
@@ -775,7 +835,7 @@
           <p class="contact-sub">
             총 회원 수·유효 회원 수·PT 비중이 어느 정도인지,<br />
             이탈이 많이 발생하는 구간과 채워지지 않는 시간대를 알려주시면<br />
-            헬스·PT 업종에 맞는 실전형 마케팅 인프라를 함께 설계해 드립니다.
+            헬스장·피트니스·PT 업종에 맞는 실전형 디지털 마케팅 인프라를 함께 설계해 드립니다.
           </p>
 
           <div class="contact-card">
@@ -804,7 +864,7 @@
                     type="text"
                     id="shop"
                     class="form-input"
-                    placeholder="예: ○○휘트니스 / ○○구 ○○동 / 헬스·PT·그룹수업 비율 등"
+                    placeholder="예: ○○휘트니스 / ○○구 ○○동 / 헬스·PT·그룹수업 비율, 24시 여부 등"
                     required
                   />
                 </div>
@@ -814,7 +874,7 @@
                   <textarea
                     id="message"
                     class="form-textarea"
-                    placeholder="회원 이탈 구간, 비는 시간대, PT 판매·업셀, 재등록, 타깃(직장인·학생·주부 등) 관련 고민을 적어 주세요."
+                    placeholder="회원 이탈 구간, 비는 시간대, PT 판매·업셀, 재등록, 타깃(직장인·학생·주부·야간 회원 등) 관련 고민을 자유롭게 적어 주세요."
                     required
                   ></textarea>
                 </div>
@@ -928,7 +988,7 @@
       }
 
       const sms =
-        `[H VIRAL 헬스장·PT 문의]\n` +
+        `[HVIRAL 헬스장·PT 문의]\n` +
         `성명: ${n}\n연락처: ${p}\n센터 정보: ${s}\n` +
         `내용: ${m}`;
 
@@ -945,3 +1005,4 @@
   </script>
 </body>
 </html>
+```0
