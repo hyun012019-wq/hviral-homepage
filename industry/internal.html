@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>내과 마케팅 인프라 │ H VIRAL</title>
+  <title>내과 마케팅 인프라 │ 하비럴 마케팅 H VIRAL</title>
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -404,6 +404,7 @@
       justify-content:space-between;
       align-items:center;
       flex-shrink:0;
+      gap:12px;
     }
     .side-menu-title {
       font-size:18px;
@@ -417,6 +418,7 @@
       font-size:13px;
       color:#e5e7eb;
       cursor:pointer;
+      white-space:nowrap;
     }
     .side-sub {
       font-size:11px;
@@ -489,10 +491,10 @@
   <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
-      <div>
+      <a href="/" class="logo-wrap">
         <div class="side-menu-title">H VIRAL</div>
-        <div class="side-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
-      </div>
+        <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
+      </a>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
     <div class="side-scroll">
@@ -514,7 +516,7 @@
           <a href="/industry/skin.html">피부과</a>
           <a href="/industry/dental.html">치과</a>
           <a href="/industry/plastic.html">성형외과</a>
-          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/internal.html"><strong>내과</strong></a>
           <a href="/industry/obgyn.html">산부인과</a>
           <a href="/industry/pediatrics.html">소아과</a>
           <a href="/industry/ent.html">이비인후과</a>
@@ -972,3 +974,4 @@
   </script>
 </body>
 </html>
+```0
