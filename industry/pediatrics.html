@@ -3,7 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>소아과 마케팅 인프라 │ H VIRAL</title>
+
+  <title>소아과 마케팅 인프라 │ HVIRAL</title>
+
+  <!-- 기본 메타 -->
+  <meta name="description" content="하비럴(HVIRAL)은 소아과 상권·연령·질환 패턴과 보호자 동선을 기준으로 소아과 전용 마케팅 인프라를 설계합니다." />
+  <meta name="keywords" content="하비럴, HVIRAL, 소아과 마케팅, 소아과 홍보, 병원 마케팅, 소아과 브랜딩, 의료 마케팅 인프라" />
+
+  <!-- Open Graph / 카카오 미리보기 -->
+  <meta property="og:title" content="소아과 마케팅 인프라 │ HVIRAL" />
+  <meta property="og:description" content="연령대·질환 패턴·보호자 동선을 기준으로 정리하는 소아과 전용 마케팅 인프라 설계 안내." />
+  <meta property="og:type" content="website" />
+  <!-- 메인과 동일 OG 이미지 경로 사용 -->
+  <meta property="og:image" content="/og-image.png" />
+
+  <!-- Twitter 카드 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="소아과 마케팅 인프라 │ HVIRAL" />
+  <meta name="twitter:description" content="소아과 상권·연령·질환 패턴과 보호자 동선을 함께 보는 마케팅 인프라 설계." />
+  <meta name="twitter:image" content="/og-image.png" />
+
+  <!-- 파비콘 (메인과 동일 경로를 사용해 주세요) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -74,8 +97,15 @@
     .menu-btn span::after { top:5px; }
 
     .logo-wrap { display:block; }
-    .logo { font-weight:700; font-size:22px; letter-spacing:1.2px; }
-    .logo-sub { font-size:11px; color:#9ca3af; }
+    .logo {
+      font-weight:700;
+      font-size:22px;
+      letter-spacing:1.2px;
+    }
+    .logo-sub {
+      font-size:11px;
+      color:#9ca3af;
+    }
 
     .consult-btn {
       padding:9px 20px;
@@ -490,7 +520,7 @@
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
-        <div class="side-menu-title">H VIRAL</div>
+        <div class="side-menu-title">HVIRAL</div>
         <div class="side-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
@@ -618,7 +648,7 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
         </a>
       </div>
@@ -955,7 +985,7 @@
       }
 
       const sms =
-        `[H VIRAL 소아과 문의]\n` +
+        `[HVIRAL 소아과 문의]\n` +
         `성명: ${n}\n연락처: ${p}\n의료기관 정보: ${s}\n` +
         `내용: ${m}`;
 
