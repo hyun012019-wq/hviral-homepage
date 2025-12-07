@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://hviral.co.kr/sitemap.xml
+
+# 참고용 RSS 피드
+# 일부 크롤러가 참고할 수 있습니다.
+Feed: https://hviral.co.kr/rss.xml
