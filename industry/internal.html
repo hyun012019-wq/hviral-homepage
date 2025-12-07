@@ -3,7 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>내과 마케팅 인프라 │ 하비럴 마케팅 H VIRAL</title>
+  <title>내과 마케팅 인프라 │ 하비럴마케팅 HVIRAL</title>
+
+  <!-- 기본 SEO -->
+  <meta name="description" content="내과 초진·재진·만성질환 관리 흐름을 기준으로 상권·환자 구성·검진 비중·예약·대기 구조를 설계하는 내과 전용 마케팅 인프라. 하비럴마케팅 HVIRAL이 지역 내과 브랜딩과 환자 여정 기반 안내 구조를 함께 정리합니다.">
+  <meta name="keywords" content="내과 마케팅, 내과 홍보, 병원 마케팅, 의료 마케팅, 내과 브랜딩, 동네 내과, 지역 내과, 내과 홈페이지 제작, 검진센터 마케팅, 만성질환 관리, 초진 재진 구조, 의료기관 디지털 브랜딩, 하비럴마케팅, HVIRAL, H바이럴, 병원 온라인 마케팅">
+
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph / 카카오 미리보기 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="내과 마케팅 인프라 │ 하비럴마케팅 HVIRAL" />
+  <meta property="og:description" content="검진·만성질환 관리·갑작스러운 증상 내원까지, 내과 환자 구조와 내원 흐름을 기준으로 설계하는 내과 전용 마케팅 인프라. 상권·환자 구성·예약·대기 구조를 함께 정리합니다." />
+  <meta property="og:site_name" content="하비럴마케팅 HVIRAL" />
+  <meta property="og:url" content="https://example.com/industry/internal.html" />
+  <meta property="og:image" content="https://example.com/assets/og/internal-clinic.png" />
+
+  <!-- Twitter 카드 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="내과 마케팅 인프라 │ 하비럴마케팅 HVIRAL" />
+  <meta name="twitter:description" content="내과 초진·재진·만성질환 관리 흐름에 맞춘 내과 전용 마케팅 인프라 설계. 상권·환자 구성·검진 비중·예약·대기 구조를 함께 정리합니다." />
+  <meta name="twitter:image" content="https://example.com/assets/og/internal-clinic.png" />
+
+  <!-- 파비콘 (기존 스타일 유지용 템플릿) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
@@ -404,7 +432,6 @@
       justify-content:space-between;
       align-items:center;
       flex-shrink:0;
-      gap:12px;
     }
     .side-menu-title {
       font-size:18px;
@@ -418,7 +445,6 @@
       font-size:13px;
       color:#e5e7eb;
       cursor:pointer;
-      white-space:nowrap;
     }
     .side-sub {
       font-size:11px;
@@ -492,8 +518,8 @@
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <a href="/" class="logo-wrap">
-        <div class="side-menu-title">H VIRAL</div>
-        <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
+        <div class="side-menu-title">HVIRAL</div>
+        <div class="side-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
       </a>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
@@ -516,7 +542,7 @@
           <a href="/industry/skin.html">피부과</a>
           <a href="/industry/dental.html">치과</a>
           <a href="/industry/plastic.html">성형외과</a>
-          <a href="/industry/internal.html"><strong>내과</strong></a>
+          <a href="/industry/internal.html">내과</a>
           <a href="/industry/obgyn.html">산부인과</a>
           <a href="/industry/pediatrics.html">소아과</a>
           <a href="/industry/ent.html">이비인후과</a>
@@ -620,7 +646,7 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">마케팅 인프라 설계·브랜딩 플랫폼</div>
         </a>
       </div>
@@ -957,7 +983,7 @@
       }
 
       const sms =
-        `[H VIRAL 내과 문의]\n` +
+        `[HVIRAL 내과 문의]\n` +
         `성명: ${n}\n연락처: ${p}\n의료기관 정보: ${s}\n` +
         `내용: ${m}`;
 
