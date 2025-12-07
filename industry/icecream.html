@@ -3,500 +3,549 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>아이스크림 매장 · 젤라또 가게 마케팅 인프라 │ HVIRAL 하비럴 마케팅</title>
-  <meta name="description" content="아이스크림 매장, 젤라또 가게, 소프트 아이스크림, 디저트 카페를 위한 온라인 마케팅 인프라 설계. 매장·포장·배달 매출 구조, 성수기·비수기, 네이버·인스타·배달앱 전략까지 HVIRAL이 함께 정리합니다.">
+
+  <!-- 기본 타이틀 / 브랜드명 포함 -->
+  <title>아이스크림 매장 마케팅 인프라 │ 하비럴마케팅 HVIRAL</title>
+
+  <!-- 기본 메타 -->
+  <meta name="description" content="아이스크림·젤라또·소프트콘 매장 매출 구조를 상권·타깃·시간대별로 설계하는 하비럴마케팅 HVIRAL 아이스크림 매장 전용 마케팅 인프라 안내." />
+  <meta name="keywords" content="하비럴마케팅,HVIRAL,아이스크림 마케팅,디저트 마케팅,젤라또 매장,소프트콘 매장,아이스크림 가게 홍보,디저트 카페 마케팅,네이버 스마트플레이스,지역 상권 마케팅,배달앱 매출,포장 매출,매장 내 취식,브랜딩,로컬 비즈니스 마케팅" />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="하비럴마케팅 HVIRAL" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Canonical (예시 URL, 실제 도메인으로 교체 권장) -->
+  <link rel="canonical" href="https://hviral.kr/industry/icecream.html" />
+
+  <!-- Favicon (경로만 실제 파비콘 위치로 수정) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph (카카오톡 / 페북 미리보기) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="하비럴마케팅 HVIRAL" />
+  <meta property="og:title" content="아이스크림 매장 마케팅 인프라 │ 하비럴마케팅 HVIRAL" />
+  <meta property="og:description" content="컵·콘·파인트·배달·포장까지 아이스크림 매장 매출 구조를 설계하는 하비럴마케팅 HVIRAL 아이스크림·디저트 매장 전용 마케팅 인프라." />
+  <meta property="og:url" content="https://hviral.kr/industry/icecream.html" />
+  <!-- OG 이미지도 실제 경로로 교체 -->
+  <meta property="og:image" content="https://hviral.kr/assets/og/icecream-default.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="아이스크림 매장 마케팅 인프라 │ 하비럴마케팅 HVIRAL" />
+  <meta name="twitter:description" content="아이스크림·젤라또·소프트콘 매장 마케팅 인프라를 상권·시간대·메뉴 구조 기준으로 설계하는 하비럴마케팅 HVIRAL." />
+  <meta name="twitter:image" content="https://hviral.kr/assets/og/icecream-default.png" />
+
   <style>
     * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",
-        "Noto Sans KR",system-ui,sans-serif;
-      background:#020617;
-      color:#e5e7eb;
-      line-height:1.6;
-      overflow-x:hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", system-ui, sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
     a {
-      color:inherit;
-      text-decoration:none;
+      color: inherit;
+      text-decoration: none;
     }
-    ul { list-style:none; }
-
+    ul {
+      list-style: none;
+    }
     .container {
-      max-width:1080px;
-      margin:0 auto;
-      padding:0 20px 96px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px 96px;
     }
 
     /* 헤더 */
     header {
-      position:sticky;
-      top:0;
-      z-index:9000;
-      background:#020617;
-      border-bottom:1px solid rgba(148,163,184,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 9000;
+      background: #020617;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
     }
     .header-inner {
-      max-width:1080px;
-      margin:0 auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .header-left {
-      display:flex;
-      align-items:center;
-      gap:16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
     .menu-btn {
-      width:32px;
-      height:32px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.6);
-      background:#020617;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
     .menu-btn span {
-      width:16px;
-      height:2px;
-      background:#e5e7eb;
-      position:relative;
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
     }
     .menu-btn span::before,
     .menu-btn span::after {
-      content:"";
-      width:16px;
-      height:2px;
-      background:#e5e7eb;
-      position:absolute;
-      left:0;
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: absolute;
+      left: 0;
     }
-    .menu-btn span::before { top:-5px; }
-    .menu-btn span::after { top:5px; }
+    .menu-btn span::before {
+      top: -5px;
+    }
+    .menu-btn span::after {
+      top: 5px;
+    }
 
-    .logo-wrap { display:block; }
+    .logo-wrap {
+      display: block;
+    }
     .logo {
-      font-weight:700;
-      font-size:22px;
-      letter-spacing:1.2px;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 1.2px;
     }
     .logo-sub {
-      font-size:11px;
-      color:#9ca3af;
+      font-size: 11px;
+      color: #9ca3af;
     }
     .consult-btn {
-      padding:9px 20px;
-      border-radius:999px;
-      background:#2563eb;
-      color:#fff;
-      font-size:15px;
-      font-weight:600;
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     /* 히어로 */
     .hero {
-      background:radial-gradient(circle at top left,#1d4ed8 0,#020617 55%);
-      padding:28px 0 32px;
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
     }
     .hero-card {
-      border-radius:28px;
-      border:1px solid rgba(148,163,184,0.4);
-      background:linear-gradient(135deg,#0b1f3a,#020617);
-      padding:28px 20px;
-      box-shadow:0 24px 60px rgba(15,23,42,0.9);
-      overflow:hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
     }
     .hero-badges {
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
     }
     .hero-badge {
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(15,23,42,0.9);
-      border:1px solid rgba(96,165,250,0.6);
-      font-size:11px;
-      color:#e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
     }
     .hero-badge-dot {
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:#22c55e;
-      box-shadow:0 0 0 4px rgba(34,197,94,0.3);
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
     .hero-title {
-      font-size:22px;
-      font-weight:800;
-      margin-bottom:10px;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
     .hero-desc {
-      font-size:14px;
-      color:#cbd5f5;
-      margin-bottom:10px;
+      font-size: 14px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
     }
-    .hero-desc strong { color:#fff; }
     .hero-note {
-      font-size:11px;
-      color:#9ca3af;
-      margin-top:4px;
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
     }
 
     .section-title {
-      margin:28px 0 10px;
-      font-size:18px;
-      font-weight:800;
+      margin: 28px 0 10px;
+      font-size: 18px;
+      font-weight: 800;
     }
     .section-sub {
-      font-size:13px;
-      color:#9ca3af;
-      margin-bottom:10px;
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 10px;
     }
 
     .card {
-      background:#020617;
-      border-radius:20px;
-      border:1px solid rgba(148,163,184,0.6);
-      padding:16px 14px;
-      font-size:13px;
-      margin-bottom:14px;
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
     }
     .card-title {
-      font-weight:700;
-      margin-bottom:6px;
-      font-size:14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 14px;
     }
     .card ul {
-      margin-top:6px;
-      padding-left:18px;
+      margin-top: 6px;
+      padding-left: 18px;
     }
     .card li {
-      list-style:disc;
-      margin-bottom:4px;
+      list-style: disc;
+      margin-bottom: 4px;
     }
 
     .label-pill {
-      display:inline-flex;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.7);
-      background:#020617;
-      font-size:11px;
-      margin-bottom:8px;
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
     }
 
     /* 문의 섹션 */
     #contact {
-      margin:32px 0 4px;
+      margin: 32px 0 4px;
     }
     .contact-title {
-      font-size:18px;
-      font-weight:800;
-      margin-bottom:10px;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
     .contact-sub {
-      font-size:13px;
-      color:#9ca3af;
-      margin-bottom:14px;
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 14px;
     }
 
     .contact-card {
-      border-radius:20px;
-      border:1px solid rgba(148,163,184,0.7);
-      padding:18px 16px;
-      font-size:13px;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
     }
     .contact-form {
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      margin-bottom:14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
     }
     .form-row {
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
     .form-group {
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      gap:4px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
     .form-label {
-      font-size:12px;
-      color:#9ca3af;
+      font-size: 12px;
+      color: #9ca3af;
     }
     .form-label span {
-      color:#f97316;
+      color: #f97316;
     }
     .form-input,
     .form-textarea {
-      border-radius:10px;
-      border:1px solid rgba(148,163,184,0.7);
-      background:#020617;
-      color:#f9fafb;
-      padding:9px 10px;
-      font-size:13px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
     }
     .form-textarea {
-      min-height:80px;
-      resize:vertical;
+      min-height: 80px;
+      resize: vertical;
     }
 
     .terms-box {
-      border-radius:12px;
-      border:1px solid rgba(55,65,81,0.9);
-      padding:10px;
-      font-size:12px;
-      margin-bottom:12px;
-      background:#020617;
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
     }
     .terms-detail {
-      margin-bottom:6px;
+      margin-bottom: 6px;
     }
     .terms-summary {
-      cursor:pointer;
-      list-style:none;
-      font-weight:600;
-      display:flex;
-      justify-content:space-between;
-      font-size:12px;
-      color:#e5e7eb;
-      align-items:center;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
     }
     .terms-summary::-webkit-details-marker {
-      display:none;
+      display: none;
     }
     .terms-summary::after {
-      content:"자세히 보기";
-      font-size:11px;
-      color:#9ca3af;
-      margin-left:8px;
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
     }
     .terms-detail[open] .terms-summary::after {
-      content:"접기";
+      content: "접기";
     }
     .terms-body {
-      font-size:11px;
-      color:#9ca3af;
-      line-height:1.5;
-      margin-top:6px;
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
     }
     .terms-row {
-      display:flex;
-      gap:6px;
-      font-size:12px;
-      margin-bottom:4px;
-      align-items:center;
+      display: flex;
+      gap: 6px;
+      font-size: 12px;
+      margin-bottom: 4px;
+      align-items: center;
     }
     .terms-checkbox {
-      width:14px;
-      height:14px;
-      accent-color:#2563eb;
+      width: 14px;
+      height: 14px;
+      accent-color: #2563eb;
     }
 
     .form-submit {
-      width:100%;
-      border-radius:999px;
-      background:#2563eb;
-      color:#fff;
-      padding:11px 0;
-      font-size:14px;
-      font-weight:700;
-      border:none;
-      cursor:pointer;
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
     }
 
     .contact-actions {
-      margin-top:14px;
-      display:flex;
-      gap:8px;
+      margin-top: 14px;
+      display: flex;
+      gap: 8px;
     }
     .contact-actions a {
-      flex:1;
-      text-align:center;
-      padding:11px 0;
-      border-radius:999px;
-      font-weight:600;
-      font-size:14px;
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
     }
     .contact-kakao {
-      background:#facc15;
-      color:#000;
+      background: #facc15;
+      color: #000;
     }
     .contact-call {
-      background:#2563eb;
-      color:#fff;
+      background: #2563eb;
+      color: #fff;
     }
 
     /* 하단 고정바 */
     .bottom-bar {
-      position:fixed;
-      left:0;
-      bottom:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      background:#020617;
-      padding:14px 10px;
-      border-top:1px solid rgba(148,163,184,0.4);
-      z-index:9700;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
     }
     .bottom-btn {
-      flex:1;
-      margin:0 4px;
-      text-align:center;
-      padding:13px 0;
-      border-radius:999px;
-      font-size:15px;
-      font-weight:600;
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
     }
     .bottom-btn.kakao {
-      background:#facc15;
-      color:#000;
+      background: #facc15;
+      color: #000;
     }
     .bottom-btn.ask {
-      background:#111827;
-      color:#e5e7eb;
-      border:1px solid rgba(148,163,184,0.6);
+      background: #111827;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
     .bottom-btn.call {
-      background:#2563eb;
-      color:#fff;
+      background: #2563eb;
+      color: #fff;
     }
 
-    /* 사이드 메뉴 */
+    /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(15,23,42,0.7);
-      backdrop-filter:blur(4px);
-      z-index:9500;
-      display:none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
     }
-    #sideBackdrop.show { display:block; }
-
+    #sideBackdrop.show {
+      display: block;
+    }
     #sideMenu {
-      position:fixed;
-      top:0;
-      left:0;
-      width:80%;
-      max-width:360px;
-      height:100%;
-      background:#020617;
-      border-right:1px solid rgba(148,163,184,0.5);
-      transform:translateX(-100%);
-      transition:transform 0.3s ease;
-      z-index:9600;
-      display:flex;
-      flex-direction:column;
-      overscroll-behavior:contain;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
     }
     #sideMenu.open {
-      transform:translateX(0);
+      transform: translateX(0);
     }
     .side-menu-header {
-      padding:20px 22px 12px;
-      border-bottom:1px solid rgba(31,41,55,0.9);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-shrink:0;
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
     }
     .side-menu-title {
-      font-size:18px;
-      font-weight:700;
+      font-size: 18px;
+      font-weight: 700;
     }
     .side-close {
-      padding:8px 16px;
-      border-radius:999px;
-      background:#111827;
-      border:1px solid rgba(148,163,184,0.7);
-      font-size:13px;
-      color:#e5e7eb;
-      cursor:pointer;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
     }
     .side-sub {
-      font-size:11px;
-      color:#9ca3af;
-      padding-top:2px;
+      font-size: 11px;
+      color: #9ca3af;
+      padding: 0 22px 12px;
+      flex-shrink: 0;
     }
     .side-scroll {
-      flex:1;
-      padding:8px 22px 120px;
-      overflow-y:auto;
-      -webkit-overflow-scrolling:touch;
-      scroll-behavior:smooth;
-      touch-action:pan-y;
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
     }
     .side-section-title {
-      font-size:13px;
-      color:#9ca3af;
-      margin:18px 0 6px;
-      font-weight:600;
-    }
-    .side-link {
-      display:block;
-      padding:8px 0;
-      font-size:14px;
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
     }
     details.side-group {
-      margin-bottom:8px;
-      border-radius:14px;
-      border:1px solid rgba(75,85,99,0.8);
-      background:#020617;
-      overflow:hidden;
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
     }
     .side-group summary {
-      list-style:none;
-      padding:10px 12px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      font-size:14px;
-      cursor:pointer;
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
     }
     .side-group summary::-webkit-details-marker {
-      display:none;
+      display: none;
     }
     .side-group-label {
-      font-weight:600;
+      font-weight: 600;
     }
     .side-group-arrow {
-      font-size:11px;
-      color:#9ca3af;
+      font-size: 11px;
+      color: #9ca3af;
     }
     .side-group-links {
-      border-top:1px solid rgba(55,65,81,0.9);
-      padding:6px 12px 8px;
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
     }
     .side-group-links a {
-      display:block;
-      padding:4px 0;
-      font-size:13px;
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
     }
 
-    @media (min-width:1024px) {
-      .hero { padding-top:36px; }
-      .hero-title { font-size:26px; }
-      .hero-card { padding:32px 28px; }
-      .container { padding-bottom:110px; }
+    /* 사이드 메뉴에서 서비스 링크용 */
+    .side-link {
+      display: block;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding-top: 36px;
+      }
+      .hero-title {
+        font-size: 26px;
+      }
+      .hero-card {
+        padding: 32px 28px;
+      }
+      .container {
+        padding-bottom: 110px;
+      }
     }
   </style>
 </head>
@@ -508,10 +557,9 @@
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
-        <a href="/" class="side-logo-link">
-          <div class="side-menu-title">HVIRAL</div>
-          <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-        </a>
+        <!-- 로고 클릭 시 홈으로 이동 -->
+        <a href="/" class="side-menu-title">HVIRAL</a>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
@@ -661,119 +709,113 @@
           <div class="hero-badges">
             <span class="hero-badge">
               <span class="hero-badge-dot"></span>
-              아이스크림 매장·젤라또 가게·소프트 아이스크림·디저트 카페 전용 디지털 인프라
+              아이스크림·젤라또·소프트콘 매장 전용 디지털 인프라
             </span>
             <span class="hero-badge">
-              날씨·계절·시간대·배달앱까지 한 구조 안에서 설계하는 아이스크림 매장 마케팅
+              날씨·시즌·시간대별로 갈리는 매출을 한 구조 안에서 설계하는 아이스크림 매장 마케팅
             </span>
           </div>
 
           <h1 class="hero-title">
             “단순 디저트가 아니라,<br />
-            매출 구조가 보이는 아이스크림·젤라또 매장을 만듭니다.”
+            매출 구조가 보이는 아이스크림 매장을 만듭니다.”
           </h1>
           <p class="hero-desc">
-            하비럴은 컵·콘·파인트·하프갤런부터 콤보 세트·디저트 플레이트·아이스크림 케이크까지,<br />
-            어떤 고객이 어떤 요일·시간대에 이 매장을 선택해야 하는지 기준을 세우고,<br />
-            <strong>매장·포장·배달 매출이 함께 성장하는 구조</strong>를 디지털 마케팅 언어로 정리합니다.
+            하비럴마케팅 HVIRAL은 컵·콘·파인트·하프갤런부터 콤보 세트·디저트 플레이트까지,<br />
+            어떤 고객이 어떤 시간대에 이 매장을 선택해야 하는지 기준을 세우고,<br />
+            매장·포장·배달 매출이 함께 성장하는 구조를 마케팅 언어로 정리합니다.
           </p>
           <p class="hero-note">
-            광고비보다 먼저, 네이버·인스타그램·배달앱 어디에서 보더라도  
-            <b>“이 동네 아이스크림은 여기서 먹어야 하는 이유”</b>가 보이게 만드는 것이 핵심입니다.
+            광고비보다 먼저,  
+            <b>“왜 이 동네 아이스크림은 여기서 먹어야 하는지”</b>가 보이게 만드는 것이 핵심입니다.
           </p>
         </div>
 
-        <h2 class="section-title">아이스크림 매장·젤라또 가게 고객이 실제로 확인하는 정보</h2>
+        <h2 class="section-title">아이스크림 매장 고객이 실제로 확인하는 정보</h2>
         <p class="section-sub">
           맛있어 보이는 사진과 메뉴 이름만으로는 선택받기 어렵습니다.<br />
-          “산책·데이트·가족 외식·야식 디저트·배달 주문 등 어떤 상황에서 이 집을 찾아와야 하는지”가  
-          네이버 지도·플레이스·인스타그램 피드에서 먼저 설명되어야 합니다.
+          “산책·데이트·가족 외식·야식 디저트 등 어떤 상황에서 이 집을 찾아와야 하는지”가 먼저 설명되어야 합니다.
         </p>
 
         <div class="card">
           <div class="card-title">1. 상권·타깃·주요 시간대 정의</div>
           <ul>
-            <li>주거지·학원가·대학교 앞·관광지·핫플 상권 등 입지 유형을 기준으로 핵심 타깃(학생·직장인·가족·연인·관광객)을 정리</li>
-            <li>하교 시간·저녁 산책 시간·주말 데이트·가족 나들이·야식 디저트 등 피크 시간대를 구분</li>
-            <li>“이 동네에서 이 아이스크림 매장이 맡고 싶은 역할”을 한 문장으로 정리해, 홈페이지·네이버 플레이스 첫 화면에 노출</li>
+            <li>주거지·학원가·대학교·관광지·상권 중심 등 입지 유형을 기준으로 핵심 타깃을 정리</li>
+            <li>하교 시간·저녁 산책 시간·주말 데이트·가족 나들이 등 피크 시간대를 구분</li>
+            <li>“이 동네에서 이 아이스크림 매장이 맡고 싶은 역할”을 한 문장으로 정리해 첫 화면에 노출</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">2. 메뉴·세트·객단가 구조</div>
           <ul>
-            <li>대표 맛(바닐라·초코·딸기 등)과 시그니처 맛(말차·쿠키앤크림·흑임자·요거트·이색 시즌 메뉴)을 역할별로 배치</li>
-            <li>1인 컵·2~3인 파인트·가족용 패밀리팩 등 인원·상황 기준 추천 구성을 통해 객단가 이미지를 설계</li>
-            <li>와플콘·디핑·토핑·브라우니·쿠키·커피·에이드 등 디저트 조합을 별도 블록으로 정리해 자연스러운 추가 주문을 유도</li>
-            <li>“산책용 한 컵, 데이트용 플레이트, 가족용 테이크아웃”처럼 장면별 대표 메뉴를 나눠 보여줍니다.</li>
+            <li>대표 맛(바닐라·초코·딸기 등)과 시그니처 맛(말차·쿠키앤크림·흑임자·이색 메뉴)을 역할별로 배치</li>
+            <li>1인 컵·2~3인 파인트·가족용 패밀리팩 등 인원 기준 추천 구성을 통해 객단가 이미지를 설계</li>
+            <li>토핑·와플콘·음료·커피 조합을 별도 블록으로 정리해 자연스러운 추가 주문을 유도</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">3. 매장·포장·배달 매출 비율 전략</div>
           <ul>
-            <li>매장 내 취식 / 포장 / 배달 매출 비율을 대략적으로 파악하고, 앞으로 키우고 싶은 축(포장·배달·매장 체류)을 명시</li>
-            <li>매장에서 사진 찍기 좋은 메뉴, 포장·배달에 최적화된 메뉴(녹는 속도·포장 안정성)를 구분해 소개</li>
-            <li>배달앱 의존도를 줄이고, 네이버 지도·인스타그램·단골 고객을 통해 직접 방문·포장 고객을 늘리는 메시지를 별도 영역으로 설계</li>
-            <li>우천·한파·비수기에는 배달·포장 위주, 성수기·주말에는 매장 체류 위주로 전략을 조정할 수 있는 구조를 제안</li>
+            <li>매장 내 취식 / 포장 / 배달 매출 비율을 대략적으로 보여주고, 앞으로 키우고 싶은 축을 명시</li>
+            <li>매장에서 사진 찍기 좋은 메뉴, 포장·배달에 최적화된 메뉴를 구분해 소개</li>
+            <li>배달앱 의존도를 줄이고, 직접 방문·포장 고객을 늘리는 메시지를 별도 영역으로 설계</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">4. 피크타임·대기·제빙·재고 구조</div>
           <ul>
-            <li>하교 시간, 주말 저녁, 더운 날씨 등 주문이 몰리는 시간대를 미리 안내해 “줄이 너무 길까?”라는 불안을 줄임</li>
-            <li>줄 서는 평균 대기 시간, 준비 소요 시간, 한 번에 응대 가능한 인원 수 등을 솔직하게 설명</li>
-            <li>날씨·계절에 따라 품절이 잦은 인기 메뉴, 미리 예약 가능한 아이스크림 케이크·패밀리팩을 한눈에 볼 수 있도록 정리</li>
-            <li>제빙·보관 용량, 일일 생산량을 고려해 “언제 오면 선택지가 많은지” 이해하기 쉽게 안내</li>
+            <li>하교 시간, 주말 저녁, 더운 날씨 등 주문이 몰리는 시간대를 미리 안내해 불안을 줄임</li>
+            <li>줄 서는 평균 대기 시간, 준비 소요 시간, 준비 가능한 인원 수 등을 솔직하게 설명</li>
+            <li>날씨·계절에 따라 품절이 잦은 메뉴, 미리 예약 가능한 메뉴를 한눈에 볼 수 있도록 정리</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-title">5. 리뷰·별점·사진·SNS 운영 전략</div>
+          <div class="card-title">5. 리뷰·별점·사진 운영 전략</div>
           <ul>
-            <li>네이버 플레이스·인스타그램·배달앱(배달의민족·요기요·쿠팡이츠 등)의 역할과 우선순위를 설정</li>
-            <li>“맛 조합이 다양함, 매장 분위기 좋음, 아이와 함께 오기 좋음, 사진 찍기 좋은 인테리어” 등 실제 선택에 영향을 주는 키워드를 문장으로 정리</li>
-            <li>광고 문구보다, 재방문·단골·지인 소개로 이어지는 리뷰·사진이 쌓이도록 리뷰 요청 타이밍과 메시지를 제안</li>
-            <li>해시태그(예: #○○동아이스크림 #젤라또맛집 #디저트카페)를 무리 없이 녹인 설명 구조로, 검색·피드 노출을 함께 노립니다.</li>
+            <li>네이버·인스타그램·배달앱 등 각 채널의 역할과 우선순위를 설정</li>
+            <li>“맛 조합이 다양함, 매장 분위기 좋음, 아이와 함께 오기 좋음” 등 실제 선택에 영향을 주는 키워드를 문장으로 정리</li>
+            <li>광고 문구가 아니라, 재방문으로 이어지는 리뷰·사진이 쌓이도록 운영 기준을 제시</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">6. 시즌·프로모션·재방문 구조</div>
           <ul>
-            <li>계절 한정 메뉴·이달의 맛·스탬프·쿠폰·멤버십을 “단기 할인”이 아닌 재방문·단골 구조 중심으로 설계</li>
-            <li>첫 방문·두 번째 방문·단골 고객에게 다른 메시지와 혜택(사이즈 업, 토핑 추가, 시즌 메뉴 미리 맛보기 등)을 제안</li>
-            <li>행사·이벤트를 하더라도 “언제 온 고객이, 어느 정도 매출과 후기를 남겼는지” 숫자로 확인할 수 있는 구조를 목표로 함</li>
-            <li>근처 카페·레스토랑·학원과의 제휴, 동네 축제·행사와 연계한 콜라보 메뉴까지 장기 계획 안에서 정리합니다.</li>
+            <li>계절 한정 메뉴·이달의 맛·스탬프·쿠폰 등을 “단기 할인”이 아닌 재방문 구조 중심으로 설계</li>
+            <li>첫 방문·두 번째 방문·단골 고객에게 다른 메시지와 혜택을 제안</li>
+            <li>행사·이벤트를 하더라도, 어떤 고객이 남는 고객인지 숫자로 확인할 수 있는 구조를 목표로 함</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-title">7. 동네 디저트 상표처럼 보이게 만들기</div>
           <ul>
-            <li>“산책하다가 아이스크림 생각나면 여기”라는 기준점을 화면과 문장으로 반복 노출해, 동네 대표 디저트 매장 포지션을 확보</li>
-            <li>근처 아파트·학교·학원·카페 거리·공원 등 주요 고객군을 상상하고, 그들의 일상 동선 속에 매장을 자연스럽게 배치</li>
-            <li>단골이 생겼을 때, 그 단골이 주변에 추천하기 쉽도록 “한 문장 소개 문구”를 미리 설계해 온라인·오프라인에서 함께 쓰이도록 정리</li>
+            <li>“산책하다가 아이스크림 생각나면 여기”라는 기준점을 화면과 문장으로 반복 노출</li>
+            <li>근처 아파트·학교·학원·카페 거리 등 주요 고객군을 상상하고, 그들의 일상 속에 매장을 배치</li>
+            <li>단골이 생겼을 때, 그 단골이 주변에 추천하기 쉽도록 설명 문장을 미리 설계</li>
           </ul>
         </div>
 
-        <div class="label-pill">아이스크림·젤라또·디저트 매장 마케팅 설계 시 체크하는 항목</div>
+        <div class="label-pill">아이스크림·디저트 매장 마케팅 설계 시 체크하는 항목</div>
         <div class="card">
           <ul>
             <li>상권·타깃·주요 시간대가 한 번에 이해되는지</li>
-            <li>매장·포장·배달·배달앱 매출 구조가 대표님 머릿속이 아닌, 화면·문서에도 정리되어 있는지</li>
-            <li>“이 동네 아이스크림은 여기서 먹어야 한다”는 이유가, 고객·리뷰·SNS 언어로 자연스럽게 설명되어 있는지</li>
+            <li>매장·포장·배달 매출 구조가 대표님 머릿속이 아닌, 화면에도 정리되어 있는지</li>
+            <li>“이 동네 아이스크림은 여기서 먹어야 한다”는 이유가, 고객 언어로 설명되어 있는지</li>
           </ul>
         </div>
 
         <!-- 문의 -->
         <section id="contact">
-          <h2 class="contact-title">아이스크림·젤라또·디저트 매장 디지털 마케팅 상담</h2>
+          <h2 class="contact-title">아이스크림·디저트 매장 디지털 마케팅 상담</h2>
           <p class="contact-sub">
             매장 내·포장·배달 매출이 각각 어느 정도인지,<br />
-            성수기·비수기, 우천·한파, 평일·주말·야간 매출 편차가 얼마나 되는지 알려주시면<br />
-            아이스크림·디저트 업종에 맞는 실전형 마케팅 구조를 함께 설계해 드립니다.
+            성수기·비수기, 낮·저녁·야간 매출 편차가 얼마나 되는지 알려주시면<br />
+            아이스크림 업종에 맞는 실전형 마케팅 구조를 함께 설계해 드립니다.
           </p>
 
           <div class="contact-card">
@@ -802,7 +844,7 @@
                     type="text"
                     id="shop"
                     class="form-input"
-                    placeholder="예: ○○아이스크림 / ○○구 ○○동 / 매장·포장·배달·배달앱 비율 등"
+                    placeholder="예: ○○아이스크림 / ○○구 ○○동 / 매장·포장·배달 비율 등"
                     required
                   />
                 </div>
@@ -812,7 +854,7 @@
                   <textarea
                     id="message"
                     class="form-textarea"
-                    placeholder="성수기·비수기, 우천·한파, 남는 재고, 오후·야간 매출, 네이버·인스타·배달앱 운영 등 가장 고민되시는 부분을 적어 주세요."
+                    placeholder="성수기·비수기, 우천·한파, 남는 재고, 오후·야간 매출 등 가장 고민되시는 부분을 적어 주세요."
                     required
                   ></textarea>
                 </div>
@@ -908,17 +950,6 @@
       }
     }
 
-    // 업종 그룹 열릴 때 해당 위치로 스크롤
-    const sideScroll = document.querySelector(".side-scroll");
-    document.querySelectorAll("details.side-group").forEach((group) => {
-      group.addEventListener("toggle", function () {
-        if (group.open && sideScroll) {
-          const top = group.offsetTop - 16;
-          sideScroll.scrollTo({ top, behavior: "smooth" });
-        }
-      });
-    });
-
     function handleContactSubmit(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
@@ -937,7 +968,7 @@
       }
 
       const sms =
-        `[HVIRAL 아이스크림·디저트 매장 문의]\n` +
+        `[HVIRAL 아이스크림 매장 문의]\n` +
         `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n` +
         `내용: ${m}`;
 
@@ -954,4 +985,3 @@
   </script>
 </body>
 </html>
-```0
