@@ -2,8 +2,44 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>플라워샵·꽃집 │ H VIRAL</title>
+  <title>플라워샵·꽃집 디지털 마케팅 인프라 │ 하비럴 마케팅 HVIRAL</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 기본 설명 -->
+  <meta name="description" content="하비럴 마케팅(HVIRAL)은 플라워샵·꽃집 전용 하비럴 광고·디지털 마케팅 인프라를 설계합니다. 온라인 주문·예약·정기 구독·근조·행사·웨딩 플라워까지, 실제 매장 운영 구조에 맞춘 꽃집 마케팅·브랜딩 인프라를 구축합니다." />
+  <meta name="keywords" content="하비럴, 하비럴 마케팅, 하비럴 광고, HVIRAL, 플라워샵 마케팅, 꽃집 마케팅, 꽃집 온라인 주문, 꽃집 디지털 마케팅, 플라워샵 브랜딩, 근조 화환 마케팅, 정기 구독 플라워, 꽃집 홈페이지 제작" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://hviral.kr/industry/flower.html" />
+
+  <!-- Open Graph / Kakao / Facebook -->
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="하비럴 마케팅(HVIRAL)" />
+  <meta property="og:title" content="플라워샵·꽃집 디지털 마케팅 인프라 │ 하비럴 마케팅 HVIRAL" />
+  <meta property="og:description" content="플라워샵·꽃집 온라인 주문·예약·정기 구독·근조·행사·웨딩 플라워까지, 하비럴 마케팅(HVIRAL)이 매장 운영 구조에 맞춘 하비럴 광고·브랜딩 인프라를 설계합니다." />
+  <meta property="og:url" content="https://hviral.kr/industry/flower.html" />
+  <meta property="og:image" content="https://hviral.kr/og/flower_1200x630.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="플라워샵·꽃집 디지털 마케팅 인프라 │ 하비럴 마케팅 HVIRAL" />
+  <meta name="twitter:description" content="하비럴 마케팅(HVIRAL)은 플라워샵·꽃집 전용 디지털 마케팅 인프라·하비럴 광고를 설계합니다. 꽃다발·박스·근조·행사·정기 구독까지 온라인에서 설명·문의·재구매가 이어지는 구조를 만듭니다." />
+  <meta name="twitter:image" content="https://hviral.kr/og/flower_1200x630.jpg" />
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicons/site.webmanifest" />
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#2563eb" />
+  <meta name="msapplication-TileColor" content="#0b1f3a" />
+  <meta name="theme-color" content="#0b1f3a" />
+
+  <!-- 검색 기본 -->
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -47,8 +83,9 @@
       box-shadow:0 0 0 4px rgba(34,197,94,0.25);
     }
     .hero-title{font-size:24px;font-weight:800;margin-bottom:12px;line-height:1.45;}
-    .hero-desc{font-size:14px;color:#cbd5f5;margin-bottom:14px;}
+    .hero-desc{font-size:14px;color:#cbd5f5;margin-bottom:10px;}
     .hero-desc strong{color:#fff;}
+    .hero-note{font-size:11px;color:#9ca3af;margin-top:4px;}
 
     .section-title{margin:34px 0 10px;font-size:20px;font-weight:800;}
     .section-sub{font-size:13px;color:#9ca3af;margin-bottom:14px;}
@@ -93,10 +130,12 @@
       padding:9px 10px;font-size:13px;border-radius:10px;
       border:1px solid rgba(148,163,184,0.7);background:#020617;color:#fff;
     }
+    .form-input::placeholder,
+    .form-textarea::placeholder{color:#6b7280;}
     .form-textarea{resize:vertical;min-height:80px;}
 
     .terms-box{border-radius:12px;border:1px solid rgba(55,65,81,0.9);padding:12px;margin-top:6px;font-size:11px;color:#9ca3af;}
-    .terms-row{display:flex;gap:8px;margin-top:6px;font-size:12px;}
+    .terms-row{display:flex;gap:8px;margin-top:6px;font-size:12px;align-items:center;}
     .terms-checkbox{width:14px;height:14px;accent-color:#2563eb;}
 
     .form-submit{
@@ -104,6 +143,17 @@
       padding:12px 0;border-radius:999px;margin-top:8px;border:none;cursor:pointer;
       font-weight:700;
     }
+    .contact-note{
+      font-size:11px;color:#9ca3af;margin-top:8px;
+    }
+    .contact-actions{
+      margin-top:14px;display:flex;gap:8px;
+    }
+    .contact-actions a{
+      flex:1;text-align:center;padding:11px 0;border-radius:999px;font-weight:600;font-size:14px;
+    }
+    .contact-kakao{background:#facc15;color:#000;}
+    .contact-call{background:#2563eb;color:#fff;}
 
     /* 사이드 메뉴(전체 메뉴) */
     #sideBackdrop{
@@ -179,7 +229,7 @@
       flex:1;border-radius:999px;padding:13px 0;text-align:center;font-weight:600;font-size:15px;
     }
     .bottom-btn.kakao{background:#facc15;color:#000;}
-    .bottom-btn.ask{background:#111827;color:#fff;border:1px solid rgba(148,163,184,0.6);}
+    .bottom-btn.ask{background:#111827;color:#e5e7eb;border:1px solid rgba(148,163,184,0.6);}
     .bottom-btn.call{background:#2563eb;color:#fff;}
 
     @media(min-width:1024px){
@@ -193,19 +243,19 @@
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <!-- 사이드 메뉴 (index와 동일 구조) -->
+  <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
-        <div class="side-menu-title">H VIRAL</div>
-        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        <div class="side-menu-title">HVIRAL</div>
+        <div class="side-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
-      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
-      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계 (하비럴 마케팅)</a>
+      <a href="/website.html" class="side-link">홈페이지 제작 · 하비럴 광고용 랜딩</a>
       <a href="/app.html" class="side-link">앱·예약 시스템</a>
       <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
@@ -280,7 +330,7 @@
       </details>
 
       <!-- 생활·지역 서비스 -->
-      <details class="side-group">
+      <details class="side-group" open>
         <summary>
           <span class="side-group-label">생활·지역 서비스</span>
           <span class="side-group-arrow">▼</span>
@@ -290,7 +340,7 @@
           <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
           <a href="/industry/demolition.html">철거·인테리어</a>
-          <a href="/industry/flower.html"><strong>플라워샵</strong></a>
+          <a href="/industry/flower.html"><strong>플라워샵·꽃집</strong></a>
           <a href="/industry/photo.html">사진관</a>
           <a href="/industry/pet.html">펫샵</a>
         </div>
@@ -325,8 +375,8 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
-          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+          <div class="logo">HVIRAL</div>
+          <div class="logo-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
         </a>
       </div>
       <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
@@ -335,13 +385,19 @@
     </div>
   </header>
 
+  <!-- 메인 -->
   <main>
     <section class="hero">
       <div class="container">
         <div class="hero-card">
           <div class="hero-badges">
-            <div class="hero-badge"><span class="hero-badge-dot"></span>플라워샵·꽃집 전용 세팅</div>
-            <div class="hero-badge">온라인 주문·예약·단골 관리 강화</div>
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              플라워샵·꽃집 전용 하비럴 마케팅 인프라
+            </div>
+            <div class="hero-badge">
+              온라인 주문·예약·정기 구독·단골 구조를 설계하는 하비럴 광고
+            </div>
           </div>
 
           <h1 class="hero-title">
@@ -351,143 +407,196 @@
 
           <p class="hero-desc">
             고객은 <strong>디자인 스타일, 가격대, 전달 방식, 당일 가능 여부</strong>를 먼저 확인합니다.<br />
-            H VIRAL은 꽃다발·박스·근조·행사·정기 구독까지  
-            <strong>온라인에서 설명–문의–재구매가 이어지도록</strong> 구조를 정리합니다.
+            하비럴 마케팅(HVIRAL)은 꽃다발·박스·근조·행사·정기 구독까지<br />
+            <strong>온라인에서 설명 → 문의 → 재구매가 이어지도록</strong> 플라워샵 전용 디지털 인프라를 설계합니다.
+          </p>
+          <p class="hero-note">
+            “예쁜 사진”보다, <strong>우리 매장이 잘하는 꽃·단골이 되는 이유</strong>를 구조로 보이게 만드는 것이 하비럴 광고의 출발점입니다.
           </p>
         </div>
 
         <!-- 고객이 중요하게 보는 기준 -->
-        <h2 class="section-title">고객이 꽃집 선택 시 확인하는 핵심 기준</h2>
-        <p class="section-sub">“이 가게에 맡겨도 될까?”를 결정하는 기준들을 먼저 보여줍니다.</p>
+        <h2 class="section-title">플라워샵·꽃집을 선택할 때, 고객이 실제로 확인하는 기준</h2>
+        <p class="section-sub">
+          “이 가게에 맡겨도 될까?”라는 질문에 답할 수 있어야<br />
+          검색·지인 추천·인스타그램에서 보고 들어온 고객이 <strong>주문·재구매까지 이어집니다.</strong>
+        </p>
 
         <div class="card">
           <div class="card-tag">01. 디자인·상품 구성</div>
           <ul>
-            <li>꽃다발·꽃박스·바스켓·미니 꽃다발 등 상품 구분</li>
-            <li>프로포즈·생일·기념일·승진·개업 등 용도별 추천 구성</li>
-            <li>매장 시그니처 스타일(내추럴/모던/빈티지 등) 정리</li>
-            <li>사진으로 실제 완성 느낌을 확인할 수 있는 포트폴리오</li>
+            <li>꽃다발·꽃박스·바스켓·미니 꽃다발 등 <strong>상품 카테고리</strong>를 명확히 나눕니다.</li>
+            <li>프로포즈·생일·기념일·승진·개업 등 <strong>상황별 추천 구성</strong>을 한눈에 보이게 합니다.</li>
+            <li>매장 시그니처 스타일(내추럴/모던/빈티지/컬러 포인트 등)을 문장과 사진으로 정리합니다.</li>
+            <li>실제 완성 사진·포트폴리오를 모아, <strong>“맡겼을 때 이런 느낌”</strong>이 바로 보이게 합니다.</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-tag">02. 주문·예약·배송 기준</div>
           <ul>
-            <li>당일 주문 가능 시간대, 마감 시간 명확화</li>
-            <li>픽업/배달 가능 지역, 배달비·최소 주문 금액 안내</li>
-            <li>메시지 카드, 포장 색상 선택 여부</li>
-            <li>급한 주문·특수 일정(졸업 시즌, 어버이날 등) 운영 기준</li>
+            <li>당일 주문 가능 시간대, 마감 시간, <strong>급한 주문 예외 처리 기준</strong>을 명확히 안내합니다.</li>
+            <li>픽업/배달 가능 지역, 배달비·최소 주문 금액 등 <strong>가격·지역 기준</strong>을 정리합니다.</li>
+            <li>메시지 카드, 리본 문구, 포장 색상 선택 가능 여부를 안내해 선택을 돕습니다.</li>
+            <li>졸업 시즌·어버이날·스승의 날 등 성수기 운영 방식과 <strong>예약 권장 시점</strong>을 함께 안내합니다.</li>
           </ul>
         </div>
 
         <div class="card">
           <div class="card-tag">03. 근조·행사·웨딩 플라워</div>
           <ul>
-            <li>근조 화환·헌화용 꽃·리스 구성 기준</li>
-            <li>행사·웨딩 데코(포토존, 메인 테이블, 부케 등) 제공 범위</li>
-            <li>사전 미팅·현장 설치·철수 프로세스 안내</li>
-            <li>기업·매장 정기 꽃 장식 가능 여부</li>
+            <li>근조 화환·헌화용 꽃·리스 등, <strong>상황에 맞는 기본 구성을 기준</strong>으로 정리합니다.</li>
+            <li>행사·웨딩 데코(포토존, 메인 테이블, 부케, 부토니에 등) 제공 범위와 스타일을 설명합니다.</li>
+            <li>사전 상담 → 디자인 확정 → 현장 설치 → 철수까지 <strong>진행 프로세스</strong>를 단계별로 안내합니다.</li>
+            <li>기업·매장 정기 꽃 장식 가능 여부, 교체 주기·예산 구조를 함께 제시합니다.</li>
           </ul>
         </div>
 
         <!-- 서비스 패키지 -->
-        <h2 class="section-title">플라워샵 전용 서비스 구성</h2>
-        <p class="section-sub">매장에서 실제로 운영하는 상품 구성을 온라인에서 한눈에 보이게 만듭니다.</p>
+        <h2 class="section-title">플라워샵 전용 서비스 구성 (하비럴 마케팅 관점)</h2>
+        <p class="section-sub">
+          매장에서 실제로 잘 나가는 상품과 <strong>객단가·재구매 패턴</strong>을 기준으로,<br />
+          하비럴 마케팅이 온라인 구조를 다시 설계합니다.
+        </p>
 
         <div class="grid-half">
           <div class="grid-box">
             <div class="grid-title">기념일·선물 꽃다발</div>
             <div class="grid-desc">
-              생일·기념일·프로포즈·승진·개업 등 상황별 추천 구성.  
-              예산 구간별(예: 3만/5만/7만 원대) 대표 예시를 함께 안내합니다.
+              생일·기념일·프로포즈·승진·개업 등 상황별 추천 구성.<br />
+              예산 구간별(예: 3만/5만/7만 원대) 대표 예시와 실제 사진을 함께 안내해
+              고객이 <strong>“이 정도 가격에 이 정도 느낌”</strong>을 바로 이해할 수 있게 합니다.
             </div>
           </div>
 
           <div class="grid-box">
             <div class="grid-title">정기 구독 플라워</div>
             <div class="grid-desc">
-              가정·사무실·매장용 정기 배송 주기(주 1회/격주/월 1회)와  
-              계절감·스타일에 따른 구성 예시를 정리합니다.
+              가정·사무실·매장용 정기 배송 주기(주 1회/격주/월 1회)와<br />
+              계절감·컬러·스타일에 따른 구성 예시를 정리합니다.<br />
+              “공간 분위기가 어떻게 달라지는지”를 중심으로 설명합니다.
             </div>
           </div>
 
           <div class="grid-box">
             <div class="grid-title">근조·행사·웨딩 플라워</div>
             <div class="grid-desc">
-              근조 화환·행사 꽃장식·웨딩 부케·부토니에 등  
-              행사 성격에 맞는 패키지 구성과 진행 절차를 설명합니다.
+              근조 화환·행사 꽃장식·웨딩 부케·부토니에 등 주요 상품을<br />
+              <strong>예산대·스타일·진행 단계</strong> 중심으로 구조화합니다.<br />
+              사진과 함께 “이런 자리에는 이런 구성이 어울립니다”를 설명합니다.
             </div>
           </div>
 
           <div class="grid-box">
             <div class="grid-title">기업·매장 플라워</div>
             <div class="grid-desc">
-              로비·응접실·카운터·테이블 데코 등 공간별 제안.  
-              계약 기간·교체 주기·예산 구조를 명확히 안내합니다.
+              로비·응접실·카운터·테이블 데코 등 공간별 제안을 정리합니다.<br />
+              계약 기간·교체 주기·예산 구조를 명확히 안내해<br />
+              <strong>장기 계약·정기 거래</strong>로 이어질 수 있는 설명을 만듭니다.
             </div>
           </div>
         </div>
 
         <!-- 디지털 마케팅 관점 -->
-        <h2 class="section-title">플라워샵 디지털 마케팅 관점</h2>
+        <h2 class="section-title">플라워샵 디지털 마케팅·하비럴 광고 관점</h2>
 
         <div class="card">
-          <div class="card-tag">검색·문의 생성 기준</div>
+          <div class="card-tag">검색·문의 생성 구조 (하비럴 마케팅)</div>
           <ul>
-            <li>“지역 + 꽃집”, “당일 꽃배달”, “프로포즈 꽃다발” 검색 패턴 반영</li>
-            <li>용도별(기념일/근조/행사/정기구독)로 안내 문장을 분리</li>
-            <li>사진·가격대·주문 방법이 순서대로 보이도록 UX 정리</li>
+            <li>“지역 + 꽃집”, “당일 꽃배달”, “프로포즈 꽃다발”, “근조 화환” 등 <strong>실제 검색어</strong> 기준으로 문장을 정리합니다.</li>
+            <li>기념일/근조/행사/정기구독 등 <strong>용도별 페이지·섹션</strong>을 나눠 고객이 길을 잃지 않게 만듭니다.</li>
+            <li>사진 → 가격대 → 주문 방법 순서로, <strong>결정에 필요한 정보</strong>가 자연스럽게 이어지도록 UX를 설계합니다.</li>
+            <li>네이버·인스타그램·카카오 채널을 하비럴 마케팅 인프라 안에서 <strong>역할별로 정리</strong>해 드립니다.</li>
           </ul>
         </div>
 
         <div class="card">
-          <div class="card-tag">재주문·단골 구조</div>
+          <div class="card-tag">재주문·단골 구조 (하비럴 광고 인프라)</div>
           <ul>
-            <li>주기적인 기념일(생일·결혼기념일 등) 기준으로 재문의 유도</li>
-            <li>정기 구독 고객에게 이벤트·신상품 안내 구조 설계</li>
-            <li>기업·매장 고객은 장기 계약으로 연결될 수 있는 설명 구성</li>
+            <li>주기적인 기념일(생일·결혼기념일·입사기념일 등)을 기준으로, <strong>다음 주문 타이밍</strong>을 안내하는 구조를 설계합니다.</li>
+            <li>정기 구독 고객에게 계절 신상품·이벤트를 자연스럽게 안내할 수 있는 <strong>메시지 포인트</strong>를 만듭니다.</li>
+            <li>기업·매장 고객은 “첫 주문 → 테스트 → 정기 계약” 흐름이 보이도록 단계별 설명을 구성합니다.</li>
+            <li>온라인 리뷰·인스타그램 태그·지인 추천이 <strong>같은 메시지</strong>를 향하도록, 하비럴 마케팅이 언어와 구조를 맞춰드립니다.</li>
           </ul>
         </div>
 
         <!-- 문의 -->
         <section id="contact">
-          <h2 class="contact-title">플라워샵·꽃집 온라인 문의 구성 상담</h2>
+          <h2 class="contact-title">플라워샵·꽃집 디지털 마케팅 인프라 상담 (하비럴 마케팅)</h2>
           <p class="contact-sub">
-            매장에서 실제로 잘 나가는 상품과 고객 문의 패턴을 기준으로  
-            온라인 설명·주문 동선을 어떻게 만들지 함께 정리해 드립니다.
+            현재 매장에서 잘 나가는 상품, 평균 객단가, 온라인·오프라인 주문 비중, 재구매 패턴이 어떻게 되는지 알려주시면,<br />
+            하비럴 마케팅(HVIRAL)이 <strong>플라워샵 전용 디지털 세일즈·브랜딩 인프라</strong> 방향을 먼저 제안드립니다.
           </p>
 
           <div class="contact-card">
             <form id="form" onsubmit="sendMsg(event)">
               <div class="form-group">
                 <label class="form-label">성명<span>*</span></label>
-                <input id="name" class="form-input" required placeholder="담당자명을 입력해 주세요." />
+                <input
+                  id="name"
+                  class="form-input"
+                  required
+                  placeholder="담당자명을 입력해 주세요."
+                />
               </div>
               <div class="form-group">
                 <label class="form-label">연락처<span>*</span></label>
-                <input id="phone" class="form-input" required placeholder="'-' 없이 입력" />
+                <input
+                  id="phone"
+                  class="form-input"
+                  required
+                  placeholder="'-' 없이 숫자만 입력"
+                />
               </div>
               <div class="form-group">
                 <label class="form-label">매장 정보<span>*</span></label>
-                <input id="shop" class="form-input" required placeholder="예: ○○동 플라워샵, 주력 상품·객단가 등" />
+                <input
+                  id="shop"
+                  class="form-input"
+                  required
+                  placeholder="예: ○○동 플라워샵 / 주력 상품·객단가·온라인 주문 비중 등"
+                />
               </div>
               <div class="form-group">
-                <label class="form-label">문의 내용<span>*</span></label>
-                <textarea id="msg" class="form-textarea" required placeholder="온라인 주문·예약·정기 구독 등 궁금한 방향을 자유롭게 남겨주세요."></textarea>
+                <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                <textarea
+                  id="msg"
+                  class="form-textarea"
+                  required
+                  placeholder="온라인 주문·예약·정기 구독·근조·행사 플라워 등, 가장 고민되는 부분을 자유롭게 적어 주세요."
+                ></textarea>
               </div>
 
               <div class="terms-box">
                 ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
-                ② 수집 목적: 디지털 마케팅·브랜딩 상담 및 회신<br />
-                ③ 보유 기간: 상담 완료 후 1년간 보관 후 파기
+                ② 수집 목적: 하비럴 마케팅·하비럴 광고 및 브랜딩 상담, 견적 안내 및 회신<br />
+                ③ 보유 기간: 상담 완료 후 1년간 보관 후 지체 없이 파기<br />
+                ④ 이용자는 동의를 거부할 권리가 있으며, 동의 거부 시 서비스 제공이 제한될 수 있습니다.
                 <div class="terms-row">
                   <input id="terms" type="checkbox" class="terms-checkbox" />
                   <span>위 내용을 확인하였으며, 개인정보 수집·이용에 동의합니다. (필수)</span>
                 </div>
               </div>
 
-              <button class="form-submit">문의 접수하기</button>
+              <button class="form-submit" type="submit">문의 접수하기</button>
             </form>
+
+            <p class="contact-note">
+              * 온라인 접수 후, 하비럴 마케팅 담당자가 카카오톡 또는 전화로 순차 안내드립니다.
+            </p>
+            <div class="contact-actions">
+              <a
+                href="https://open.kakao.com/o/sdxcyB4h"
+                target="_blank"
+                rel="noopener"
+                class="contact-kakao"
+              >
+                카톡으로 바로 상담 (하비럴)
+              </a>
+              <a href="tel:01032689899" class="contact-call">
+                전화로 바로 상담
+              </a>
+            </div>
           </div>
         </section>
 
@@ -497,7 +606,14 @@
 
   <!-- 하단 고정바 -->
   <div class="bottom-bar">
-    <a class="bottom-btn kakao" href="https://open.kakao.com/o/sdxcyB4h" target="_blank" rel="noopener">카톡 상담</a>
+    <a
+      class="bottom-btn kakao"
+      href="https://open.kakao.com/o/sdxcyB4h"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담 (하비럴)
+    </a>
     <a class="bottom-btn ask" href="#contact">문의하기</a>
     <a class="bottom-btn call" href="tel:01032689899">전화 상담</a>
   </div>
@@ -529,6 +645,7 @@
       });
     });
 
+    // 문의 폼 → 문자앱으로 전송
     function sendMsg(e){
       e.preventDefault();
       const n=document.getElementById("name").value.trim();
@@ -548,16 +665,22 @@
       }
 
       const txt =
-        `[H VIRAL 플라워샵 문의]\n`+
+        `[하비럴 마케팅(HVIRAL) 플라워샵 문의]\n`+
         `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n`+
         `문의 내용: ${m}`;
 
       const url = "sms:01032689899?body=" + encodeURIComponent(txt);
       window.location.href = url;
 
-      alert("문자 발송 화면으로 이동합니다.");
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문자앱이 열리지 않는 환경에서는 하비럴 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      document.getElementById("form").reset();
     }
   </script>
 
 </body>
 </html>
+```0
