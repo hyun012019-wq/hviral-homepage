@@ -1,17 +1,421 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>H Viral</title>
+    <!-- 채널 기본 정보 -->
+    <title>HVIRAL - 하비럴 마케팅 디지털 마케팅 플랫폼</title>
     <link>https://hviral.co.kr/</link>
-    <description>하비럴 공식 RSS 피드</description>
+    <atom:link href="https://hviral.co.kr/rss.xml" rel="self" type="application/rss+xml" />
+    <description>하비럴(HVIRAL) │ (주)하비럴, 하비럴 마케팅, 하비럴광고, 하비럴 디지털 마케팅. 소상공인·전문직·B2B 기업을 위한 검색–콘텐츠–문의 중심 디지털 마케팅·브랜딩·홈페이지·예약 시스템 인프라 설계 플랫폼.</description>
     <language>ko-KR</language>
+    <!-- 실제 운영 시 날짜를 갱신해 주세요 (RFC 822 형식) -->
+    <lastBuildDate>Wed, 04 Dec 2024 12:00:00 +0900</lastBuildDate>
+    <generator>HVIRAL RSS Generator</generator>
+
+    <!-- ===== 메인 & 서비스 페이지 ===== -->
 
     <item>
-      <title>H Viral 메인</title>
+      <title>HVIRAL 메인 - 하비럴 디지털 마케팅 플랫폼</title>
       <link>https://hviral.co.kr/</link>
-      <description>하비럴 공식 홈페이지 메인</description>
-      <pubDate>Wed, 03 Dec 2025 09:00:00 +0900</pubDate>
-      <guid>https://hviral.co.kr/</guid>
+      <guid isPermaLink="true">https://hviral.co.kr/</guid>
+      <description>하비럴(HVIRAL) │ 소상공인·전문직·B2B 기업을 위한 디지털 마케팅 설계·브랜딩·홈페이지·예약 시스템까지 온라인 문의가 이어지는 마케팅 인프라 설계 플랫폼.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>디지털 마케팅 설계 │ HVIRAL</title>
+      <link>https://hviral.co.kr/digital.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/digital.html</guid>
+      <description>HVIRAL 디지털 마케팅 설계 서비스. 업종별 검색–콘텐츠–문의 흐름을 분석해, 광고비 의존도를 줄이고 실제 문의·상담 중심의 디지털 인프라를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>홈페이지 제작 │ HVIRAL</title>
+      <link>https://hviral.co.kr/website.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/website.html</guid>
+      <description>하비럴 홈페이지 제작. 실사 중심 콘텐츠·업종별 구조 설계를 통해, 방문자에게 브랜드 신뢰와 문의 전환을 동시에 만드는 웹사이트를 제작합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>앱·예약 시스템 │ HVIRAL</title>
+      <link>https://hviral.co.kr/app.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/app.html</guid>
+      <description>앱·예약 시스템 구축으로 전화·문자·카톡 예약을 한 번에 정리하고, 요일·시간대·고객 유형에 맞춘 예약 인프라를 설계하는 하비럴 마케팅 서비스.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>마케팅 강의 신청 │ HVIRAL</title>
+      <link>https://hviral.co.kr/lecture.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/lecture.html</guid>
+      <description>소상공인·전문직·B2B 대표님과 실무자를 위한 하비럴 마케팅 강의. 실제 현장 데이터를 기반으로 디지털 마케팅·브랜딩 인프라 설계 방법을 다룹니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 의료·병원 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>피부과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/skin.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/skin.html</guid>
+      <description>피부과 마케팅 인프라 설계. 피부과 진료과목·고객 유형·시술 동선에 맞춰 검색·콘텐츠·문의 구조를 설계하는 하비럴 피부과 마케팅.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>치과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/dental.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/dental.html</guid>
+      <description>치과 마케팅·브랜딩 시스템. 교정·임플란트·보존·치주 등 진료 구조에 맞춰, 환자의 검색–상담–내원 과정이 이어지도록 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>성형외과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/plastic.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/plastic.html</guid>
+      <description>성형외과 마케팅 인프라. 수술 항목·안전성·상담 프로세스를 기준으로 내원 환자 흐름과 온라인 문의 구조를 함께 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>내과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/internal.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/internal.html</guid>
+      <description>내과·건강검진센터 등 내과계 의원을 위한 마케팅·브랜딩. 검사·진료 동선을 기준으로 환자 유입 구조를 정리합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>산부인과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/obgyn.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/obgyn.html</guid>
+      <description>산부인과·여성의원 마케팅. 진료 항목·생애 주기별 고객군에 맞춘 콘텐츠·문의 구조를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>소아과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/pediatrics.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/pediatrics.html</guid>
+      <description>소아과·소아청소년과 마케팅. 보호자 검색 패턴·증상별 내원 흐름에 맞춘 온라인 안내·신뢰 형성 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>이비인후과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/ent.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/ent.html</guid>
+      <description>이비인후과 마케팅 인프라. 증상·연령·상권 특성을 반영한 검색–내원–재방문 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>안과 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/eye.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/eye.html</guid>
+      <description>안과·라식·라섹·드림렌즈 등 안과 특화 마케팅. 시력교정·검진·수술 중심 퍼널을 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>한의원 디지털 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/oriental.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/oriental.html</guid>
+      <description>한의원·한방다이어트·추나·교통사고 등 한방의료 마케팅. 질환·체질·생활 패턴을 기준으로 디지털 브랜딩을 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 헬스·뷰티 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>헬스장·피트니스 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/gym.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/gym.html</guid>
+      <description>헬스장·피트니스 센터 마케팅. 회원 유형·시간대별 출석 패턴을 기준으로 회원 확보·유지 구조를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>PT 스튜디오 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/pt.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/pt.html</guid>
+      <description>PT 스튜디오·퍼스널트레이닝 마케팅. 객단가·수강권 구조에 맞춰 문의–상담–등록 인프라를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>요가학원·요가센터 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/yoga.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/yoga.html</guid>
+      <description>요가학원·핫요가·요가센터 마케팅. 회원 세부 유형·시간대별 패턴 분석을 기반으로 매출 구조가 보이는 요가 마케팅 인프라를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>필라테스 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/pilates.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/pilates.html</guid>
+      <description>기구 필라테스·그룹 레슨 등 필라테스 센터 마케팅. 체형·통증·다이어트 목적에 맞춘 수업·회원 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>미용실·헤어살롱 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/beauty.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/beauty.html</guid>
+      <description>미용실·헤어살롱 마케팅. 스타일·시술·단골 고객 구조를 반영한 예약·재방문 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>네일샵 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/nail.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/nail.html</guid>
+      <description>네일샵·뷰티샵 마케팅. 시즌·디자인·고객 라이프스타일에 맞춘 단골·소개 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>체육관·태권도·합기도 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/dojang.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/dojang.html</guid>
+      <description>체육관·태권도장·합기도장 마케팅. 연령·수업·운동 목적에 맞춘 수강·재등록 구조를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 카페·음식점 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>카페 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/cafe.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/cafe.html</guid>
+      <description>카페 마케팅 인프라. 상권·동선·객단가·회전율에 맞춘 디지털 브랜딩·콘텐츠 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>디저트 카페 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/dessert.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/dessert.html</guid>
+      <description>디저트 카페·베이커리 카페 마케팅. 메뉴·사진·회전 구조를 함께 보는 디지털 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>한식당 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/korean.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/korean.html</guid>
+      <description>한식당·백반·가정식 등 한식 매장 마케팅. 점심·저녁·단체 손님 구조에 맞춘 콘텐츠 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>일식당 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/japanese.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/japanese.html</guid>
+      <description>스시·돈카츠·이자카야 등 일식당 마케팅. 코스·객단가·예약 구조를 중심으로 브랜딩을 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>중식당 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/chinese.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/chinese.html</guid>
+      <description>중식당·요리 전문점 마케팅. 단체·배달·홀 내식 구조를 함께 보는 디지털 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>양식당·브런치·비스트로 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/western.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/western.html</guid>
+      <description>양식당·브런치·비스트로 마케팅. 콘셉트·객단가·회전율·예약률이 보이게 만드는 양식 매장 디지털 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>치킨 전문점 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/chicken.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/chicken.html</guid>
+      <description>치킨 전문점·호프·야식 매장 마케팅. 포장·배달·홀 매출 구조에 맞춘 디지털 브랜딩 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>아이스크림 매장 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/icecream.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/icecream.html</guid>
+      <description>아이스크림·디저트 테이크아웃 매장 마케팅. 시즌·시간대별 객층에 맞춘 방문·재방문 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 교육·학원 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>입시·보습학원 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/academy.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/academy.html</guid>
+      <description>입시·보습학원 마케팅. 학부모·학생 관점에서 커리큘럼·성적·관리 구조가 보이도록 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>어학·유학 학원 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/lang.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/lang.html</guid>
+      <description>어학·시험·유학 준비 학원 마케팅. 레벨·목표·기간에 맞춘 수강·상담 흐름 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>예체능·취미 학원 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/art.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/art.html</guid>
+      <description>미술·음악·댄스·취미 학원 마케팅. 연령·목적·수업 형태에 맞춘 등록·재등록 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>공부방·학습센터 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/studyroom.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/studyroom.html</guid>
+      <description>공부방·소규모 학습센터 마케팅. 생활 동선·통학 패턴에 맞춘 문의·등록 흐름 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 생활·지역 서비스 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>자동차 정비·카센터 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/car.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/car.html</guid>
+      <description>자동차 정비·카센터 마케팅. 정비 항목·예약·재방문 구조를 함께 보는 디지털 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>차량 튜닝·썬팅 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/cartuning.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/cartuning.html</guid>
+      <description>튜닝·썬팅·광택 업체 마케팅. 차량·예산·옵션 구조를 기준으로 한 문의·예약 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>청소·이사 서비스 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/cleaning.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/cleaning.html</guid>
+      <description>입주 청소·이사 청소·정기 청소 등 청소·이사 서비스 마케팅. 평형·날짜·예산 기반 견적 문의 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>철거·인테리어 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/demolition.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/demolition.html</guid>
+      <description>철거·인테리어 업체 마케팅. 현장 유형·예산·기간 구조를 기준으로 한 상담·견적 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>플라워샵·꽃집 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/flower.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/flower.html</guid>
+      <description>플라워샵·꽃집 마케팅. 기념일·행사·정기 구독 구조를 함께 보는 디지털 브랜딩 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>사진관·스튜디오 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/photo.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/photo.html</guid>
+      <description>사진관·스튜디오 마케팅. 촬영 종류·패키지·예약 동선을 기준으로 한 문의 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>펫샵·반려동물 서비스 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/pet.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/pet.html</guid>
+      <description>펫샵·미용·호텔·유치원 등 반려동물 서비스 마케팅. 보호자·반려동물 라이프스타일 중심 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <!-- ===== 전문직·B2B 업종별 상세페이지 ===== -->
+
+    <item>
+      <title>세무·회계사 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/tax.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/tax.html</guid>
+      <description>세무사·회계사 사무소 마케팅. 기장·신고·컨설팅 구조를 한 번에 이해되게 만드는 세무 마케팅·세무 브랜딩 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>변호사 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/lawyer.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/lawyer.html</guid>
+      <description>변호사·로펌 마케팅. 사건 유형·의뢰인 여정을 기준으로 한 온라인 브랜딩·문의 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>법무사 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/lawoffice.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/lawoffice.html</guid>
+      <description>법무사 사무소 마케팅. 등기·경매·법률 행정 업무 흐름에 맞춘 문의·의뢰 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>행정사 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/administrative.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/administrative.html</guid>
+      <description>행정사 사무소 마케팅. 인허가·민원·출입국 등 업무 특성에 맞춘 설명·문의 구조 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>공인중개사·부동산 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/realestate.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/realestate.html</guid>
+      <description>공인중개사·부동산 마케팅. 매물·입지·생활 동선을 기준으로 한 상담·문의 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>가맹거래사·프랜차이즈 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/franchise.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/franchise.html</guid>
+      <description>가맹거래사·프랜차이즈 본사 마케팅. 점주 모집·브랜드 확장 구조를 기준으로 디지털 인프라를 설계합니다.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>제조업 B2B 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/manufacture.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/manufacture.html</guid>
+      <description>제조업 B2B 마케팅. 공정·품질·납기 구조를 기준으로 한 레퍼런스·문의 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>유통업 B2B 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/distribution.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/distribution.html</guid>
+      <description>도소매·도매·벤더 등 유통업 B2B 마케팅. 공급·납품·입점 구조를 기준으로 한 상담·제안 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
+    </item>
+
+    <item>
+      <title>B2B 서비스·컨설팅 마케팅 │ HVIRAL</title>
+      <link>https://hviral.co.kr/industry/b2b.html</link>
+      <guid isPermaLink="true">https://hviral.co.kr/industry/b2b.html</guid>
+      <description>B2B 서비스·컨설팅 마케팅. 리드 생성·제안·프로젝트 전환까지 이어지는 디지털 마케팅 인프라 설계.</description>
+      <pubDate>Wed, 04 Dec 2024 12:00:00 +0900</pubDate>
     </item>
 
   </channel>
