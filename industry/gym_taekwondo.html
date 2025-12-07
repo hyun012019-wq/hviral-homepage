@@ -2,18 +2,43 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <title>체육관·태권도장·합기도장 브랜딩·마케팅 │ HVIRAL 하비럴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>체육관 · 태권도 · 합기도 디지털 브랜딩 │ H VIRAL</title>
+
+  <!-- SEO 기본 메타 -->
+  <meta name="description" content="체육관·태권도장·합기도장·주짓수·유도·어린이체육관 디지털 브랜딩 및 온라인 문의 시스템 설계. 학부모가 궁금해하는 지도력·안전·교육철학·수업 커리큘럼을 한 화면에 정리하고, 체험수업·등록 문의로 자연스럽게 이어지도록 HVIRAL(하비럴)이 도와드립니다." />
+  <meta name="keywords" content="HVIRAL,하비럴,체육관 마케팅,태권도장 마케팅,합기도장 마케팅,주짓수 도장 마케팅,유도장 마케팅,어린이체육관 홍보,아동체육 마케팅,태권도 브랜딩,체육관 홈페이지,태권도장 홈페이지,도장 디지털 브랜딩,학부모 상담,체험수업 문의,도장 온라인 문의,방과후 체육,예절교육,인성교육,태권도 승급 심사,품새,겨루기" />
+
+  <!-- 오픈그래프 -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HVIRAL 하비럴" />
+  <meta property="og:title" content="체육관·태권도장·합기도장 브랜딩·마케팅 │ HVIRAL 하비럴" />
+  <meta property="og:description" content="체육관·태권도·합기도·주짓수·유도 도장의 교육 방향과 지도력을 중심으로, 학부모가 안심하고 문의할 수 있는 디지털 브랜딩·온라인 문의 페이지를 설계합니다." />
+  <meta property="og:url" content="https://hviral.kr/industry/dojang.html" />
+  <meta property="og:image" content="/og-image-dojang.jpg" />
+
+  <!-- 트위터 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="체육관·태권도장·합기도장 브랜딩·마케팅 │ HVIRAL 하비럴" />
+  <meta name="twitter:description" content="체육관·태권도장·합기도장·어린이체육관 디지털 브랜딩, 학부모가 실제로 궁금해하는 내용을 기준으로 체험수업·등록 문의 흐름을 설계합니다." />
+  <meta name="twitter:image" content="/og-image-dojang.jpg" />
+
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo","Noto Sans KR",sans-serif;
-      background:#020617; color:#e5e7eb; line-height:1.6;
+      font-family:-apple-system, BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+      background:#020617; color:#e5e7eb; line-height:1.6; overflow-x:hidden;
     }
     a { color:inherit; text-decoration:none; }
+    ul { list-style:none; }
 
-    .container { max-width:1080px; margin:0 auto; padding:20px; padding-bottom:100px; }
+    .container { max-width:1080px; margin:0 auto; padding:0 20px 96px; }
 
     /* 헤더 */
     header {
@@ -22,11 +47,43 @@
       border-bottom:1px solid rgba(148,163,184,.2);
     }
     .header-inner {
-      padding:14px 20px; max-width:1080px; margin:0 auto;
+      max-width:1080px; margin:0 auto;
+      padding:14px 20px;
       display:flex; align-items:center; justify-content:space-between;
     }
-    .logo { font-size:20px; font-weight:700; }
+    .header-left {
+      display:flex; align-items:center; gap:16px;
+    }
+    .menu-btn {
+      width:32px; height:32px; border-radius:999px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:#020617;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+    }
+    .menu-btn span {
+      width:16px; height:2px; background:#e5e7eb; position:relative;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content:""; width:16px; height:2px; background:#e5e7eb;
+      position:absolute; left:0;
+    }
+    .menu-btn span::before { top:-5px; }
+    .menu-btn span::after { top:5px; }
+
+    .logo-wrap { display:block; }
+    .logo { font-size:22px; font-weight:700; letter-spacing:1.2px; }
     .logo-sub { font-size:11px; color:#94a3b8; }
+
+    .consult-btn {
+      padding:9px 20px;
+      border-radius:999px;
+      background:#2563eb;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+    }
 
     /* 히어로 */
     .hero {
@@ -45,17 +102,22 @@
       padding:4px 10px; border-radius:999px;
       border:1px solid rgba(96,165,250,.65);
       background:rgba(15,23,42,.9);
-      font-size:11px; margin-bottom:16px;
+      font-size:11px; margin-bottom:10px;
     }
     .hero-badge-dot {
       width:8px;height:8px;border-radius:999px;
       background:#22c55e; box-shadow:0 0 0 4px rgba(34,197,94,.3);
     }
-    .hero-title { font-size:24px; font-weight:800; margin-bottom:10px; }
-    .hero-title span { color:#60a5fa; }
-    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:18px; }
+    .hero-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
 
-    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; }
+    .hero-title { font-size:24px; font-weight:800; margin-bottom:10px; line-height:1.5; }
+    .hero-title span { color:#60a5fa; }
+
+    .hero-desc { font-size:14px; color:#cbd5f5; margin-bottom:10px; }
+    .hero-desc strong { color:#fff; }
+    .hero-note { font-size:11px; color:#9ca3af; margin-top:6px; }
+
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; font-size:11px; margin-top:10px; }
     .hero-meta span {
       padding:3px 8px; border-radius:999px;
       background:rgba(15,23,42,.9);
@@ -97,6 +159,7 @@
     .faq-q { font-weight:700;margin-bottom:4px; }
     .faq-a { font-size:12px;color:#94a3b8; }
 
+    /* 문의 섹션 */
     #contact { margin:34px 0 4px; }
     .contact-title { font-size:18px;font-weight:800;margin-bottom:8px; }
     .contact-sub { font-size:13px;color:#94a3b8;margin-bottom:12px; }
@@ -106,213 +169,668 @@
       background:#020617;padding:18px 16px;
     }
 
+    .form-group { margin-bottom:10px; display:flex; flex-direction:column; gap:4px; }
+    .form-label { font-size:12px; color:#9ca3af; }
+    .form-label span { color:#f97316; }
+
     .form-input,.form-textarea {
       width:100%;padding:9px 10px;
       border-radius:10px;border:1px solid rgba(148,163,184,.7);
       background:#020617;color:#f9fafb;font-size:13px;
-      margin-bottom:10px;
     }
     .form-textarea { min-height:80px;resize:vertical; }
 
     .terms-box {
       border-radius:12px;border:1px solid rgba(55,65,81,.9);
       padding:10px 10px;font-size:12px;margin-bottom:12px;
+      background:#020617;
+    }
+    .terms-detail { margin-bottom:6px; }
+    .terms-summary {
+      cursor:pointer; list-style:none;
+      font-weight:600; display:flex; justify-content:space-between;
+      font-size:12px; color:#e5e7eb; align-items:center;
+    }
+    .terms-summary::-webkit-details-marker { display:none; }
+    .terms-summary::after {
+      content:"자세히 보기";
+      font-size:11px; color:#9ca3af; margin-left:8px;
+    }
+    .terms-detail[open] .terms-summary::after { content:"접기"; }
+    .terms-body {
+      font-size:11px; color:#9ca3af; line-height:1.5; margin-top:6px;
+    }
+    .terms-row {
+      display:flex; gap:6px; font-size:12px;
+      margin-bottom:4px; align-items:center;
+    }
+    .terms-checkbox {
+      width:14px; height:14px; accent-color:#2563eb;
     }
 
     .form-submit {
       width:100%;padding:11px 0;border-radius:999px;
       background:#2563eb;color:#fff;font-size:14px;font-weight:700;
-      border:none;
+      border:none; cursor:pointer;
     }
 
+    /* 하단 고정바 */
     .bottom-bar {
       position:fixed;left:0;bottom:0;width:100%;
       background:#020617;padding:12px 10px;
       border-top:1px solid rgba(148,163,184,.4);
       display:flex;gap:6px;z-index:9700;
     }
-    .bottom-btn { flex:1;padding:12px 0;border-radius:999px;font-weight:600;text-align:center; }
-    .kakao { background:#facc15;color:#000; }
-    .ask { background:#111827;color:#e5e7eb;border:1px solid rgba(148,163,184,.6); }
-    .call { background:#2563eb;color:#fff; }
+    .bottom-btn {
+      flex:1;padding:12px 0;border-radius:999px;
+      font-weight:600;text-align:center;font-size:15px;
+    }
+    .bottom-btn.kakao { background:#facc15;color:#000; }
+    .bottom-btn.ask {
+      background:#111827;color:#e5e7eb;
+      border:1px solid rgba(148,163,184,.6);
+    }
+    .bottom-btn.call { background:#2563eb;color:#fff; }
 
+    /* 사이드 메뉴 */
+    #sideBackdrop {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(15,23,42,0.7);
+      backdrop-filter:blur(4px);
+      z-index:9500;
+      display:none;
+    }
+    #sideBackdrop.show { display:block; }
+
+    #sideMenu {
+      position:fixed;
+      top:0; left:0;
+      width:80%; max-width:360px;
+      height:100%;
+      background:#020617;
+      border-right:1px solid rgba(148,163,184,0.5);
+      transform:translateX(-100%);
+      transition:transform 0.3s ease;
+      z-index:9600;
+      display:flex;
+      flex-direction:column;
+      overscroll-behavior:contain;
+    }
+    #sideMenu.open { transform:translateX(0); }
+    .side-menu-header {
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,0.9);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .side-menu-title { font-size:18px; font-weight:700; }
+    .side-close {
+      padding:8px 16px;
+      border-radius:999px;
+      background:#111827;
+      border:1px solid rgba(148,163,184,0.7);
+      font-size:13px;
+      color:#e5e7eb;
+      cursor:pointer;
+    }
+    .side-sub {
+      font-size:11px;
+      color:#9ca3af;
+      padding:0 22px 12px;
+      flex-shrink:0;
+    }
+    .side-scroll {
+      flex:1;
+      padding:8px 22px 120px;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      touch-action:pan-y;
+    }
+    .side-section-title {
+      font-size:13px;
+      color:#9ca3af;
+      margin:18px 0 6px;
+      font-weight:600;
+    }
+    .side-link {
+      display:block;
+      padding:8px 0;
+      font-size:14px;
+    }
+    details.side-group {
+      margin-bottom:8px;
+      border-radius:14px;
+      border:1px solid rgba(75,85,99,0.8);
+      background:#020617;
+      overflow:hidden;
+    }
+    .side-group summary {
+      list-style:none;
+      padding:10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .side-group summary::-webkit-details-marker { display:none; }
+    .side-group-label { font-weight:600; }
+    .side-group-arrow {
+      font-size:11px;
+      color:#9ca3af;
+    }
+    .side-group-links {
+      border-top:1px solid rgba(55,65,81,0.9);
+      padding:6px 12px 8px;
+    }
+    .side-group-links a {
+      display:block;
+      padding:4px 0;
+      font-size:13px;
+    }
+
+    @media(min-width:1024px){
+      .hero { padding-top:32px; }
+      .container { padding-bottom:110px; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <div>
-      <div class="logo">H VIRAL</div>
-      <div class="logo-sub">디지털 마케팅 · 교육기관 브랜딩</div>
-    </div>
-  </div>
-</header>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-card">
-      <div class="hero-badge">
-        <span class="hero-badge-dot"></span> 체육관·태권도·합기도 전용 디지털 설계
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <div>
+        <div class="side-menu-title">HVIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
-      <h1 class="hero-title">
-        <span>체육관·태권도·합기도,</span>  
-        등록 문의가 실제로 들어오는 브랜딩 시스템
-      </h1>
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
 
-      <p class="hero-desc">
-        부모님·학생 고객은 “안전·교육내용·신뢰감”을 가장 먼저 봅니다.<br />
-        H VIRAL은 <strong>운영 철학 → 교육 방향 → 수업 사진 → 문의까지 흐름</strong>을  
-        자연스럽게 이어지도록 설계합니다.
-      </p>
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
 
-      <div class="hero-meta">
-        <span>교육기관 전문 디지털 전략</span>
-        <span>실사 기반 브랜드 신뢰 구축</span>
-        <span>문의·등록 전환 퍼널</span>
+      <!-- 헬스·뷰티 -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장·피트니스</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html"><strong>체육관·태권도·합기도</strong></a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">HVIRAL</div>
+          <div class="logo-sub">디지털 마케팅 · 교육기관 브랜딩</div>
+        </a>
       </div>
+      <a
+        href="https://open.kakao.com/o/sdxcyB4h"
+        class="consult-btn"
+        target="_blank"
+        rel="noopener"
+      >
+        상담하기
+      </a>
     </div>
-  </div>
-</section>
+  </header>
 
-<div class="container">
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
 
-  <h2 class="section-title">체육관·도장 고객은 이렇게 선택합니다</h2>
-  <p class="section-sub">
-    학부모·성인 고객은 장소보다 <strong>“지도력·교육철학·안전”</strong>을 우선 확인합니다.
-  </p>
-
-  <div class="pill">핵심 디지털 설계 포인트</div>
-
-  <div class="card">
-    <strong>1. 지도자 신뢰도 중심의 브랜딩 구성</strong>
-    <ul>
-      <li>관장님 지도경력·대회경력·교육철학 정리</li>
-      <li>수업 운영 방식, 커리큘럼 흐름 정리</li>
-      <li>학부모가 궁금한 포인트 중심 설명</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>2. 실사 기반 안내 페이지 구성</strong>
-    <ul>
-      <li>수업 장면·관장님 지도 모습·체육관 분위기</li>
-      <li>안전관리·출석관리·평판 요소 강조</li>
-      <li>과장 없는 합법 카피라이팅</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <strong>3. 등록 문의로 이어지는 흐름 설계</strong>
-    <ul>
-      <li>전화·카톡·온라인 문의 동선 정리</li>
-      <li>체험수업 · 등록절차 · 비용구조 안내</li>
-      <li>학부모의 주요 질문 중심 FAQ 구성</li>
-    </ul>
-  </div>
-
-  <h2 class="section-title">운영 목적에 맞춘 디지털 인프라 설계</h2>
-
-  <div class="grid-2">
-    <div class="card">
-      <strong>STEP 1. 현재 운영 상황 분석</strong>
-      <ul>
-        <li>현재 등록 인원·수업 구조 파악</li>
-        <li>체험수업 운영 여부·문의 채널 점검</li>
-        <li>체육관 강점·지역 특성 분석</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <strong>STEP 2. 메시지·브랜드 방향 설정</strong>
-      <ul>
-        <li>교육 철학·지도 방향 정리</li>
-        <li>학부모에게 전달할 메시지 구조</li>
-        <li>안전 관리 체계·지도력 강조</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <strong>STEP 3. 페이지 설계·콘텐츠 구성</strong>
-      <ul>
-        <li>수업 커리큘럼·시간표·운영 안내</li>
-        <li>관장님 소개·교육 사진·도장 환경 실사</li>
-        <li>과장 없는 안전한 문구 사용</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <strong>STEP 4. 문의 전환 최적화</strong>
-      <ul>
-        <li>체험수업 → 본 등록 흐름 안정화</li>
-        <li>전화·카톡·문자 등 문의 동선 정리</li>
-        <li>필요 시 지속적인 보완 및 개선</li>
-      </ul>
-    </div>
-  </div>
-
-  <h2 class="section-title">자주 묻는 질문</h2>
-
-  <div class="faq-item">
-    <div class="faq-q">Q. 체험수업 문의가 적은데 해결 가능할까요?</div>
-    <div class="faq-a">A. 네. 학부모가 확인하고 싶은 정보 중심으로 재구성하면 문의가 증가합니다.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Q. 기존 체육관 사진이 거의 없는데도 가능할까요?</div>
-    <div class="faq-a">A. 가능합니다. 필요한 실사 구도 가이드도 제공해드립니다.</div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">Q. 등록 문의를 내부에서 바로 받을 수 있나요?</div>
-    <div class="faq-a">A. 네. 카카오톡·문자·전화 모두 연결됩니다.</div>
-  </div>
-
-  <section id="contact">
-    <h2 class="contact-title">체육관·태권도·합기도 문의 접수</h2>
-    <p class="contact-sub">현재 상황·운영 방향을 간단히 남겨주시면 안내드리겠습니다.</p>
-
-    <div class="contact-card">
-      <form onsubmit="submitGym(event)">
-        <input class="form-input" id="name" placeholder="성명*" required />
-        <input class="form-input" id="phone" placeholder="연락처('-' 제외)*" required />
-        <input class="form-input" id="gym" placeholder="체육관/도장 명 · 지역*" required />
-        <textarea class="form-textarea" id="msg" placeholder="현재 상황 / 문의 내용을 입력해주세요*" required></textarea>
-
-        <div class="terms-box">
-          개인정보 수집 및 이용에 동의합니다. (상담 목적)
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            체육관·태권도장·합기도장·주짓수·유도·어린이체육관 디지털 브랜딩
+          </div>
+          <div class="hero-badge">
+            학부모 상담·체험수업·등록 문의까지 한 흐름으로 설계하는 교육기관 마케팅 인프라
+          </div>
         </div>
 
-        <button class="form-submit" type="submit">문의 접수하기</button>
-      </form>
+        <h1 class="hero-title">
+          <span>체육관·태권도·합기도,</span><br />
+          등록 문의가 실제로 들어오는 디지털 브랜딩 시스템
+        </h1>
+
+        <p class="hero-desc">
+          학부모·성인 회원은 <strong>“지도력·안전·교육내용·분위기”</strong>를 가장 먼저 확인합니다.<br />
+          HVIRAL(하비럴)은 <strong>관장님 철학 → 수업 방식 → 실사 사진·영상 → 체험수업·등록 문의</strong>로 이어지는<br />
+          <strong>체육관·도장 전용 온라인 설명·문의 구조</strong>를 설계합니다.
+        </p>
+
+        <p class="hero-note">
+          간판·입소문만으로는 한계가 있습니다.<br />
+          “이 동네에서 우리 아이·우리 가족이 다녀야 할 도장인지”를
+          <b>온라인에서 미리 안심할 수 있게 만드는 것</b>이 핵심입니다.
+        </p>
+
+        <div class="hero-meta">
+          <span>태권도장·합기도장·유도장·주짓수 도장 브랜딩</span>
+          <span>어린이체육관·방과후 체육·예절교육·인성교육 구조화</span>
+          <span>체험수업·상담·등록 문의 전환 퍼널 설계</span>
+        </div>
+      </div>
     </div>
   </section>
 
-</div>
+  <!-- 본문 -->
+  <div class="container">
 
-<div class="bottom-bar">
-  <a href="https://open.kakao.com/o/s0ogfV3h" class="bottom-btn kakao">카톡 상담</a>
-  <a href="#contact" class="bottom-btn ask">문의하기</a>
-  <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
-</div>
+    <h2 class="section-title">체육관·도장을 선택하는 학부모·성인의 실제 기준</h2>
+    <p class="section-sub">
+      시설·매트·샤워실도 중요하지만, 결국 선택을 결정짓는 것은<br />
+      <strong>“어떤 관장님이, 어떤 분위기에서, 무엇을 가르치는지”</strong>에 대한 신뢰입니다.
+    </p>
 
-<script>
-  function submitGym(e){
-    e.preventDefault();
-    const name=document.getElementById("name").value.trim();
-    const phone=document.getElementById("phone").value.trim();
-    const gym=document.getElementById("gym").value.trim();
-    const msg=document.getElementById("msg").value.trim();
+    <div class="pill">체육관·태권도장·합기도장 디지털 브랜딩 핵심 포인트</div>
 
-    const body = encodeURIComponent(
-      `[체육관 문의]\n성명:${name}\n연락처:${phone}\n체육관/지역:${gym}\n내용:${msg}`
-    );
+    <div class="card">
+      <strong>1. 지도자 신뢰도 중심의 브랜딩 구성</strong>
+      <ul>
+        <li>관장님·사범님 지도 경력, 대회 경력, 자격증, 수련 이력 등을 한눈에 정리</li>
+        <li>“체육만 가르치는 곳인지, 인성·예절·생활습관까지 함께 보는 곳인지” 교육 철학을 학부모 언어로 설명</li>
+        <li>유단자 교육·품새·겨루기·시합 준비·재활 운동 등 도장이 잘하는 영역을 명확히 구분</li>
+        <li>연령대별(유아·초등·중고생·성인) 지도 방식 차이를 이해하기 쉽게 텍스트로 구성</li>
+      </ul>
+    </div>
 
-    location.href=`sms:01032689899?body=${body}`;
-    alert("문자앱이 열립니다. 그대로 전송해주세요.");
-  }
-</script>
+    <div class="card">
+      <strong>2. 실사·수업 장면을 중심으로 한 안내 페이지 구성</strong>
+      <ul>
+        <li>수업 장면·관장님 지도 모습·아이들 표정·체육관 분위기 등 실사 사진·영상 중심 구성</li>
+        <li>출석 관리, 안전 수칙, 보호자 대기 공간, 통학 차량(있을 경우) 등 안전·관리 시스템을 강조</li>
+        <li>“스파르타식인지, 칭찬 중심인지, 균형형 지도인지” 등 수업 톤 앤 매너를 구체적 문장으로 표현</li>
+        <li>과장된 표현을 줄이고, 실제 운영 방식과 일치하는 <strong>합법·안전 카피라이팅</strong>으로 신뢰 확보</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>3. 체험수업·등록 문의로 자연스럽게 이어지는 흐름</strong>
+      <ul>
+        <li>“어떤 연령, 어떤 목적의 아이/성인이 어떤 수업을 체험하면 좋은지”를 예시로 안내</li>
+        <li>체험수업 신청 → 상담 → 등록 → 승급·발표회까지의 흐름을 간단한 단계로 정리</li>
+        <li>전화·카톡·온라인 문의·문자 등 다양한 채널로 문의하기 쉽게 버튼·동선을 배치</li>
+        <li>자주 묻는 질문(시간표, 회비, 준비물, 승급 심사, 방학 일정 등)을 FAQ로 미리 정리해 문의 스트레스 감소</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">운영 목적에 맞춘 체육관·도장 디지털 인프라 설계</h2>
+    <p class="section-sub">
+      “아이들 줄 세워 세게만 시키는 곳”이 아닌,<br />
+      “우리 아이를 장기적으로 맡길 수 있는 곳”으로 보이도록 기준을 세웁니다.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <strong>STEP 1. 현재 운영 상황 분석</strong>
+        <ul>
+          <li>등록 인원, 반 구성(유아·초등·청소년·성인), 반 편성 방식 파악</li>
+          <li>주요 시간대(하교 후, 저녁, 주말) 수업 구조와 인원 분포 확인</li>
+          <li>현재 문의 채널(전화·카톡·블로그·인스타·전단)과 전환율 점검</li>
+          <li>체육관·도장의 강점(시합 결과, 분위기, 인성 교육 등)과 지역 특성 분석</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>STEP 2. 메시지·브랜드 방향 설정</strong>
+        <ul>
+          <li>“이 도장은 어떤 아이들에게 특히 잘 맞는지”를 한 문장으로 정의</li>
+          <li>학부모가 친구에게 소개할 때 그대로 가져다 쓸 수 있는 설명 문구 설계</li>
+          <li>안전 관리, 출석 체크, 피드백 방식(카톡, 문자, 공지사항)을 정리해 신뢰도 강화</li>
+          <li>태권도·합기도·유도·주짓수 등 종목별 포지셔닝을 온라인에서 정리</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>STEP 3. 페이지 설계·콘텐츠 구성</strong>
+        <ul>
+          <li>수업 커리큘럼, 시간표, 회비 구조, 승급 심사·발표회 일정 등 학부모용 안내 페이지 구성</li>
+          <li>관장님·사범님 소개, 도장 환경 사진, 수업 장면 등 실사 콘텐츠 중심 편집</li>
+          <li>초보자·처음 체육관 다니는 아이도 불안하지 않게 만드는 안내 문장 설계</li>
+          <li>네이버 지도·검색·블로그·인스타그램에서 동일하게 활용 가능한 설명 구조로 구성</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <strong>STEP 4. 문의·등록 전환 최적화</strong>
+        <ul>
+          <li>체험수업 신청 폼·문의 폼·카카오 채널·문자로 이어지는 문의 동선 정리</li>
+          <li>등록 타이밍(신학기·방학·새 학년)과 이벤트를 연결해 문의 피크 조정</li>
+          <li>형제·자매, 친구 추천, 기존 회원 승급 시기와 연계한 재등록·소개 구조 설계</li>
+          <li>필요 시 텍스트·구조를 주기적으로 점검해 지속적으로 보완·업데이트</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 체험수업 문의가 거의 없는데, 온라인으로 바뀔 수 있을까요?</div>
+      <div class="faq-a">
+        A. 네. <strong>학부모가 실제로 궁금해하는 순서</strong>대로 안내를 재구성하면,
+        체험수업 문의가 눈에 띄게 늘어나는 경우가 많습니다.
+        “시간표·회비·지도 스타일·안전”만 명확히 보여줘도 선택이 쉬워집니다.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 도장 사진이 별로 없는데도 작업이 가능할까요?</div>
+      <div class="faq-a">
+        A. 가능합니다. 필요한 실사 구도(수업 장면, 관장님 지도 장면, 준비·정리 시간 등)를
+        체크리스트 형태로 드리고, 스마트폰으로도 충분히 활용 가능한 수준까지 가이드합니다.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 등록 문의를 바로 우리 도장으로 받을 수 있나요?</div>
+      <div class="faq-a">
+        A. 네. 전화, 문자, 카카오톡 채널, 오픈채팅 등
+        관장님께서 원하시는 방식으로 문의가 바로 들어오도록 연결해 드립니다.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 기존 학부모에게도 도움이 되는가요?</div>
+      <div class="faq-a">
+        A. 네. 도장 방향성과 교육 철학을 온라인에 정리해두면
+        기존 학부모도 “아 우리 아이가 이런 방향으로 배우고 있구나”를 더 잘 이해하게 되고,
+        자연스럽게 <strong>지인 소개·형제 등록</strong>으로 이어지는 경우가 많습니다.
+      </div>
+    </div>
+
+    <!-- 문의 섹션 -->
+    <section id="contact">
+      <h2 class="contact-title">체육관·태권도·합기도 디지털 브랜딩·문의 세팅 상담</h2>
+      <p class="contact-sub">
+        도장명·지역·수업 대상(유아/초등/청소년/성인)과<br />
+        현재 등록 상황·체험수업 운영 여부를 알려주시면,<br />
+        온라인에서 어떤 흐름으로 설명·문의 구조를 잡으면 좋을지 먼저 제안드립니다.
+      </p>
+
+      <div class="contact-card">
+        <form id="dojoForm" onsubmit="handleDojoSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">성명<span>*</span></label>
+            <input
+              class="form-input"
+              id="name"
+              placeholder="관장님 성함 또는 담당자명을 입력해 주세요."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">연락처<span>*</span></label>
+            <input
+              class="form-input"
+              id="phone"
+              placeholder="연락처('-' 제외) 숫자만 입력"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">도장명 · 지역 · 종목<span>*</span></label>
+            <input
+              class="form-input"
+              id="gym"
+              placeholder="예: ○○태권도 / ○○구 ○○동 / 태권도·합기도·주짓수·유도 등"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+            <textarea
+              class="form-textarea"
+              id="msg"
+              placeholder="예: 유아·초등 위주 / 방과후 시간대 위주 / 체험수업은 하고 있으나 문의 적음 / 학부모 상담 구조를 온라인에 정리하고 싶습니다 등 자유롭게 작성해 주세요."
+              required
+            ></textarea>
+          </div>
+
+          <div class="terms-box">
+            <details class="terms-detail">
+              <summary class="terms-summary">
+                개인정보 수집 및 이용 동의 (필수)
+              </summary>
+              <div class="terms-body">
+                ① 수집 항목: 성명, 연락처, 도장 정보, 문의 내용<br />
+                ② 수집 목적: 체육관·도장 관련 상담 및 회신<br />
+                ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                ④ 동의 거부 시: 서비스 제공(상담)이 제한될 수 있습니다.
+              </div>
+            </details>
+            <label class="terms-row">
+              <input
+                type="checkbox"
+                id="termsRequired"
+                class="terms-checkbox"
+              />
+              <span>위 내용을 확인하였으며, 개인정보 수집 및 이용에 동의합니다.</span>
+            </label>
+
+            <details class="terms-detail">
+              <summary class="terms-summary">
+                마케팅 정보 수신 동의 (선택)
+              </summary>
+              <div class="terms-body">
+                세미나·자료 발송 등 도장 운영에 도움 될 수 있는 정보를
+                카카오톡 또는 문자로 보내드릴 수 있습니다.
+              </div>
+            </details>
+            <label class="terms-row">
+              <input
+                type="checkbox"
+                id="termsMarketing"
+                class="terms-checkbox"
+              />
+              <span>마케팅 정보 수신에 동의합니다. (선택)</span>
+            </label>
+          </div>
+
+          <button class="form-submit" type="submit">문의 접수하기</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 하단 고정바 -->
+  <div class="bottom-bar">
+    <a
+      href="https://open.kakao.com/o/sdxcyB4h"
+      class="bottom-btn kakao"
+      target="_blank"
+      rel="noopener"
+    >
+      카톡 상담
+    </a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    function toggleMenu(open){
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if(open){
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }else{
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    }
+
+    // 업종 그룹 열릴 때 해당 위치로 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group)=>{
+      group.addEventListener("toggle", function(){
+        if(group.open && sideScroll){
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior:"smooth" });
+        }
+      });
+    });
+
+    function handleDojoSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const gym = document.getElementById("gym").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+      const termsRequired = document.getElementById("termsRequired").checked;
+
+      if(!termsRequired){
+        alert("개인정보 수집 및 이용에 동의해 주세요.");
+        return;
+      }
+      if(!name || !phone || !gym || !msg){
+        alert("필수 항목을 모두 입력해 주세요.");
+        return;
+      }
+
+      const body = encodeURIComponent(
+        `[HVIRAL 체육관·도장 문의]\n` +
+        `성명: ${name}\n연락처: ${phone}\n도장 정보: ${gym}\n` +
+        `내용: ${msg}`
+      );
+
+      const url = `sms:01032689899?body=${body}`;
+      window.location.href = url;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
+    }
+  </script>
 
 </body>
 </html>
+```0
