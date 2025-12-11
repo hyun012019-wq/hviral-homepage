@@ -9,13 +9,13 @@
   <meta name="description" content="치과 상권·환자 구조·교정·임플란트 비중·예약 동선을 기준으로 마케팅 인프라를 설계합니다. 하비럴 마케팅 HVIRAL이 치과 전용 디지털 마케팅 구조를 함께 만듭니다." />
   <meta name="keywords" content="치과 마케팅, 치과 마케팅 인프라, 치과 디지털 마케팅, 치과 브랜딩, 교정 마케팅, 임플란트 마케팅, 치과 홈페이지, 치과 예약 구조, 하비럴, HVIRAL" />
   <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://hviral.kr/industry/dental.html" />
+  <link rel="canonical" href="https://hviral.co.kr/industry/dental.html" />
 
   <!-- Open Graph / Kakao -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="치과 마케팅 인프라 │ 하비럴 마케팅 HVIRAL" />
   <meta property="og:description" content="환자 여정·진료 동선·예약 구조를 기준으로 설계하는 치과 전용 마케팅 인프라. 하비럴 마케팅 HVIRAL이 상권과 환자 구조에 맞춘 디지털 인프라를 설계합니다." />
-  <meta property="og:url" content="https://hviral.kr/industry/dental.html" />
+  <meta property="og:url" content="https://hviral.co.kr/industry/dental.html" />
   <meta property="og:site_name" content="HVIRAL 하비럴 마케팅" />
   <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="치과 마케팅 인프라 │ 하비럴 마케팅 HVIRAL" />
   <meta name="twitter:description" content="치과 상권·환자 구조·장기 진료 흐름을 기준으로 설계하는 치과 전용 마케팅 인프라. 온라인 문의부터 재내원까지 흐름을 구조로 만듭니다." />
-  <meta name="twitter:image" content="https://hviral.kr/og/dental.jpg" />
+  <meta name="twitter:image" content="https://hviral.co.kr/og/dental.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
@@ -462,11 +462,6 @@
       color:#9ca3af;
       margin:18px 0 6px;
       font-weight:600;
-    }
-    .side-link {
-      display:block;
-      padding:8px 0;
-      font-size:14px;
     }
     details.side-group {
       margin-bottom:8px;
@@ -959,17 +954,6 @@
         document.body.style.overflow = "";
       }
     }
-
-    // index / skin과 동일: 사이드 그룹 열릴 때 자동 스크롤
-    const sideScroll = document.querySelector(".side-scroll");
-    document.querySelectorAll("details.side-group").forEach((group) => {
-      group.addEventListener("toggle", function () {
-        if (group.open && sideScroll) {
-          const top = group.offsetTop - 16;
-          sideScroll.scrollTo({ top, behavior: "smooth" });
-        }
-      });
-    });
 
     function handleContactSubmit(e) {
       e.preventDefault();
