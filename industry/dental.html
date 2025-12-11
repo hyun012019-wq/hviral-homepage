@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="치과 상권·환자 구조·장기 진료 흐름을 기준으로 설계하는 치과 전용 마케팅 인프라. 온라인 문의부터 재내원까지 흐름을 구조로 만듭니다." />
   <meta name="twitter:image" content="https://hviral.kr/og/dental.jpg" />
 
- <!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -462,6 +462,11 @@
       color:#9ca3af;
       margin:18px 0 6px;
       font-weight:600;
+    }
+    .side-link {
+      display:block;
+      padding:8px 0;
+      font-size:14px;
     }
     details.side-group {
       margin-bottom:8px;
@@ -954,6 +959,17 @@
         document.body.style.overflow = "";
       }
     }
+
+    // index / skin과 동일: 사이드 그룹 열릴 때 자동 스크롤
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
 
     function handleContactSubmit(e) {
       e.preventDefault();
