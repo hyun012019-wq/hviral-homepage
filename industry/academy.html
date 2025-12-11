@@ -58,7 +58,7 @@
     .container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 0 20px 96px;
+      padding: 0 20px 110px; /* 하단 고정바랑 안 겹치게 살짝 여유 */
     }
 
     /* 헤더 */
@@ -276,6 +276,7 @@
     }
     .form-label span {
       color: #f97316;
+      margin-left: 2px;
     }
     .form-input,
     .form-textarea {
@@ -488,6 +489,11 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -544,7 +550,7 @@
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <!-- 사이드 메뉴 (index / cleaning과 동일 구조) -->
+  <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
       <div>
