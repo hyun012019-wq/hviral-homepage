@@ -3,6 +3,7 @@
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
 >
+
   <!-- 메인 홈 -->
   <url>
     <loc>https://hviral.co.kr/</loc>
@@ -17,8 +18,11 @@
   <url><loc>https://hviral.co.kr/app.html</loc><priority>0.85</priority></url>
   <url><loc>https://hviral.co.kr/lecture.html</loc><priority>0.80</priority></url>
 
-  <!-- 업종 페이지 (지금까지 만든 것 기준) -->
-  <!-- 의료 -->
+  <!-- ========================= -->
+  <!-- 업종 페이지 (industry 폴더) -->
+  <!-- ========================= -->
+
+  <!-- 의료·병원 -->
   <url><loc>https://hviral.co.kr/industry/skin.html</loc><priority>0.80</priority></url>
   <url><loc>https://hviral.co.kr/industry/dental.html</loc><priority>0.80</priority></url>
   <url><loc>https://hviral.co.kr/industry/plastic.html</loc><priority>0.80</priority></url>
@@ -28,9 +32,11 @@
   <url><loc>https://hviral.co.kr/industry/ent.html</loc><priority>0.80</priority></url>
   <url><loc>https://hviral.co.kr/industry/eye.html</loc><priority>0.80</priority></url>
   <url><loc>https://hviral.co.kr/industry/oriental.html</loc><priority>0.80</priority></url>
+  <url><loc>https://hviral.co.kr/industry/ortho.html</loc><priority>0.80</priority></url>
 
-  <!-- 헬스·뷰티 -->
+  <!-- 헬스·뷰티·도장 -->
   <url><loc>https://hviral.co.kr/industry/gym.html</loc><priority>0.78</priority></url>
+  <url><loc>https://hviral.co.kr/industry/gym_taekwondo.html</loc><priority>0.78</priority></url>
   <url><loc>https://hviral.co.kr/industry/pt.html</loc><priority>0.78</priority></url>
   <url><loc>https://hviral.co.kr/industry/yoga.html</loc><priority>0.78</priority></url>
   <url><loc>https://hviral.co.kr/industry/pilates.html</loc><priority>0.78</priority></url>
@@ -53,6 +59,23 @@
   <url><loc>https://hviral.co.kr/industry/lang.html</loc><priority>0.72</priority></url>
   <url><loc>https://hviral.co.kr/industry/art.html</loc><priority>0.72</priority></url>
   <url><loc>https://hviral.co.kr/industry/studyroom.html</loc><priority>0.72</priority></url>
+  <url><loc>https://hviral.co.kr/industry/study.html</loc><priority>0.72</priority></url>
 
-  <!-- 나머지 페이지도 추가 동일하게 -->
+  <!-- 전문직·B2B·기타 서비스 -->
+  <url><loc>https://hviral.co.kr/industry/b2b.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/lawoffice.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/lawyer.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/realestate.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/tax.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/manufacture.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/distribution.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/franchise.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/flower.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/photo.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/pet.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/cleaning.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/demolition.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/car.html</loc><priority>0.70</priority></url>
+  <url><loc>https://hviral.co.kr/industry/cartuning.html</loc><priority>0.70</priority></url>
+
 </urlset>
