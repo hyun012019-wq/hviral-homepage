@@ -352,7 +352,7 @@
       color:#fff;
     }
 
-    /* 하단 고정바 */
+    /* 하단 고정 상담바 (index와 동일) */
     .bottom-bar {
       position:fixed;
       left:0;
@@ -361,8 +361,8 @@
       display:flex;
       justify-content:space-between;
       background:#020617;
-      padding:14px 10px;
       border-top:1px solid rgba(148,163,184,0.4);
+      padding:14px 10px 14px;
       z-index:9700;
     }
     .bottom-btn {
@@ -388,7 +388,7 @@
       color:#fff;
     }
 
-    /* 사이드 메뉴 */
+    /* 사이드 메뉴 (index와 동일) */
     #sideBackdrop {
       position:fixed;
       top:0;
@@ -463,6 +463,14 @@
       margin:18px 0 6px;
       font-weight:600;
     }
+
+    /* ★ 서비스 4개가 한 줄씩 나오도록 (index와 동일) */
+    .side-link {
+      display:block;
+      padding:8px 0;
+      font-size:14px;
+    }
+
     details.side-group {
       margin-bottom:8px;
       border-radius:14px;
@@ -941,6 +949,7 @@
   </div>
 
   <script>
+    // 햄버거 / 사이드 메뉴 토글 (index와 동일 구조)
     function toggleMenu(open) {
       const m = document.getElementById("sideMenu");
       const b = document.getElementById("sideBackdrop");
@@ -955,6 +964,7 @@
       }
     }
 
+    // 문의 폼 → 문자앱으로 내용 전달
     function handleContactSubmit(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
