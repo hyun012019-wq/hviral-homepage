@@ -50,6 +50,11 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+    /* 메뉴 열렸을 때 바디 스크롤 잠금 (소아과/산부인과 기준) */
+    body.menu-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -216,10 +221,11 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
+    /* 서비스 4개 링크 스타일 (메인/소아과/산부인과와 동일) */
     .side-link {
       display: block;
-      padding: 8px 0;
-      font-size: 14px;
+      padding: 4px 0;
+      font-size: 13px;
     }
     details.side-group {
       margin-bottom: 8px;
@@ -600,14 +606,14 @@
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">HVIRAL</div>
-        <div class="side-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
-      <a href="/digital.html" class="side-link">디지털 마케팅 설계 (하비럴 마케팅)</a>
-      <a href="/website.html" class="side-link">홈페이지 제작 · 하비럴 광고용 랜딩</a>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
       <a href="/app.html" class="side-link">앱·예약 시스템</a>
       <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
 
@@ -622,11 +628,11 @@
         <div class="side-group-links">
           <a href="/industry/skin.html">피부과</a>
           <a href="/industry/dental.html">치과</a>
-          <a href="/industry/ortho.html">정형외과</a>
+          <a href="/industry/plastic.html">성형외과</a>
           <a href="/industry/internal.html">내과</a>
-          <a href="/industry/ent.html">이비인후과</a>
           <a href="/industry/obgyn.html">산부인과</a>
           <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
           <a href="/industry/eye.html">안과</a>
           <a href="/industry/oriental.html">한의원</a>
         </div>
@@ -645,6 +651,7 @@
           <a href="/industry/pilates.html">필라테스</a>
           <a href="/industry/beauty.html">미용실</a>
           <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
       </details>
 
@@ -662,6 +669,7 @@
           <a href="/industry/chinese.html">중식당</a>
           <a href="/industry/western.html">양식당</a>
           <a href="/industry/chicken.html">치킨 전문점</a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
         </div>
       </details>
 
@@ -673,10 +681,9 @@
         </summary>
         <div class="side-group-links">
           <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
           <a href="/industry/studyroom.html">공부방</a>
-          <a href="/industry/lang.html">외국어 학원</a>
-          <a href="/industry/arts.html">예체능·취미학원</a>
-          <a href="/industry/studycafe.html">스터디카페</a>
         </div>
       </details>
 
@@ -688,13 +695,12 @@
         </summary>
         <div class="side-group-links">
           <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
           <a href="/industry/cleaning.html">청소·이사</a>
           <a href="/industry/demolition.html">철거·인테리어</a>
           <a href="/industry/flower.html">플라워샵</a>
           <a href="/industry/photo.html">사진관</a>
           <a href="/industry/pet.html">펫샵</a>
-          <a href="/industry/icecream.html">아이스크림 매장</a>
-          <a href="/industry/gymtae.html">체육관·합기도·태권도</a>
         </div>
       </details>
 
@@ -705,14 +711,15 @@
           <span class="side-group-arrow">▼</span>
         </summary>
         <div class="side-group-links">
-          <a href="/industry/tax.html">세무/회계사</a>
-          <a href="/industry/law.html">법무사</a>
-          <a href="/industry/attorney.html">변호사</a>
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
           <a href="/industry/administrative.html">행정사</a>
-          <a href="/industry/agent.html">공인중개사</a>
-          <a href="/industry/franchise.html">가맹거래사·프랜차이즈 본사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
           <a href="/industry/manufacture.html">제조업</a>
           <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
         </div>
       </details>
     </div>
@@ -727,7 +734,7 @@
         </button>
         <a href="/" class="logo-wrap">
           <div class="logo">HVIRAL</div>
-          <div class="logo-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
       <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
@@ -986,20 +993,31 @@
   </div>
 
   <script>
-    // 사이드 메뉴 토글
+    // 사이드 메뉴 토글 (소아과/산부인과와 동일 패턴)
     function toggleMenu(open) {
       const menu = document.getElementById("sideMenu");
       const backdrop = document.getElementById("sideBackdrop");
-      if (open) {
+
+      const isOpen = menu.classList.contains("open");
+      const shouldOpen = (typeof open === "boolean") ? open : !isOpen;
+
+      if (shouldOpen) {
         menu.classList.add("open");
         backdrop.classList.add("show");
-        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
       } else {
         menu.classList.remove("open");
         backdrop.classList.remove("show");
-        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
       }
     }
+
+    // ESC 키로 닫기
+    window.addEventListener("keyup", function (e) {
+      if (e.key === "Escape") {
+        toggleMenu(false);
+      }
+    });
 
     // 업종 그룹 열릴 때 부드럽게 스크롤
     const sideScroll = document.querySelector(".side-scroll");
