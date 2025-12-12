@@ -18,7 +18,6 @@
   <meta property="og:title" content="치킨 전문점·야식 배달 마케팅 인프라 │ HVIRAL 하비럴">
   <meta property="og:description" content="배달앱·포장·홀 매출이 함께 성장하는 치킨집 마케팅 인프라. 상권·타깃·메뉴·피크타임·리뷰·쿠폰 구조를 HVIRAL 하비럴이 디지털 화면으로 설계합니다.">
   <meta property="og:url" content="https://hviral.co.kr/industry/chicken.html">
-  <!-- OG 이미지는 인덱스와 동일 규칙 -->
   <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -61,4 +60,711 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-   _toggleMenu is not defined0
+    }
+    .header-left { display: flex; align-items: center; gap: 16px; }
+    .menu-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .menu-btn span {
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: relative;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: "";
+      width: 16px;
+      height: 2px;
+      background: #e5e7eb;
+      position: absolute;
+      left: 0;
+    }
+    .menu-btn span::before { top: -5px; }
+    .menu-btn span::after { top: 5px; }
+
+    .logo-wrap { display: block; }
+    .logo { font-weight: 700; font-size: 22px; letter-spacing: 1.2px; }
+    .logo-sub { font-size: 11px; color: #9ca3af; }
+    .consult-btn {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* 히어로 */
+    .hero {
+      background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      padding: 28px 0 32px;
+    }
+    .hero-card {
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: linear-gradient(135deg, #0b1f3a, #020617);
+      padding: 28px 20px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(96, 165, 250, 0.6);
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
+    }
+    .hero-title { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .hero-desc { font-size: 14px; color: #cbd5f5; margin-bottom: 10px; }
+    .hero-note { font-size: 11px; color: #9ca3af; margin-top: 4px; }
+
+    .section-title { margin: 28px 0 10px; font-size: 18px; font-weight: 800; }
+    .section-sub { font-size: 13px; color: #9ca3af; margin-bottom: 10px; }
+
+    .card {
+      background: #020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+    .card-title { font-weight: 700; margin-bottom: 6px; font-size: 14px; }
+    .card ul { margin-top: 6px; padding-left: 18px; }
+    .card li { list-style: disc; margin-bottom: 4px; }
+
+    .label-pill {
+      display: inline-flex;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+
+    /* 문의 섹션 */
+    #contact { margin: 32px 0 4px; }
+    .contact-title { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .contact-sub { font-size: 13px; color: #9ca3af; margin-bottom: 14px; }
+
+    .contact-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 18px 16px;
+      font-size: 13px;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .form-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .form-group { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+    .form-label { font-size: 12px; color: #9ca3af; }
+    .form-label span { color: #f97316; }
+    .form-input, .form-textarea {
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: #020617;
+      color: #f9fafb;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    .form-textarea { min-height: 80px; resize: vertical; }
+
+    .terms-box {
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      background: #020617;
+    }
+    .terms-detail { margin-bottom: 6px; }
+    .terms-summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #e5e7eb;
+      align-items: center;
+    }
+    .terms-summary::-webkit-details-marker { display: none; }
+    .terms-summary::after {
+      content: "자세히 보기";
+      font-size: 11px;
+      color: #9ca3af;
+      margin-left: 8px;
+    }
+    .terms-detail[open] .terms-summary::after { content: "접기"; }
+    .terms-body {
+      font-size: 11px;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+    .terms-row { display: flex; gap: 6px; font-size: 12px; margin-bottom: 4px; align-items: center; }
+    .terms-checkbox { width: 14px; height: 14px; accent-color: #2563eb; }
+
+    .form-submit {
+      width: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #fff;
+      padding: 11px 0;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-actions { margin-top: 14px; display: flex; gap: 8px; }
+    .contact-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 11px 0;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .contact-kakao { background: #facc15; color: #000; }
+    .contact-call { background: #2563eb; color: #fff; }
+
+    /* 하단 고정바 */
+    .bottom-bar {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background: #020617;
+      padding: 14px 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      z-index: 9700;
+    }
+    .bottom-btn {
+      flex: 1;
+      margin: 0 4px;
+      text-align: center;
+      padding: 13px 0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .bottom-btn.kakao { background: #facc15; color: #000; }
+    .bottom-btn.ask { background: #111827; color: #e5e7eb; border: 1px solid rgba(148, 163, 184, 0.6); }
+    .bottom-btn.call { background: #2563eb; color: #fff; }
+
+    /* 사이드 메뉴 */
+    #sideBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 9500;
+      display: none;
+    }
+    #sideBackdrop.show { display: block; }
+
+    #sideMenu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%;
+      max-width: 360px;
+      height: 100%;
+      background: #020617;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      overscroll-behavior: contain;
+    }
+    #sideMenu.open { transform: translateX(0); }
+
+    .side-menu-header {
+      padding: 20px 22px 12px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .side-logo-wrap { display: block; color: inherit; text-decoration: none; }
+    .side-menu-title { font-size: 18px; font-weight: 700; }
+    .side-sub { font-size: 11px; color: #9ca3af; padding: 0 22px 12px; flex-shrink: 0; }
+
+    .side-close {
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+
+    .side-scroll {
+      flex: 1;
+      padding: 8px 22px 120px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      touch-action: pan-y;
+    }
+    .side-section-title {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+
+    /* 서비스 4개 링크 */
+    .side-link { display: block; padding: 8px 0; font-size: 14px; }
+
+    details.side-group {
+      margin-bottom: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      background: #020617;
+      overflow: hidden;
+    }
+    .side-group summary {
+      list-style: none;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .side-group summary::-webkit-details-marker { display: none; }
+    .side-group-label { font-weight: 600; }
+    .side-group-arrow { font-size: 11px; color: #9ca3af; }
+    .side-group-links {
+      border-top: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 12px 8px;
+    }
+    .side-group-links a { display: block; padding: 4px 0; font-size: 13px; }
+
+    @media (min-width: 1024px) {
+      .hero { padding-top: 36px; }
+      .hero-title { font-size: 26px; }
+      .hero-card { padding: 32px 28px; }
+      .container { padding-bottom: 110px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 사이드 메뉴 백드롭 -->
+  <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
+
+  <!-- 사이드 메뉴 -->
+  <nav id="sideMenu" aria-label="전체 메뉴">
+    <div class="side-menu-header">
+      <a href="/" class="side-logo-wrap">
+        <div class="side-menu-title">HVIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      </a>
+      <button class="side-close" onclick="toggleMenu(false)">닫기</button>
+    </div>
+
+    <div class="side-scroll">
+      <div class="side-section-title">서비스</div>
+      <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
+      <a href="/website.html" class="side-link">홈페이지 제작</a>
+      <a href="/app.html" class="side-link">앱·예약 시스템</a>
+      <a href="/lecture.html" class="side-link">마케팅 강의 신청</a>
+
+      <div class="side-section-title" style="margin-top:22px;">업종별 상세페이지</div>
+
+      <!-- 의료·병원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">의료·병원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/skin.html">피부과</a>
+          <a href="/industry/dental.html">치과</a>
+          <a href="/industry/plastic.html">성형외과</a>
+          <a href="/industry/internal.html">내과</a>
+          <a href="/industry/obgyn.html">산부인과</a>
+          <a href="/industry/pediatrics.html">소아과</a>
+          <a href="/industry/ent.html">이비인후과</a>
+          <a href="/industry/eye.html">안과</a>
+          <a href="/industry/oriental.html">한의원</a>
+        </div>
+      </details>
+
+      <!-- 헬스·뷰티 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">헬스·뷰티</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/gym.html">헬스장</a>
+          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/yoga.html">요가</a>
+          <a href="/industry/pilates.html">필라테스</a>
+          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/nail.html">네일샵</a>
+          <a href="/industry/dojang.html">체육관·태권도·합기도</a>
+        </div>
+      </details>
+
+      <!-- 카페·음식점 -->
+      <details class="side-group" open>
+        <summary>
+          <span class="side-group-label">카페·음식점</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/cafe.html">카페</a>
+          <a href="/industry/dessert.html">디저트 카페</a>
+          <a href="/industry/korean.html">한식당</a>
+          <a href="/industry/japanese.html">일식당</a>
+          <a href="/industry/chinese.html">중식당</a>
+          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/chicken.html"><strong>치킨 전문점</strong></a>
+          <a href="/industry/icecream.html">아이스크림 매장</a>
+        </div>
+      </details>
+
+      <!-- 교육·학원 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">교육·학원</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/academy.html">입시·보습학원</a>
+          <a href="/industry/lang.html">어학·유학</a>
+          <a href="/industry/art.html">예체능·취미</a>
+          <a href="/industry/studyroom.html">공부방</a>
+        </div>
+      </details>
+
+      <!-- 생활·지역 서비스 -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">생활·지역 서비스</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/car.html">자동차 정비·카센터</a>
+          <a href="/industry/cartuning.html">차량 튜닝·썬팅</a>
+          <a href="/industry/cleaning.html">청소·이사</a>
+          <a href="/industry/demolition.html">철거·인테리어</a>
+          <a href="/industry/flower.html">플라워샵</a>
+          <a href="/industry/photo.html">사진관</a>
+          <a href="/industry/pet.html">펫샵</a>
+        </div>
+      </details>
+
+      <!-- 전문직·B2B -->
+      <details class="side-group">
+        <summary>
+          <span class="side-group-label">전문직·B2B</span>
+          <span class="side-group-arrow">▼</span>
+        </summary>
+        <div class="side-group-links">
+          <a href="/industry/tax.html">세무·회계사</a>
+          <a href="/industry/lawyer.html">변호사</a>
+          <a href="/industry/lawoffice.html">법무사</a>
+          <a href="/industry/administrative.html">행정사</a>
+          <a href="/industry/realestate.html">공인중개사</a>
+          <a href="/industry/franchise.html">가맹거래사·프랜차이즈</a>
+          <a href="/industry/manufacture.html">제조업</a>
+          <a href="/industry/distribution.html">유통업</a>
+          <a href="/industry/b2b.html">B2B 서비스·컨설팅</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="menu-btn" onclick="toggleMenu(true)" aria-label="전체 메뉴 열기">
+          <span></span>
+        </button>
+        <a href="/" class="logo-wrap">
+          <div class="logo">HVIRAL</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+        </a>
+      </div>
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
+        상담하기
+      </a>
+    </div>
+  </header>
+
+  <!-- 메인 (본문 내용 그대로) -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-badges">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              치킨 전문점·호프·야식 배달 전용 디지털 인프라
+            </span>
+            <span class="hero-badge">
+              배달앱·포장·홀 매출을 한 구조 안에서 설계하는 치킨집 마케팅
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            “단순 배달이 아닌,<br />
+            매출 구조가 보이는 치킨집을 만듭니다.”
+          </h1>
+          <p class="hero-desc">
+            하비럴은 프라이드·양념·간장치킨부터 순살·사이드·맥주까지,<br />
+            어떤 고객이 어떤 시간대에 이 매장을 선택해야 하는지 기준을 세우고,<br />
+            배달앱·포장·홀 매출이 함께 성장하는 구조를 마케팅 언어로 정리합니다.
+          </p>
+          <p class="hero-note">
+            광고비보다 먼저,
+            <b>“왜 이 동네 치킨은 여기서 시켜야 하는지”</b>가 보이게 만드는 것이 핵심입니다.
+          </p>
+        </div>
+
+        <h2 class="section-title">치킨집·호프 고객이 실제로 확인하는 정보</h2>
+        <p class="section-sub">
+          메뉴 이름과 가격만으로는 선택받기 어렵습니다.<br />
+          “야식·회식·가족 모임 등 어떤 상황에서 이 집을 불러야 하는지”가 먼저 설명되어야 합니다.
+        </p>
+
+        <div class="card">
+          <div class="card-title">1. 상권·타깃·주요 시간대 정의</div>
+          <ul>
+            <li>주거지·오피스·대학교·역세권 등 상권 유형을 기준으로 주요 타깃을 정리</li>
+            <li>평일 야식 / 주말 가족 외식 / 경기 있는 날 단체 주문 등 핵심 시간대를 구분</li>
+            <li>“이 동네에서 이 치킨집이 맡고 싶은 역할”을 한 문장으로 정리해 첫 화면에 노출</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">2. 메뉴·세트·객단가 구조</div>
+          <ul>
+            <li>대표 메뉴(프라이드·양념·간장)와 시그니처 메뉴(로제·마라·크림 등)를 역할별로 배치</li>
+            <li>1인·2~3인·4인 가족 세트 등 인원 기준 추천 구성을 통해 객단가 이미지를 설계</li>
+            <li>사이드·주류·콜라·맥주 조합을 별도 블록으로 정리해 자연스러운 추가 주문을 유도</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">3. 배달앱·포장·홀 매출 비율 전략</div>
+          <ul>
+            <li>배달앱 / 포장 / 홀 매출 비율을 대략적으로 보여주고, 앞으로 키우고 싶은 축을 명시</li>
+            <li>배달에 최적화된 메뉴, 포장과 홀에서 더 만족도가 높은 메뉴를 구분해 소개</li>
+            <li>배달앱 의존도를 줄이고, 직접 주문·포장 고객을 늘리는 메시지를 별도 영역으로 설계</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">4. 피크타임·조리시간·대기 구조</div>
+          <ul>
+            <li>평일·주말·경기 있는 날 등 주문이 몰리는 시간대를 미리 안내해 불안을 줄임</li>
+            <li>평균 조리·배달 소요 시간, 포장 준비 시간 등을 솔직하게 설명</li>
+            <li>대기·예약·사전 주문이 가능한지 여부를 한눈에 볼 수 있도록 정리</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">5. 리뷰·별점·사진 운영 전략</div>
+          <ul>
+            <li>배달앱·네이버·인스타그램 등 각 채널의 역할과 우선순위를 설정</li>
+            <li>“양 많음, 바삭함, 늦은 시간까지 운영” 등 실제로 선택에 영향을 주는 키워드를 문장으로 정리</li>
+            <li>광고 문구가 아니라, 재주문으로 이어지는 리뷰·사진이 쌓이도록 운영 기준을 제시</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">6. 프로모션·쿠폰·재주문 구조</div>
+          <ul>
+            <li>쿠폰·포인트·스탬프 등 혜택을 “단기 할인”이 아닌 재주문 구조 중심으로 설계</li>
+            <li>첫 주문·두 번째 주문·단골 고객에게 다른 메시지와 혜택을 제안</li>
+            <li>광고비를 쓰더라도, 어떤 고객이 남는 고객인지 숫자로 확인할 수 있는 구조를 목표로 함</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">7. 동네 단골·야식 상표처럼 보이게 만들기</div>
+          <ul>
+            <li>“늦은 밤 치킨 생각나면 여기”라는 기준점을 화면과 문장으로 반복 노출</li>
+            <li>근처 아파트·원룸·회사·상가 등 주요 고객군을 상상하고, 그들의 일상 속에 매장을 배치</li>
+            <li>단골이 생겼을 때, 그 단골이 주변에 추천하기 쉽도록 설명 문장을 미리 설계</li>
+          </ul>
+        </div>
+
+        <div class="label-pill">치킨 전문점·야식 배달 마케팅 설계 시 체크하는 항목</div>
+        <div class="card">
+          <ul>
+            <li>상권·타깃·주요 시간대가 한 번에 이해되는지</li>
+            <li>배달앱·포장·홀 매출 구조가 대표님 머릿속이 아닌, 화면에도 정리되어 있는지</li>
+            <li>“이 동네 치킨은 여기서 시켜야 한다”는 이유가, 고객 언어로 설명되어 있는지</li>
+          </ul>
+        </div>
+
+        <!-- 문의 -->
+        <section id="contact">
+          <h2 class="contact-title">치킨 전문점·야식 매장 디지털 마케팅 상담</h2>
+          <p class="contact-sub">
+            배달앱 비중·포장·홀 매출이 각각 어느 정도인지,<br />
+            지금 가장 고민되는 구간이 어디인지 알려주시면<br />
+            치킨 업종에 맞는 실전형 마케팅 구조를 함께 설계해 드립니다.
+          </p>
+
+          <div class="contact-card">
+            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+              <div class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">성명<span>*</span></label>
+                    <input type="text" id="name" class="form-input" required />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">연락처<span>*</span></label>
+                    <input type="tel" id="phone" class="form-input" placeholder="'-' 없이 숫자만" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">매장명·위치·운영 형태<span>*</span></label>
+                  <input type="text" id="shop" class="form-input" placeholder="예: ○○치킨 / ○○구 ○○동 / 배달앱·포장·홀 비율 등" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">현재 상황 / 문의 내용<span>*</span></label>
+                  <textarea id="message" class="form-textarea" placeholder="배달비·쿠폰·마진·비어 있는 시간대 등, 가장 고민되시는 부분을 적어 주세요." required></textarea>
+                </div>
+              </div>
+
+              <div class="terms-box">
+                <details class="terms-detail">
+                  <summary class="terms-summary">개인정보 수집 및 이용 동의 (필수)</summary>
+                  <div class="terms-body">
+                    ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
+                    ② 수집 목적: 상담 및 안내<br />
+                    ③ 보유 기간: 상담 완료 후 1년 보관 후 파기<br />
+                    ④ 동의 거부 시 상담 제공이 제한될 수 있음
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input type="checkbox" id="termsRequired" class="terms-checkbox" />
+                  <span>개인정보 수집 및 이용에 동의합니다.</span>
+                </label>
+
+                <details class="terms-detail">
+                  <summary class="terms-summary">마케팅 정보 수신 동의 (선택)</summary>
+                  <div class="terms-body">
+                    세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
+                  </div>
+                </details>
+                <label class="terms-row">
+                  <input type="checkbox" id="termsMarketing" class="terms-checkbox" />
+                  <span>마케팅 정보 수신에 동의합니다.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="form-submit">문의 접수하기</button>
+            </form>
+
+            <div class="contact-actions">
+              <a href="https://open.kakao.com/o/sdxcyB4h" target="_blank" rel="noopener" class="contact-kakao">카톡 상담</a>
+              <a href="tel:01032689899" class="contact-call">전화 상담</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정바 -->
+  <div class="bottom-bar">
+    <a href="https://open.kakao.com/o/sdxcyB4h" class="bottom-btn kakao" target="_blank" rel="noopener">카톡 상담</a>
+    <a href="#contact" class="bottom-btn ask">문의하기</a>
+    <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
+  </div>
+
+  <script>
+    function toggleMenu(open) {
+      const menu = document.getElementById("sideMenu");
+      const backdrop = document.getElementById("sideBackdrop");
+      if (open) {
+        menu.classList.add("open");
+        backdrop.classList.add("show");
+        document.body.style.overflow = "hidden";
+      } else {
+        menu.classList.remove("open");
+        backdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const n = document.getElementById("name").value.trim();
+      const p = document.getElementById("phone").value.trim();
+      const s = document.getElementById("shop").value.trim();
+      const m = document.getElementById("message").value.trim();
+      const t = document.getElementById("termsRequired").checked;
+
+      if (!t) {
+        alert("개인정보 수집 및 이용에 동의해주세요.");
+        return;
+      }
+      if (!n || !p || !s || !m) {
+        alert("필수 항목을 모두 입력해주세요.");
+        return;
+      }
+
+      const sms =
+        `[HVIRAL 치킨 전문점 문의]\n` +
+        `성명: ${n}\n연락처: ${p}\n매장 정보: ${s}\n` +
+        `내용: ${m}`;
+
+      const url = `sms:01032689899?body=${encodeURIComponent(sms)}`;
+      window.location.href = url;
+
+      alert(
+        "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
+        "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+      );
+
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
