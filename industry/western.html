@@ -18,6 +18,7 @@
   <meta property="og:title" content="양식당·브런치·비스트로 디지털 인프라 │ HVIRAL" />
   <meta property="og:description" content="파스타·스테이크·브런치·비스트로 매장의 객단가·회전율·예약률을 함께 보는 양식당 디지털 인프라·마케팅 설계." />
   <meta property="og:url" content="https://hviral.kr/industry/western.html" />
+  <!-- ✅ OG 이미지는 인덱스와 동일 규칙 (파일명 오타/통일 유지) -->
   <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -486,6 +487,14 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
+
+    /* ✅ 서비스 4개가 안 보이는 이슈 방지: side-link 스타일 누락 방지 */
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -608,7 +617,7 @@
           <a href="/industry/korean.html">한식당</a>
           <a href="/industry/japanese.html">일식당</a>
           <a href="/industry/chinese.html">중식당</a>
-          <a href="/industry/western.html">양식당</a>
+          <a href="/industry/western.html"><strong>양식당</strong></a>
           <a href="/industry/chicken.html">치킨 전문점</a>
           <a href="/industry/icecream.html">아이스크림 매장</a>
         </div>
