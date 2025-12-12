@@ -41,6 +41,10 @@
       line-height:1.6;
       overflow-x:hidden;
     }
+    /* 메뉴 열렸을 때 바디 스크롤 잠금 (메인/산부인과와 동일) */
+    body.menu-open {
+      overflow:hidden;
+    }
 
     a { color:inherit; text-decoration:none; }
     ul { list-style:none; }
@@ -964,20 +968,32 @@
   </div>
 
   <script>
-    // Index와 동일한 방식의 메뉴 열기/닫기
+    // 메인/산부인과와 동일한 패턴의 메뉴 토글
     function toggleMenu(open) {
       const menu = document.getElementById("sideMenu");
       const backdrop = document.getElementById("sideBackdrop");
-      if (open) {
+
+      const isOpen = menu.classList.contains("open");
+      const shouldOpen =
+        typeof open === "boolean" ? open : !isOpen;
+
+      if (shouldOpen) {
         menu.classList.add("open");
         backdrop.classList.add("show");
-        document.body.style.overflow = "hidden";
+        document.body.classList.add("menu-open");
       } else {
         menu.classList.remove("open");
         backdrop.classList.remove("show");
-        document.body.style.overflow = "";
+        document.body.classList.remove("menu-open");
       }
     }
+
+    // ESC 키로 닫기
+    window.addEventListener("keyup", function(e) {
+      if (e.key === "Escape") {
+        toggleMenu(false);
+      }
+    });
 
     function handleContactSubmit(e) {
       e.preventDefault();
