@@ -22,7 +22,6 @@
   <meta property="og:title" content="요가학원·요가센터·핫요가 마케팅 인프라 │ HVIRAL" />
   <meta property="og:description" content="직장인·전업주부·프리랜서·시니어·산전·산후 회원까지 실제 회원 세부 분석을 기반으로, 매출 구조가 보이는 요가학원 마케팅 인프라를 설계합니다." />
   <meta property="og:url" content="https://hviral.co.kr/industry/yoga.html" />
-  <!-- TODO: 실제 OG 이미지 경로로 교체하세요 -->
   <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -491,6 +490,11 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -929,6 +933,7 @@
   </div>
 
   <script>
+    // 사이드 메뉴 열고 닫기 (index 기준)
     function toggleMenu(open) {
       const m = document.getElementById("sideMenu");
       const b = document.getElementById("sideBackdrop");
@@ -943,6 +948,18 @@
       }
     }
 
+    // 업종 그룹 열릴 때 해당 위치로 부드럽게 스크롤 (유통/B2B와 동일)
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+
+    // 문의 폼 → 문자 앱으로 전달
     function handleContactSubmit(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
