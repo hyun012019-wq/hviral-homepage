@@ -19,7 +19,8 @@
   <meta property="og:title" content="유통업 디지털 마케팅 설계 │ 하비럴 마케팅 HVIRAL" />
   <meta property="og:description" content="하비럴 마케팅(HVIRAL)은 유통업 특유의 B2B 세일즈 구조를 디지털 채널에 그대로 옮겨, 도매·납품·입점 제안·총판 모집을 위한 유통업 전용 세일즈 인프라를 설계하는 하비럴 광고 플랫폼입니다." />
   <meta property="og:url" content="https://hviral.co.kr/industry/distribution.html" />
-  <meta property="og:image" content="https://hviral.co.kr/og/distribution_1200x630.jpg" />
+  <!-- ★ 여기 통일된 OG 이미지 -->
+  <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -27,7 +28,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="유통업 디지털 마케팅 설계 │ 하비럴 마케팅 HVIRAL" />
   <meta name="twitter:description" content="하비럴 마케팅(HVIRAL)은 유통업 B2B 세일즈를 위한 디지털 인프라 설계·하비럴 광고·브랜딩까지 한 번에 설계합니다. 도매·입점 제안·총판 모집 구조를 온라인에 그대로 옮깁니다." />
-  <meta name="twitter:image" content="https://hviral.co.kr/og/distribution_1200x630.jpg" />
+  <!-- ★ 트위터도 통일 -->
+  <meta name="twitter:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
@@ -50,7 +52,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    /* 메뉴 열렸을 때 스크롤 잠금 (인덱스/산부/소아 기준 통일) */
+    /* 메뉴 열렸을 때 스크롤 잠금 */
     body.menu-open {
       overflow: hidden;
     }
@@ -221,7 +223,6 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
-    /* 서비스 4개 링크 스타일 (인덱스 기준 동일 적용) */
     .side-link {
       display: block;
       padding: 4px 0;
@@ -545,7 +546,7 @@
       color: #fff;
     }
 
-    /* 하단 고정 상담바 (index 기준 통일) */
+    /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
       left: 0;
@@ -978,7 +979,7 @@
     </section>
   </main>
 
-  <!-- 하단 고정 상담바 (index와 동일 텍스트) -->
+  <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
     <a
       href="https://open.kakao.com/o/sdxcyB4h"
@@ -993,7 +994,7 @@
   </div>
 
   <script>
-    // 사이드 메뉴 토글 (인덱스/산부/소아와 동일 패턴)
+    // 사이드 메뉴 토글
     function toggleMenu(open) {
       const menu = document.getElementById("sideMenu");
       const backdrop = document.getElementById("sideBackdrop");
@@ -1019,7 +1020,7 @@
       }
     });
 
-    // 업종 그룹 열릴 때 부드럽게 스크롤 (선택 기능, 그대로 유지)
+    // 업종 그룹 열릴 때 부드럽게 스크롤
     const sideScroll = document.querySelector(".side-scroll");
     document.querySelectorAll("details.side-group").forEach((group) => {
       group.addEventListener("toggle", function () {
