@@ -26,7 +26,6 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="철거·인테리어 전문 디지털 마케팅 │ 하비럴 마케팅 HVIRAL" />
   <meta name="twitter:description" content="철거·인테리어 전문 업체를 위한 디지털 마케팅·브랜딩 설계. 온라인 문의가 현장 방문·작업 예약으로 이어지도록 구조를 만듭니다." />
-  <!-- 도메인 co.kr로 통일 -->
   <meta name="twitter:image" content="https://hviral.co.kr/og/demolition.jpg" />
 
   <!-- Favicon -->
@@ -184,7 +183,7 @@
     .grid-title { font-weight: 600; margin-bottom: 4px; }
     .grid-desc { font-size: 12px; color: #9ca3af; }
 
-    /* 문의 폼 (본문 유지: 스타일만 공통 유지) */
+    /* 문의 폼 */
     #contact { margin: 40px 0 20px; }
     .contact-title { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
     .contact-sub { font-size: 13px; color: #9ca3af; margin-bottom: 16px; }
@@ -301,13 +300,18 @@
       font-weight: 600;
     }
     .side-link { display: block; padding: 8px 0; font-size: 14px; }
+
+    /* ✅ FIX: details 박스 밖으로 글자/영역이 튀는 현상 방지 */
     details.side-group {
+      display: block;             /* 모바일 브라우저 details 렌더링 안정화 */
       margin-bottom: 8px;
       border-radius: 14px;
       border: 1px solid rgba(75, 85, 99, 0.8);
       background: #020617;
-      overflow: hidden;
+      overflow: hidden;           /* 라운드 밖으로 내용 튀는 것 클립 */
+      contain: paint;             /* 일부 브라우저에서 border/clip 깨짐 방지 */
     }
+
     .side-group summary {
       list-style: none;
       padding: 10px 12px;
@@ -320,11 +324,22 @@
     .side-group summary::-webkit-details-marker { display: none; }
     .side-group-label { font-weight: 600; }
     .side-group-arrow { font-size: 11px; color: #9ca3af; }
+
     .side-group-links {
       border-top: 1px solid rgba(55, 65, 81, 0.9);
       padding: 6px 12px 8px;
+      overflow: hidden;           /* ✅ 내부 링크가 바깥으로 삐져나가는 케이스 방지 */
     }
-    .side-group-links a { display: block; padding: 4px 0; font-size: 13px; }
+    .side-group-links a {
+      display: block;
+      padding: 4px 0;
+      font-size: 13px;
+
+      /* ✅ 긴 텍스트/특정 브라우저 렌더링에서 박스 밖으로 “흘러내림” 방지 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     /* 하단 고정 상담바 (index 동일) */
     .bottom-bar {
@@ -622,7 +637,7 @@
           </ul>
         </div>
 
-        <!-- 문의 섹션 (본문 그대로) -->
+        <!-- 문의 섹션 -->
         <section id="contact">
           <h2 class="contact-title">철거·인테리어 상담 접수</h2>
           <p class="contact-sub">평수·상태·원하시는 작업만 적어주셔도 됩니다.</p>
@@ -695,7 +710,7 @@
       });
     });
 
-    // 문자 문의 (기존 본문 로직 그대로)
+    // 문자 문의
     function sendMsg(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
