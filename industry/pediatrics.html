@@ -477,7 +477,7 @@
       margin:18px 0 6px;
       font-weight:600;
     }
-    /* 서비스 4개 a태그용 */
+    /* 서비스 4개 링크 스타일 (인덱스 기준 동일 적용) */
     .side-link {
       display:block;
       padding:4px 0;
@@ -536,7 +536,7 @@
     <div class="side-menu-header">
       <div>
         <div class="side-menu-title">HVIRAL</div>
-        <div class="side-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
@@ -664,7 +664,7 @@
         </button>
         <a href="/" class="logo-wrap">
           <div class="logo">HVIRAL</div>
-          <div class="logo-sub">하비럴 마케팅 인프라 설계·브랜딩 플랫폼</div>
+          <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
       <a
@@ -719,6 +719,7 @@
           마케팅 인프라가 단순 홍보가 아닌, 진료 방향과 연결될 수 있습니다.
         </p>
 
+        <!-- 카드들 (기존 내용 그대로) -->
         <!-- 카드 1: 상권·연령·가정 구조 -->
         <div class="card">
           <div class="card-title">1. 상권·연령대·가정 구조 파악</div>
@@ -974,8 +975,7 @@
       const backdrop = document.getElementById("sideBackdrop");
 
       const isOpen = menu.classList.contains("open");
-      const shouldOpen =
-        typeof open === "boolean" ? open : !isOpen;
+      const shouldOpen = (typeof open === "boolean") ? open : !isOpen;
 
       if (shouldOpen) {
         menu.classList.add("open");
@@ -989,7 +989,7 @@
     }
 
     // ESC 키로 닫기
-    window.addEventListener("keyup", function(e) {
+    window.addEventListener("keyup", function (e) {
       if (e.key === "Escape") {
         toggleMenu(false);
       }
