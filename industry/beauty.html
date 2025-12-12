@@ -32,11 +32,7 @@
   <meta name="twitter:image" content="/og/og-beauty.jpg">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
         "Noto Sans KR", system-ui, sans-serif;
@@ -45,18 +41,9 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    ul {
-      list-style: none;
-    }
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 20px 96px;
-    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 20px 96px; }
 
     /* 헤더 */
     header {
@@ -74,11 +61,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .header-left { display: flex; align-items: center; gap: 16px; }
     .menu-btn {
       width: 32px;
       height: 32px;
@@ -105,25 +88,12 @@
       position: absolute;
       left: 0;
     }
-    .menu-btn span::before {
-      top: -5px;
-    }
-    .menu-btn span::after {
-      top: 5px;
-    }
+    .menu-btn span::before { top: -5px; }
+    .menu-btn span::after { top: 5px; }
 
-    .logo-wrap {
-      display: block;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 22px;
-      letter-spacing: 1.2px;
-    }
-    .logo-sub {
-      font-size: 11px;
-      color: #9ca3af;
-    }
+    .logo-wrap { display: block; }
+    .logo { font-weight: 700; font-size: 22px; letter-spacing: 1.2px; }
+    .logo-sub { font-size: 11px; color: #9ca3af; }
     .consult-btn {
       padding: 9px 20px;
       border-radius: 999px;
@@ -146,12 +116,7 @@
       box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
       overflow: hidden;
     }
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -170,32 +135,12 @@
       background: #22c55e;
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
-    .hero-title {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .hero-desc {
-      font-size: 14px;
-      color: #cbd5f5;
-      margin-bottom: 10px;
-    }
-    .hero-note {
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
+    .hero-title { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .hero-desc { font-size: 14px; color: #cbd5f5; margin-bottom: 10px; }
+    .hero-note { font-size: 11px; color: #9ca3af; margin-top: 4px; }
 
-    .section-title {
-      margin: 28px 0 10px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-    .section-sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 10px;
-    }
+    .section-title { margin: 28px 0 10px; font-size: 18px; font-weight: 800; }
+    .section-sub { font-size: 13px; color: #9ca3af; margin-bottom: 10px; }
 
     .card {
       background: #020617;
@@ -205,19 +150,9 @@
       font-size: 13px;
       margin-bottom: 14px;
     }
-    .card-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-    .card ul {
-      margin-top: 6px;
-      padding-left: 18px;
-    }
-    .card li {
-      list-style: disc;
-      margin-bottom: 4px;
-    }
+    .card-title { font-weight: 700; margin-bottom: 6px; font-size: 14px; }
+    .card ul { margin-top: 6px; padding-left: 18px; }
+    .card li { list-style: disc; margin-bottom: 4px; }
 
     .label-pill {
       display: inline-flex;
@@ -230,19 +165,9 @@
     }
 
     /* 문의 섹션 */
-    #contact {
-      margin: 32px 0 4px;
-    }
-    .contact-title {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-    .contact-sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 14px;
-    }
+    #contact { margin: 32px 0 4px; }
+    .contact-title { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .contact-sub { font-size: 13px; color: #9ca3af; margin-bottom: 14px; }
 
     .contact-card {
       border-radius: 20px;
@@ -250,32 +175,12 @@
       padding: 18px 16px;
       font-size: 13px;
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .form-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .form-group {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .form-label {
-      font-size: 12px;
-      color: #9ca3af;
-    }
-    .form-label span {
-      color: #f97316;
-    }
-    .form-input,
-    .form-textarea {
+    .contact-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .form-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .form-group { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+    .form-label { font-size: 12px; color: #9ca3af; }
+    .form-label span { color: #f97316; }
+    .form-input, .form-textarea {
       border-radius: 10px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       background: #020617;
@@ -283,10 +188,7 @@
       padding: 9px 10px;
       font-size: 13px;
     }
-    .form-textarea {
-      min-height: 80px;
-      resize: vertical;
-    }
+    .form-textarea { min-height: 80px; resize: vertical; }
 
     .terms-box {
       border-radius: 12px;
@@ -296,9 +198,7 @@
       margin-bottom: 12px;
       background: #020617;
     }
-    .terms-detail {
-      margin-bottom: 6px;
-    }
+    .terms-detail { margin-bottom: 6px; }
     .terms-summary {
       cursor: pointer;
       list-style: none;
@@ -309,36 +209,22 @@
       color: #e5e7eb;
       align-items: center;
     }
-    .terms-summary::-webkit-details-marker {
-      display: none;
-    }
+    .terms-summary::-webkit-details-marker { display: none; }
     .terms-summary::after {
       content: "자세히 보기";
       font-size: 11px;
       color: #9ca3af;
       margin-left: 8px;
     }
-    .terms-detail[open] .terms-summary::after {
-      content: "접기";
-    }
+    .terms-detail[open] .terms-summary::after { content: "접기"; }
     .terms-body {
       font-size: 11px;
       color: #9ca3af;
       line-height: 1.5;
       margin-top: 6px;
     }
-    .terms-row {
-      display: flex;
-      gap: 6px;
-      font-size: 12px;
-      margin-bottom: 4px;
-      align-items: center;
-    }
-    .terms-checkbox {
-      width: 14px;
-      height: 14px;
-      accent-color: #2563eb;
-    }
+    .terms-row { display: flex; gap: 6px; font-size: 12px; margin-bottom: 4px; align-items: center; }
+    .terms-checkbox { width: 14px; height: 14px; accent-color: #2563eb; }
 
     .form-submit {
       width: 100%;
@@ -352,11 +238,7 @@
       cursor: pointer;
     }
 
-    .contact-actions {
-      margin-top: 14px;
-      display: flex;
-      gap: 8px;
-    }
+    .contact-actions { margin-top: 14px; display: flex; gap: 8px; }
     .contact-actions a {
       flex: 1;
       text-align: center;
@@ -365,14 +247,8 @@
       font-weight: 600;
       font-size: 14px;
     }
-    .contact-kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .contact-call {
-      background: #2563eb;
-      color: #fff;
-    }
+    .contact-kakao { background: #facc15; color: #000; }
+    .contact-call { background: #2563eb; color: #fff; }
 
     /* 하단 고정바 */
     .bottom-bar {
@@ -396,21 +272,11 @@
       font-size: 15px;
       font-weight: 600;
     }
-    .bottom-btn.kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .bottom-btn.ask {
-      background: #111827;
-      color: #e5e7eb;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-    }
-    .bottom-btn.call {
-      background: #2563eb;
-      color: #fff;
-    }
+    .bottom-btn.kakao { background: #facc15; color: #000; }
+    .bottom-btn.ask { background: #111827; color: #e5e7eb; border: 1px solid rgba(148, 163, 184, 0.6); }
+    .bottom-btn.call { background: #2563eb; color: #fff; }
 
-    /* 사이드 메뉴 (index와 동일 구조) */
+    /* 사이드 메뉴 */
     #sideBackdrop {
       position: fixed;
       top: 0;
@@ -422,9 +288,8 @@
       z-index: 9500;
       display: none;
     }
-    #sideBackdrop.show {
-      display: block;
-    }
+    #sideBackdrop.show { display: block; }
+
     #sideMenu {
       position: fixed;
       top: 0;
@@ -441,9 +306,8 @@
       flex-direction: column;
       overscroll-behavior: contain;
     }
-    #sideMenu.open {
-      transform: translateX(0);
-    }
+    #sideMenu.open { transform: translateX(0); }
+
     .side-menu-header {
       padding: 20px 22px 12px;
       border-bottom: 1px solid rgba(31, 41, 55, 0.9);
@@ -452,10 +316,11 @@
       align-items: center;
       flex-shrink: 0;
     }
-    .side-menu-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
+
+    .side-logo-wrap { display: block; color: inherit; text-decoration: none; }
+    .side-menu-title { font-size: 18px; font-weight: 700; }
+    .side-sub { font-size: 11px; color: #9ca3af; padding: 0 22px 12px; flex-shrink: 0; }
+
     .side-close {
       padding: 8px 16px;
       border-radius: 999px;
@@ -465,12 +330,7 @@
       color: #e5e7eb;
       cursor: pointer;
     }
-    .side-sub {
-      font-size: 11px;
-      color: #9ca3af;
-      padding: 0 22px 12px;
-      flex-shrink: 0;
-    }
+
     .side-scroll {
       flex: 1;
       padding: 8px 22px 120px;
@@ -479,12 +339,11 @@
       scroll-behavior: smooth;
       touch-action: pan-y;
     }
-    .side-section-title {
-      font-size: 13px;
-      color: #9ca3af;
-      margin: 18px 0 6px;
-      font-weight: 600;
-    }
+    .side-section-title { font-size: 13px; color: #9ca3af; margin: 18px 0 6px; font-weight: 600; }
+
+    /* ✅ 서비스 4개 링크가 안 보이던 원인: side-link 스타일 누락 */
+    .side-link { display: block; padding: 8px 0; font-size: 14px; }
+
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -501,39 +360,20 @@
       font-size: 14px;
       cursor: pointer;
     }
-    .side-group summary::-webkit-details-marker {
-      display: none;
-    }
-    .side-group-label {
-      font-weight: 600;
-    }
-    .side-group-arrow {
-      font-size: 11px;
-      color: #9ca3af;
-    }
+    .side-group summary::-webkit-details-marker { display: none; }
+    .side-group-label { font-weight: 600; }
+    .side-group-arrow { font-size: 11px; color: #9ca3af; }
     .side-group-links {
       border-top: 1px solid rgba(55, 65, 81, 0.9);
       padding: 6px 12px 8px;
     }
-    .side-group-links a {
-      display: block;
-      padding: 4px 0;
-      font-size: 13px;
-    }
+    .side-group-links a { display: block; padding: 4px 0; font-size: 13px; }
 
     @media (min-width: 1024px) {
-      .hero {
-        padding-top: 36px;
-      }
-      .hero-title {
-        font-size: 26px;
-      }
-      .hero-card {
-        padding: 32px 28px;
-      }
-      .container {
-        padding-bottom: 110px;
-      }
+      .hero { padding-top: 36px; }
+      .hero-title { font-size: 26px; }
+      .hero-card { padding: 32px 28px; }
+      .container { padding-bottom: 110px; }
     }
   </style>
 </head>
@@ -544,12 +384,13 @@
   <!-- 사이드 메뉴 -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
-      <div>
-        <div class="side-menu-title">H VIRAL</div>
+      <a href="/" class="side-logo-wrap">
+        <div class="side-menu-title">HVIRAL</div>
         <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
-      </div>
+      </a>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
+
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
       <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
@@ -589,7 +430,7 @@
           <a href="/industry/pt.html">PT 스튜디오</a>
           <a href="/industry/yoga.html">요가</a>
           <a href="/industry/pilates.html">필라테스</a>
-          <a href="/industry/beauty.html">미용실</a>
+          <a href="/industry/beauty.html"><strong>미용실</strong></a>
           <a href="/industry/nail.html">네일샵</a>
           <a href="/industry/dojang.html">체육관·태권도·합기도</a>
         </div>
@@ -673,16 +514,11 @@
           <span></span>
         </button>
         <a href="/" class="logo-wrap">
-          <div class="logo">H VIRAL</div>
+          <div class="logo">HVIRAL</div>
           <div class="logo-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
         </a>
       </div>
-      <a
-        href="https://open.kakao.com/o/sdxcyB4h"
-        class="consult-btn"
-        target="_blank"
-        rel="noopener"
-      >
+      <a href="https://open.kakao.com/o/sdxcyB4h" class="consult-btn" target="_blank" rel="noopener">
         상담하기
       </a>
     </div>
@@ -815,13 +651,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label">연락처<span>*</span></label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      class="form-input"
-                      placeholder="'-' 없이 숫자만"
-                      required
-                    />
+                    <input type="tel" id="phone" class="form-input" placeholder="'-' 없이 숫자만" required />
                   </div>
                 </div>
 
@@ -849,9 +679,7 @@
 
               <div class="terms-box">
                 <details class="terms-detail">
-                  <summary class="terms-summary">
-                    개인정보 수집 및 이용 동의 (필수)
-                  </summary>
+                  <summary class="terms-summary">개인정보 수집 및 이용 동의 (필수)</summary>
                   <div class="terms-body">
                     ① 수집 항목: 성명, 연락처, 매장 정보, 문의 내용<br />
                     ② 수집 목적: 상담 및 안내<br />
@@ -860,28 +688,18 @@
                   </div>
                 </details>
                 <label class="terms-row">
-                  <input
-                    type="checkbox"
-                    id="termsRequired"
-                    class="terms-checkbox"
-                  />
+                  <input type="checkbox" id="termsRequired" class="terms-checkbox" />
                   <span>개인정보 수집 및 이용에 동의합니다.</span>
                 </label>
 
                 <details class="terms-detail">
-                  <summary class="terms-summary">
-                    마케팅 정보 수신 동의 (선택)
-                  </summary>
+                  <summary class="terms-summary">마케팅 정보 수신 동의 (선택)</summary>
                   <div class="terms-body">
                     세미나·자료 발송 등 정보 제공을 위해 카카오톡·문자로 연락드릴 수 있습니다.
                   </div>
                 </details>
                 <label class="terms-row">
-                  <input
-                    type="checkbox"
-                    id="termsMarketing"
-                    class="terms-checkbox"
-                  />
+                  <input type="checkbox" id="termsMarketing" class="terms-checkbox" />
                   <span>마케팅 정보 수신에 동의합니다.</span>
                 </label>
               </div>
@@ -890,17 +708,8 @@
             </form>
 
             <div class="contact-actions">
-              <a
-                href="https://open.kakao.com/o/sdxcyB4h"
-                target="_blank"
-                rel="noopener"
-                class="contact-kakao"
-              >
-                카톡 상담
-              </a>
-              <a href="tel:01032689899" class="contact-call">
-                전화 상담
-              </a>
+              <a href="https://open.kakao.com/o/sdxcyB4h" target="_blank" rel="noopener" class="contact-kakao">카톡 상담</a>
+              <a href="tel:01032689899" class="contact-call">전화 상담</a>
             </div>
           </div>
         </section>
@@ -910,14 +719,7 @@
 
   <!-- 하단 고정바 -->
   <div class="bottom-bar">
-    <a
-      href="https://open.kakao.com/o/sdxcyB4h"
-      class="bottom-btn kakao"
-      target="_blank"
-      rel="noopener"
-    >
-      카톡 상담
-    </a>
+    <a href="https://open.kakao.com/o/sdxcyB4h" class="bottom-btn kakao" target="_blank" rel="noopener">카톡 상담</a>
     <a href="#contact" class="bottom-btn ask">문의하기</a>
     <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
   </div>
@@ -945,14 +747,8 @@
       const m = document.getElementById("message").value.trim();
       const t = document.getElementById("termsRequired").checked;
 
-      if (!t) {
-        alert("개인정보 수집 및 이용에 동의해주세요.");
-        return;
-      }
-      if (!n || !p || !s || !m) {
-        alert("필수 항목을 모두 입력해주세요.");
-        return;
-      }
+      if (!t) { alert("개인정보 수집 및 이용에 동의해주세요."); return; }
+      if (!n || !p || !s || !m) { alert("필수 항목을 모두 입력해주세요."); return; }
 
       const sms =
         `[H VIRAL 미용실 문의]\n` +
@@ -964,7 +760,7 @@
 
       alert(
         "문의 내용을 문자로 전송하실 수 있도록 문자앱을 열었습니다.\n" +
-          "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
+        "문자앱이 열리지 않는 환경에서는 카카오톡 또는 전화 상담을 이용해 주세요."
       );
 
       e.target.reset();
