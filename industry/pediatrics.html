@@ -41,10 +41,6 @@
       line-height:1.6;
       overflow-x:hidden;
     }
-    /* 메뉴 열렸을 때 바디 스크롤 잠금 */
-    body.menu-open {
-      overflow:hidden;
-    }
 
     a { color:inherit; text-decoration:none; }
     ul { list-style:none; }
@@ -968,32 +964,20 @@
   </div>
 
   <script>
-    // 메뉴 열기/닫기 공통 처리 (피부과 페이지와 동일한 패턴)
+    // Index와 동일한 방식의 메뉴 열기/닫기
     function toggleMenu(open) {
       const menu = document.getElementById("sideMenu");
       const backdrop = document.getElementById("sideBackdrop");
-
-      const isOpen = menu.classList.contains("open");
-      const shouldOpen =
-        typeof open === "boolean" ? open : !isOpen;
-
-      if (shouldOpen) {
+      if (open) {
         menu.classList.add("open");
         backdrop.classList.add("show");
-        document.body.classList.add("menu-open");
+        document.body.style.overflow = "hidden";
       } else {
         menu.classList.remove("open");
         backdrop.classList.remove("show");
-        document.body.classList.remove("menu-open");
+        document.body.style.overflow = "";
       }
     }
-
-    // ESC 키로도 닫기 (옵션)
-    window.addEventListener("keyup", function (e) {
-      if (e.key === "Escape") {
-        toggleMenu(false);
-      }
-    });
 
     function handleContactSubmit(e) {
       e.preventDefault();
