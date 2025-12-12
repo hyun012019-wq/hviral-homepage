@@ -45,7 +45,6 @@
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
 
-    /* 공통 레이아웃 */
     .container { max-width: 1080px; margin: 0 auto; padding: 0 20px 96px; }
 
     /* 헤더 */
@@ -66,31 +65,19 @@
     }
     .header-left { display: flex; align-items: center; gap: 16px; }
     .menu-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
+      width: 32px; height: 32px; border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      background: #020617;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; background: #020617;
     }
     .menu-btn span {
-      display: block;
-      width: 16px;
-      height: 2px;
-      background: #e5e7eb;
-      position: relative;
+      display: block; width: 16px; height: 2px;
+      background: #e5e7eb; position: relative;
     }
     .menu-btn span::before,
     .menu-btn span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 16px;
-      height: 2px;
-      background: #e5e7eb;
+      content: ""; position: absolute; left: 0;
+      width: 16px; height: 2px; background: #e5e7eb;
     }
     .menu-btn span::before { top: -5px; }
     .menu-btn span::after { top: 5px; }
@@ -99,12 +86,9 @@
     .logo { font-weight: 700; font-size: 22px; letter-spacing: 1.2px; }
     .logo-sub { font-size: 11px; color: #9ca3af; }
     .consult-btn {
-      padding: 9px 20px;
-      border-radius: 999px;
-      background: #2563eb;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
+      padding: 9px 20px; border-radius: 999px;
+      background: #2563eb; color: #fff;
+      font-size: 15px; font-weight: 600;
     }
 
     /* 히어로 */
@@ -123,19 +107,14 @@
     }
     .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 4px 10px; border-radius: 999px;
       background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(96, 165, 250, 0.6);
-      font-size: 11px;
-      color: #e5e7eb;
+      font-size: 11px; color: #e5e7eb;
     }
     .hero-badge-dot {
-      width: 8px; height: 8px;
-      border-radius: 999px;
+      width: 8px; height: 8px; border-radius: 999px;
       background: #22c55e;
       box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.3);
     }
@@ -232,116 +211,74 @@
       margin-top: 8px;
     }
 
-    /* 사이드 메뉴 (index 동일) */
-    #sideBackdrop {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(4px);
-      z-index: 9500;
-      display: none;
+    /* ✅✅ 사이드 메뉴: PT/NAIL과 동일하게 정리 (서비스 4개 항상 보이게) */
+    #sideBackdrop{
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      background:rgba(15,23,42,0.7); backdrop-filter:blur(4px);
+      z-index:9500; display:none;
     }
-    #sideBackdrop.show { display: block; }
+    #sideBackdrop.show{ display:block; }
 
-    #sideMenu {
-      position: fixed;
-      top: 0; left: 0;
-      width: 80%;
-      max-width: 360px;
-      height: 100%;
-      background: #020617;
-      border-right: 1px solid rgba(148, 163, 184, 0.5);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-      z-index: 9600;
-      display: flex;
-      flex-direction: column;
-      overscroll-behavior: contain;
+    #sideMenu{
+      position:fixed; top:0; left:0;
+      width:80%; max-width:360px; height:100%;
+      background:#020617; border-right:1px solid rgba(148,163,184,0.5);
+      transform:translateX(-100%); transition:transform 0.3s ease;
+      z-index:9600; display:flex; flex-direction:column;
+      overscroll-behavior:contain;
     }
-    #sideMenu.open { transform: translateX(0); }
+    #sideMenu.open{ transform:translateX(0); }
 
-    .side-menu-header {
-      padding: 20px 22px 12px;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-shrink: 0;
+    .side-menu-header{
+      padding:20px 22px 12px;
+      border-bottom:1px solid rgba(31,41,55,0.9);
+      display:flex; justify-content:space-between; align-items:center;
+      flex-shrink:0;
     }
-    .side-menu-title { font-size: 18px; font-weight: 700; }
-    .side-sub {
-      font-size: 11px;
-      color: #9ca3af;
-      padding: 0 22px 12px;
-      flex-shrink: 0;
+    .side-menu-title{ font-size:18px; font-weight:700; }
+    .side-close{
+      padding:8px 16px; border-radius:999px; background:#111827;
+      border:1px solid rgba(148,163,184,0.7);
+      font-size:13px; color:#e5e7eb; cursor:pointer;
     }
-    .side-close {
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: #111827;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 13px;
-      color: #e5e7eb;
-      cursor: pointer;
+    .side-sub{
+      font-size:11px; color:#9ca3af;
+      padding:0 22px 12px;
+      flex-shrink:0;              /* ✅ 서비스가 밀려 올라가서 사라지는 현상 방지 */
     }
-    .side-scroll {
-      flex: 1;
-      padding: 8px 22px 120px;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      touch-action: pan-y;
+    .side-scroll{
+      flex:1;
+      padding:8px 22px 120px;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      scroll-behavior:smooth;
+      touch-action:pan-y;
     }
-    .side-section-title {
-      font-size: 13px;
-      color: #9ca3af;
-      margin: 18px 0 6px;
-      font-weight: 600;
-    }
-    .side-link { display: block; padding: 8px 0; font-size: 14px; }
-
-    /* ✅ FIX: details 박스 밖으로 글자/영역이 튀는 현상 방지 */
-    details.side-group {
-      display: block;             /* 모바일 브라우저 details 렌더링 안정화 */
-      margin-bottom: 8px;
-      border-radius: 14px;
-      border: 1px solid rgba(75, 85, 99, 0.8);
-      background: #020617;
-      overflow: hidden;           /* 라운드 밖으로 내용 튀는 것 클립 */
-      contain: paint;             /* 일부 브라우저에서 border/clip 깨짐 방지 */
+    .side-section-title{
+      font-size:13px; color:#9ca3af;
+      margin:18px 0 6px; font-weight:600;
     }
 
-    .side-group summary {
-      list-style: none;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 14px;
-      cursor: pointer;
+    details.side-group{
+      margin-bottom:8px; border-radius:14px;
+      border:1px solid rgba(75,85,99,0.8);
+      background:#020617; overflow:hidden;
     }
-    .side-group summary::-webkit-details-marker { display: none; }
-    .side-group-label { font-weight: 600; }
-    .side-group-arrow { font-size: 11px; color: #9ca3af; }
-
-    .side-group-links {
-      border-top: 1px solid rgba(55, 65, 81, 0.9);
-      padding: 6px 12px 8px;
-      overflow: hidden;           /* ✅ 내부 링크가 바깥으로 삐져나가는 케이스 방지 */
+    .side-group summary{
+      list-style:none; padding:10px 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:14px; cursor:pointer;
     }
-    .side-group-links a {
-      display: block;
-      padding: 4px 0;
-      font-size: 13px;
-
-      /* ✅ 긴 텍스트/특정 브라우저 렌더링에서 박스 밖으로 “흘러내림” 방지 */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .side-group summary::-webkit-details-marker{ display:none; }
+    .side-group-label{ font-weight:600; }
+    .side-group-arrow{ font-size:11px; color:#9ca3af; }
+    .side-group-links{
+      border-top:1px solid rgba(55,65,81,0.9);
+      padding:6px 12px 8px;
     }
+    .side-group-links a{ display:block; padding:4px 0; font-size:13px; }
 
-    /* 하단 고정 상담바 (index 동일) */
+    /* 하단 고정 상담바 */
     .bottom-bar {
       position: fixed;
       left: 0;
@@ -385,13 +322,15 @@
   <!-- 사이드 메뉴 백드롭 -->
   <div id="sideBackdrop" onclick="toggleMenu(false)"></div>
 
-  <!-- 사이드 메뉴 -->
+  <!-- ✅ 사이드 메뉴 (PT/NAIL 동일 구조) -->
   <nav id="sideMenu" aria-label="전체 메뉴">
     <div class="side-menu-header">
-      <a href="/" class="side-menu-title">HVIRAL</a>
+      <div>
+        <div class="side-menu-title">HVIRAL</div>
+        <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
+      </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
-    <div class="side-sub">디지털 마케팅 설계·브랜딩 플랫폼</div>
 
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
@@ -545,7 +484,6 @@
           </p>
         </div>
 
-        <!-- 섹션 1 -->
         <h2 class="section-title">고객이 가장 먼저 확인하는 철거·인테리어 기준</h2>
         <p class="section-sub">
           “얼마나 안전하게, 어디까지, 어떤 팀이 작업하느냐”를 알기 쉽게 전달합니다.
@@ -581,7 +519,6 @@
           </ul>
         </div>
 
-        <!-- 섹션 2 -->
         <h2 class="section-title">철거·인테리어 서비스 패키지</h2>
 
         <div class="grid-half">
@@ -615,7 +552,6 @@
           </div>
         </div>
 
-        <!-- 섹션 3 -->
         <h2 class="section-title">비용 안내와 상담 연결 방식</h2>
 
         <div class="card">
@@ -637,7 +573,6 @@
           </ul>
         </div>
 
-        <!-- 문의 섹션 -->
         <section id="contact">
           <h2 class="contact-title">철거·인테리어 상담 접수</h2>
           <p class="contact-sub">평수·상태·원하시는 작업만 적어주셔도 됩니다.</p>
@@ -676,7 +611,6 @@
     </section>
   </main>
 
-  <!-- 하단 고정 상담바 -->
   <div class="bottom-bar">
     <a href="https://open.kakao.com/o/sdxcyB4h" class="bottom-btn kakao" target="_blank" rel="noopener">카톡 상담</a>
     <a href="#contact" class="bottom-btn ask">문의하기</a>
@@ -684,33 +618,20 @@
   </div>
 
   <script>
-    // 사이드 메뉴 열고 닫기
     function toggleMenu(open) {
-      const menu = document.getElementById("sideMenu");
-      const backdrop = document.getElementById("sideBackdrop");
+      const m = document.getElementById("sideMenu");
+      const b = document.getElementById("sideBackdrop");
       if (open) {
-        menu.classList.add("open");
-        backdrop.classList.add("show");
+        m.classList.add("open");
+        b.classList.add("show");
         document.body.style.overflow = "hidden";
       } else {
-        menu.classList.remove("open");
-        backdrop.classList.remove("show");
+        m.classList.remove("open");
+        b.classList.remove("show");
         document.body.style.overflow = "";
       }
     }
 
-    // (기존 기능 유지) 대제목 클릭 시, 펼치면서 그 위치로 스크롤
-    const sideScroll = document.querySelector(".side-scroll");
-    document.querySelectorAll("details.side-group").forEach((group) => {
-      group.addEventListener("toggle", function () {
-        if (group.open && sideScroll) {
-          const top = group.offsetTop - 16;
-          sideScroll.scrollTo({ top, behavior: "smooth" });
-        }
-      });
-    });
-
-    // 문자 문의
     function sendMsg(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
@@ -719,19 +640,14 @@
       const m = document.getElementById("msg").value.trim();
       const t = document.getElementById("terms").checked;
 
-      if (!t) {
-        alert("필수 약관에 동의해 주세요.");
-        return;
-      }
-      if (!n || !p || !i || !m) {
-        alert("필수 항목을 모두 입력해 주세요.");
-        return;
-      }
+      if (!t) { alert("필수 약관에 동의해 주세요."); return; }
+      if (!n || !p || !i || !m) { alert("필수 항목을 모두 입력해 주세요."); return; }
 
       const txt =
         `[HVIRAL 철거·인테리어 문의]\n` +
         `이름: ${n}\n연락처: ${p}\n공간: ${i}\n` +
         `요청 내용: ${m}`;
+
       const url = "sms:01032689899?body=" + encodeURIComponent(txt);
       window.location.href = url;
 
