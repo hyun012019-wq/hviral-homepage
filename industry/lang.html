@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="어학·유학 디지털 인프라 │ HVIRAL" />
   <meta property="og:description" content="어학·유학 고객의 목표·레벨·일정을 기준으로 레벨테스트부터 유학·연수·출국까지 이어지는 디지털 인프라를 설계합니다." />
-  <meta property="og:url" content="https://hviral.kr/industry/lang.html" />
+  <meta property="og:url" content="https://hviral.co.kr/industry/lang.html" />
   <meta property="og:site_name" content="HVIRAL" />
   <meta property="og:locale" content="ko_KR" />
   <!-- 필요하면 실제 OG 이미지 경로로 교체 -->
@@ -29,12 +29,12 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="어학·유학 디지털 인프라 │ HVIRAL" />
   <meta name="twitter:description" content="어학원·유학원의 레벨·목표·일정을 기준으로 상담·등록·출국까지 이어지는 화면과 메시지 구조를 설계합니다." />
-  <meta name="twitter:image" content="https://hviral.kr/og/og-lang.jpg" />
+  <meta name="twitter:image" content="https://hviral.co.kr/og/og-lang.jpg" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://hviral.kr/industry/lang.html" />
+  <link rel="canonical" href="https://hviral.co.kr/industry/lang.html" />
 
- <!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -492,6 +492,11 @@
       margin: 18px 0 6px;
       font-weight: 600;
     }
+    .side-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+    }
     details.side-group {
       margin-bottom: 8px;
       border-radius: 14px;
@@ -929,6 +934,7 @@
   </div>
 
   <script>
+    // 사이드 메뉴 열고 닫기
     function toggleMenu(open) {
       const m = document.getElementById("sideMenu");
       const b = document.getElementById("sideBackdrop");
@@ -943,6 +949,18 @@
       }
     }
 
+    // 업종 그룹 열릴 때 해당 위치로 부드럽게 스크롤 (B2B/요가와 동일)
+    const sideScroll = document.querySelector(".side-scroll");
+    document.querySelectorAll("details.side-group").forEach((group) => {
+      group.addEventListener("toggle", function () {
+        if (group.open && sideScroll) {
+          const top = group.offsetTop - 16;
+          sideScroll.scrollTo({ top, behavior: "smooth" });
+        }
+      });
+    });
+
+    // 문의 폼 → 문자 앱으로 전달
     function handleContactSubmit(e) {
       e.preventDefault();
       const n = document.getElementById("name").value.trim();
