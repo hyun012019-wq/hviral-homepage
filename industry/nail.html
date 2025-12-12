@@ -18,8 +18,8 @@
   <meta property="og:title" content="네일샵·네일살롱 마케팅 인프라 설계 │ HVIRAL" />
   <meta property="og:description" content="네일샵 원장님이 실제로 고민하는 상권·고객·메뉴·재방문 구조를 기반으로, 왜 이 네일샵을 선택해야 하는지가 보이는 네일샵 마케팅 인프라를 설계합니다." />
   <meta property="og:url" content="https://hviral.co.kr/industry/nail.html" />
-  <!-- ⚠️ pn5 오타 수정: .pn5.png -> .png (파일명이 실제로 다르면 여기만 실제 파일명으로 맞춰) -->
-  <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.png" />
+  <!-- pn5 파일명 유지 (건들지 않음) -->
+  <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
@@ -227,6 +227,9 @@
     }
     .side-section-title{ font-size:13px; color:#9ca3af; margin:18px 0 6px; font-weight:600; }
 
+    /* ✅ 이게 빠져서 서비스 4개가 안 보이던 핵심 */
+    .side-link{ display:block; padding:8px 0; font-size:14px; }
+
     details.side-group{
       margin-bottom:8px; border-radius:14px;
       border:1px solid rgba(75,85,99,0.8); background:#020617; overflow:hidden;
@@ -268,6 +271,7 @@
 
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
+      <!-- ✅ 햄버거 안 서비스 4개 -->
       <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
       <a href="/website.html" class="side-link">홈페이지 제작</a>
       <a href="/app.html" class="side-link">앱·예약 시스템</a>
