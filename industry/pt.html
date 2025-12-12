@@ -19,6 +19,7 @@
   <meta property="og:title" content="PT 스튜디오 마케팅 인프라 │ 하비럴 마케팅 HVIRAL" />
   <meta property="og:description" content="PT 스튜디오, 1:1 PT, 바디프로필, 체형교정 PT를 위한 마케팅 인프라 설계. 상담·등록·재등록·소개까지 한 구조 안에서 관리되는 PT 스튜디오 마케팅 인프라를 제안합니다." />
   <meta property="og:url" content="/industry/pt.html" />
+  <!-- pn5 파일명 유지(건들지 않음) -->
   <meta property="og:image" content="https://hviral.co.kr/assets/hero-cafe.pn5.png" />
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,7 +33,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon32.png">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  
+
   <style>
     * {
       margin: 0;
@@ -107,16 +108,10 @@
       position: absolute;
       left: 0;
     }
-    .menu-btn span::before {
-      top: -5px;
-    }
-    .menu-btn span::after {
-      top: 5px;
-    }
+    .menu-btn span::before { top: -5px; }
+    .menu-btn span::after { top: 5px; }
 
-    .logo-wrap {
-      display: block;
-    }
+    .logo-wrap { display: block; }
     .logo {
       font-weight: 700;
       font-size: 22px;
@@ -232,9 +227,7 @@
     }
 
     /* 문의 섹션 */
-    #contact {
-      margin: 32px 0 4px;
-    }
+    #contact { margin: 32px 0 4px; }
     .contact-title {
       font-size: 18px;
       font-weight: 800;
@@ -273,9 +266,7 @@
       font-size: 12px;
       color: #9ca3af;
     }
-    .form-label span {
-      color: #f97316;
-    }
+    .form-label span { color: #f97316; }
     .form-input,
     .form-textarea {
       border-radius: 10px;
@@ -298,9 +289,7 @@
       margin-bottom: 12px;
       background: #020617;
     }
-    .terms-detail {
-      margin-bottom: 6px;
-    }
+    .terms-detail { margin-bottom: 6px; }
     .terms-summary {
       cursor: pointer;
       list-style: none;
@@ -311,18 +300,14 @@
       color: #e5e7eb;
       align-items: center;
     }
-    .terms-summary::-webkit-details-marker {
-      display: none;
-    }
+    .terms-summary::-webkit-details-marker { display: none; }
     .terms-summary::after {
       content: "자세히 보기";
       font-size: 11px;
       color: #9ca3af;
       margin-left: 8px;
     }
-    .terms-detail[open] .terms-summary::after {
-      content: "접기";
-    }
+    .terms-detail[open] .terms-summary::after { content: "접기"; }
     .terms-body {
       font-size: 11px;
       color: #9ca3af;
@@ -367,14 +352,8 @@
       font-weight: 600;
       font-size: 14px;
     }
-    .contact-kakao {
-      background: #facc15;
-      color: #000;
-    }
-    .contact-call {
-      background: #2563eb;
-      color: #fff;
-    }
+    .contact-kakao { background: #facc15; color: #000; }
+    .contact-call { background: #2563eb; color: #fff; }
 
     /* 하단 고정바 */
     .bottom-bar {
@@ -398,19 +377,13 @@
       font-size: 15px;
       font-weight: 600;
     }
-    .bottom-btn.kakao {
-      background: #facc15;
-      color: #000;
-    }
+    .bottom-btn.kakao { background: #facc15; color: #000; }
     .bottom-btn.ask {
       background: #111827;
       color: #e5e7eb;
       border: 1px solid rgba(148, 163, 184, 0.6);
     }
-    .bottom-btn.call {
-      background: #2563eb;
-      color: #fff;
-    }
+    .bottom-btn.call { background: #2563eb; color: #fff; }
 
     /* 사이드 메뉴 (index와 동일 구조) */
     #sideBackdrop {
@@ -424,9 +397,7 @@
       z-index: 9500;
       display: none;
     }
-    #sideBackdrop.show {
-      display: block;
-    }
+    #sideBackdrop.show { display: block; }
     #sideMenu {
       position: fixed;
       top: 0;
@@ -443,9 +414,7 @@
       flex-direction: column;
       overscroll-behavior: contain;
     }
-    #sideMenu.open {
-      transform: translateX(0);
-    }
+    #sideMenu.open { transform: translateX(0); }
     .side-menu-header {
       padding: 20px 22px 12px;
       border-bottom: 1px solid rgba(31, 41, 55, 0.9);
@@ -454,10 +423,7 @@
       align-items: center;
       flex-shrink: 0;
     }
-    .side-menu-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
+    .side-menu-title { font-size: 18px; font-weight: 700; }
     .side-close {
       padding: 8px 16px;
       border-radius: 999px;
@@ -503,16 +469,9 @@
       font-size: 14px;
       cursor: pointer;
     }
-    .side-group summary::-webkit-details-marker {
-      display: none;
-    }
-    .side-group-label {
-      font-weight: 600;
-    }
-    .side-group-arrow {
-      font-size: 11px;
-      color: #9ca3af;
-    }
+    .side-group summary::-webkit-details-marker { display: none; }
+    .side-group-label { font-weight: 600; }
+    .side-group-arrow { font-size: 11px; color: #9ca3af; }
     .side-group-links {
       border-top: 1px solid rgba(55, 65, 81, 0.9);
       padding: 6px 12px 8px;
@@ -524,18 +483,10 @@
     }
 
     @media (min-width: 1024px) {
-      .hero {
-        padding-top: 36px;
-      }
-      .hero-title {
-        font-size: 26px;
-      }
-      .hero-card {
-        padding: 32px 28px;
-      }
-      .container {
-        padding-bottom: 110px;
-      }
+      .hero { padding-top: 36px; }
+      .hero-title { font-size: 26px; }
+      .hero-card { padding: 32px 28px; }
+      .container { padding-bottom: 110px; }
     }
   </style>
 </head>
@@ -552,6 +503,7 @@
       </div>
       <button class="side-close" onclick="toggleMenu(false)">닫기</button>
     </div>
+
     <div class="side-scroll">
       <div class="side-section-title">서비스</div>
       <a href="/digital.html" class="side-link">디지털 마케팅 설계</a>
@@ -588,7 +540,7 @@
         </summary>
         <div class="side-group-links">
           <a href="/industry/gym.html">헬스장</a>
-          <a href="/industry/pt.html">PT 스튜디오</a>
+          <a href="/industry/pt.html"><strong>PT 스튜디오</strong></a>
           <a href="/industry/yoga.html">요가</a>
           <a href="/industry/pilates.html">필라테스</a>
           <a href="/industry/beauty.html">미용실</a>
