@@ -1097,6 +1097,55 @@
     <a href="tel:01032689899" class="bottom-btn call">전화 상담</a>
   </div>
 
+  <!-- ===================== -->
+  <!-- HVIRAL 팝업 (Version A) -->
+  <!-- ===================== -->
+  <div id="hviral-popup-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:9998;"></div>
+
+  <div id="hviral-popup" style="display:none; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:min(92vw, 420px); background:#0b1730; color:#fff; border-radius:18px; z-index:9999;
+    box-shadow:0 12px 40px rgba(0,0,0,.45); overflow:hidden;">
+
+    <div style="padding:18px 18px 10px 18px;">
+      <div style="font-size:14px; opacity:.85; margin-bottom:8px;">HVIRAL</div>
+
+      <div style="font-size:20px; line-height:1.35; font-weight:800; margin-bottom:10px;">
+        ⭕ 광고는 하고 있는데,<br>
+        문의가 늘지 않는 이유<br>
+        정확히 알고 계신가요?
+      </div>
+
+      <div style="font-size:14px; line-height:1.55; opacity:.92;">
+        많은 대표님들께서<br>
+        ‘광고’보다<br>
+        ‘마케팅 시스템’에서<br>
+        놓치고 있는 부분이 있습니다.
+      </div>
+
+      <div style="margin-top:14px; display:flex; gap:10px;">
+        <a href="#contact" id="hviral-popup-cta"
+           style="flex:1; text-align:center; padding:12px 14px; background:#2f6cff; color:#fff; text-decoration:none;
+           border-radius:12px; font-weight:700;">
+          확인해보기
+        </a>
+
+        <button type="button" id="hviral-popup-close"
+          style="padding:12px 14px; background:rgba(255,255,255,.08); color:#fff; border:none;
+          border-radius:12px; font-weight:700; cursor:pointer;">
+          닫기
+        </button>
+      </div>
+    </div>
+
+    <div style="padding:12px 18px 16px 18px; display:flex; align-items:center; justify-content:space-between; background:rgba(255,255,255,.04);">
+      <label style="display:flex; align-items:center; gap:8px; font-size:13px; opacity:.9; cursor:pointer;">
+        <input id="hviral-popup-hide-today" type="checkbox" style="width:16px; height:16px;">
+        오늘 하루 보지 않기
+      </label>
+      <span style="font-size:12px; opacity:.7;">ESC 닫기</span>
+    </div>
+  </div>
+
   <script>
     // 사이드 메뉴 열고 닫기
     function toggleMenu(open) {
@@ -1282,6 +1331,93 @@
       // 자동 전환 (2.5초)
       setInterval(nextSlide, 2500);
     });
+
+    // ==========================
+    // HVIRAL 팝업 스크립트 (1회 노출 + 오늘 하루 보지 않기)
+    // ==========================
+    (function () {
+      const KEY = "hviral_popup_hide_until";
+      const popup = document.getElementById("hviral-popup");
+      const overlay = document.getElementById("hviral-popup-overlay");
+      const closeBtn = document.getElementById("hviral-popup-close");
+      const ctaBtn = document.getElementById("hviral-popup-cta");
+      const hideTodayChk = document.getElementById("hviral-popup-hide-today");
+
+      function nowTs() { return Date.now(); }
+
+      function startOfTomorrowTs() {
+        const d = new Date();
+        d.setHours(24, 0, 0, 0); // 내일 00:00
+        return d.getTime();
+      }
+
+      function isHidden() {
+        const until = parseInt(localStorage.getItem(KEY) || "0", 10);
+        return until && nowTs() < until;
+      }
+
+      function isSideMenuOpen() {
+        const menu = document.getElementById("sideMenu");
+        return menu && menu.classList.contains("open");
+      }
+
+      function lockScroll() {
+        document.body.style.overflow = "hidden";
+      }
+
+      function unlockScrollIfSafe() {
+        // 사이드 메뉴가 열려있으면 body overflow를 풀면 안됨
+        if (!isSideMenuOpen()) {
+          document.body.style.overflow = "";
+        }
+      }
+
+      function openPopup() {
+        overlay.style.display = "block";
+        popup.style.display = "block";
+        lockScroll();
+      }
+
+      function closePopup(shouldSetHideToday) {
+        if (shouldSetHideToday) {
+          localStorage.setItem(KEY, String(startOfTomorrowTs()));
+        }
+        popup.style.display = "none";
+        overlay.style.display = "none";
+        unlockScrollIfSafe();
+      }
+
+      // 메인에서만 ("/" 또는 "/index.html" 등) — 혹시 경로가 다르면 조정 가능
+      const path = location.pathname;
+      const isMain = (path === "/" || path.endsWith("/index.html") || path.endsWith("/index.htm"));
+      if (!isMain) return;
+
+      if (isHidden()) return;
+
+      // 페이지 로드 후 살짝 딜레이
+      window.setTimeout(openPopup, 650);
+
+      function onClose() {
+        const checked = hideTodayChk && hideTodayChk.checked;
+        closePopup(checked);
+      }
+
+      closeBtn.addEventListener("click", onClose);
+      overlay.addEventListener("click", onClose);
+
+      // CTA 클릭 시: 팝업 닫고 #contact로 이동(기본 앵커 동작)
+      ctaBtn.addEventListener("click", function () {
+        const checked = hideTodayChk && hideTodayChk.checked;
+        closePopup(checked);
+      });
+
+      // ESC 닫기
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && popup.style.display === "block") {
+          onClose();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
