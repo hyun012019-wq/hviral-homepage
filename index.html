@@ -694,6 +694,130 @@
         padding-bottom: 110px;
       }
     }
+
+    /* ====================================================== */
+    /* ✅ [추가] 최하단 인프라/영문화 키워드 블록 (기존 건드림 X) */
+    /* ====================================================== */
+    .hviral-infra-wrap{
+      margin: 28px 0 0;
+      padding-top: 10px;
+    }
+    .hviral-infra-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin: 0 0 12px;
+    }
+    .hviral-infra-title{
+      font-size:18px;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+    .hviral-infra-sub{
+      font-size:12px;
+      color:#9ca3af;
+      margin-top:6px;
+      line-height:1.55;
+    }
+    .hviral-infra-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 4px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(96,165,250,.55);
+      background: rgba(15,23,42,.85);
+      font-size:11px;
+      color:#e5e7eb;
+      white-space:nowrap;
+    }
+    .hviral-infra-card{
+      background:#020617;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 16px 14px;
+      margin-bottom: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hviral-infra-watermark{
+      position:absolute;
+      right:12px;
+      top:10px;
+      font-size:10px;
+      color:rgba(148,163,184,.55);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      pointer-events:none;
+    }
+    .hviral-infra-lead{
+      font-size:13px;
+      color:#e5e7eb;
+      margin-bottom:10px;
+      line-height:1.6;
+    }
+    .hviral-infra-lead strong{
+      color:#ffffff;
+      font-weight:800;
+    }
+    .hviral-infra-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (min-width: 640px){
+      .hviral-infra-grid{ grid-template-columns: 1fr 1fr; }
+    }
+    .hviral-infra-box{
+      border-radius:16px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(2,6,23,.65);
+      padding: 12px 12px;
+    }
+    .hviral-infra-box-title{
+      font-weight:800;
+      font-size:12px;
+      color:#93c5fd;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+    .hviral-tag-cloud{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .hviral-tag{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(148,163,184,.55);
+      background: rgba(15,23,42,.72);
+      font-size:11px;
+      color:#e5e7eb;
+      line-height:1;
+      white-space:nowrap;
+    }
+    .hviral-tag.em{
+      border-color: rgba(34,197,94,.55);
+      background: rgba(34,197,94,.10);
+    }
+    .hviral-tag.blue{
+      border-color: rgba(96,165,250,.55);
+      background: rgba(37,99,235,.10);
+    }
+    .hviral-infra-note{
+      margin-top:12px;
+      font-size:11px;
+      color:#9ca3af;
+      line-height:1.55;
+    }
+    .hviral-infra-note b{
+      color:#e5e7eb;
+      font-weight:700;
+    }
   </style>
 </head>
 <body>
@@ -1083,6 +1207,125 @@
                 class="contact-kakao"
               >카톡으로 바로 상담</a>
               <a href="tel:01032689899" class="contact-call">전화로 바로 상담</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ✅ [추가] 최하단 인프라/영문화 키워드 블록 (기존 건드림 X) -->
+        <!-- ====================================================== -->
+        <section class="hviral-infra-wrap" id="infra">
+          <div class="hviral-infra-head">
+            <div>
+              <div class="hviral-infra-title">HVIRAL 디지털 마케팅·개발 인프라 키워드</div>
+              <div class="hviral-infra-sub">
+                업종별로 “문의가 생기는 흐름”을 만들기 위해, 아래 범주를 한 번에 다룹니다.<br>
+                (표현이 어렵게 느껴져도 괜찮습니다. 하비럴은 이 영역을 실무로 연결합니다.)
+              </div>
+            </div>
+            <div class="hviral-infra-badge">ⓘ (주)하비럴 샘플 페이지</div>
+          </div>
+
+          <div class="hviral-infra-card">
+            <div class="hviral-infra-watermark">HVIRAL SAMPLE · OFFICIAL</div>
+            <div class="hviral-infra-lead">
+              <strong>“광고 집행”</strong>을 넘어서, <strong>검색–콘텐츠–전환–운영</strong>이 한 방향으로 움직이는
+              <strong>디지털 인프라</strong>를 설계합니다.
+            </div>
+
+            <div class="hviral-infra-grid">
+              <div class="hviral-infra-box">
+                <div class="hviral-infra-box-title">INFRA / SECURITY / SERVER</div>
+                <div class="hviral-tag-cloud">
+                  <span class="hviral-tag em">SSL</span>
+                  <span class="hviral-tag">HTTPS</span>
+                  <span class="hviral-tag">Hosting</span>
+                  <span class="hviral-tag">Server</span>
+                  <span class="hviral-tag">VPS</span>
+                  <span class="hviral-tag">CDN</span>
+                  <span class="hviral-tag">DNS</span>
+                  <span class="hviral-tag">WAF</span>
+                  <span class="hviral-tag">Firewall</span>
+                  <span class="hviral-tag">Backup</span>
+                  <span class="hviral-tag">Uptime</span>
+                  <span class="hviral-tag">Monitoring</span>
+                  <span class="hviral-tag">Log</span>
+                  <span class="hviral-tag">Performance</span>
+                  <span class="hviral-tag">Latency</span>
+                  <span class="hviral-tag">Caching</span>
+                </div>
+              </div>
+
+              <div class="hviral-infra-box">
+                <div class="hviral-infra-box-title">PRODUCT / UX / UI / CONVERSION</div>
+                <div class="hviral-tag-cloud">
+                  <span class="hviral-tag blue">UI</span>
+                  <span class="hviral-tag blue">UX</span>
+                  <span class="hviral-tag">IA</span>
+                  <span class="hviral-tag">Wireframe</span>
+                  <span class="hviral-tag">Prototype</span>
+                  <span class="hviral-tag">Landing Page</span>
+                  <span class="hviral-tag">CRO</span>
+                  <span class="hviral-tag">CTA</span>
+                  <span class="hviral-tag">Lead</span>
+                  <span class="hviral-tag">Form</span>
+                  <span class="hviral-tag">Funnel</span>
+                  <span class="hviral-tag">Retention</span>
+                  <span class="hviral-tag">CRM</span>
+                  <span class="hviral-tag">Automation</span>
+                  <span class="hviral-tag">A/B Test</span>
+                  <span class="hviral-tag">Heatmap</span>
+                </div>
+              </div>
+
+              <div class="hviral-infra-box">
+                <div class="hviral-infra-box-title">MARKETING / SEARCH / CONTENT</div>
+                <div class="hviral-tag-cloud">
+                  <span class="hviral-tag em">SEO</span>
+                  <span class="hviral-tag">SEM</span>
+                  <span class="hviral-tag">Search Intent</span>
+                  <span class="hviral-tag">Keyword</span>
+                  <span class="hviral-tag">Content Strategy</span>
+                  <span class="hviral-tag">Copywriting</span>
+                  <span class="hviral-tag">Branding</span>
+                  <span class="hviral-tag">Local</span>
+                  <span class="hviral-tag">Map</span>
+                  <span class="hviral-tag">Review</span>
+                  <span class="hviral-tag">UGC</span>
+                  <span class="hviral-tag">PR</span>
+                  <span class="hviral-tag">Community</span>
+                  <span class="hviral-tag">Blog</span>
+                  <span class="hviral-tag">Video</span>
+                  <span class="hviral-tag">Newsletter</span>
+                </div>
+              </div>
+
+              <div class="hviral-infra-box">
+                <div class="hviral-infra-box-title">BUILD / SYSTEM / SCALE</div>
+                <div class="hviral-tag-cloud">
+                  <span class="hviral-tag">SaaS</span>
+                  <span class="hviral-tag">Web App</span>
+                  <span class="hviral-tag">Mobile</span>
+                  <span class="hviral-tag">Reservation System</span>
+                  <span class="hviral-tag">Payment</span>
+                  <span class="hviral-tag">Webhook</span>
+                  <span class="hviral-tag">API</span>
+                  <span class="hviral-tag">Integration</span>
+                  <span class="hviral-tag">Analytics</span>
+                  <span class="hviral-tag">Event Tracking</span>
+                  <span class="hviral-tag">Dashboard</span>
+                  <span class="hviral-tag">Data Layer</span>
+                  <span class="hviral-tag">Pipeline</span>
+                  <span class="hviral-tag">Scalability</span>
+                  <span class="hviral-tag">Roadmap</span>
+                  <span class="hviral-tag">Operations</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hviral-infra-note">
+              <b>표기:</b> 본 영역은 “방법을 가르치는 글”이 아니라, 하비럴이 다루는 <b>실무 범주</b>를 압축해 보여주는 참고 블록입니다.<br>
+              <b>표현:</b> (주)하비럴 공식 홈페이지 샘플 페이지 · 내부 테스트/개선 과정에서 내용이 예고 없이 업데이트될 수 있습니다.
             </div>
           </div>
         </section>
