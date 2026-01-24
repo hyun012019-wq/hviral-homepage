@@ -7,9 +7,12 @@
   <link rel="alternate" type="application/rss+xml" title="HVIRAL RSS" href="/rss.xml">
 
   <!-- Web App Manifest -->
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#020617">
-  
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#020617">
+
+  <!-- ✅ (미세 튜닝) robots 명시 -->
+  <meta name="robots" content="index,follow">
+
   <!-- SEO 메타 -->
   <meta name="description" content="
 하비럴(HVIRAL) 공식 메인 홈페이지입니다.
@@ -377,6 +380,26 @@
       font-size: 12px;
       color: #9ca3af;
     }
+
+    /* ✅ 옵션3 느낌: 모바일에서 제작 프로세스는 네이버 카드처럼 스와이프 */
+    @media (max-width: 639px) {
+      .process-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 4px;
+      }
+      .process-grid::-webkit-scrollbar { display: none; }
+      .process-step {
+        flex: 0 0 auto;
+        min-width: 82%;
+        scroll-snap-align: start;
+      }
+    }
+
     /* 문의 섹션 */
     #contact {
       margin: 36px 0 4px;
@@ -818,6 +841,18 @@
       color:#e5e7eb;
       font-weight:700;
     }
+
+    /* ✅ 카드별 Lazy 효과 */
+    .hv-lazy {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .55s ease, transform .55s ease;
+      will-change: opacity, transform;
+    }
+    .hv-lazy.show {
+      opacity: 1;
+      transform: none;
+    }
   </style>
 </head>
 <body>
@@ -969,9 +1004,9 @@
   <main>
     <section class="hero">
       <div class="hero-slides">
-        <img src="assets/hero-cafe.pn5.png" class="slide active">
-        <img src="assets/hero-cafe.png.png" class="slide">
-        <img src="assets/hero-cafe.png3.png" class="slide">
+        <img src="assets/hero-cafe.pn5.png" class="slide active" alt="">
+        <img src="assets/hero-cafe.png.png" class="slide" alt="">
+        <img src="assets/hero-cafe.png3.png" class="slide" alt="">
       </div>
       <div class="container">
         <div class="hero-card">
@@ -1494,7 +1529,6 @@
         <input id="hviral-popup-hide-today" type="checkbox" style="width:16px; height:16px;">
         오늘 하루 보지 않기
       </label>
-      
     </div>
   </div>
 
@@ -1664,9 +1698,17 @@
       e.target.reset();
     }
 
+    // ✅ Hero 자동 슬라이드: 속도 조절 상수화 + 조금 빠르게
     document.addEventListener("DOMContentLoaded", function () {
+      const HERO_SLIDE_MS = 1800; // ✅ 여기 숫자만 바꾸면 속도 조절됨 (기존 2500ms → 더 빠르게)
       const slides = document.querySelectorAll(".hero-slides .slide");
       let currentIndex = 0;
+
+      // 이미지 lazy 힌트(구조 유지 / DOM 변경 최소)
+      slides.forEach((img, idx) => {
+        try { img.loading = (idx === 0 ? "eager" : "lazy"); } catch(e) {}
+        img.decoding = "async";
+      });
 
       function showSlide(index) {
         slides.forEach((slide) => {
@@ -1676,13 +1718,40 @@
       }
 
       function nextSlide() {
+        if (!slides.length) return;
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
       }
 
-      // 자동 전환 (2.5초)
-      setInterval(nextSlide, 2500);
+      // 자동 전환
+      window.setInterval(nextSlide, HERO_SLIDE_MS);
     });
+
+    // ✅ 카드별 Lazy 효과 (진입 시 자연스럽게 등장)
+    (function(){
+      const targets = [];
+      document.querySelectorAll(".card, .process-step, .service, .search-wrap, .hero-card").forEach(el => {
+        el.classList.add("hv-lazy");
+        targets.push(el);
+      });
+
+      if (!("IntersectionObserver" in window)) {
+        // 구형 브라우저 fallback
+        targets.forEach(el => el.classList.add("show"));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("show");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      targets.forEach(el => io.observe(el));
+    })();
 
     // ==========================
     // HVIRAL 팝업 스크립트 (1회 노출 + 오늘 하루 보지 않기)
