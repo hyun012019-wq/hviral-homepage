@@ -1843,6 +1843,7 @@
 <script>
 (function () {
 
+  // 방문 카운트
   let count = localStorage.getItem("hviral_visit_count");
   if (!count) count = 0;
   count++;
@@ -1854,24 +1855,24 @@
       if (!data) return;
 
       // IP 마스킹
-      const ip = data.ip
-        ? data.ip.split(':')[0] + ":xxxx:xxxx"
-        : "알 수 없음";
+      let ip = data.ip;
 
-      // 지역 처리 (대한민국 + 시/도)
-      let region = data.region || "";
-      let country = "대한민국";
-
-      if (!region || region.length < 2) {
-        region = "현재 위치";
+      if (ip) {
+        if (ip.includes(".")) {
+          const parts = ip.split(".");
+          ip = parts[0] + "." + parts[1] + ".xxx.xxx";
+        } else {
+          const parts = ip.split(":");
+          ip = parts[0] + ":" + parts[1] + ":xxxx:xxxx:" + parts.slice(-2).join(":");
+        }
+      } else {
+        ip = "알 수 없음";
       }
 
-      // 이상값 필터
-      if (region.toLowerCase().includes("gaigeturi")) {
-        region = "대한민국";
-      }
-
+      // 팝업 생성
       const box = document.createElement("div");
+      box.style.transition = "opacity 0.5s ease";
+
       box.innerHTML = `
         <div style="
           position:fixed;
@@ -1890,7 +1891,7 @@
           min-width:260px;
         ">
 
-          🔎 ${country} ${region}에서 접속 중<br>
+          🔎 현재 접속 중<br>
           <span style="opacity:.7;">IP 접속 (${ip})</span><br><br>
 
           📊 현재 방문 횟수<br>
@@ -1928,13 +1929,23 @@
 
       document.body.appendChild(box);
 
+      // 닫기 버튼
       document.getElementById("hviral-ip-close").onclick = function () {
         box.remove();
       };
 
+      // 🔥 깜빡 효과 (사라졌다 나타남 반복)
+      let visible = true;
+      const blink = setInterval(() => {
+        box.style.opacity = visible ? "0" : "1";
+        visible = !visible;
+      }, 1500); // 1.5초 간격 (너무 빠르지 않게)
+
+      // 🔥 30초 후 완전 제거
       setTimeout(() => {
+        clearInterval(blink);
         box.remove();
-      }, 15000);
+      }, 30000);
     });
 
 })();
