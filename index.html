@@ -1939,7 +1939,7 @@
       const blink = setInterval(() => {
         box.style.opacity = visible ? "0" : "1";
         visible = !visible;
-      }, 1500); // 1.5초 간격 (너무 빠르지 않게)
+      }, 10000); // 10초 간격 (너무 빠르지 않게)
 
       // 🔥 30초 후 완전 제거
       setTimeout(() => {
